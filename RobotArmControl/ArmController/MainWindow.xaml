@@ -1,0 +1,10 @@
+﻿<Window x:Class="ArmController.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Robot Arm Controller" Height="640" Width="480"
+        Loaded="WindowLoaded" Closing="WindowClosing">
+    <Grid>
+        <Image Name="KinectRenderFeedback" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="480"/>
+
+    </Grid>
+</Window>

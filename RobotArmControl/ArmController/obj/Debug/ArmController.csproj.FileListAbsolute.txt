@@ -1,0 +1,15 @@
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\bin\Debug\ArmController.exe.config
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\obj\Debug\ArmController.csprojResolveAssemblyReference.cache
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\obj\Debug\MainWindow.baml
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\obj\Debug\MainWindow.g.cs
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\obj\Debug\App.g.cs
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\obj\Debug\ArmController_MarkupCompile.cache
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\obj\Debug\ArmController.g.resources
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\obj\Debug\ArmController.Properties.Resources.resources
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\obj\Debug\ArmController.csproj.GenerateResource.Cache
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\bin\Debug\ArmController.exe
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\bin\Debug\ArmController.pdb
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\bin\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\bin\Debug\Microsoft.Kinect.Toolkit.pdb
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\obj\Debug\ArmController.exe
+C:\Users\jbabb\Documents\Visual Studio 2012\Projects\RobotArmControl\ArmController\obj\Debug\ArmController.pdb
