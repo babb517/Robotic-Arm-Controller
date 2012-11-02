@@ -20,8 +20,26 @@ namespace RobotArmControl
     /// </summary>
     public enum BusNodes
     {
-        POS_LEFT_SHOULDER,
-        POS_RIGHT_SHOULDER
+        // Output from the Position Detection Module (Kinect)
+
+        KINECT_TICK,            ///< A value that's published once every output from the Kinect has been published. Subscribe to this to avoid getting notified when each value has been changed.
+
+        PLAYER_ONE_ID,          ///< Integer ID for player one according to the Kinect
+
+        POS_NECK_BASE,          ///< System.Windows.Point giving the 3d point of the base of the neck in space.
+        POS_HEAD,               ///< System.Windows.Point giving the 3d point of the head in space.
+
+        POS_LEFT_SHOULDER,      ///< System.Windows.Point giving the 3d point of the left shoulder in space.
+        POS_LEFT_ELBOW,         ///< System.Windows.Point giving the 3d point of the left elbow in space.
+        POS_LEFT_WRIST,         ///< System.Windows.Point giving the 3d point of the left wrist in space.
+        POS_LEFT_HAND,          ///< System.Windows.Point giving the 3d point of the left hand in space.
+        
+        POS_RIGHT_SHOULDER,     ///< System.Windows.Point giving the 3d point of the right shoulder in space.
+        POS_RIGHT_ELBOW,        ///< System.Windows.Point giving the 3d point of the right elbow in space.
+        POS_RIGHT_WRIST,        ///< System.Windows.Point giving the 3d point of the right wrist in space.
+        POS_RIGHT_HAND,         ///< System.Windows.Point giving the 3d point of the right hand in space.
+                                
+
         // TODO: Populate the nodes with appropriate values.
     }
    
