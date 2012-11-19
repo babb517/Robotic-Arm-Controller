@@ -10,9 +10,11 @@ using System.Windows;
 using System.Diagnostics;
 using System.ComponentModel;
 
-namespace RobotArmControl.Kinect_Module
+using ArmController.Integration;
+
+namespace ArmController.Kinect_Module
 {
-    class PositionalTracker
+    class PositionalTracker : Module
     {
         #region Constants
         /**********************************************************************/
@@ -50,43 +52,7 @@ namespace RobotArmControl.Kinect_Module
         /// A member used to track the player we're currently working with.
         /// A value of null indicates that a player hasn't been found and then next available player will be registered as player one.
         /// </summary>
-        public Skeleton _playerOne;
-
-        #endregion Private Members
-
-        #region Public Members
-        /**********************************************************************/
-        /* Private Members */
-        /**********************************************************************
-        
-
-        /// <summary>
-        /// A virtual member used to access the canvas we're drawing on.
-        /// </summary>
-        public DrawingGroup Canvas
-        {
-            get
-            {
-                return _renderer.Canvas;
-            }
-
-            set
-            {
-                _renderer.Canvas = value;
-            }
-        }
-
-        /// <summary>
-        /// A virtual member to get the status of the kinect sensor.
-        /// </summary>
-        public ChooserStatus Status
-        {
-            get
-            {
-                return _snsr.Status;
-            }
-        }
-
+        private Skeleton _playerOne;
 
         #endregion Private Members
 
@@ -119,31 +85,22 @@ namespace RobotArmControl.Kinect_Module
 
         #endregion Constructors
 
-        #region Public Methods
+        #region Event Handling
         /**********************************************************************/
-        /* Public Methods */
+        /* Event Handling */
         /**********************************************************************/
 
-
-
-        public void Start()
+        protected override void OnInitialize()
         {
             Debug.WriteLine("Starting the kinect...");
             StartKinectST();
         }
 
-        public void Stop()
+        protected override void OnFinalize()
         {
             Debug.WriteLine("Stopping the kinect...");
             StopKinectST();
         }
-
-        #endregion Public Methods
-
-        #region Event Handling
-        /**********************************************************************/
-        /* Event Handling */
-        /**********************************************************************/
 
         /// <summary>
         /// A handler to take care of the sensor changing during operation.
@@ -195,7 +152,7 @@ namespace RobotArmControl.Kinect_Module
         /// <param name="e">An event object containing the most recent skeletal frame.</param>
         private void OnKinectDataReady(object sender, SkeletonFrameReadyEventArgs e)
         {
-            Debug.WriteLine("Kinect Data is ready, processing it...");
+            //Debug.WriteLine("Kinect Data is ready, processing it...");
 
             // unpackage the skeletal data
             using (SkeletonFrame skeletonFrame = e.OpenSkeletonFrame())
@@ -206,10 +163,7 @@ namespace RobotArmControl.Kinect_Module
                 }
             }
 
-            SelectPlayerOne();
-
             ProcessSkeletalData();
-            PublishSkeletalData();
         }
 
         #endregion Event Handling
@@ -264,7 +218,8 @@ namespace RobotArmControl.Kinect_Module
         /// <summary>
         /// Scans through our skeletons and selects player one based on our previous selection and the position of each skeleton.
         /// </summary>
-        private void SelectPlayerOne()
+        /// <returns>True if a new player has been selected, false otherwise.</returns>
+        private bool SelectPlayerOne()
         {
             bool foundPreviousPlayerOne = false;
             Skeleton closest = null;
@@ -287,7 +242,12 @@ namespace RobotArmControl.Kinect_Module
             }
 
             // If our previous player has left select the closest candidate as the new player one.
-            if (!foundPreviousPlayerOne) _playerOne = closest;
+            if (!foundPreviousPlayerOne)
+            {
+                _playerOne = closest;
+                return true;
+            }
+            else return false;
 
         }
 
@@ -296,23 +256,52 @@ namespace RobotArmControl.Kinect_Module
         /// </summary>
         private void ProcessSkeletalData()
         {
-            if (_playerOne == null)
+            if (SelectPlayerOne() && _playerOne != null ) { Bus.Publish(BusNode.PLAYER_ONE_ID, (_playerOne != null) ? _playerOne.TrackingId : -1); }
+
+            if (_playerOne == null || _playerOne.TrackingState != SkeletonTrackingState.Tracked)
             {
                 Debug.WriteLine("Player not found...");
             } 
-            else if (_playerOne.TrackingState == SkeletonTrackingState.Tracked)
+            else
             {
+                // there is an active player 1, let's publish his information...
 
+                // positions
+                Bus.Publish(BusNode.POS_LEFT_SHOULDER, _playerOne.Joints[JointType.ShoulderLeft].Position);
+                Bus.Publish(BusNode.POS_LEFT_ELBOW, _playerOne.Joints[JointType.ElbowLeft].Position);
+                Bus.Publish(BusNode.POS_LEFT_WRIST, _playerOne.Joints[JointType.WristLeft].Position);
+                Bus.Publish(BusNode.POS_LEFT_HAND, _playerOne.Joints[JointType.HandLeft].Position);
 
-            }
-        }
+                Bus.Publish(BusNode.POS_RIGHT_SHOULDER, _playerOne.Joints[JointType.ShoulderRight].Position);
+                Bus.Publish(BusNode.POS_RIGHT_ELBOW, _playerOne.Joints[JointType.ElbowRight].Position);
+                Bus.Publish(BusNode.POS_RIGHT_WRIST, _playerOne.Joints[JointType.WristRight].Position);
+                Bus.Publish(BusNode.POS_RIGHT_HAND, _playerOne.Joints[JointType.HandRight].Position);
 
-        /// <summary>
-        /// Publishes the skeleton data.
-        /// </summary>
-        private void PublishSkeletalData()
-        {
+                // directions
+                Bus.Publish(BusNode.DIR_LEFT_UPPER_ARM, GetUnitDirection(JointType.ElbowLeft));
+                Bus.Publish(BusNode.DIR_LEFT_LOWER_ARM, GetUnitDirection(JointType.WristLeft));
+                Bus.Publish(BusNode.DIR_LEFT_HAND, GetUnitDirection(JointType.HandLeft));
+
+                Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, GetUnitDirection(JointType.ElbowRight));
+                Bus.Publish(BusNode.DIR_RIGHT_LOWER_ARM, GetUnitDirection(JointType.WristRight));
+                Bus.Publish(BusNode.DIR_RIGHT_HAND, GetUnitDirection(JointType.HandRight));
+
+                // orientations
+                Bus.Publish(BusNode.ORIENTATION_LEFT_UPPER_ARM, GetOrientation(JointType.ElbowLeft));
+                Bus.Publish(BusNode.ORIENTATION_LEFT_LOWER_ARM, GetOrientation(JointType.WristLeft));
+                Bus.Publish(BusNode.ORIENTATION_LEFT_HAND, GetOrientation(JointType.HandLeft));
+
+                Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, GetOrientation(JointType.ElbowRight));
+                Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, GetOrientation(JointType.WristRight));
+                Bus.Publish(BusNode.ORIENTATION_RIGHT_HAND, GetOrientation(JointType.HandRight));
+
+            }  
+
+            // render the skeleton.
             if (_renderer.IsReady) _renderer.DrawSkeletons(_skeletonData);
+
+            // trigger a tick.
+            Bus.Publish<object>(BusNode.POSITION_TICK, null);
         }
 
         /// <summary>
@@ -331,6 +320,61 @@ namespace RobotArmControl.Kinect_Module
             // We are not using depth directly, but we do want the points in our 640x480 output resolution.
             DepthImagePoint depthPoint = _snsr.Kinect.MapSkeletonPointToDepth(skelpoint, DepthImageFormat.Resolution640x480Fps30);
             return new Point(depthPoint.X, depthPoint.Y);
+        }
+
+        /// <summary>
+        /// Gets the (relative) direction of the bone identified by the provided terminal joint.
+        /// </summary>
+        /// <param name="terminus">The joint at which the bone terminates.</param>
+        /// <returns>A 3d point representing a unit vector in the relative direction of the bone.</returns>
+        private SkeletonPoint GetUnitDirection(JointType terminus)
+        {
+            SkeletonPoint res = new SkeletonPoint();
+            Matrix4 r = _playerOne.BoneOrientations[terminus].HierarchicalRotation.Matrix;
+
+            float inv_mag = 1 / (float)Math.Sqrt(r.M21 * r.M21 + r.M22 * r.M22 + r.M23 * r.M23);
+
+            res.X = r.M21 * inv_mag;
+            res.Y = r.M22 * inv_mag;
+            res.Z = r.M23 * inv_mag;
+
+            return res;
+        }
+
+        /// <summary>
+        /// Gets the (relative) orientation of the bone identified by the provided terminal joint.
+        /// </summary>
+        /// <param name="terminus">The joint at which the bone terminates.</param>
+        /// <returns>A 3d point representing a unit vector in the relative direction of the bone.</returns>
+        private Orientation GetOrientation(JointType terminus)
+        {
+            
+            /**
+             * NOTE: The bones are indexed by their terminal joint.
+             * http://msdn.microsoft.com/en-us/library/hh973073.aspx
+             * The Z axis extends directly in front of the player.
+             * The elbow is restricted to a postive yawing motion.
+             * The shoulder can move in all directions.   
+             */
+
+            //Debug.WriteLine(_playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M11.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M21.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M31.ToString());
+            //Debug.WriteLine(_playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M12.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M22.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M32.ToString());
+            //Debug.WriteLine(_playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M13.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M23.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M33.ToString());
+            //Debug.WriteLine("");
+
+            Matrix4 r = _playerOne.BoneOrientations[terminus].HierarchicalRotation.Matrix;
+
+            float roll = (float)Math.Asin(r.M13);
+            float inv_cos_roll = 1 / (float)Math.Cos(roll);
+            float pitch = (float)Math.Asin(r.M23 * inv_cos_roll);
+            float yaw = (float)Math.Asin(r.M12 * inv_cos_roll);
+
+            //Debug.WriteLine("Roll: " + roll * 180 / Math.PI);
+            //Debug.WriteLine("Pitch: " + pitch * 180 / Math.PI);
+            //Debug.WriteLine("Yaw: " + yaw * 180 / Math.PI);
+            //Debug.WriteLine("");
+
+            return new Orientation(roll, pitch, yaw);
         }
 
         #endregion Private Methods

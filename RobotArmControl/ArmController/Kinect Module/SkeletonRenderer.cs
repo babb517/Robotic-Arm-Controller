@@ -11,7 +11,7 @@ using System.Diagnostics;
 
 using Microsoft.Kinect;
 
-namespace RobotArmControl.Kinect_Module
+namespace ArmController.Kinect_Module
 {
     /// <summary>
     /// This class provides us with a means to render a skeleton on a screen. 
@@ -26,7 +26,7 @@ namespace RobotArmControl.Kinect_Module
         /// <summary>
         /// Width of output drawing
         /// </summary>
-        private const float RenderWidth = 640.0f;
+        private const float RenderWidth = 480.0f;
 
         /// <summary>
         /// Height of our output drawing
@@ -143,7 +143,7 @@ namespace RobotArmControl.Kinect_Module
         /// <param name="skeletons">The skeletons to draw.</param>
         public void DrawSkeletons(Skeleton[] skeletons)
         {
-            Debug.WriteLine("Drawing " + skeletons.Length + " skeletons...");
+            //Debug.WriteLine("Drawing " + skeletons.Length + " skeletons...");
             
             using (DrawingContext context = Canvas.Open())
             {

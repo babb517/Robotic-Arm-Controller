@@ -62,8 +62,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Integration\BusNode.cs" />
+    <Compile Include="Integration\Module.cs" />
     <Compile Include="Integration\VirtualBus.cs" />
+    <Compile Include="Kinect Module\Orientation.cs" />
     <Compile Include="Kinect Module\PositionalTracker.cs" />
+    <Compile Include="Kinect Module\PositionFeedback.cs" />
     <Compile Include="Kinect Module\SkeletonRenderer.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>

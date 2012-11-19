@@ -4,7 +4,21 @@
         Title="Robot Arm Controller" Height="640" Width="480"
         Loaded="WindowLoaded" Closing="WindowClosing">
     <Grid>
-        <Image Name="KinectRenderFeedback" HorizontalAlignment="Left" Height="640" VerticalAlignment="Top" Width="480"/>
-
+        <Image Name="KinectRenderFeedback" HorizontalAlignment="Left" Width="480" Margin="0,0,-8,0" Height="480" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Height="33" Margin="10,510,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Content="Upper Arm"/>
+        <Label HorizontalAlignment="Left" Height="33" Margin="10,537,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Content="Lower Arm"/>
+        <Label HorizontalAlignment="Left" Height="33" Margin="10,570,0,0" VerticalAlignment="Top" Width="120" FontSize="20" Content="Hand"/>
+        <TextBox IsEnabled="false" Name="UpperArmOrientation" HorizontalAlignment="Left" Height="33" Margin="157,510,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="233" FontSize="16" TextAlignment="Center"/>
+        <TextBox IsEnabled="false" Name="LowerArmOrientaiton" HorizontalAlignment="Left" Height="33" Margin="157,543,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="233" FontSize="16" TextAlignment="Center"/>
+        <TextBox IsEnabled="false" Name="HandOrientation" HorizontalAlignment="Left" Height="33" Margin="157,573,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="233" RenderTransformOrigin="0.5,0.5" FontSize="16" TextAlignment="Center">
+            <TextBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.143"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TextBox.RenderTransform>
+        </TextBox>
     </Grid>
 </Window>
