@@ -1,0 +1,6 @@
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\CyberGloveLibrary\bin\Debug\CyberGloveLibrary.exe.config
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\CyberGloveLibrary\bin\Debug\CyberGloveLibrary.exe
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\CyberGloveLibrary\bin\Debug\CyberGloveLibrary.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\CyberGloveLibrary\obj\Debug\CyberGloveLibrary.exe
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\CyberGloveLibrary\obj\Debug\CyberGloveLibrary.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\CyberGloveLibrary\obj\Debug\CyberGloveLibrary.csprojResolveAssemblyReference.cache
