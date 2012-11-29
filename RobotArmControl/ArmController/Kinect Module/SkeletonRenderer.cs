@@ -6,10 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
+using System.Diagnostics;
+
 
 using Microsoft.Kinect;
 
-namespace RobotArmControl.Kinect_Module
+namespace ArmController.Kinect_Module
 {
     /// <summary>
     /// This class provides us with a means to render a skeleton on a screen. 
@@ -17,10 +19,14 @@ namespace RobotArmControl.Kinect_Module
     /// </summary>
     public class SkeletonRenderer
     {
+        #region Constants
+        /**********************************************************************/
+        /* Constants */
+        /**********************************************************************/
         /// <summary>
         /// Width of output drawing
         /// </summary>
-        private const float RenderWidth = 640.0f;
+        private const float RenderWidth = 480.0f;
 
         /// <summary>
         /// Height of our output drawing
@@ -67,6 +73,9 @@ namespace RobotArmControl.Kinect_Module
         /// </summary>        
         private readonly Pen inferredBonePen = new Pen(Brushes.Gray, 1);
 
+        #endregion Constants
+
+        #region Private Members
         /**********************************************************************/
         /* Private Members */
         /**********************************************************************/
@@ -90,7 +99,10 @@ namespace RobotArmControl.Kinect_Module
         /// The delegate used to resolve the 2d position of skeletal points.
         /// </summary>
         public PointResolverDelegate PointResolver { get; set; }
-        
+
+        #endregion Private Members
+
+        #region Public Interfaces
         /**********************************************************************/
         /* Public Interfaces */
         /**********************************************************************/
@@ -101,6 +113,9 @@ namespace RobotArmControl.Kinect_Module
         /// <returns>The 2d position of that point on a canvas.</returns>
         public delegate Point PointResolverDelegate(SkeletonPoint point);
 
+        #endregion Public Interfaces
+
+        #region Constructors
         /**********************************************************************/
         /* Constructors */
         /**********************************************************************/
@@ -115,7 +130,9 @@ namespace RobotArmControl.Kinect_Module
             Canvas = canvas;
         }
 
+        #endregion Constructors
 
+        #region Public Methods
         /**********************************************************************/
         /* Public Methods */
         /**********************************************************************/
@@ -126,16 +143,30 @@ namespace RobotArmControl.Kinect_Module
         /// <param name="skeletons">The skeletons to draw.</param>
         public void DrawSkeletons(Skeleton[] skeletons)
         {
+            //Debug.WriteLine("Drawing " + skeletons.Length + " skeletons...");
+            
             using (DrawingContext context = Canvas.Open())
             {
+
+                // Draw a transparent background to set the render size
+                context.DrawRectangle(Brushes.Black, null, new Rect(0.0, 0.0, RenderWidth, RenderHeight));
+
+
                 foreach (Skeleton skeleton in skeletons)
                 {
                     DrawSkeleton(context, skeleton);
                 }
+
+                
             }
+
+            // prevent drawing outside of our render area
+            Canvas.ClipGeometry = new RectangleGeometry(new Rect(0.0, 0.0, RenderWidth, RenderHeight));
         }
 
+        #endregion Public Methods
 
+        #region Private Methods
         /**********************************************************************/
         /* Private Methods */
         /**********************************************************************/
@@ -268,6 +299,8 @@ namespace RobotArmControl.Kinect_Module
                     new Rect(RenderWidth - ClipBoundsThickness, 0, ClipBoundsThickness, RenderHeight));
             }
         }
+
+        #endregion Private Methods
 
     }
 }

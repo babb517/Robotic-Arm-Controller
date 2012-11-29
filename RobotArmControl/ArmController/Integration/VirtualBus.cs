@@ -9,22 +9,13 @@ using System.Threading.Tasks;
 using System.Collections.Concurrent;
 using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Diagnostics;
+using System.Windows.Threading;
 
-namespace RobotArmControl
+namespace ArmController.Integration
 {
 
-    /// <summary>
-    /// <summary>
-    /// This enumeration stores known data points which may be queried
-    /// using the virtual bus.
-    /// </summary>
-    public enum BusNodes
-    {
-        POS_LEFT_SHOULDER,
-        POS_RIGHT_SHOULDER
-        // TODO: Populate the nodes with appropriate values.
-    }
-   
+    #region Virtual Bus
     /// <summary>
     /// The virtual bus implements a publish / subscribe architecture to
     /// facilitate extensible communication between modules. Each module
@@ -33,10 +24,14 @@ namespace RobotArmControl
     /// </summary>
     class VirtualBus
     {
-
+        #region Constants
         /************************************************************************************************************************************/
         /* Public Constants */
         /************************************************************************************************************************************/
+
+        #endregion Constants
+
+        #region Types
         /************************************************************************************************************************************/
         /* Types */
         /************************************************************************************************************************************/
@@ -47,25 +42,28 @@ namespace RobotArmControl
         /// </summary>
         /// <param name="node">The node which has been changed.</param>
         /// <param name="value"></param>
-        public delegate void onValueChangedCallback(int node, Object value);
+        public delegate void OnValueChangedCallback(BusNode node, Object value);
 
         /// <summary>
         /// A single entry in the node table.
         /// </summary>
         private class NodeEntry
         {
-            public NodeEntry(Type type, Object value, List<VirtualBus.onValueChangedCallback> subscribers)
+            public NodeEntry(BusNode node, Object value, List<VirtualBus.OnValueChangedCallback> subscribers)
             {
-                this.type = type;
-                this.value = value;
-                this.subscribers = subscribers;
+                Node = node;
+                Value = value;
+                Subscribers = subscribers;
             }
 
-            public Object value { get; set; }
-            public List<VirtualBus.onValueChangedCallback> subscribers { get; set; }
-            public Type type { get; private set; }
+            public BusNode Node { get; private set; }
+            public Object Value { get; set; }
+            public List<VirtualBus.OnValueChangedCallback> Subscribers { get; set; }
         }
 
+        #endregion Types
+
+        #region Private Members
         /************************************************************************************************************************************/
         /* Private Members */
         /************************************************************************************************************************************/
@@ -73,7 +71,7 @@ namespace RobotArmControl
         /// <summary>
         /// This is the set of all nodes active nodes in the virtual bus.
         /// </summary>
-        private ConcurrentDictionary<int, NodeEntry> _nodes;
+        private ConcurrentDictionary<BusNode, NodeEntry> _nodes;
 
 
         /// <summary>
@@ -82,20 +80,39 @@ namespace RobotArmControl
         private Queue _updatedNodes;
 
         /// <summary>
-        /// The thread that the notification are ran on.
+        ///  A dispatcher used for notifying everything on the GUI thread.
         /// </summary>
-        Thread _notifier;
+        private Dispatcher _dispatcher;
 
+        /// <summary>
+        /// An object used to track an active notification request.
+        /// </summary>
+        private DispatcherOperation _notification;
+
+        #endregion Private Members
+
+        #region Constructors
         /************************************************************************************************************************************/
         /* Constructors */
         /************************************************************************************************************************************/
-        public VirtualBus()
+        public VirtualBus(System.Windows.Threading.Dispatcher dispatcher)
         {
+            Debug.Write("Initializing the virtual bus...\n");
             _updatedNodes = Queue.Synchronized(new Queue());
-            _nodes = new ConcurrentDictionary<int, NodeEntry>();
-            _notifier = new Thread(NotifyQueuedNodes);
-        }
+            _nodes = new ConcurrentDictionary<BusNode, NodeEntry>();
+            _dispatcher = dispatcher;
 
+            foreach (BusNode node in BusNode.Values)
+            {
+                if (!IsValidType(node.NodeType))
+                    throw new ArgumentException("Cannot initialize a node of type '" + node.NodeType.Name + "' as the type is not serializable.");
+
+                _nodes[node] = new NodeEntry(node, null, new List<VirtualBus.OnValueChangedCallback>());
+            }
+        }
+        #endregion Constructors
+
+        #region Public Methods
         /************************************************************************************************************************************/
         /* Public Methods */
         /************************************************************************************************************************************/
@@ -105,58 +122,20 @@ namespace RobotArmControl
         /// <typeparam name="T">The type of the node to retrieve.</typeparam>
         /// <param name="node">The node to retrieve.</param>
         /// <returns>The value of the node cast to the parameterized type. Must be a serializable type.</returns>
-        /// <exception cref="KeyNotFoundException">Thrown if the node doesn't exist.</exception>
         /// <exception cref="InvalidCastException">Thrown if the node can't be cast to the parameterized type.</exception>
         /// <exception cref="ArgumentException">Thrown if T is not a valid type.</exception>
-        public T Get<T>(int node)
+        public T Get<T>(BusNode node)
         {
-            T value,copy;
+            T value, copy;
 
             try
             {
-                value = (T)_nodes[node].value;
-            }
-            catch (KeyNotFoundException e)
-            {
-                throw new KeyNotFoundException("Unable to get the value of node " + node + " as the node doesn't exist.", e);
+                value = (T)_nodes[node].Value;
             }
             catch (InvalidCastException e)
             {
                 throw e;
             }
-
-            if (!SerializeCopy(value, out copy))
-                throw new ArgumentException("Cannot get a value of type " + typeof(T).Name + " from node " + node + ". The type must be serializeable.");
-
-            return copy;
-        }
-
-        /// <summary>
-        /// Returns the current value of a node.
-        /// </summary>
-        /// <typeparam name="T">The type of the object to attach to the node. Must be a serializable type.</typeparam>
-        /// <param name="node">The node to retrieve.</param>
-        /// <param name="defaultValue">A value to return in the event the node doesn't exist.</param>
-        /// <returns>The value of the node cast to the parameterized type, or the defaultValue if it doesn't exist.</returns>
-        /// <exception cref="InvalidCastException">Thrown if the node can't be cast to the parameterized type.</exception>
-        /// <exception cref="ArgumentException">Thrown if T is not a valid type.</exception>
-        public T Get<T>(int node, T defaultValue)
-        {
-            T value,copy;
-
-            try
-            {
-                value = (T)_nodes[node].value;
-            }
-            catch (KeyNotFoundException e)
-            {
-                value = defaultValue;
-            }
-            catch (InvalidCastException e)
-            {
-                throw e;
-            }
-
 
             if (!SerializeCopy(value, out copy))
                 throw new ArgumentException("Cannot get a value of type " + typeof(T).Name + " from node " + node + ". The type must be serializeable.");
@@ -170,78 +149,28 @@ namespace RobotArmControl
         /// <typeparam name="T">The type of the object to attach to the node. Must be a serializable type.</typeparam>
         /// <param name="node">The node to attach the value to.</param>
         /// <param name="value">The new value of the node.</param>
-        /// <param name="strict">Whether an exception should be thrown if the node exists. Otherwise the node is created.</param>
-        /// <exception cref="KeyNotFoundException">Thrown if operating in strict mode and the node doesn't exist.</exception>
         /// <exception cref="ArgumentException">Thrown if the type of T is not valid or is not compatible with the declared type of the node.</exception>
-        /// <returns>True if the already existed, false otherwise.</returns>
-        public bool Publish<T>(int node, T value, bool strict = true) {
-            bool ret = false;
+        public void Publish<T>(BusNode node, T value)
+        {
             NodeEntry entry;
             T copy;
 
-            if (!SerializeCopy(value,out copy))
+            if (!SerializeCopy(value, out copy))
                 throw new ArgumentException("Cannot publish a value of type " + typeof(T).Name + " to node " + node + ". The type must be serializeable.");
 
-            
-            try
-            {
-                entry = _nodes[node];
 
-                if (!entry.type.IsAssignableFrom(typeof(T)))
-                    throw new ArgumentException("Cannot publish a value of type " + typeof(T).Name + " to a node " + node + " of type " + entry.type.Name + ". The types are not compatible.");
+            entry = _nodes[node];
 
-                lock (entry)
-                {
-                    entry.value = copy;
-                }
-            }
-            catch (KeyNotFoundException e)
+            if (!entry.Node.NodeType.IsAssignableFrom(typeof(T)))
+                throw new ArgumentException("Cannot publish a value of type " + typeof(T).Name + " to a node " + node + " of type " + entry.Node.NodeType.Name + ". The types are not compatible.");
+
+            lock (entry)
             {
-                if (strict)
-                    throw new KeyNotFoundException("Unable to attach value " + value + " to node " + node + " as the node doesn't exist.", e);
-                else {
-                    Create(node, copy);
-                    ret = true;
-                }
+                entry.Value = copy;
             }
 
             QueueNotification(node);
-
-            return ret;
         }
-
-        /// <summary>
-        /// Attempts to create a new node on the virtual bus
-        /// </summary>
-        /// <typeparam name="T">The type of the object to attach to the node. Must be a serializable type.</typeparam>
-        /// <param name="node">The identifier for the new node.</param>
-        /// <param name="value">The initial value of the node.</param>
-        /// <param name="strict">Whether to throw an exception if the node already exists.</param>
-        /// <exception cref="ArgumentException">Thrown if operating in strict mode and the node already exists, or T is not a valid type.</exception>
-        /// <returns>True if the node was created.</returns>
-        public bool Create<T>(int node, T value = default(T), bool strict = true)
-        {
-            T copy;
-            bool ret = true;
-
-            if (!SerializeCopy(value, out copy))
-                throw new ArgumentException("Cannot create node " + node + " of type " + typeof(T).Name + ". The type must be serializable.");
-
-            NodeEntry newNode = new NodeEntry(typeof(T),value, new List<onValueChangedCallback>());
-
-            if (!_nodes.TryAdd(node, newNode))
-            {
-                if (strict)
-                    throw new ArgumentException("Unable to create node " + node + " as the node already exists.");
-                else
-                    ret = false;
-            }
-             
-            _nodes[node].value = value;
-
-            return ret;
-        }
-
 
         /// <summary>
         /// Attempts to subscribe a value-changed listener to a node.
@@ -249,50 +178,19 @@ namespace RobotArmControl
         /// <typeparam name="T">The type of the object to attach to the node. Must be a serializable type.</typeparam>
         /// <param name="node">The node to subscribe the listener to.</param>
         /// <param name="callback">The delegate to call when a node has been changed.</param>
-        /// <param name="strict">Whether to throw an exception if the node doesn't exists. The node is created otherwise.</param>
-        /// <exception cref="KeyNotFoundException">Thrown if operating in strict mode and the node doesn't exist.</exception>
-        /// <exception cref="ArgumentException">Thrown if T is not a valid type.</exception>
-        /// <returns>True if the node already existed, false if it was created.</returns>
-        public bool Subscribe<T>(int node, onValueChangedCallback callback, bool strict = true) 
+        public void Subscribe(BusNode node, OnValueChangedCallback callback)
         {
             NodeEntry entry;
 
-            if (!IsValidType(typeof(T)))
-                throw new ArgumentException("Cannot subscribe to node " + node + " with type " + typeof(T).Name + ". The type must be serializable.");
+            entry = _nodes[node];
 
-            try
+            lock (entry)
             {
-                entry = _nodes[node];
-
-                lock (entry)
+                if (!entry.Subscribers.Contains(callback))
                 {
-                    if (!entry.subscribers.Contains(callback))
-                    {
-                        entry.subscribers.Add(callback);
-                    }
+                    entry.Subscribers.Add(callback);
                 }
             }
-            catch (KeyNotFoundException e)
-            {
-                if (strict)
-                    throw new KeyNotFoundException("Unable to subscribe to node " + node + " as the node doesn't exist.", e);
-                else
-                {
-                    Create<T>(node);
-                    entry = _nodes[node];
-                    lock (entry)
-                    {
-                        if (!entry.subscribers.Contains(callback))
-                        {
-                            entry.subscribers.Add(callback);
-                        }
-                    }
-
-                    return false;
-                }
-            }
-
-            return true;
         }
 
         /// <summary>
@@ -300,33 +198,19 @@ namespace RobotArmControl
         /// </summary>
         /// <param name="node">The node to unsubscribe the listener from.</param>
         /// <param name="callback">The listener to unsubscribe.</param>
-        /// <param name="strict">Whether to throw an exception if the node doesn't exist or the listener wasn't subscribed to the node.</param>
-        /// <exception cref="KeyNotFoundException">Thrown if operating in strict mode and the node doesn't exist.</exception>
+        /// <param name="strict">Whether to throw an exception if something goes wrong.</param>
         /// <exception cref="ArgumentException">Thrown if operating in strict mode and the callback wasn't registered to the node.</exception>
-        /// <returns>True if successful, false otherwise.</returns>
-        public bool Unsubscribe(int node, onValueChangedCallback callback, bool strict = true)
+        public void Unsubscribe(BusNode node, OnValueChangedCallback callback, bool strict = true)
         {
             NodeEntry entry = null;
 
-            try
-            {
-                entry = _nodes[node];
-            }
-            catch (KeyNotFoundException e)
-            {
-                if (strict)
-                    throw new KeyNotFoundException("Unable to unsubscribe from node " + node + " as the node doesn't exist.", e);
-                else
-                    return false;
-            }
+            entry = _nodes[node];
 
             lock (entry)
             {
-                if (!entry.subscribers.Remove(callback) && strict)
+                if (!entry.Subscribers.Remove(callback) && strict)
                     throw new ArgumentException("Unable to unsubscribe from node " + node + " as the delegate wasn't subscribed properly.");
             }
-
-            return true;
 
         }
 
@@ -335,33 +219,25 @@ namespace RobotArmControl
         /// Queues a node to be notified
         /// </summary>
         /// <param name="node">The node to call the listeners for.</param>
-        /// <param name="strict">Whether we should throw an exception if the node doesn't exist.</param>
-        /// <exception cref="KeyNotFoundException">Thrown if the node doesn't exist.</exception>
-        /// <returns>True if successful, false otherwise.</returns>
-        public bool QueueNotification(int node, bool strict = true)
+        public void QueueNotification(BusNode node)
         {
-            NodeEntry entry = null;
-
-            try
+            
+            if (!_updatedNodes.Contains(node))
             {
-                entry = _nodes[node];
+                Debug.WriteLine("Queueing notification...");
+                _updatedNodes.Enqueue(node);
             }
-            catch (KeyNotFoundException e)
-            {
-                if (strict)
-                    throw new KeyNotFoundException("Unable to notify listeners on node " + node + " as the node doesn't exist.", e);
-                else
-                    return false;
-            }
-
             // add the node to the queue and start the notifier if neccessary.
-            _updatedNodes.Enqueue(node);
-            if (!_notifier.IsAlive) _notifier.Start();
+            if (_notification == null)
+            {
+               _notification = _dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, new Action(NotifyNodes));
+            }
 
-            return true;
         }
 
+        #endregion Public Methods
 
+        #region Private Methods
         /************************************************************************************************************************************/
         /* Private Methods */
         /************************************************************************************************************************************/
@@ -369,54 +245,44 @@ namespace RobotArmControl
         /// <summary>
         /// Notifies all currently queued nodes.
         /// </summary>
-        private void NotifyQueuedNodes()
+        private void NotifyNodes()
         {
-            int node;
+            BusNode node;
 
             while (_updatedNodes.Count > 0)
             {
-                node = (int)_updatedNodes.Dequeue();
+                Debug.WriteLine("Notifying nodes.");
+                node = (BusNode)_updatedNodes.Dequeue();
                 Notify(node);
             }
+
+            _notification = null;
         }
 
         /// <summary>
         /// Calls any listeners for a node.
         /// </summary>
         /// <param name="node">The node to call the listeners for.</param>
-        /// <param name="strict">Whether we should throw an exception if the node doesn't exist.</param>
-        /// <exception cref="KeyNotFoundException">Thrown if the node doesn't exist.</exception>
-        /// <returns>True if successful, false otherwise. </returns>
-        private bool Notify(int node, bool strict = true)
+        private void Notify(BusNode node)
         {
             NodeEntry entry = null;
 
-            try
-            {
-                entry = _nodes[node];
-            }
-            catch (KeyNotFoundException e)
-            {
-                if (strict)
-                    throw new KeyNotFoundException("Unable to notify listeners on node " + node + " as the node doesn't exist.", e);
-                else
-                    return false;
-            }
+            entry = _nodes[node];
+
 
             lock (entry)
             {
-                foreach (onValueChangedCallback c in entry.subscribers)
+                foreach (OnValueChangedCallback c in entry.Subscribers)
                 {
-                    c(node, entry.value);
+                    c(node, entry.Value);
                 }
             }
-            return true;
         }
 
         /// <summary>
-        /// Determines if the provided type
+        /// Determines if the provided type is valid.
         /// </summary>
-        /// <param name="type"></param>
+        /// <param name="type">The type to check.</param>
         private static bool IsValidType(Type type)
         {
             return type.IsSerializable;
@@ -443,7 +309,7 @@ namespace RobotArmControl
                 return false;
             }
             // Don't serialize a null value.
-            else if (Object.ReferenceEquals(original,null))
+            else if (Object.ReferenceEquals(original, null))
             {
                 copy = default(T);
             }
@@ -462,5 +328,7 @@ namespace RobotArmControl
 
         }
 
+        #endregion Private Methods
     }
+    #endregion Virtual Bus
 }

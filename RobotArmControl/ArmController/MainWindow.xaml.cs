@@ -12,8 +12,10 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Diagnostics;
 
-using RobotArmControl.Kinect_Module;
+using ArmController.Kinect_Module;
+using ArmController.Integration;
 
 namespace ArmController
 {
@@ -27,11 +29,15 @@ namespace ArmController
         /**************************************************************************/
 
         /// <summary>
-        /// A drawing group used to render the kinect feedback image.
+        /// The modules which are being managed by the application.
         /// </summary>
-        DrawingGroup _kinectDrawingGroup;
+        List<Module> _modules;
 
-        PositionalTracker _kinectModule;
+        /// <summary>
+        /// The bus used to communicate between modules.
+        /// </summary>
+        VirtualBus _bus;
+
 
         /**************************************************************************/
         /* Constructors */
@@ -52,23 +58,81 @@ namespace ArmController
         /// <param name="e">event arguments</param>
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            // setup the kinect feedback
-            _kinectDrawingGroup = new DrawingGroup();
-            KinectRenderFeedback.Source = new DrawingImage(_kinectDrawingGroup);
+            // setup the virtual bus.
+            _bus = new VirtualBus(Dispatcher);
+            _bus.Subscribe(BusNode.STOP_REQUESTED, OnBusValueChanged);
 
-            // setup kinect module
-            _kinectModule = new PositionalTracker(_kinectDrawingGroup);
-            _kinectModule.Start();
 
+            // setup the image
+            DrawingGroup drawingGroup = new DrawingGroup();
+            KinectRenderFeedback.Source = new DrawingImage(drawingGroup);
+
+            // setup each of the modules.
+            _modules = new List<Module>();
+
+            // TODO: Add each module to the list here.
+            _modules.Add(new PositionalTracker(drawingGroup));
+            _modules.Add(new PositionFeedback(this.UpperArmOrientation, this.LowerArmOrientaiton, this.HandOrientation));
+
+            
+            // start everything!
+            InitializeModules();
         }
 
-
+        /// <summary>
+        /// Finalizes the states of all modules in preparation for the program exiting.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             // stop the kinect
-            _kinectModule.Stop();
+            FinalizeModules();
+        }
+
+        /// <summary>
+        /// Handles bus
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="value"></param>
+        private void OnBusValueChanged(BusNode node, Object value)
+        {
+            if (node == BusNode.STOP_REQUESTED)
+            {
+                Debug.WriteLine("Caught a program stop request");
+                this.Close();
+            }
+        }
+
+        /**************************************************************************/
+        /* Private Members */
+        /**************************************************************************/
+
+        /// <summary>
+        /// Initializes the states of all the modules.
+        /// </summary>
+        private void InitializeModules()
+        {
+            foreach (Module module in _modules)
+            {
+                module.InitializeModule(_bus);
+            }
+        }
+
+        /// <summary>
+        /// Requests that all modules finalize their states in preparation to close.
+        /// </summary>
+        private void FinalizeModules()
+        {
+            foreach (Module module in _modules)
+            {
+                module.FinalizeModule();
+            }
+        }
+
+        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
+        {
+
         }
     }
-
-    
 }
