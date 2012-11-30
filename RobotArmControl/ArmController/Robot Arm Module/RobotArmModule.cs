@@ -67,6 +67,10 @@ namespace ArmController.Robot_Arm_Module
 
             _lastUpdateTime = 0;
 
+            //Initialize the robot arm position
+            move(1, 1500);
+            move(2, 1500);
+
             // Subscribe to the kinect data tick
             Bus.Subscribe(BusNode.POSITION_TICK, OnValuePublished);
        }
@@ -111,8 +115,8 @@ namespace ArmController.Robot_Arm_Module
 
             // What we want to do here is update our 'goal' position based on the data we can read from the virtual bus.
             // Since we've subscribed to the POSITION_TICK, the 'value' parameter has no meaning, we should get the value directly from the bus.
-            Orientation shoulder = Bus.Get<Orientation>(BusNode.ORIENTATION_RIGHT_UPPER_ARM);
-            Orientation elbow = Bus.Get<Orientation>(BusNode.ORIENTATION_RIGHT_LOWER_ARM);
+            Orientation arm = Bus.Get<Orientation>(BusNode.ORIENTATION_RIGHT_UPPER_ARM);
+            Orientation forearm = Bus.Get<Orientation>(BusNode.ORIENTATION_RIGHT_LOWER_ARM);
             Orientation wrist = Bus.Get<Orientation>(BusNode.ORIENTATION_RIGHT_HAND);
 
             // we should now convert these orientations to the values expected by the servo controller.
@@ -122,7 +126,7 @@ namespace ArmController.Robot_Arm_Module
             // WRIST:
             if (wrist != null)
             {
-                Debug.WriteLine("Wrist: " + (wrist.Roll * 180) / Math.PI + " / " + (wrist.Pitch * 180) / Math.PI + " / " + (wrist.Yaw * 180) / Math.PI );
+                //Debug.WriteLine("Wrist: " + (wrist.Roll * 180) / Math.PI + " / " + (wrist.Pitch * 180) / Math.PI + " / " + (wrist.Yaw * 180) / Math.PI );
 
                 // clip to +- 30 degrees
                 if (wrist.Yaw > 30 * RAD_PER_DEG) wrist.Yaw = (float)(30 * RAD_PER_DEG);
@@ -139,7 +143,33 @@ namespace ArmController.Robot_Arm_Module
 
 
             // TODO: All the other joints
+            if (forearm != null)
+            {
+                //Debug.WriteLine("forearm: " + (forearm.Roll * 180) / Math.PI + " / " + (forearm.Pitch * 180) / Math.PI + " / " + (forearm.Yaw * 180) / Math.PI);
+                if (forearm.Pitch > 90 * RAD_PER_DEG) forearm.Pitch = (float)(90 * RAD_PER_DEG);
+                if (forearm.Pitch < 0 * RAD_PER_DEG) forearm.Pitch = (float)(0 * RAD_PER_DEG);
 
+                // scale to the valid range (1000 - 2000)
+                int forearm_pos = 1000 + (int)(((-forearm.Pitch + (120 * RAD_PER_DEG)) / (180 * RAD_PER_DEG)) * 1000);
+
+                // move the stuff!
+                // TODO: Do This correctly
+                move(2, forearm_pos);
+            }
+            
+            if (arm != null)
+            {
+                Debug.WriteLine("arm: " + (arm.Roll * 180) / Math.PI + " / " + (arm.Pitch * 180) / Math.PI + " / " + (arm.Yaw * 180) / Math.PI);
+                if (arm.Pitch > 40 * RAD_PER_DEG) arm.Pitch = (float)(40 * RAD_PER_DEG);
+                if (arm.Pitch < -80 * RAD_PER_DEG) arm.Pitch = (float)(-80 * RAD_PER_DEG);
+
+                // scale to the valid range (1000 - 2000)
+                int arm_pos = 1000 + (int)(((-arm.Pitch + (40 * RAD_PER_DEG)) / (80 * RAD_PER_DEG)) * 1000);
+
+                // move the stuff!
+                // TODO: Do This correctly
+                move(1, arm_pos);
+            }
 
 
             
