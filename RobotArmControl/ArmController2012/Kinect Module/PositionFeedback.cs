@@ -72,8 +72,7 @@ namespace ArmController.Kinect_Module
             }
             else if (node == BusNode.ORIENTATION_RIGHT_HAND)
             {
-                //_handDisplay.Text = OrientationToString(or);
-                _handDisplay.Text = OrientationToString(Bus.Get<Orientation>(BusNode.ORIENTATION_RIGHT_HAND));
+                _handDisplay.Text = OrientationToString(or);
             }
         }
 

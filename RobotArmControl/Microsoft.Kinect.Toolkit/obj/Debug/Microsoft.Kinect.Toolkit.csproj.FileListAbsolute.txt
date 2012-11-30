@@ -24,3 +24,16 @@ C:\Users\jbabb\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft
 C:\Users\jbabb\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.csproj.GenerateResource.Cache
 C:\Users\jbabb\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.dll
 C:\Users\jbabb\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.pdb
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\bin\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\bin\Debug\Microsoft.Kinect.Toolkit.pdb
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\bin\Debug\Microsoft.Kinect.Toolkit.dll.CodeAnalysisLog.xml
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\bin\Debug\Microsoft.Kinect.Toolkit.dll.lastcodeanalysissucceeded
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.csprojResolveAssemblyReference.cache
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\KinectSensorChooserUI.baml
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\KinectSensorChooserUI.g.cs
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit_MarkupCompile.cache
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.g.resources
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.Properties.Resources.resources
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.csproj.GenerateResource.Cache
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Microsoft.Kinect.Toolkit\obj\Debug\Microsoft.Kinect.Toolkit.pdb

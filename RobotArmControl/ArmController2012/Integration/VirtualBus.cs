@@ -130,7 +130,7 @@ namespace ArmController.Integration
 
             try
             {
-                value = (T)(_nodes[node].Value);
+                value = (T)_nodes[node].Value;
             }
             catch (InvalidCastException e)
             {
@@ -224,7 +224,7 @@ namespace ArmController.Integration
             
             if (!_updatedNodes.Contains(node))
             {
-                //Debug.WriteLine("Queueing notification...");
+                Debug.WriteLine("Queueing notification...");
                 _updatedNodes.Enqueue(node);
             }
             // add the node to the queue and start the notifier if neccessary.
@@ -251,7 +251,7 @@ namespace ArmController.Integration
 
             while (_updatedNodes.Count > 0)
             {
-                //Debug.WriteLine("Notifying nodes.");
+                Debug.WriteLine("Notifying nodes.");
                 node = (BusNode)_updatedNodes.Dequeue();
                 Notify(node);
             }
@@ -269,16 +269,12 @@ namespace ArmController.Integration
 
             entry = _nodes[node];
 
-            // make a copy of the value.
-            object copy;
-
-            SerializeCopy(entry.Value, out copy);
 
             lock (entry)
             {
                 foreach (OnValueChangedCallback c in entry.Subscribers)
                 {
-                    c(node, copy);
+                    c(node, entry.Value);
                 }
             }
         }
