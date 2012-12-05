@@ -34,7 +34,7 @@ namespace ArmController.CyberGloveLibrary
             // //Console.WriteLine("Hi");
 
             //Declare the serial port that the glove is using and open it.
-            sp = new SerialPort("COM4", 115200, Parity.None, 8, StopBits.One);
+            sp = new SerialPort("COM1", 115200, Parity.None, 8, StopBits.One);
             sp.Open();
 
             Bus.Publish(BusNode.ROBOT_ACTIVE, true);
@@ -157,9 +157,15 @@ namespace ArmController.CyberGloveLibrary
                         /*
                          * Wrist flexion/extension calculations
                          */
-                        // Craig: extension: 55 (roughly 100 deg from top of arm)
-                        // Craig flexion: 215 (roughly 120 deg from bottom of arm)
-                        wrist_percent = ((wrist - 55) / 160) * 100;
+                        // Craig: extension (hand up): 75 (roughly 100 deg from top of arm)
+                        // Craig centered (hand straight): 170 (180 degrees)
+                        // Craig flexion (hand down): 215 (roughly 120 deg from bottom of arm)
+                        if (wrist >= 170)
+                            wrist_percent = (wrist - 170) / 45 * 50 + 50;
+                        else
+                            wrist_percent = (wrist - 75) / 95 * 50;
+
+                        //wrist_percent = ((wrist - 75) / 140) * 100;
                         if (wrist_percent < 0)
                             wrist_percent = 0;
                         else if (wrist_percent > 100)
@@ -172,7 +178,7 @@ namespace ArmController.CyberGloveLibrary
                         //{
                             //Console.WriteLine("The claw is open " + percent + " percent");
                             Debug.WriteLine("The index finger is at " + (100 - (int)index_percent));
-                            Debug.WriteLine("The wrist is at " + (int)wrist_percent);
+                            Debug.WriteLine("Raw wrist: " + wrist + ", percent: " + (int)wrist_percent);
                             Bus.Publish(BusNode.CLAW_OPEN_PERCENT, 100 - (int)index_percent);
                             Bus.Publish(BusNode.WRIST_PERCENT, (int)wrist_percent);
                         //}
