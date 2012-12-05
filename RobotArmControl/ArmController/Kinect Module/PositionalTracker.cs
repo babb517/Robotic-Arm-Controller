@@ -224,11 +224,14 @@ namespace ArmController.Kinect_Module
             bool foundPreviousPlayerOne = false;
             Skeleton closest = null;
 
+
             // found our tracked skeletons
             foreach (Skeleton skel in _skeletonData)
             {
+                if (skel == null) continue;
                 // check if we've found our previous selection
                 if (skel.TrackingState == SkeletonTrackingState.Tracked) {
+
                     if (_playerOne != null && skel.TrackingId == _playerOne.TrackingId)
                     {
                         foundPreviousPlayerOne = true;
@@ -286,6 +289,7 @@ namespace ArmController.Kinect_Module
                 Bus.Publish(BusNode.DIR_RIGHT_LOWER_ARM, GetUnitDirection(JointType.WristRight));
                 Bus.Publish(BusNode.DIR_RIGHT_HAND, GetUnitDirection(JointType.HandRight));
 
+
                 // orientations
                 Bus.Publish(BusNode.ORIENTATION_LEFT_UPPER_ARM, GetOrientation(JointType.ElbowLeft));
                 Bus.Publish(BusNode.ORIENTATION_LEFT_LOWER_ARM, GetOrientation(JointType.WristLeft));
@@ -295,6 +299,9 @@ namespace ArmController.Kinect_Module
                 Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, GetOrientation(JointType.WristRight));
                 Bus.Publish(BusNode.ORIENTATION_RIGHT_HAND, GetOrientation(JointType.HandRight));
 
+                //float roll = (float)Math.Asin(_playerOne.BoneOrientations[JointType.ElbowRight].HierarchicalRotation.Matrix.M13);
+                //float inv_cos_roll = 1 / (float)Math.Cos(roll);
+                //Debug.WriteLine((_playerOne.BoneOrientations[JointType.ElbowRight].HierarchicalRotation.Matrix.M12 * inv_cos_roll).ToString("F3") + " " + (_playerOne.BoneOrientations[JointType.ElbowRight].HierarchicalRotation.Matrix.M23 * inv_cos_roll).ToString("F3"));
             }  
 
             // render the skeleton.
@@ -357,17 +364,12 @@ namespace ArmController.Kinect_Module
              * The shoulder can move in all directions.   
              */
 
-            //Debug.WriteLine(_playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M11.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M21.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M31.ToString());
-            //Debug.WriteLine(_playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M12.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M22.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M32.ToString());
-            //Debug.WriteLine(_playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M13.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M23.ToString() + "\t\t" + _playerOne.BoneOrientations[JointType.WristRight].HierarchicalRotation.Matrix.M33.ToString());
-            //Debug.WriteLine("");
 
             Matrix4 r = _playerOne.BoneOrientations[terminus].HierarchicalRotation.Matrix;
 
-            float roll = (float)Math.Asin(r.M13);
-            float inv_cos_roll = 1 / (float)Math.Cos(roll);
-            float pitch = (float)Math.Asin(r.M23 * inv_cos_roll);
-            float yaw = (float)Math.Asin(r.M12 * inv_cos_roll);
+            float yaw = (float)Math.Atan2(r.M12, r.M11);
+            float pitch = (float)Math.Atan2(r.M23, r.M33);
+            float roll = (float)Math.Atan2(-r.M13, Math.Sqrt(r.M23 * r.M23 + r.M33 * r.M33));
 
             //Debug.WriteLine("Roll: " + roll * 180 / Math.PI);
             //Debug.WriteLine("Pitch: " + pitch * 180 / Math.PI);
@@ -376,6 +378,7 @@ namespace ArmController.Kinect_Module
 
             return new Orientation(roll, pitch, yaw);
         }
+
 
         #endregion Private Methods
 

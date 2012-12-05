@@ -1,0 +1,2165 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Microsoft.Kinect.Fakes</name>
+    </assembly>
+    <members>
+        <member name="T:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs">
+            <summary>Shim type of Microsoft.Kinect.AllFramesReadyEventArgs</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.#ctor(Microsoft.Kinect.AllFramesReadyEventArgs)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.ConstructorColorImageFrameReadyEventArgsDepthImageFrameReadyEventArgsSkeletonFrameReadyEventArgs">
+            <summary>Sets the shim of AllFramesReadyEventArgs.AllFramesReadyEventArgs(ColorImageFrameReadyEventArgs colorArgs, DepthImageFrameReadyEventArgs depthArgs, SkeletonFrameReadyEventArgs skeletonArgs)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.OpenColorImageFrame">
+            <summary>Sets the shim of AllFramesReadyEventArgs.OpenColorImageFrame()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.OpenDepthImageFrame">
+            <summary>Sets the shim of AllFramesReadyEventArgs.OpenDepthImageFrame()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.OpenSkeletonFrame">
+            <summary>Sets the shim of AllFramesReadyEventArgs.OpenSkeletonFrame()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.AllInstances.OpenColorImageFrame">
+            <summary>Sets the shim of AllFramesReadyEventArgs.OpenColorImageFrame()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.AllInstances.OpenDepthImageFrame">
+            <summary>Sets the shim of AllFramesReadyEventArgs.OpenDepthImageFrame()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimAllFramesReadyEventArgs.AllInstances.OpenSkeletonFrame">
+            <summary>Sets the shim of AllFramesReadyEventArgs.OpenSkeletonFrame()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs">
+            <summary>Shim type of Microsoft.Kinect.BeamAngleChangedEventArgs</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.#ctor(Microsoft.Kinect.BeamAngleChangedEventArgs)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.AngleGet">
+            <summary>Sets the shim of BeamAngleChangedEventArgs.get_Angle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.AngleSetDouble">
+            <summary>Sets the shim of BeamAngleChangedEventArgs.set_Angle(Double value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.Constructor">
+            <summary>Sets the shim of BeamAngleChangedEventArgs.BeamAngleChangedEventArgs()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.AllInstances.AngleGet">
+            <summary>Sets the shim of BeamAngleChangedEventArgs.get_Angle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimBeamAngleChangedEventArgs.AllInstances.AngleSetDouble">
+            <summary>Sets the shim of BeamAngleChangedEventArgs.set_Angle(Double value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimColorImageFrame">
+            <summary>Shim type of Microsoft.Kinect.ColorImageFrame</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageFrame.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageFrame.#ctor(Microsoft.Kinect.ColorImageFrame)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageFrame.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageFrame.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageFrame.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.CopyPixelDataToByteArray">
+            <summary>Sets the shim of ColorImageFrame.CopyPixelDataTo(Byte[] pixelData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.CreateColorImageStreamInt32Int64">
+            <summary>Sets the shim of ColorImageFrame.Create(ColorImageStream colorImageStream, Int32 frameNumber, Int64 timestamp)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.DisposeBoolean">
+            <summary>Sets the shim of ColorImageFrame.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.FormatGet">
+            <summary>Sets the shim of ColorImageFrame.get_Format()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.FormatSetColorImageFormat">
+            <summary>Sets the shim of ColorImageFrame.set_Format(ColorImageFormat value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.PixelDataLengthGet">
+            <summary>Sets the shim of ColorImageFrame.get_PixelDataLength()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.SourceStreamGet">
+            <summary>Sets the shim of ColorImageFrame.get_SourceStream()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimColorImageFrame.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.AllInstances.CopyPixelDataToByteArray">
+            <summary>Sets the shim of ColorImageFrame.CopyPixelDataTo(Byte[] pixelData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of ColorImageFrame.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.AllInstances.FormatGet">
+            <summary>Sets the shim of ColorImageFrame.get_Format()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.AllInstances.FormatSetColorImageFormat">
+            <summary>Sets the shim of ColorImageFrame.set_Format(ColorImageFormat value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.AllInstances.PixelDataLengthGet">
+            <summary>Sets the shim of ColorImageFrame.get_PixelDataLength()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrame.AllInstances.SourceStreamGet">
+            <summary>Sets the shim of ColorImageFrame.get_SourceStream()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs">
+            <summary>Shim type of Microsoft.Kinect.ColorImageFrameReadyEventArgs</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.#ctor(Microsoft.Kinect.ColorImageFrameReadyEventArgs)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.ConstructorColorImageStreamInt32Int64Boolean">
+            <summary>Sets the shim of ColorImageFrameReadyEventArgs.ColorImageFrameReadyEventArgs(ColorImageStream colorImageStream, Int32 frameNumber, Int64 timestamp, Boolean isInvalid)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.CreateColorImageStreamInt32Int64">
+            <summary>Sets the shim of ColorImageFrameReadyEventArgs.Create(ColorImageStream colorImageStream, Int32 frameNumber, Int64 timestamp)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.CreateInvalid">
+            <summary>Sets the shim of ColorImageFrameReadyEventArgs.CreateInvalid()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.OpenColorImageFrame">
+            <summary>Sets the shim of ColorImageFrameReadyEventArgs.OpenColorImageFrame()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageFrameReadyEventArgs.AllInstances.OpenColorImageFrame">
+            <summary>Sets the shim of ColorImageFrameReadyEventArgs.OpenColorImageFrame()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimColorImagePoint">
+            <summary>Shim type of Microsoft.Kinect.ColorImagePoint</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImagePoint.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImagePoint.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImagePoint.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImagePoint.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImagePoint.EqualityOpColorImagePointColorImagePoint">
+            <summary>Sets the shim of ColorImagePoint.op_Equality(ColorImagePoint imagePoint1, ColorImagePoint imagePoint2)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImagePoint.InequalityOpColorImagePointColorImagePoint">
+            <summary>Sets the shim of ColorImagePoint.op_Inequality(ColorImagePoint imagePoint1, ColorImagePoint imagePoint2)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimColorImagePoint.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimColorImageStream">
+            <summary>Shim type of Microsoft.Kinect.ColorImageStream</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageStream.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageStream.#ctor(Microsoft.Kinect.ColorImageStream)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageStream.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimColorImageStream.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.ConstructorKinectSensor">
+            <summary>Sets the shim of ColorImageStream.ColorImageStream(KinectSensor mainNui)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.Enable">
+            <summary>Sets the shim of ColorImageStream.Enable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.EnableColorImageFormat">
+            <summary>Sets the shim of ColorImageStream.Enable(ColorImageFormat format)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.FormatGet">
+            <summary>Sets the shim of ColorImageStream.get_Format()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.FormatSetColorImageFormat">
+            <summary>Sets the shim of ColorImageStream.set_Format(ColorImageFormat value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.NominalDiagonalFieldOfViewGet">
+            <summary>Sets the shim of ColorImageStream.get_NominalDiagonalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.NominalFocalLengthInPixelsGet">
+            <summary>Sets the shim of ColorImageStream.get_NominalFocalLengthInPixels()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.NominalHorizontalFieldOfViewGet">
+            <summary>Sets the shim of ColorImageStream.get_NominalHorizontalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.NominalInverseFocalLengthInPixelsGet">
+            <summary>Sets the shim of ColorImageStream.get_NominalInverseFocalLengthInPixels()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.NominalVerticalFieldOfViewGet">
+            <summary>Sets the shim of ColorImageStream.get_NominalVerticalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.OpenNextFrameInt32">
+            <summary>Sets the shim of ColorImageStream.OpenNextFrame(Int32 millisecondsWait)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.ScaleValueSingle">
+            <summary>Sets the shim of ColorImageStream.ScaleValue(Single value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.Enable">
+            <summary>Sets the shim of ColorImageStream.Enable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.EnableColorImageFormat">
+            <summary>Sets the shim of ColorImageStream.Enable(ColorImageFormat format)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.FormatGet">
+            <summary>Sets the shim of ColorImageStream.get_Format()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.FormatSetColorImageFormat">
+            <summary>Sets the shim of ColorImageStream.set_Format(ColorImageFormat value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.NominalDiagonalFieldOfViewGet">
+            <summary>Sets the shim of ColorImageStream.get_NominalDiagonalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.NominalFocalLengthInPixelsGet">
+            <summary>Sets the shim of ColorImageStream.get_NominalFocalLengthInPixels()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.NominalHorizontalFieldOfViewGet">
+            <summary>Sets the shim of ColorImageStream.get_NominalHorizontalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.NominalInverseFocalLengthInPixelsGet">
+            <summary>Sets the shim of ColorImageStream.get_NominalInverseFocalLengthInPixels()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.NominalVerticalFieldOfViewGet">
+            <summary>Sets the shim of ColorImageStream.get_NominalVerticalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.OpenNextFrameInt32">
+            <summary>Sets the shim of ColorImageStream.OpenNextFrame(Int32 millisecondsWait)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimColorImageStream.AllInstances.ScaleValueSingle">
+            <summary>Sets the shim of ColorImageStream.ScaleValue(Single value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimDepthImageFrame">
+            <summary>Shim type of Microsoft.Kinect.DepthImageFrame</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageFrame.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageFrame.#ctor(Microsoft.Kinect.DepthImageFrame)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageFrame.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageFrame.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageFrame.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.CopyPixelDataToInt16Array">
+            <summary>Sets the shim of DepthImageFrame.CopyPixelDataTo(Int16[] pixelData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.CreateDepthImageStreamInt32Int64">
+            <summary>Sets the shim of DepthImageFrame.Create(DepthImageStream depthImageStream, Int32 frameNumber, Int64 timestamp)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.DisposeBoolean">
+            <summary>Sets the shim of DepthImageFrame.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.FormatGet">
+            <summary>Sets the shim of DepthImageFrame.get_Format()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.FormatSetDepthImageFormat">
+            <summary>Sets the shim of DepthImageFrame.set_Format(DepthImageFormat value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.MapFromSkeletonPointSkeletonPoint">
+            <summary>Sets the shim of DepthImageFrame.MapFromSkeletonPoint(SkeletonPoint skeletonPoint)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.MapToColorImagePointInt32Int32ColorImageFormat">
+            <summary>Sets the shim of DepthImageFrame.MapToColorImagePoint(Int32 depthX, Int32 depthY, ColorImageFormat colorImageFormat)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.MapToSkeletonPointInt32Int32">
+            <summary>Sets the shim of DepthImageFrame.MapToSkeletonPoint(Int32 depthX, Int32 depthY)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.PixelDataLengthGet">
+            <summary>Sets the shim of DepthImageFrame.get_PixelDataLength()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.SourceStreamGet">
+            <summary>Sets the shim of DepthImageFrame.get_SourceStream()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimDepthImageFrame.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.AllInstances.CopyPixelDataToInt16Array">
+            <summary>Sets the shim of DepthImageFrame.CopyPixelDataTo(Int16[] pixelData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of DepthImageFrame.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.AllInstances.FormatGet">
+            <summary>Sets the shim of DepthImageFrame.get_Format()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.AllInstances.FormatSetDepthImageFormat">
+            <summary>Sets the shim of DepthImageFrame.set_Format(DepthImageFormat value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.AllInstances.MapFromSkeletonPointSkeletonPoint">
+            <summary>Sets the shim of DepthImageFrame.MapFromSkeletonPoint(SkeletonPoint skeletonPoint)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.AllInstances.MapToColorImagePointInt32Int32ColorImageFormat">
+            <summary>Sets the shim of DepthImageFrame.MapToColorImagePoint(Int32 depthX, Int32 depthY, ColorImageFormat colorImageFormat)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.AllInstances.MapToSkeletonPointInt32Int32">
+            <summary>Sets the shim of DepthImageFrame.MapToSkeletonPoint(Int32 depthX, Int32 depthY)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.AllInstances.PixelDataLengthGet">
+            <summary>Sets the shim of DepthImageFrame.get_PixelDataLength()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrame.AllInstances.SourceStreamGet">
+            <summary>Sets the shim of DepthImageFrame.get_SourceStream()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs">
+            <summary>Shim type of Microsoft.Kinect.DepthImageFrameReadyEventArgs</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.#ctor(Microsoft.Kinect.DepthImageFrameReadyEventArgs)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.ConstructorDepthImageStreamInt32Int64Boolean">
+            <summary>Sets the shim of DepthImageFrameReadyEventArgs.DepthImageFrameReadyEventArgs(DepthImageStream depthImageStream, Int32 frameNumber, Int64 timestamp, Boolean isInvalid)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.CreateDepthImageStreamInt32Int64">
+            <summary>Sets the shim of DepthImageFrameReadyEventArgs.Create(DepthImageStream depthImageStream, Int32 frameNumber, Int64 timestamp)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.CreateInvalid">
+            <summary>Sets the shim of DepthImageFrameReadyEventArgs.CreateInvalid()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.OpenDepthImageFrame">
+            <summary>Sets the shim of DepthImageFrameReadyEventArgs.OpenDepthImageFrame()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageFrameReadyEventArgs.AllInstances.OpenDepthImageFrame">
+            <summary>Sets the shim of DepthImageFrameReadyEventArgs.OpenDepthImageFrame()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimDepthImagePoint">
+            <summary>Shim type of Microsoft.Kinect.DepthImagePoint</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImagePoint.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImagePoint.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImagePoint.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImagePoint.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImagePoint.EqualityOpDepthImagePointDepthImagePoint">
+            <summary>Sets the shim of DepthImagePoint.op_Equality(DepthImagePoint imagePoint1, DepthImagePoint imagePoint2)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImagePoint.InequalityOpDepthImagePointDepthImagePoint">
+            <summary>Sets the shim of DepthImagePoint.op_Inequality(DepthImagePoint imagePoint1, DepthImagePoint imagePoint2)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimDepthImagePoint.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimDepthImageStream">
+            <summary>Shim type of Microsoft.Kinect.DepthImageStream</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageStream.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageStream.#ctor(Microsoft.Kinect.DepthImageStream)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageStream.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimDepthImageStream.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.ConstructorKinectSensor">
+            <summary>Sets the shim of DepthImageStream.DepthImageStream(KinectSensor mainNui)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.Enable">
+            <summary>Sets the shim of DepthImageStream.Enable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.EnableDepthImageFormat">
+            <summary>Sets the shim of DepthImageStream.Enable(DepthImageFormat format)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.FormatGet">
+            <summary>Sets the shim of DepthImageStream.get_Format()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.FormatSetDepthImageFormat">
+            <summary>Sets the shim of DepthImageStream.set_Format(DepthImageFormat value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.LookUpPixelDataLengthDepthImageFormat">
+            <summary>Sets the shim of DepthImageStream.LookUpPixelDataLength(DepthImageFormat format)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.MaxDepthGet">
+            <summary>Sets the shim of DepthImageStream.get_MaxDepth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.MinDepthGet">
+            <summary>Sets the shim of DepthImageStream.get_MinDepth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.NominalDiagonalFieldOfViewGet">
+            <summary>Sets the shim of DepthImageStream.get_NominalDiagonalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.NominalFocalLengthInPixelsGet">
+            <summary>Sets the shim of DepthImageStream.get_NominalFocalLengthInPixels()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.NominalHorizontalFieldOfViewGet">
+            <summary>Sets the shim of DepthImageStream.get_NominalHorizontalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.NominalInverseFocalLengthInPixelsGet">
+            <summary>Sets the shim of DepthImageStream.get_NominalInverseFocalLengthInPixels()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.NominalVerticalFieldOfViewGet">
+            <summary>Sets the shim of DepthImageStream.get_NominalVerticalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.OpenNextFrameInt32">
+            <summary>Sets the shim of DepthImageStream.OpenNextFrame(Int32 millisecondsWait)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.RangeGet">
+            <summary>Sets the shim of DepthImageStream.get_Range()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.RangeSetDepthRange">
+            <summary>Sets the shim of DepthImageStream.set_Range(DepthRange value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.ScaleValueSingle">
+            <summary>Sets the shim of DepthImageStream.ScaleValue(Single value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.TooFarDepthGet">
+            <summary>Sets the shim of DepthImageStream.get_TooFarDepth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.TooNearDepthGet">
+            <summary>Sets the shim of DepthImageStream.get_TooNearDepth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.UnknownDepthGet">
+            <summary>Sets the shim of DepthImageStream.get_UnknownDepth()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.Enable">
+            <summary>Sets the shim of DepthImageStream.Enable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.EnableDepthImageFormat">
+            <summary>Sets the shim of DepthImageStream.Enable(DepthImageFormat format)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.FormatGet">
+            <summary>Sets the shim of DepthImageStream.get_Format()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.FormatSetDepthImageFormat">
+            <summary>Sets the shim of DepthImageStream.set_Format(DepthImageFormat value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.MaxDepthGet">
+            <summary>Sets the shim of DepthImageStream.get_MaxDepth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.MinDepthGet">
+            <summary>Sets the shim of DepthImageStream.get_MinDepth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.NominalDiagonalFieldOfViewGet">
+            <summary>Sets the shim of DepthImageStream.get_NominalDiagonalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.NominalFocalLengthInPixelsGet">
+            <summary>Sets the shim of DepthImageStream.get_NominalFocalLengthInPixels()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.NominalHorizontalFieldOfViewGet">
+            <summary>Sets the shim of DepthImageStream.get_NominalHorizontalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.NominalInverseFocalLengthInPixelsGet">
+            <summary>Sets the shim of DepthImageStream.get_NominalInverseFocalLengthInPixels()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.NominalVerticalFieldOfViewGet">
+            <summary>Sets the shim of DepthImageStream.get_NominalVerticalFieldOfView()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.OpenNextFrameInt32">
+            <summary>Sets the shim of DepthImageStream.OpenNextFrame(Int32 millisecondsWait)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.RangeGet">
+            <summary>Sets the shim of DepthImageStream.get_Range()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.RangeSetDepthRange">
+            <summary>Sets the shim of DepthImageStream.set_Range(DepthRange value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.ScaleValueSingle">
+            <summary>Sets the shim of DepthImageStream.ScaleValue(Single value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.TooFarDepthGet">
+            <summary>Sets the shim of DepthImageStream.get_TooFarDepth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.TooNearDepthGet">
+            <summary>Sets the shim of DepthImageStream.get_TooNearDepth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimDepthImageStream.AllInstances.UnknownDepthGet">
+            <summary>Sets the shim of DepthImageStream.get_UnknownDepth()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimImageFrame">
+            <summary>Shim type of Microsoft.Kinect.ImageFrame</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimImageFrame.#ctor(Microsoft.Kinect.ImageFrame)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimImageFrame.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimImageFrame.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimImageFrame.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.BytesPerPixelGet">
+            <summary>Sets the shim of ImageFrame.get_BytesPerPixel()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.BytesPerPixelSetInt32">
+            <summary>Sets the shim of ImageFrame.set_BytesPerPixel(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.Dispose">
+            <summary>Sets the shim of ImageFrame.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.FrameNumberGet">
+            <summary>Sets the shim of ImageFrame.get_FrameNumber()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.FrameNumberSetInt32">
+            <summary>Sets the shim of ImageFrame.set_FrameNumber(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.HeightGet">
+            <summary>Sets the shim of ImageFrame.get_Height()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.HeightSetInt32">
+            <summary>Sets the shim of ImageFrame.set_Height(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.TimestampGet">
+            <summary>Sets the shim of ImageFrame.get_Timestamp()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.TimestampSetInt64">
+            <summary>Sets the shim of ImageFrame.set_Timestamp(Int64 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.WidthGet">
+            <summary>Sets the shim of ImageFrame.get_Width()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.WidthSetInt32">
+            <summary>Sets the shim of ImageFrame.set_Width(Int32 value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.BytesPerPixelGet">
+            <summary>Sets the shim of ImageFrame.get_BytesPerPixel()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.BytesPerPixelSetInt32">
+            <summary>Sets the shim of ImageFrame.set_BytesPerPixel(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.Dispose">
+            <summary>Sets the shim of ImageFrame.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.FrameNumberGet">
+            <summary>Sets the shim of ImageFrame.get_FrameNumber()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.FrameNumberSetInt32">
+            <summary>Sets the shim of ImageFrame.set_FrameNumber(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.HeightGet">
+            <summary>Sets the shim of ImageFrame.get_Height()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.HeightSetInt32">
+            <summary>Sets the shim of ImageFrame.set_Height(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.TimestampGet">
+            <summary>Sets the shim of ImageFrame.get_Timestamp()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.TimestampSetInt64">
+            <summary>Sets the shim of ImageFrame.set_Timestamp(Int64 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.WidthGet">
+            <summary>Sets the shim of ImageFrame.get_Width()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageFrame.AllInstances.WidthSetInt32">
+            <summary>Sets the shim of ImageFrame.set_Width(Int32 value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimImageStream">
+            <summary>Shim type of Microsoft.Kinect.ImageStream</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimImageStream.#ctor(Microsoft.Kinect.ImageStream)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimImageStream.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimImageStream.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.BufferCountGet">
+            <summary>Sets the shim of ImageStream.get_BufferCount()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.BufferCountSetInt32">
+            <summary>Sets the shim of ImageStream.set_BufferCount(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.Close">
+            <summary>Sets the shim of ImageStream.Close()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.Disable">
+            <summary>Sets the shim of ImageStream.Disable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.Dispose">
+            <summary>Sets the shim of ImageStream.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.FillHeightWidth">
+            <summary>Sets the shim of ImageStream.FillHeightWidth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.FrameBytesPerPixelGet">
+            <summary>Sets the shim of ImageStream.get_FrameBytesPerPixel()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.FrameBytesPerPixelSetInt32">
+            <summary>Sets the shim of ImageStream.set_FrameBytesPerPixel(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.FrameHeightGet">
+            <summary>Sets the shim of ImageStream.get_FrameHeight()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.FrameHeightSetInt32">
+            <summary>Sets the shim of ImageStream.set_FrameHeight(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.FramePixelDataLengthGet">
+            <summary>Sets the shim of ImageStream.get_FramePixelDataLength()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.FramePixelDataLengthSetInt32">
+            <summary>Sets the shim of ImageStream.set_FramePixelDataLength(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.FrameWidthGet">
+            <summary>Sets the shim of ImageStream.get_FrameWidth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.FrameWidthSetInt32">
+            <summary>Sets the shim of ImageStream.set_FrameWidth(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.InternalEnable">
+            <summary>Sets the shim of ImageStream.InternalEnable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.IsEnabledGet">
+            <summary>Sets the shim of ImageStream.get_IsEnabled()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.IsEnabledSetBoolean">
+            <summary>Sets the shim of ImageStream.set_IsEnabled(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.Open">
+            <summary>Sets the shim of ImageStream.Open()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.SensorGet">
+            <summary>Sets the shim of ImageStream.get_Sensor()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.SensorSetKinectSensor">
+            <summary>Sets the shim of ImageStream.set_Sensor(KinectSensor value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.Start">
+            <summary>Sets the shim of ImageStream.Start()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.Stop">
+            <summary>Sets the shim of ImageStream.Stop()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.TryGetNextFrameInternalInt32Int32OutInt64Out">
+            <summary>Sets the shim of ImageStream.TryGetNextFrameInternal(Int32 millisecondsWait, Int32&amp; frameNumber, Int64&amp; timestamp)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.BufferCountGet">
+            <summary>Sets the shim of ImageStream.get_BufferCount()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.BufferCountSetInt32">
+            <summary>Sets the shim of ImageStream.set_BufferCount(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.Close">
+            <summary>Sets the shim of ImageStream.Close()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.Disable">
+            <summary>Sets the shim of ImageStream.Disable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.Dispose">
+            <summary>Sets the shim of ImageStream.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.FillHeightWidth">
+            <summary>Sets the shim of ImageStream.FillHeightWidth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.FrameBytesPerPixelGet">
+            <summary>Sets the shim of ImageStream.get_FrameBytesPerPixel()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.FrameBytesPerPixelSetInt32">
+            <summary>Sets the shim of ImageStream.set_FrameBytesPerPixel(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.FrameHeightGet">
+            <summary>Sets the shim of ImageStream.get_FrameHeight()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.FrameHeightSetInt32">
+            <summary>Sets the shim of ImageStream.set_FrameHeight(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.FramePixelDataLengthGet">
+            <summary>Sets the shim of ImageStream.get_FramePixelDataLength()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.FramePixelDataLengthSetInt32">
+            <summary>Sets the shim of ImageStream.set_FramePixelDataLength(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.FrameWidthGet">
+            <summary>Sets the shim of ImageStream.get_FrameWidth()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.FrameWidthSetInt32">
+            <summary>Sets the shim of ImageStream.set_FrameWidth(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.InternalEnable">
+            <summary>Sets the shim of ImageStream.InternalEnable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.IsEnabledGet">
+            <summary>Sets the shim of ImageStream.get_IsEnabled()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.IsEnabledSetBoolean">
+            <summary>Sets the shim of ImageStream.set_IsEnabled(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.Open">
+            <summary>Sets the shim of ImageStream.Open()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.SensorGet">
+            <summary>Sets the shim of ImageStream.get_Sensor()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.SensorSetKinectSensor">
+            <summary>Sets the shim of ImageStream.set_Sensor(KinectSensor value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.Start">
+            <summary>Sets the shim of ImageStream.Start()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.Stop">
+            <summary>Sets the shim of ImageStream.Stop()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimImageStream.AllInstances.TryGetNextFrameInternalInt32Int32OutInt64Out">
+            <summary>Sets the shim of ImageStream.TryGetNextFrameInternal(Int32 millisecondsWait, Int32&amp; frameNumber, Int64&amp; timestamp)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimJoint">
+            <summary>Shim type of Microsoft.Kinect.Joint</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimJoint.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimJoint.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimJoint.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJoint.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJoint.EqualityOpJointJoint">
+            <summary>Sets the shim of Joint.op_Equality(Joint joint1, Joint joint2)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJoint.InequalityOpJointJoint">
+            <summary>Sets the shim of Joint.op_Inequality(Joint joint1, Joint joint2)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimJoint.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimJointCollection">
+            <summary>Shim type of Microsoft.Kinect.JointCollection</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimJointCollection.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimJointCollection.#ctor(Microsoft.Kinect.JointCollection)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimJointCollection.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimJointCollection.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimJointCollection.Bind(System.Collections.IEnumerable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimJointCollection.Bind(System.Collections.Generic.IEnumerable{Microsoft.Kinect.Joint})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.Constructor">
+            <summary>Sets the shim of JointCollection.JointCollection()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.CountGet">
+            <summary>Sets the shim of JointCollection.get_Count()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.GetEnumerator">
+            <summary>Sets the shim of JointCollection.GetEnumerator()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.ItemGetJointType">
+            <summary>Sets the shim of JointCollection.get_Item(JointType jointType)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.ItemSetJointTypeJoint">
+            <summary>Sets the shim of JointCollection.set_Item(JointType jointType, Joint value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.SystemCollectionsGenericIEnumerableMicrosoftKinectJointGetEnumerator">
+            <summary>Sets the shim of JointCollection.System.Collections.Generic.IEnumerable&lt;Microsoft.Kinect.Joint&gt;.GetEnumerator()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimJointCollection.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.AllInstances.CountGet">
+            <summary>Sets the shim of JointCollection.get_Count()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.AllInstances.GetEnumerator">
+            <summary>Sets the shim of JointCollection.GetEnumerator()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.AllInstances.ItemGetJointType">
+            <summary>Sets the shim of JointCollection.get_Item(JointType jointType)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.AllInstances.ItemSetJointTypeJoint">
+            <summary>Sets the shim of JointCollection.set_Item(JointType jointType, Joint value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimJointCollection.AllInstances.SystemCollectionsGenericIEnumerableMicrosoftKinectJointGetEnumerator">
+            <summary>Sets the shim of JointCollection.System.Collections.Generic.IEnumerable&lt;Microsoft.Kinect.Joint&gt;.GetEnumerator()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimKinectAudioSource">
+            <summary>Shim type of Microsoft.Kinect.KinectAudioSource</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectAudioSource.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectAudioSource.#ctor(Microsoft.Kinect.KinectAudioSource)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectAudioSource.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectAudioSource.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AutomaticGainControlEnabledGet">
+            <summary>Sets the shim of KinectAudioSource.get_AutomaticGainControlEnabled()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AutomaticGainControlEnabledSetBoolean">
+            <summary>Sets the shim of KinectAudioSource.set_AutomaticGainControlEnabled(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.BeamAngleChangedAddEventHandlerOfBeamAngleChangedEventArgs">
+            <summary>Sets the shim of KinectAudioSource.add_BeamAngleChanged(EventHandler`1&lt;BeamAngleChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.BeamAngleChangedRemoveEventHandlerOfBeamAngleChangedEventArgs">
+            <summary>Sets the shim of KinectAudioSource.remove_BeamAngleChanged(EventHandler`1&lt;BeamAngleChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.BeamAngleGet">
+            <summary>Sets the shim of KinectAudioSource.get_BeamAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.BeamAngleModeGet">
+            <summary>Sets the shim of KinectAudioSource.get_BeamAngleMode()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.BeamAngleModeSetBeamAngleMode">
+            <summary>Sets the shim of KinectAudioSource.set_BeamAngleMode(BeamAngleMode value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.ConstructorKinectSensor">
+            <summary>Sets the shim of KinectAudioSource.KinectAudioSource(KinectSensor sensor)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.DeviceIndexesGet">
+            <summary>Sets the shim of KinectAudioSource.get_DeviceIndexes()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.DeviceIndexesSetInt32">
+            <summary>Sets the shim of KinectAudioSource.set_DeviceIndexes(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.Dispose">
+            <summary>Sets the shim of KinectAudioSource.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.EchoCancellationModeGet">
+            <summary>Sets the shim of KinectAudioSource.get_EchoCancellationMode()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.EchoCancellationModeSetEchoCancellationMode">
+            <summary>Sets the shim of KinectAudioSource.set_EchoCancellationMode(EchoCancellationMode value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.EchoCancellationSpeakerIndexGet">
+            <summary>Sets the shim of KinectAudioSource.get_EchoCancellationSpeakerIndex()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.EchoCancellationSpeakerIndexSetInt32">
+            <summary>Sets the shim of KinectAudioSource.set_EchoCancellationSpeakerIndex(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.FeatureModeGet">
+            <summary>Sets the shim of KinectAudioSource.get_FeatureMode()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.FeatureModeSetBoolean">
+            <summary>Sets the shim of KinectAudioSource.set_FeatureMode(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.FetchNextBeamAngle">
+            <summary>Sets the shim of KinectAudioSource.FetchNextBeamAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.FindMicrophoneIndex">
+            <summary>Sets the shim of KinectAudioSource.FindMicrophoneIndex()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.GetDefaultSpeakerIndex">
+            <summary>Sets the shim of KinectAudioSource.GetDefaultSpeakerIndex()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.GetPropertyInt32">
+            <summary>Sets the shim of KinectAudioSource.GetProperty(Int32 pid)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.ManualBeamAngleGet">
+            <summary>Sets the shim of KinectAudioSource.get_ManualBeamAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.ManualBeamAngleSetDouble">
+            <summary>Sets the shim of KinectAudioSource.set_ManualBeamAngle(Double value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.MaxBeamAngleGet">
+            <summary>Sets the shim of KinectAudioSource.get_MaxBeamAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.MaxSoundSourceAngleGet">
+            <summary>Sets the shim of KinectAudioSource.get_MaxSoundSourceAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.MicrophoneIndexSetUInt16">
+            <summary>Sets the shim of KinectAudioSource.set_MicrophoneIndex(UInt16 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.MinBeamAngleGet">
+            <summary>Sets the shim of KinectAudioSource.get_MinBeamAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.MinSoundSourceAngleGet">
+            <summary>Sets the shim of KinectAudioSource.get_MinSoundSourceAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.NoiseSuppressionGet">
+            <summary>Sets the shim of KinectAudioSource.get_NoiseSuppression()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.NoiseSuppressionSetBoolean">
+            <summary>Sets the shim of KinectAudioSource.set_NoiseSuppression(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.SetBeamAngleDouble">
+            <summary>Sets the shim of KinectAudioSource.SetBeamAngle(Double angle)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.SetPropertyInt32Object">
+            <summary>Sets the shim of KinectAudioSource.SetProperty(Int32 pid, Object value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.SetSoundSourceAngleAndConfidenceDoubleDouble">
+            <summary>Sets the shim of KinectAudioSource.SetSoundSourceAngleAndConfidence(Double angle, Double confidence)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.SoundSourceAngleChangedAddEventHandlerOfSoundSourceAngleChangedEventArgs">
+            <summary>Sets the shim of KinectAudioSource.add_SoundSourceAngleChanged(EventHandler`1&lt;SoundSourceAngleChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.SoundSourceAngleChangedRemoveEventHandlerOfSoundSourceAngleChangedEventArgs">
+            <summary>Sets the shim of KinectAudioSource.remove_SoundSourceAngleChanged(EventHandler`1&lt;SoundSourceAngleChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.SoundSourceAngleConfidenceGet">
+            <summary>Sets the shim of KinectAudioSource.get_SoundSourceAngleConfidence()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.SoundSourceAngleGet">
+            <summary>Sets the shim of KinectAudioSource.get_SoundSourceAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.Start">
+            <summary>Sets the shim of KinectAudioSource.Start()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.StartTimeSpan">
+            <summary>Sets the shim of KinectAudioSource.Start(TimeSpan readStaleThreshold)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.StaticConstructor">
+            <summary>Sets the shim of KinectAudioSource.KinectAudioSource()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.Stop">
+            <summary>Sets the shim of KinectAudioSource.Stop()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.VerifyFeatureMode">
+            <summary>Sets the shim of KinectAudioSource.VerifyFeatureMode()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.AutomaticGainControlEnabledGet">
+            <summary>Sets the shim of KinectAudioSource.get_AutomaticGainControlEnabled()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.AutomaticGainControlEnabledSetBoolean">
+            <summary>Sets the shim of KinectAudioSource.set_AutomaticGainControlEnabled(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.BeamAngleChangedAddEventHandlerOfBeamAngleChangedEventArgs">
+            <summary>Sets the shim of KinectAudioSource.add_BeamAngleChanged(EventHandler`1&lt;BeamAngleChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.BeamAngleChangedRemoveEventHandlerOfBeamAngleChangedEventArgs">
+            <summary>Sets the shim of KinectAudioSource.remove_BeamAngleChanged(EventHandler`1&lt;BeamAngleChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.BeamAngleGet">
+            <summary>Sets the shim of KinectAudioSource.get_BeamAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.BeamAngleModeGet">
+            <summary>Sets the shim of KinectAudioSource.get_BeamAngleMode()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.BeamAngleModeSetBeamAngleMode">
+            <summary>Sets the shim of KinectAudioSource.set_BeamAngleMode(BeamAngleMode value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.DeviceIndexesGet">
+            <summary>Sets the shim of KinectAudioSource.get_DeviceIndexes()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.DeviceIndexesSetInt32">
+            <summary>Sets the shim of KinectAudioSource.set_DeviceIndexes(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.Dispose">
+            <summary>Sets the shim of KinectAudioSource.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.EchoCancellationModeGet">
+            <summary>Sets the shim of KinectAudioSource.get_EchoCancellationMode()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.EchoCancellationModeSetEchoCancellationMode">
+            <summary>Sets the shim of KinectAudioSource.set_EchoCancellationMode(EchoCancellationMode value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.EchoCancellationSpeakerIndexGet">
+            <summary>Sets the shim of KinectAudioSource.get_EchoCancellationSpeakerIndex()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.EchoCancellationSpeakerIndexSetInt32">
+            <summary>Sets the shim of KinectAudioSource.set_EchoCancellationSpeakerIndex(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.FeatureModeGet">
+            <summary>Sets the shim of KinectAudioSource.get_FeatureMode()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.FeatureModeSetBoolean">
+            <summary>Sets the shim of KinectAudioSource.set_FeatureMode(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.FetchNextBeamAngle">
+            <summary>Sets the shim of KinectAudioSource.FetchNextBeamAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.FindMicrophoneIndex">
+            <summary>Sets the shim of KinectAudioSource.FindMicrophoneIndex()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.GetDefaultSpeakerIndex">
+            <summary>Sets the shim of KinectAudioSource.GetDefaultSpeakerIndex()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.GetPropertyInt32">
+            <summary>Sets the shim of KinectAudioSource.GetProperty(Int32 pid)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.ManualBeamAngleGet">
+            <summary>Sets the shim of KinectAudioSource.get_ManualBeamAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.ManualBeamAngleSetDouble">
+            <summary>Sets the shim of KinectAudioSource.set_ManualBeamAngle(Double value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.MicrophoneIndexSetUInt16">
+            <summary>Sets the shim of KinectAudioSource.set_MicrophoneIndex(UInt16 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.NoiseSuppressionGet">
+            <summary>Sets the shim of KinectAudioSource.get_NoiseSuppression()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.NoiseSuppressionSetBoolean">
+            <summary>Sets the shim of KinectAudioSource.set_NoiseSuppression(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.SetBeamAngleDouble">
+            <summary>Sets the shim of KinectAudioSource.SetBeamAngle(Double angle)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.SetPropertyInt32Object">
+            <summary>Sets the shim of KinectAudioSource.SetProperty(Int32 pid, Object value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.SetSoundSourceAngleAndConfidenceDoubleDouble">
+            <summary>Sets the shim of KinectAudioSource.SetSoundSourceAngleAndConfidence(Double angle, Double confidence)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.SoundSourceAngleChangedAddEventHandlerOfSoundSourceAngleChangedEventArgs">
+            <summary>Sets the shim of KinectAudioSource.add_SoundSourceAngleChanged(EventHandler`1&lt;SoundSourceAngleChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.SoundSourceAngleChangedRemoveEventHandlerOfSoundSourceAngleChangedEventArgs">
+            <summary>Sets the shim of KinectAudioSource.remove_SoundSourceAngleChanged(EventHandler`1&lt;SoundSourceAngleChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.SoundSourceAngleConfidenceGet">
+            <summary>Sets the shim of KinectAudioSource.get_SoundSourceAngleConfidence()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.SoundSourceAngleGet">
+            <summary>Sets the shim of KinectAudioSource.get_SoundSourceAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.Start">
+            <summary>Sets the shim of KinectAudioSource.Start()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.StartTimeSpan">
+            <summary>Sets the shim of KinectAudioSource.Start(TimeSpan readStaleThreshold)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.Stop">
+            <summary>Sets the shim of KinectAudioSource.Stop()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectAudioSource.AllInstances.VerifyFeatureMode">
+            <summary>Sets the shim of KinectAudioSource.VerifyFeatureMode()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimKinectSensor">
+            <summary>Shim type of Microsoft.Kinect.KinectSensor</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensor.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensor.#ctor(Microsoft.Kinect.KinectSensor)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensor.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensor.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensor.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllFramesReadyAddEventHandlerOfAllFramesReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.add_AllFramesReady(EventHandler`1&lt;AllFramesReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllFramesReadyRemoveEventHandlerOfAllFramesReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.remove_AllFramesReady(EventHandler`1&lt;AllFramesReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AudioSourceGet">
+            <summary>Sets the shim of KinectSensor.get_AudioSource()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.CheckNotRunning">
+            <summary>Sets the shim of KinectSensor.CheckNotRunning()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.ColorFrameReadyAddEventHandlerOfColorImageFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.add_ColorFrameReady(EventHandler`1&lt;ColorImageFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.ColorFrameReadyRemoveEventHandlerOfColorImageFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.remove_ColorFrameReady(EventHandler`1&lt;ColorImageFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.ColorStreamGet">
+            <summary>Sets the shim of KinectSensor.get_ColorStream()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.ColorStreamSetColorImageStream">
+            <summary>Sets the shim of KinectSensor.set_ColorStream(ColorImageStream value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.CreateStreamObjects">
+            <summary>Sets the shim of KinectSensor.CreateStreamObjects()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.DepthFrameReadyAddEventHandlerOfDepthImageFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.add_DepthFrameReady(EventHandler`1&lt;DepthImageFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.DepthFrameReadyRemoveEventHandlerOfDepthImageFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.remove_DepthFrameReady(EventHandler`1&lt;DepthImageFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.DepthStreamGet">
+            <summary>Sets the shim of KinectSensor.get_DepthStream()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.DepthStreamSetDepthImageStream">
+            <summary>Sets the shim of KinectSensor.set_DepthStream(DepthImageStream value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.DeviceConnectionIdGet">
+            <summary>Sets the shim of KinectSensor.get_DeviceConnectionId()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.Dispose">
+            <summary>Sets the shim of KinectSensor.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.ElevationAngleGet">
+            <summary>Sets the shim of KinectSensor.get_ElevationAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.ElevationAngleSetInt32">
+            <summary>Sets the shim of KinectSensor.set_ElevationAngle(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.GetColorFrame">
+            <summary>Sets the shim of KinectSensor.GetColorFrame()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.GetDepthFrame">
+            <summary>Sets the shim of KinectSensor.GetDepthFrame()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.GetDeviceConnectionId">
+            <summary>Sets the shim of KinectSensor.GetDeviceConnectionId()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.GetSkeletonFrame">
+            <summary>Sets the shim of KinectSensor.GetSkeletonFrame()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.GetStatus">
+            <summary>Sets the shim of KinectSensor.GetStatus()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.GetUniqueKinectId">
+            <summary>Sets the shim of KinectSensor.GetUniqueKinectId()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.HasAllFramesInvocationsGet">
+            <summary>Sets the shim of KinectSensor.get_HasAllFramesInvocations()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.HasColorInvocationsGet">
+            <summary>Sets the shim of KinectSensor.get_HasColorInvocations()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.HasDepthInvocationsGet">
+            <summary>Sets the shim of KinectSensor.get_HasDepthInvocations()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.HasSkeletonInvocationsGet">
+            <summary>Sets the shim of KinectSensor.get_HasSkeletonInvocations()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.InstanceIndexGet">
+            <summary>Sets the shim of KinectSensor.get_InstanceIndex()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.IsDisposedGet">
+            <summary>Sets the shim of KinectSensor.get_IsDisposed()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.IsDisposedSetBoolean">
+            <summary>Sets the shim of KinectSensor.set_IsDisposed(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.IsRunningGet">
+            <summary>Sets the shim of KinectSensor.get_IsRunning()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.IsRunningInternalGet">
+            <summary>Sets the shim of KinectSensor.get_IsRunningInternal()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.KinectSensorsGet">
+            <summary>Sets the shim of KinectSensor.get_KinectSensors()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.LastStatusGet">
+            <summary>Sets the shim of KinectSensor.get_LastStatus()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.LastStatusSetKinectStatus">
+            <summary>Sets the shim of KinectSensor.set_LastStatus(KinectStatus value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.MainBackgroundThreadProcObject">
+            <summary>Sets the shim of KinectSensor.MainBackgroundThreadProc(Object data)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.MapDepthFrameToColorFrameDepthImageFormatInt16ArrayColorImageFormatColorImagePointArray">
+            <summary>Sets the shim of KinectSensor.MapDepthFrameToColorFrame(DepthImageFormat depthImageFormat, Int16[] depthPixelData, ColorImageFormat colorImageFormat, ColorImagePoint[] colorCoordinates)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.MapDepthToColorImagePointDepthImageFormatInt32Int32Int16ColorImageFormat">
+            <summary>Sets the shim of KinectSensor.MapDepthToColorImagePoint(DepthImageFormat depthImageFormat, Int32 depthX, Int32 depthY, Int16 depthPixelValue, ColorImageFormat colorImageFormat)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.MapDepthToSkeletonPointDepthImageFormatInt32Int32Int16">
+            <summary>Sets the shim of KinectSensor.MapDepthToSkeletonPoint(DepthImageFormat depthImageFormat, Int32 depthX, Int32 depthY, Int16 depthPixelValue)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.MapSkeletonPointToColorSkeletonPointColorImageFormat">
+            <summary>Sets the shim of KinectSensor.MapSkeletonPointToColor(SkeletonPoint skeletonPoint, ColorImageFormat colorImageFormat)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.MapSkeletonPointToDepthSkeletonPointDepthImageFormat">
+            <summary>Sets the shim of KinectSensor.MapSkeletonPointToDepth(SkeletonPoint skeletonPoint, DepthImageFormat depthImageFormat)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.MapStatusUInt32">
+            <summary>Sets the shim of KinectSensor.MapStatus(UInt32 code)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.MaxElevationAngleGet">
+            <summary>Sets the shim of KinectSensor.get_MaxElevationAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.MinElevationAngleGet">
+            <summary>Sets the shim of KinectSensor.get_MinElevationAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.RequestSkeletonEngineBoolean">
+            <summary>Sets the shim of KinectSensor.RequestSkeletonEngine(Boolean enable)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.SkeletonFrameReadyAddEventHandlerOfSkeletonFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.add_SkeletonFrameReady(EventHandler`1&lt;SkeletonFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.SkeletonFrameReadyRemoveEventHandlerOfSkeletonFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.remove_SkeletonFrameReady(EventHandler`1&lt;SkeletonFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.SkeletonStreamGet">
+            <summary>Sets the shim of KinectSensor.get_SkeletonStream()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.SkeletonStreamSetSkeletonStream">
+            <summary>Sets the shim of KinectSensor.set_SkeletonStream(SkeletonStream value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.Start">
+            <summary>Sets the shim of KinectSensor.Start()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.StaticConstructor">
+            <summary>Sets the shim of KinectSensor.KinectSensor()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.StatusGet">
+            <summary>Sets the shim of KinectSensor.get_Status()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.Stop">
+            <summary>Sets the shim of KinectSensor.Stop()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.Uninitialize">
+            <summary>Sets the shim of KinectSensor.Uninitialize()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.UniqueKinectIdGet">
+            <summary>Sets the shim of KinectSensor.get_UniqueKinectId()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.AllFramesReadyAddEventHandlerOfAllFramesReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.add_AllFramesReady(EventHandler`1&lt;AllFramesReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.AllFramesReadyRemoveEventHandlerOfAllFramesReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.remove_AllFramesReady(EventHandler`1&lt;AllFramesReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.AudioSourceGet">
+            <summary>Sets the shim of KinectSensor.get_AudioSource()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.CheckNotRunning">
+            <summary>Sets the shim of KinectSensor.CheckNotRunning()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.ColorFrameReadyAddEventHandlerOfColorImageFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.add_ColorFrameReady(EventHandler`1&lt;ColorImageFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.ColorFrameReadyRemoveEventHandlerOfColorImageFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.remove_ColorFrameReady(EventHandler`1&lt;ColorImageFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.ColorStreamGet">
+            <summary>Sets the shim of KinectSensor.get_ColorStream()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.ColorStreamSetColorImageStream">
+            <summary>Sets the shim of KinectSensor.set_ColorStream(ColorImageStream value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.CreateStreamObjects">
+            <summary>Sets the shim of KinectSensor.CreateStreamObjects()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.DepthFrameReadyAddEventHandlerOfDepthImageFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.add_DepthFrameReady(EventHandler`1&lt;DepthImageFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.DepthFrameReadyRemoveEventHandlerOfDepthImageFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.remove_DepthFrameReady(EventHandler`1&lt;DepthImageFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.DepthStreamGet">
+            <summary>Sets the shim of KinectSensor.get_DepthStream()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.DepthStreamSetDepthImageStream">
+            <summary>Sets the shim of KinectSensor.set_DepthStream(DepthImageStream value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.DeviceConnectionIdGet">
+            <summary>Sets the shim of KinectSensor.get_DeviceConnectionId()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.Dispose">
+            <summary>Sets the shim of KinectSensor.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.ElevationAngleGet">
+            <summary>Sets the shim of KinectSensor.get_ElevationAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.ElevationAngleSetInt32">
+            <summary>Sets the shim of KinectSensor.set_ElevationAngle(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.GetColorFrame">
+            <summary>Sets the shim of KinectSensor.GetColorFrame()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.GetDepthFrame">
+            <summary>Sets the shim of KinectSensor.GetDepthFrame()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.GetDeviceConnectionId">
+            <summary>Sets the shim of KinectSensor.GetDeviceConnectionId()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.GetSkeletonFrame">
+            <summary>Sets the shim of KinectSensor.GetSkeletonFrame()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.GetStatus">
+            <summary>Sets the shim of KinectSensor.GetStatus()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.GetUniqueKinectId">
+            <summary>Sets the shim of KinectSensor.GetUniqueKinectId()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.HasAllFramesInvocationsGet">
+            <summary>Sets the shim of KinectSensor.get_HasAllFramesInvocations()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.HasColorInvocationsGet">
+            <summary>Sets the shim of KinectSensor.get_HasColorInvocations()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.HasDepthInvocationsGet">
+            <summary>Sets the shim of KinectSensor.get_HasDepthInvocations()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.HasSkeletonInvocationsGet">
+            <summary>Sets the shim of KinectSensor.get_HasSkeletonInvocations()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.InstanceIndexGet">
+            <summary>Sets the shim of KinectSensor.get_InstanceIndex()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.IsDisposedGet">
+            <summary>Sets the shim of KinectSensor.get_IsDisposed()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.IsDisposedSetBoolean">
+            <summary>Sets the shim of KinectSensor.set_IsDisposed(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.IsRunningGet">
+            <summary>Sets the shim of KinectSensor.get_IsRunning()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.IsRunningInternalGet">
+            <summary>Sets the shim of KinectSensor.get_IsRunningInternal()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.LastStatusGet">
+            <summary>Sets the shim of KinectSensor.get_LastStatus()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.LastStatusSetKinectStatus">
+            <summary>Sets the shim of KinectSensor.set_LastStatus(KinectStatus value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.MainBackgroundThreadProcObject">
+            <summary>Sets the shim of KinectSensor.MainBackgroundThreadProc(Object data)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.MapDepthFrameToColorFrameDepthImageFormatInt16ArrayColorImageFormatColorImagePointArray">
+            <summary>Sets the shim of KinectSensor.MapDepthFrameToColorFrame(DepthImageFormat depthImageFormat, Int16[] depthPixelData, ColorImageFormat colorImageFormat, ColorImagePoint[] colorCoordinates)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.MapDepthToColorImagePointDepthImageFormatInt32Int32Int16ColorImageFormat">
+            <summary>Sets the shim of KinectSensor.MapDepthToColorImagePoint(DepthImageFormat depthImageFormat, Int32 depthX, Int32 depthY, Int16 depthPixelValue, ColorImageFormat colorImageFormat)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.MapDepthToSkeletonPointDepthImageFormatInt32Int32Int16">
+            <summary>Sets the shim of KinectSensor.MapDepthToSkeletonPoint(DepthImageFormat depthImageFormat, Int32 depthX, Int32 depthY, Int16 depthPixelValue)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.MapSkeletonPointToColorSkeletonPointColorImageFormat">
+            <summary>Sets the shim of KinectSensor.MapSkeletonPointToColor(SkeletonPoint skeletonPoint, ColorImageFormat colorImageFormat)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.MapSkeletonPointToDepthSkeletonPointDepthImageFormat">
+            <summary>Sets the shim of KinectSensor.MapSkeletonPointToDepth(SkeletonPoint skeletonPoint, DepthImageFormat depthImageFormat)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.MaxElevationAngleGet">
+            <summary>Sets the shim of KinectSensor.get_MaxElevationAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.MinElevationAngleGet">
+            <summary>Sets the shim of KinectSensor.get_MinElevationAngle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.RequestSkeletonEngineBoolean">
+            <summary>Sets the shim of KinectSensor.RequestSkeletonEngine(Boolean enable)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.SkeletonFrameReadyAddEventHandlerOfSkeletonFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.add_SkeletonFrameReady(EventHandler`1&lt;SkeletonFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.SkeletonFrameReadyRemoveEventHandlerOfSkeletonFrameReadyEventArgs">
+            <summary>Sets the shim of KinectSensor.remove_SkeletonFrameReady(EventHandler`1&lt;SkeletonFrameReadyEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.SkeletonStreamGet">
+            <summary>Sets the shim of KinectSensor.get_SkeletonStream()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.SkeletonStreamSetSkeletonStream">
+            <summary>Sets the shim of KinectSensor.set_SkeletonStream(SkeletonStream value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.Start">
+            <summary>Sets the shim of KinectSensor.Start()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.StatusGet">
+            <summary>Sets the shim of KinectSensor.get_Status()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.Stop">
+            <summary>Sets the shim of KinectSensor.Stop()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.Uninitialize">
+            <summary>Sets the shim of KinectSensor.Uninitialize()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensor.AllInstances.UniqueKinectIdGet">
+            <summary>Sets the shim of KinectSensor.get_UniqueKinectId()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimKinectSensorCollection">
+            <summary>Shim type of Microsoft.Kinect.KinectSensorCollection</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.#ctor(Microsoft.Kinect.KinectSensorCollection)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Bind(System.Collections.ICollection)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Bind(System.Collections.IEnumerable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Bind(System.Collections.IList)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Bind(System.Collections.Generic.ICollection{Microsoft.Kinect.KinectSensor})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Bind(System.Collections.Generic.IEnumerable{Microsoft.Kinect.KinectSensor})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Bind(System.Collections.Generic.IList{Microsoft.Kinect.KinectSensor})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Bind(System.Collections.Generic.IReadOnlyCollection{Microsoft.Kinect.KinectSensor})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Bind(System.Collections.Generic.IReadOnlyList{Microsoft.Kinect.KinectSensor})">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Constructor">
+            <summary>Sets the shim of KinectSensorCollection.KinectSensorCollection()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Dispose">
+            <summary>Sets the shim of KinectSensorCollection.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.Initialize">
+            <summary>Sets the shim of KinectSensorCollection.Initialize()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.InstanceGet">
+            <summary>Sets the shim of KinectSensorCollection.get_Instance()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.ItemGetString">
+            <summary>Sets the shim of KinectSensorCollection.get_Item(String instanceId)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.NotifyUserKinectsStatusChangedObject">
+            <summary>Sets the shim of KinectSensorCollection.NotifyUserKinectsStatusChanged(Object state)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.OnNuiStatusCallbackInt32StringStringIntPtr">
+            <summary>Sets the shim of KinectSensorCollection.OnNuiStatusCallback(Int32 status, String instanceName, String uniqueDeviceName, IntPtr pUserData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.RemakeSensorKinectSensorString">
+            <summary>Sets the shim of KinectSensorCollection.RemakeSensor(KinectSensor sensor, String name)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.StaticConstructor">
+            <summary>Sets the shim of KinectSensorCollection.KinectSensorCollection()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.StatusChangedAddEventHandlerOfStatusChangedEventArgs">
+            <summary>Sets the shim of KinectSensorCollection.add_StatusChanged(EventHandler`1&lt;StatusChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.StatusChangedRemoveEventHandlerOfStatusChangedEventArgs">
+            <summary>Sets the shim of KinectSensorCollection.remove_StatusChanged(EventHandler`1&lt;StatusChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.UpdateActiveSensors">
+            <summary>Sets the shim of KinectSensorCollection.UpdateActiveSensors()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection._UpdateActiveSensorsb__dKinectSensor">
+            <summary>Sets the shim of KinectSensorCollection.&lt;UpdateActiveSensors&gt;b__d(KinectSensor r)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection._UpdateActiveSensorsb__eKinectSensor">
+            <summary>Sets the shim of KinectSensorCollection.&lt;UpdateActiveSensors&gt;b__e(KinectSensor r)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.AllInstances.Dispose">
+            <summary>Sets the shim of KinectSensorCollection.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.AllInstances.ItemGetString">
+            <summary>Sets the shim of KinectSensorCollection.get_Item(String instanceId)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.AllInstances.NotifyUserKinectsStatusChangedObject">
+            <summary>Sets the shim of KinectSensorCollection.NotifyUserKinectsStatusChanged(Object state)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.AllInstances.OnNuiStatusCallbackInt32StringStringIntPtr">
+            <summary>Sets the shim of KinectSensorCollection.OnNuiStatusCallback(Int32 status, String instanceName, String uniqueDeviceName, IntPtr pUserData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.AllInstances.RemakeSensorKinectSensorString">
+            <summary>Sets the shim of KinectSensorCollection.RemakeSensor(KinectSensor sensor, String name)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.AllInstances.StatusChangedAddEventHandlerOfStatusChangedEventArgs">
+            <summary>Sets the shim of KinectSensorCollection.add_StatusChanged(EventHandler`1&lt;StatusChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.AllInstances.StatusChangedRemoveEventHandlerOfStatusChangedEventArgs">
+            <summary>Sets the shim of KinectSensorCollection.remove_StatusChanged(EventHandler`1&lt;StatusChangedEventArgs&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimKinectSensorCollection.AllInstances.UpdateActiveSensors">
+            <summary>Sets the shim of KinectSensorCollection.UpdateActiveSensors()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSkeleton">
+            <summary>Shim type of Microsoft.Kinect.Skeleton</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeleton.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeleton.#ctor(Microsoft.Kinect.Skeleton)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeleton.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeleton.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.ClippedEdgesGet">
+            <summary>Sets the shim of Skeleton.get_ClippedEdges()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.ClippedEdgesSetFrameEdges">
+            <summary>Sets the shim of Skeleton.set_ClippedEdges(FrameEdges value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.Constructor">
+            <summary>Sets the shim of Skeleton.Skeleton()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.ConstructorSkeleton">
+            <summary>Sets the shim of Skeleton.Skeleton(Skeleton sourceData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.CopyFromSkeleton">
+            <summary>Sets the shim of Skeleton.CopyFrom(Skeleton sourceData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.JointsGet">
+            <summary>Sets the shim of Skeleton.get_Joints()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.JointsSetJointCollection">
+            <summary>Sets the shim of Skeleton.set_Joints(JointCollection value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.PositionGet">
+            <summary>Sets the shim of Skeleton.get_Position()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.PositionSetSkeletonPoint">
+            <summary>Sets the shim of Skeleton.set_Position(SkeletonPoint value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.StaticConstructor">
+            <summary>Sets the shim of Skeleton.Skeleton()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.TrackingIdGet">
+            <summary>Sets the shim of Skeleton.get_TrackingId()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.TrackingIdSetInt32">
+            <summary>Sets the shim of Skeleton.set_TrackingId(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.TrackingStateGet">
+            <summary>Sets the shim of Skeleton.get_TrackingState()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.TrackingStateSetSkeletonTrackingState">
+            <summary>Sets the shim of Skeleton.set_TrackingState(SkeletonTrackingState value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.ClippedEdgesGet">
+            <summary>Sets the shim of Skeleton.get_ClippedEdges()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.ClippedEdgesSetFrameEdges">
+            <summary>Sets the shim of Skeleton.set_ClippedEdges(FrameEdges value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.CopyFromSkeleton">
+            <summary>Sets the shim of Skeleton.CopyFrom(Skeleton sourceData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.JointsGet">
+            <summary>Sets the shim of Skeleton.get_Joints()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.JointsSetJointCollection">
+            <summary>Sets the shim of Skeleton.set_Joints(JointCollection value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.PositionGet">
+            <summary>Sets the shim of Skeleton.get_Position()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.PositionSetSkeletonPoint">
+            <summary>Sets the shim of Skeleton.set_Position(SkeletonPoint value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.TrackingIdGet">
+            <summary>Sets the shim of Skeleton.get_TrackingId()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.TrackingIdSetInt32">
+            <summary>Sets the shim of Skeleton.set_TrackingId(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.TrackingStateGet">
+            <summary>Sets the shim of Skeleton.get_TrackingState()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeleton.AllInstances.TrackingStateSetSkeletonTrackingState">
+            <summary>Sets the shim of Skeleton.set_TrackingState(SkeletonTrackingState value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSkeletonFrame">
+            <summary>Shim type of Microsoft.Kinect.SkeletonFrame</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonFrame.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonFrame.#ctor(Microsoft.Kinect.SkeletonFrame)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonFrame.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonFrame.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonFrame.Bind(System.IDisposable)">
+            <summary>Binds the members of the interface to the shim.</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.CopySkeletonDataToSkeletonArray">
+            <summary>Sets the shim of SkeletonFrame.CopySkeletonDataTo(Skeleton[] skeletonData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.CreateSkeletonStreamInt32Int64">
+            <summary>Sets the shim of SkeletonFrame.Create(SkeletonStream skeletonStream, Int32 frameNumber, Int64 timestamp)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.Dispose">
+            <summary>Sets the shim of SkeletonFrame.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.DisposeBoolean">
+            <summary>Sets the shim of SkeletonFrame.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.FloorClipPlaneGet">
+            <summary>Sets the shim of SkeletonFrame.get_FloorClipPlane()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.FloorClipPlaneSetTupleOfSingleSingleSingleSingle">
+            <summary>Sets the shim of SkeletonFrame.set_FloorClipPlane(Tuple`4&lt;Single,Single,Single,Single&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.FrameNumberGet">
+            <summary>Sets the shim of SkeletonFrame.get_FrameNumber()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.FrameNumberSetInt32">
+            <summary>Sets the shim of SkeletonFrame.set_FrameNumber(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.SkeletonArrayLengthGet">
+            <summary>Sets the shim of SkeletonFrame.get_SkeletonArrayLength()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.TimestampGet">
+            <summary>Sets the shim of SkeletonFrame.get_Timestamp()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.TimestampSetInt64">
+            <summary>Sets the shim of SkeletonFrame.set_Timestamp(Int64 value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances.CopySkeletonDataToSkeletonArray">
+            <summary>Sets the shim of SkeletonFrame.CopySkeletonDataTo(Skeleton[] skeletonData)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances.Dispose">
+            <summary>Sets the shim of SkeletonFrame.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances.DisposeBoolean">
+            <summary>Sets the shim of SkeletonFrame.Dispose(Boolean disposing)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances.FloorClipPlaneGet">
+            <summary>Sets the shim of SkeletonFrame.get_FloorClipPlane()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances.FloorClipPlaneSetTupleOfSingleSingleSingleSingle">
+            <summary>Sets the shim of SkeletonFrame.set_FloorClipPlane(Tuple`4&lt;Single,Single,Single,Single&gt; value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances.FrameNumberGet">
+            <summary>Sets the shim of SkeletonFrame.get_FrameNumber()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances.FrameNumberSetInt32">
+            <summary>Sets the shim of SkeletonFrame.set_FrameNumber(Int32 value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances.SkeletonArrayLengthGet">
+            <summary>Sets the shim of SkeletonFrame.get_SkeletonArrayLength()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances.TimestampGet">
+            <summary>Sets the shim of SkeletonFrame.get_Timestamp()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrame.AllInstances.TimestampSetInt64">
+            <summary>Sets the shim of SkeletonFrame.set_Timestamp(Int64 value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs">
+            <summary>Shim type of Microsoft.Kinect.SkeletonFrameReadyEventArgs</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.#ctor(Microsoft.Kinect.SkeletonFrameReadyEventArgs)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.ConstructorSkeletonStreamInt32Int64Boolean">
+            <summary>Sets the shim of SkeletonFrameReadyEventArgs.SkeletonFrameReadyEventArgs(SkeletonStream skeletonStream, Int32 frameNumber, Int64 timestamp, Boolean isInvalid)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.CreateInvalid">
+            <summary>Sets the shim of SkeletonFrameReadyEventArgs.CreateInvalid()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.CreateSkeletonStreamInt32Int64">
+            <summary>Sets the shim of SkeletonFrameReadyEventArgs.Create(SkeletonStream skeletonImageStream, Int32 frameNumber, Int64 timestamp)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.OpenSkeletonFrame">
+            <summary>Sets the shim of SkeletonFrameReadyEventArgs.OpenSkeletonFrame()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonFrameReadyEventArgs.AllInstances.OpenSkeletonFrame">
+            <summary>Sets the shim of SkeletonFrameReadyEventArgs.OpenSkeletonFrame()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSkeletonPoint">
+            <summary>Shim type of Microsoft.Kinect.SkeletonPoint</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonPoint.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonPoint.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonPoint.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonPoint.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonPoint.EqualityOpSkeletonPointSkeletonPoint">
+            <summary>Sets the shim of SkeletonPoint.op_Equality(SkeletonPoint skeletonPoint1, SkeletonPoint skeletonPoint2)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonPoint.InequalityOpSkeletonPointSkeletonPoint">
+            <summary>Sets the shim of SkeletonPoint.op_Inequality(SkeletonPoint skeletonPoint1, SkeletonPoint skeletonPoint2)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSkeletonPoint.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSkeletonStream">
+            <summary>Shim type of Microsoft.Kinect.SkeletonStream</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonStream.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonStream.#ctor(Microsoft.Kinect.SkeletonStream)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonStream.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSkeletonStream.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AppChoosesSkeletonsGet">
+            <summary>Sets the shim of SkeletonStream.get_AppChoosesSkeletons()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AppChoosesSkeletonsSetBoolean">
+            <summary>Sets the shim of SkeletonStream.set_AppChoosesSkeletons(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.ChooseSkeletons">
+            <summary>Sets the shim of SkeletonStream.ChooseSkeletons()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.ChooseSkeletonsInt32">
+            <summary>Sets the shim of SkeletonStream.ChooseSkeletons(Int32 trackingId1)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.ChooseSkeletonsInt32Int32">
+            <summary>Sets the shim of SkeletonStream.ChooseSkeletons(Int32 trackingId1, Int32 trackingId2)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.ConstructorKinectSensor">
+            <summary>Sets the shim of SkeletonStream.SkeletonStream(KinectSensor mainNui)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.Disable">
+            <summary>Sets the shim of SkeletonStream.Disable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.Dispose">
+            <summary>Sets the shim of SkeletonStream.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.Enable">
+            <summary>Sets the shim of SkeletonStream.Enable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.EnableTransformSmoothParameters">
+            <summary>Sets the shim of SkeletonStream.Enable(TransformSmoothParameters smoothParameters)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.FrameSkeletonArrayLengthGet">
+            <summary>Sets the shim of SkeletonStream.get_FrameSkeletonArrayLength()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.IsEnabledGet">
+            <summary>Sets the shim of SkeletonStream.get_IsEnabled()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.IsEnabledSetBoolean">
+            <summary>Sets the shim of SkeletonStream.set_IsEnabled(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.IsSmoothingEnabledGet">
+            <summary>Sets the shim of SkeletonStream.get_IsSmoothingEnabled()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.IsSmoothingEnabledSetBoolean">
+            <summary>Sets the shim of SkeletonStream.set_IsSmoothingEnabled(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.OpenNextFrameInt32">
+            <summary>Sets the shim of SkeletonStream.OpenNextFrame(Int32 millisecondsWait)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.SetEnabledStateBoolean">
+            <summary>Sets the shim of SkeletonStream.SetEnabledState(Boolean enable)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.SetSmoothingStateBooleanTransformSmoothParameters">
+            <summary>Sets the shim of SkeletonStream.SetSmoothingState(Boolean enable, TransformSmoothParameters smoothParameters)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.SmoothParametersGet">
+            <summary>Sets the shim of SkeletonStream.get_SmoothParameters()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.SmoothParametersSetTransformSmoothParameters">
+            <summary>Sets the shim of SkeletonStream.set_SmoothParameters(TransformSmoothParameters value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.Start">
+            <summary>Sets the shim of SkeletonStream.Start()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.StartTracking">
+            <summary>Sets the shim of SkeletonStream.StartTracking()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.Stop">
+            <summary>Sets the shim of SkeletonStream.Stop()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.StopTracking">
+            <summary>Sets the shim of SkeletonStream.StopTracking()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.TryGetNextFrameInternalInt32Int32OutInt64Out">
+            <summary>Sets the shim of SkeletonStream.TryGetNextFrameInternal(Int32 millisecondsWait, Int32&amp; frameNumber, Int64&amp; timestamp)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.AppChoosesSkeletonsGet">
+            <summary>Sets the shim of SkeletonStream.get_AppChoosesSkeletons()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.AppChoosesSkeletonsSetBoolean">
+            <summary>Sets the shim of SkeletonStream.set_AppChoosesSkeletons(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.ChooseSkeletons">
+            <summary>Sets the shim of SkeletonStream.ChooseSkeletons()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.ChooseSkeletonsInt32">
+            <summary>Sets the shim of SkeletonStream.ChooseSkeletons(Int32 trackingId1)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.ChooseSkeletonsInt32Int32">
+            <summary>Sets the shim of SkeletonStream.ChooseSkeletons(Int32 trackingId1, Int32 trackingId2)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.Disable">
+            <summary>Sets the shim of SkeletonStream.Disable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.Dispose">
+            <summary>Sets the shim of SkeletonStream.Dispose()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.Enable">
+            <summary>Sets the shim of SkeletonStream.Enable()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.EnableTransformSmoothParameters">
+            <summary>Sets the shim of SkeletonStream.Enable(TransformSmoothParameters smoothParameters)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.FrameSkeletonArrayLengthGet">
+            <summary>Sets the shim of SkeletonStream.get_FrameSkeletonArrayLength()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.IsEnabledGet">
+            <summary>Sets the shim of SkeletonStream.get_IsEnabled()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.IsEnabledSetBoolean">
+            <summary>Sets the shim of SkeletonStream.set_IsEnabled(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.IsSmoothingEnabledGet">
+            <summary>Sets the shim of SkeletonStream.get_IsSmoothingEnabled()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.IsSmoothingEnabledSetBoolean">
+            <summary>Sets the shim of SkeletonStream.set_IsSmoothingEnabled(Boolean value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.OpenNextFrameInt32">
+            <summary>Sets the shim of SkeletonStream.OpenNextFrame(Int32 millisecondsWait)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.SetEnabledStateBoolean">
+            <summary>Sets the shim of SkeletonStream.SetEnabledState(Boolean enable)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.SetSmoothingStateBooleanTransformSmoothParameters">
+            <summary>Sets the shim of SkeletonStream.SetSmoothingState(Boolean enable, TransformSmoothParameters smoothParameters)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.SmoothParametersGet">
+            <summary>Sets the shim of SkeletonStream.get_SmoothParameters()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.SmoothParametersSetTransformSmoothParameters">
+            <summary>Sets the shim of SkeletonStream.set_SmoothParameters(TransformSmoothParameters value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.Start">
+            <summary>Sets the shim of SkeletonStream.Start()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.StartTracking">
+            <summary>Sets the shim of SkeletonStream.StartTracking()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.Stop">
+            <summary>Sets the shim of SkeletonStream.Stop()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.StopTracking">
+            <summary>Sets the shim of SkeletonStream.StopTracking()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSkeletonStream.AllInstances.TryGetNextFrameInternalInt32Int32OutInt64Out">
+            <summary>Sets the shim of SkeletonStream.TryGetNextFrameInternal(Int32 millisecondsWait, Int32&amp; frameNumber, Int64&amp; timestamp)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs">
+            <summary>Shim type of Microsoft.Kinect.SoundSourceAngleChangedEventArgs</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.#ctor(Microsoft.Kinect.SoundSourceAngleChangedEventArgs)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.AngleGet">
+            <summary>Sets the shim of SoundSourceAngleChangedEventArgs.get_Angle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.AngleSetDouble">
+            <summary>Sets the shim of SoundSourceAngleChangedEventArgs.set_Angle(Double value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.ConfidenceLevelGet">
+            <summary>Sets the shim of SoundSourceAngleChangedEventArgs.get_ConfidenceLevel()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.ConfidenceLevelSetDouble">
+            <summary>Sets the shim of SoundSourceAngleChangedEventArgs.set_ConfidenceLevel(Double value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.Constructor">
+            <summary>Sets the shim of SoundSourceAngleChangedEventArgs.SoundSourceAngleChangedEventArgs()</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.AllInstances.AngleGet">
+            <summary>Sets the shim of SoundSourceAngleChangedEventArgs.get_Angle()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.AllInstances.AngleSetDouble">
+            <summary>Sets the shim of SoundSourceAngleChangedEventArgs.set_Angle(Double value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.AllInstances.ConfidenceLevelGet">
+            <summary>Sets the shim of SoundSourceAngleChangedEventArgs.get_ConfidenceLevel()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimSoundSourceAngleChangedEventArgs.AllInstances.ConfidenceLevelSetDouble">
+            <summary>Sets the shim of SoundSourceAngleChangedEventArgs.set_ConfidenceLevel(Double value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs">
+            <summary>Shim type of Microsoft.Kinect.StatusChangedEventArgs</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.#ctor(Microsoft.Kinect.StatusChangedEventArgs)">
+            <summary>Initializes a new shim for the given instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.Constructor">
+            <summary>Sets the shim of StatusChangedEventArgs.StatusChangedEventArgs()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.SensorGet">
+            <summary>Sets the shim of StatusChangedEventArgs.get_Sensor()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.SensorSetKinectSensor">
+            <summary>Sets the shim of StatusChangedEventArgs.set_Sensor(KinectSensor value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.StatusGet">
+            <summary>Sets the shim of StatusChangedEventArgs.get_Status()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.StatusSetKinectStatus">
+            <summary>Sets the shim of StatusChangedEventArgs.set_Status(KinectStatus value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.AllInstances.SensorGet">
+            <summary>Sets the shim of StatusChangedEventArgs.get_Sensor()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.AllInstances.SensorSetKinectSensor">
+            <summary>Sets the shim of StatusChangedEventArgs.set_Sensor(KinectSensor value)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.AllInstances.StatusGet">
+            <summary>Sets the shim of StatusChangedEventArgs.get_Status()</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimStatusChangedEventArgs.AllInstances.StatusSetKinectStatus">
+            <summary>Sets the shim of StatusChangedEventArgs.set_Status(KinectStatus value)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimTransformSmoothParameters">
+            <summary>Shim type of Microsoft.Kinect.TransformSmoothParameters</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimTransformSmoothParameters.#ctor">
+            <summary>Initializes a new shim instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimTransformSmoothParameters.BehaveAsCurrent">
+            <summary>Assigns the &apos;Current&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.ShimTransformSmoothParameters.BehaveAsNotImplemented">
+            <summary>Assigns the &apos;NotImplemented&apos; behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimTransformSmoothParameters.Behavior">
+            <summary>Assigns the behavior for all methods of the shimmed type</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimTransformSmoothParameters.EqualityOpTransformSmoothParametersTransformSmoothParameters">
+            <summary>Sets the shim of TransformSmoothParameters.op_Equality(TransformSmoothParameters smoothParameters1, TransformSmoothParameters smoothParameters2)</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.ShimTransformSmoothParameters.InequalityOpTransformSmoothParametersTransformSmoothParameters">
+            <summary>Sets the shim of TransformSmoothParameters.op_Inequality(TransformSmoothParameters smoothParameters1, TransformSmoothParameters smoothParameters2)</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.ShimTransformSmoothParameters.AllInstances">
+            <summary>Define shims for all instances members</summary>
+        </member>
+        <member name="T:Microsoft.Kinect.Fakes.StubSkeleton">
+            <summary>Stub type of Microsoft.Kinect.Skeleton</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.StubSkeleton.#ctor">
+            <summary>Initializes a new instance</summary>
+        </member>
+        <member name="M:Microsoft.Kinect.Fakes.StubSkeleton.InitializeStub">
+            <summary>Initializes a new instance of type StubSkeleton</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.StubSkeleton.CallBase">
+            <summary>Gets or sets a value that indicates if the base method should be called instead of the fallback behavior</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.StubSkeleton.InstanceBehavior">
+            <summary>Gets or sets the instance behavior.</summary>
+        </member>
+        <member name="P:Microsoft.Kinect.Fakes.StubSkeleton.InstanceObserver">
+            <summary>Gets or sets the instance observer.</summary>
+        </member>
+    </members>
+</doc>

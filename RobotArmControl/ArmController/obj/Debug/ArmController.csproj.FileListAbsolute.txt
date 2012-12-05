@@ -43,3 +43,18 @@ C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmContr
 C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\Debug\ArmController.pdb
 C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\Debug\Microsoft.Kinect.Toolkit.dll
 C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\Debug\Microsoft.Kinect.Toolkit.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\MainWindow.baml
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\MainWindow.g.cs
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\App.g.cs
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\ArmController_MarkupCompile.cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\ArmController.g.resources
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\ArmController.Properties.Resources.resources
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\ArmController.csproj.GenerateResource.Cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\Debug\ArmController.exe.config
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\Debug\ArmController.exe
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\Debug\ArmController.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\Debug\Microsoft.Kinect.Toolkit.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\ArmController.exe
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\ArmController.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\ArmController.csprojResolveAssemblyReference.cache

@@ -81,6 +81,15 @@ namespace ArmController.Integration
 
         #endregion Position Module Output
 
+        #region CyberGlove Nodes
+
+        public static readonly BusNode CLAW_OPEN_PERCENT = new BusNode(typeof(int));
+        public static readonly BusNode WRIST_PERCENT = new BusNode(typeof(int));
+        public static readonly BusNode ROBOT_ACTIVE = new BusNode(typeof(bool));
+        public static readonly BusNode ROBOT_RESET = new BusNode(typeof(object));
+
+        #endregion CyberGlove Nodes
+
         // TODO: Populate the nodes with appropriate values.
 
 

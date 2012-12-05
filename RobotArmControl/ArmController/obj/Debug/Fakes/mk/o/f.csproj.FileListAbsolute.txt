@@ -1,0 +1,7 @@
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\Fakes\mk\b\Microsoft.Kinect.Fakes.xml
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\Fakes\mk\b\Microsoft.Kinect.Fakes.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\Fakes\mk\b\Microsoft.Kinect.Fakes.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\Fakes\mk\b\Microsoft.QualityTools.Testing.Fakes.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\Fakes\mk\o\f.csprojResolveAssemblyReference.cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\Fakes\mk\o\Microsoft.Kinect.Fakes.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\Fakes\mk\o\Microsoft.Kinect.Fakes.pdb

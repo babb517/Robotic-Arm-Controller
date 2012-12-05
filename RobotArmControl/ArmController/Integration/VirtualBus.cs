@@ -14,7 +14,6 @@ using System.Windows.Threading;
 
 namespace ArmController.Integration
 {
-
     #region Virtual Bus
     /// <summary>
     /// The virtual bus implements a publish / subscribe architecture to
@@ -130,7 +129,15 @@ namespace ArmController.Integration
 
             try
             {
-                value = (T)(_nodes[node].Value);
+                object tmp = _nodes[node].Value;
+                if (tmp != null)
+                {
+                    value = (T)(tmp);
+                }
+                else
+                {
+                    value = default(T);
+                }
             }
             catch (InvalidCastException e)
             {
@@ -281,6 +288,7 @@ namespace ArmController.Integration
                     c(node, copy);
                 }
             }
+
         }
 
         /// <summary>

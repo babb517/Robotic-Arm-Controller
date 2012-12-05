@@ -29,6 +29,28 @@ namespace ArmController.Robot_Arm_Module
         /// </summary>
         private const long MIN_UPDATE_INTERVAL = 500;
 
+        /// <summary>
+        ///  Servo constants
+        /// </summary>
+        #region Servos
+        private const int SHOULDER_ROLL = 0;
+        private const int SHOULDER_PITCH = 1;
+        private const int ELBOW_JOINT = 2;
+        private const int WRIST_JOINT = 3;
+        private const int FINGERS = 4;
+        #endregion Servos
+
+        #region Input Extrema
+        private const int ELBOW_PITCH_MAX_DEG = 140;
+        private const int ELBOW_PITCH_MIN_DEG = 0;
+
+        private const int SHOULDER_PITCH_MAX_DEG = 60;
+        private const int SHOULDER_PITCH_MIN_DEG = -20;
+        #endregion Input Extrema
+
+
+
+
         #endregion Private Constants
 
         #region Private Members
@@ -68,11 +90,16 @@ namespace ArmController.Robot_Arm_Module
             _lastUpdateTime = 0;
 
             //Initialize the robot arm position
-            move(1, 1500);
-            move(2, 1500);
+            move(SHOULDER_PITCH, 1500);
+            move(ELBOW_JOINT, 700);
+            move(WRIST_JOINT, 1500);
 
             // Subscribe to the kinect data tick
             Bus.Subscribe(BusNode.POSITION_TICK, OnValuePublished);
+            Bus.Subscribe(BusNode.CLAW_OPEN_PERCENT, OnValuePublished);
+            Bus.Subscribe(BusNode.ROBOT_ACTIVE, OnValuePublished);
+            Bus.Subscribe(BusNode.WRIST_PERCENT, OnValuePublished);
+
        }
 
         /// <summary>
@@ -95,9 +122,16 @@ namespace ArmController.Robot_Arm_Module
         /// <param name="e"></param>
         private void sp_DataReceived(object sender, SerialDataReceivedEventArgs e)
         {
-            
-            string data = _serialPort.ReadLine();
-
+            /*
+            try
+            {
+                string data = _serialPort.ReadLine();
+            }
+            catch (TimeoutException)
+            {
+                // something is wrong....
+            }
+            */
             //this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] { data });
         }
 
@@ -118,64 +152,87 @@ namespace ArmController.Robot_Arm_Module
             Orientation arm = Bus.Get<Orientation>(BusNode.ORIENTATION_RIGHT_UPPER_ARM);
             Orientation forearm = Bus.Get<Orientation>(BusNode.ORIENTATION_RIGHT_LOWER_ARM);
             Orientation wrist = Bus.Get<Orientation>(BusNode.ORIENTATION_RIGHT_HAND);
+            int hand = Bus.Get<int>(BusNode.CLAW_OPEN_PERCENT);
+            bool armMoving = Bus.Get<bool>(BusNode.ROBOT_ACTIVE);
+
+            int wrist_hand = Bus.Get<int>(BusNode.WRIST_PERCENT);
+
 
             // we should now convert these orientations to the values expected by the servo controller.
 
-            
-
-            // WRIST:
-            if (wrist != null)
+            if (armMoving)
             {
-                //Debug.WriteLine("Wrist: " + (wrist.Roll * 180) / Math.PI + " / " + (wrist.Pitch * 180) / Math.PI + " / " + (wrist.Yaw * 180) / Math.PI );
 
-                // clip to +- 30 degrees
-                if (wrist.Yaw > 30 * RAD_PER_DEG) wrist.Yaw = (float)(30 * RAD_PER_DEG);
-                if (wrist.Yaw < -30 * RAD_PER_DEG) wrist.Yaw = (float)(-30 * RAD_PER_DEG);
 
+                //// WRIST:
+                //if (wrist != null)
+                //{
+                //    //Debug.WriteLine("Wrist: " + (wrist.Roll * 180) / Math.PI + " / " + (wrist.Pitch * 180) / Math.PI + " / " + (wrist.Yaw * 180) / Math.PI );
+
+                //    // clip to +- 30 degrees
+                //    if (wrist.Yaw > 30 * RAD_PER_DEG) wrist.Yaw = (float)(30 * RAD_PER_DEG);
+                //    if (wrist.Yaw < -30 * RAD_PER_DEG) wrist.Yaw = (float)(-30 * RAD_PER_DEG);
+
+                //    // scale to the valid range (1000 - 2000)
+                //    int wrist_pos = 1000 + (int)(((-wrist.Yaw + (30 * RAD_PER_DEG)) / (60 * RAD_PER_DEG)) * 1000);
+
+                //    // move the stuff!
+                //    // TODO: Do This correctly
+                //    move(WRIST_JOINT, wrist_pos);
+                //}
+
+
+
+
+
+                // TODO: All the other joints
+                if (forearm != null)
+                {
+                    //Debug.WriteLine("forearm: " + (forearm.Roll * 180) / Math.PI + " / " + (forearm.Pitch * 180) / Math.PI + " / " + (forearm.Yaw * 180) / Math.PI);
+                    if (forearm.Pitch > ELBOW_PITCH_MAX_DEG * RAD_PER_DEG) forearm.Pitch = (float)(ELBOW_PITCH_MAX_DEG * RAD_PER_DEG);
+                    if (forearm.Pitch < ELBOW_PITCH_MIN_DEG * RAD_PER_DEG) forearm.Pitch = (float)(ELBOW_PITCH_MIN_DEG * RAD_PER_DEG);
+
+                    // scale to the valid range (700 - 2000)
+                    int forearm_pos = 700 + (int)((
+                        (forearm.Pitch - ELBOW_PITCH_MIN_DEG * RAD_PER_DEG) 
+                            / ((ELBOW_PITCH_MAX_DEG - ELBOW_PITCH_MIN_DEG) * RAD_PER_DEG)
+                        ) * 1300);
+
+                    // move the stuff!
+                    // TODO: Do This correctly
+                    move(ELBOW_JOINT, forearm_pos);
+                }
+
+                if (arm != null)
+                {
+                    if (arm.Pitch > SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG) arm.Pitch = (float)(SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG);
+                    if (arm.Pitch < -SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG) arm.Pitch = (float)(-SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG);
+
+                    // scale to the valid range (1000 - 2000)
+                    int arm_pos = 1000 + (int)((
+                        (-arm.Pitch + (SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG)) / 
+                            ((SHOULDER_PITCH_MAX_DEG - SHOULDER_PITCH_MIN_DEG) * RAD_PER_DEG)
+                        ) * 1000);
+
+                    // move the stuff!
+                    // TODO: Do This correctly
+                    move(SHOULDER_PITCH, arm_pos);
+                }
+
+  
                 // scale to the valid range (1000 - 2000)
-                int wrist_pos = 1000 + (int)(((-wrist.Yaw + (30 * RAD_PER_DEG)) / (60 * RAD_PER_DEG)) * 1000);
+                int FINGER_DEGREE = 2000 + (-hand * 10);
 
                 // move the stuff!
                 // TODO: Do This correctly
-                move(3, wrist_pos);
+                move(FINGERS, FINGER_DEGREE);
+
+                int temp = 2500 + (-wrist_hand * 20);
+
+                move(WRIST_JOINT,temp);
+                
+
             }
-
-
-
-            // TODO: All the other joints
-            if (forearm != null)
-            {
-                //Debug.WriteLine("forearm: " + (forearm.Roll * 180) / Math.PI + " / " + (forearm.Pitch * 180) / Math.PI + " / " + (forearm.Yaw * 180) / Math.PI);
-                if (forearm.Pitch > 90 * RAD_PER_DEG) forearm.Pitch = (float)(90 * RAD_PER_DEG);
-                if (forearm.Pitch < 0 * RAD_PER_DEG) forearm.Pitch = (float)(0 * RAD_PER_DEG);
-
-                // scale to the valid range (1000 - 2000)
-                int forearm_pos = 1000 + (int)(((-forearm.Pitch + (120 * RAD_PER_DEG)) / (180 * RAD_PER_DEG)) * 1000);
-
-                // move the stuff!
-                // TODO: Do This correctly
-                move(2, forearm_pos);
-            }
-            
-            if (arm != null)
-            {
-                Debug.WriteLine("arm: " + (arm.Roll * 180) / Math.PI + " / " + (arm.Pitch * 180) / Math.PI + " / " + (arm.Yaw * 180) / Math.PI);
-                if (arm.Pitch > 40 * RAD_PER_DEG) arm.Pitch = (float)(40 * RAD_PER_DEG);
-                if (arm.Pitch < -80 * RAD_PER_DEG) arm.Pitch = (float)(-80 * RAD_PER_DEG);
-
-                // scale to the valid range (1000 - 2000)
-                int arm_pos = 1000 + (int)(((-arm.Pitch + (40 * RAD_PER_DEG)) / (80 * RAD_PER_DEG)) * 1000);
-
-                // move the stuff!
-                // TODO: Do This correctly
-                move(1, arm_pos);
-            }
-
-
-            
-
-
-
         }
 
         private void move(int servo, int pos)
@@ -201,7 +258,7 @@ namespace ArmController.Robot_Arm_Module
                 _serialPort.Write(tempcommand);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                Debug.WriteLine("Oh noes! something went wrong!");
             }
