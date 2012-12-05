@@ -34,7 +34,7 @@ namespace ArmController.CyberGloveLibrary
             // //Console.WriteLine("Hi");
 
             //Declare the serial port that the glove is using and open it.
-            sp = new SerialPort("COM1", 115200, Parity.None, 8, StopBits.One);
+            sp = new SerialPort("COM4", 115200, Parity.None, 8, StopBits.One);
             sp.Open();
 
             Bus.Publish(BusNode.ROBOT_ACTIVE, true);
@@ -73,7 +73,9 @@ namespace ArmController.CyberGloveLibrary
 
                 try
                 {
+                    Debug.WriteLine("Reading...");
                     msg = sp.ReadLine();
+                    Debug.WriteLine("Yay!");
                     ////Console.WriteLine(msg);
 
                     /* Sensor 5 - Index MPJ - byte 4 in manual - clamp control
@@ -169,7 +171,8 @@ namespace ArmController.CyberGloveLibrary
                         //if (moving == true)
                         //{
                             //Console.WriteLine("The claw is open " + percent + " percent");
-                            //Debug.WriteLine("The index finger is at " + (100 - percent));
+                            Debug.WriteLine("The index finger is at " + (100 - (int)index_percent));
+                            Debug.WriteLine("The wrist is at " + (int)wrist_percent);
                             Bus.Publish(BusNode.CLAW_OPEN_PERCENT, 100 - (int)index_percent);
                             Bus.Publish(BusNode.WRIST_PERCENT, (int)wrist_percent);
                         //}

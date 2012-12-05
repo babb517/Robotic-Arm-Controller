@@ -45,7 +45,8 @@ namespace ArmController.Robot_Arm_Module
         private const int ELBOW_PITCH_MIN_DEG = 0;
 
         private const int SHOULDER_PITCH_MAX_DEG = 60;
-        private const int SHOULDER_PITCH_MIN_DEG = -20;
+        private const int SHOULDER_PITCH_MIN_DEG = -30;
+        private const int SHOULDER_PITCH_MIN_DEG_PHYSICAL = -40;        // The intended minimum shoulder pitch, corresponds to human physical limits.
         #endregion Input Extrema
 
 
@@ -94,11 +95,11 @@ namespace ArmController.Robot_Arm_Module
             move(ELBOW_JOINT, 700);
             move(WRIST_JOINT, 1500);
 
-            // Subscribe to the kinect data tick
-            Bus.Subscribe(BusNode.POSITION_TICK, OnValuePublished);
-            Bus.Subscribe(BusNode.CLAW_OPEN_PERCENT, OnValuePublished);
-            Bus.Subscribe(BusNode.ROBOT_ACTIVE, OnValuePublished);
-            Bus.Subscribe(BusNode.WRIST_PERCENT, OnValuePublished);
+          //  // Subscribe to the kinect data tick
+          //  Bus.Subscribe(BusNode.POSITION_TICK, OnValuePublished);
+          Bus.Subscribe(BusNode.CLAW_OPEN_PERCENT, OnValuePublished);
+          Bus.Subscribe(BusNode.ROBOT_ACTIVE, OnValuePublished);
+          Bus.Subscribe(BusNode.WRIST_PERCENT, OnValuePublished);
 
        }
 
@@ -160,6 +161,7 @@ namespace ArmController.Robot_Arm_Module
 
             // we should now convert these orientations to the values expected by the servo controller.
 
+            // TODO: Uncomment
             if (armMoving)
             {
 
@@ -206,13 +208,28 @@ namespace ArmController.Robot_Arm_Module
                 if (arm != null)
                 {
                     if (arm.Pitch > SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG) arm.Pitch = (float)(SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG);
-                    if (arm.Pitch < -SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG) arm.Pitch = (float)(-SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG);
-
+                    if (arm.Pitch < SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG) arm.Pitch = (float)(SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG);
+                    
+                    int arm_pos;
+                    
                     // scale to the valid range (1000 - 2000)
-                    int arm_pos = 1000 + (int)((
-                        (-arm.Pitch + (SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG)) / 
-                            ((SHOULDER_PITCH_MAX_DEG - SHOULDER_PITCH_MIN_DEG) * RAD_PER_DEG)
-                        ) * 1000);
+                    if (arm.Pitch > 0)
+                    {
+                        arm_pos = 1500 - (int)((
+                            arm.Pitch /
+                                (SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG)
+                            ) * 500);
+                    }
+                    else
+                    {
+                        arm_pos = 1500 + (int)((
+                            ( Math.Abs(arm.Pitch) /
+                                (Math.Abs(SHOULDER_PITCH_MIN_DEG) * RAD_PER_DEG)
+                            ) * (((float)Math.Abs(SHOULDER_PITCH_MIN_DEG)) / 90)
+                            ) * 500);
+                    }
+
+                    //Debug.WriteLine("Arm pos: " + arm_pos);
 
                     // move the stuff!
                     // TODO: Do This correctly
@@ -227,7 +244,7 @@ namespace ArmController.Robot_Arm_Module
                 // TODO: Do This correctly
                 move(FINGERS, FINGER_DEGREE);
 
-                int temp = 2500 + (-wrist_hand * 20);
+                int temp = 2000 + (-wrist_hand * 20);
 
                 move(WRIST_JOINT,temp);
                 
