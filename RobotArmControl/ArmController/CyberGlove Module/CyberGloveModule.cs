@@ -34,7 +34,7 @@ namespace ArmController.CyberGloveLibrary
             // //Console.WriteLine("Hi");
 
             //Declare the serial port that the glove is using and open it.
-            sp = new SerialPort("COM1", 115200, Parity.None, 8, StopBits.One);
+            sp = new SerialPort("COM5", 115200, Parity.None, 8, StopBits.One);
             sp.Open();
 
             Bus.Publish(BusNode.ROBOT_ACTIVE, true);

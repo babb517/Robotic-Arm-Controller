@@ -27,6 +27,7 @@ namespace ArmController.Robot_Arm_Module
         int currentForearmPosition = 0;
         int currentWristPosition = 0;
         int currentHandPosition = 0;
+        int currentShoulderPosition = 0;
 
         /// <summary>
         /// Minimum movement amount
@@ -47,7 +48,7 @@ namespace ArmController.Robot_Arm_Module
         ///  Servo constants
         /// </summary>
         #region Servos
-        private const int SHOULDER_ROLL = 0;
+        private const int SHOULDER_YAW = 0;
         private const int SHOULDER_PITCH = 1;
         private const int ELBOW_JOINT = 2;
         private const int WRIST_JOINT = 3;
@@ -61,6 +62,9 @@ namespace ArmController.Robot_Arm_Module
         private const int SHOULDER_PITCH_MAX_DEG = 60;
         private const int SHOULDER_PITCH_MIN_DEG = -30;
         private const int SHOULDER_PITCH_MIN_DEG_PHYSICAL = -40;        // The intended minimum shoulder pitch, corresponds to human physical limits.
+
+        private const int SHOULDER_YAW_MAX_DEG = 45;
+        private const int SHOULDER_YAW_MIN_DEG = -45;
         #endregion Input Extrema
 
 
@@ -106,9 +110,9 @@ namespace ArmController.Robot_Arm_Module
 
             //Initialize the robot arm position
             //move(SHOULDER_PITCH, 1500);
-            move(ELBOW_JOINT, 700);
-            move(WRIST_JOINT, 1500);
-            move(FINGERS, 1500);
+            move(ELBOW_JOINT, 700,150);
+            move(WRIST_JOINT, 1500,150);
+            move(FINGERS, 1500,150);
 
           //  // Subscribe to the kinect data tick
           Bus.Subscribe(BusNode.POSITION_TICK, OnValuePublished);
@@ -163,11 +167,12 @@ namespace ArmController.Robot_Arm_Module
             int finalForearmPosition = 0;
             int finalWristPosition = 0;
             int finalHandPosition = 0;
+            int finalShoulderPosition = 0;
 
             // Let's limit the rate at which we send commands
             // TODO: Do this right!
-            if (System.DateTime.Now.Ticks < _lastUpdateTime + MIN_UPDATE_INTERVAL * System.TimeSpan.TicksPerMillisecond) return;
-            _lastUpdateTime = System.DateTime.Now.Millisecond;
+            //if (System.DateTime.Now.Ticks < _lastUpdateTime + MIN_UPDATE_INTERVAL * System.TimeSpan.TicksPerMillisecond) return;
+            //_lastUpdateTime = System.DateTime.Now.Millisecond;
 
             // What we want to do here is update our 'goal' position based on the data we can read from the virtual bus.
             // Since we've subscribed to the POSITION_TICK, the 'value' parameter has no meaning, we should get the value directly from the bus.
@@ -185,21 +190,20 @@ namespace ArmController.Robot_Arm_Module
             if (armMoving)
             {
 
-                if (true)
-                //if (node == BusNode.POSITION_TICK)
+                if (node == BusNode.POSITION_TICK)
                 {
                     // TODO: All the other joints
                     if (forearm != null)
                     {
 
                         //Debug.WriteLine("forearm: " + (forearm.Roll * 180) / Math.PI + " / " + (forearm.Pitch * 180) / Math.PI + " / " + (forearm.Yaw * 180) / Math.PI);
-                        if (forearm.Pitch > ELBOW_PITCH_MAX_DEG * RAD_PER_DEG) forearm.Pitch = (float)(ELBOW_PITCH_MAX_DEG * RAD_PER_DEG);
-                        if (forearm.Pitch < ELBOW_PITCH_MIN_DEG * RAD_PER_DEG) forearm.Pitch = (float)(ELBOW_PITCH_MIN_DEG * RAD_PER_DEG);
+                        if (forearm.Pitch > SHOULDER_YAW_MAX_DEG * RAD_PER_DEG) forearm.Pitch = (float)(SHOULDER_YAW_MAX_DEG * RAD_PER_DEG);
+                        if (forearm.Pitch < SHOULDER_YAW_MIN_DEG * RAD_PER_DEG) forearm.Pitch = (float)(SHOULDER_YAW_MIN_DEG * RAD_PER_DEG);
 
                         // scale to the valid range (1500 - 2200)
                         finalForearmPosition = 1500 + (int)((
-                            (forearm.Pitch - ELBOW_PITCH_MIN_DEG * RAD_PER_DEG)
-                                / ((ELBOW_PITCH_MAX_DEG - ELBOW_PITCH_MIN_DEG) * RAD_PER_DEG)
+                            (forearm.Pitch - SHOULDER_YAW_MIN_DEG * RAD_PER_DEG)
+                                / ((SHOULDER_YAW_MAX_DEG - SHOULDER_YAW_MIN_DEG) * RAD_PER_DEG)
                             ) * 700);
 
                         // move the stuff!
@@ -207,9 +211,41 @@ namespace ArmController.Robot_Arm_Module
                         if (Math.Abs(finalForearmPosition - currentForearmPosition) >= positionDeltaThreshold)
                         {
                             currentForearmPosition = finalForearmPosition;
-                            move(ELBOW_JOINT, currentForearmPosition);
+                            move(ELBOW_JOINT, currentForearmPosition,300);
                         }
                         
+                    }
+
+                    if (arm != null)
+                    {
+                        if (arm.Yaw > SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG) arm.Yaw = (float)(SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG);
+                        if (arm.Yaw < SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG) arm.Yaw = (float)(SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG);
+
+                        // scale to the valid range (800 - 2200)
+                        if (arm.Pitch > 0)
+                        {
+                            finalArmPosition = 1500 - (int)((
+                                (arm.Yaw /
+                                    (SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG)
+                                )
+                                ) * 700);
+                        }
+                        else
+                        {
+                            finalArmPosition = 1500 + (int)((
+                                (Math.Abs(arm.Yaw) /
+                                    (Math.Abs(SHOULDER_PITCH_MIN_DEG) * RAD_PER_DEG)
+                                )
+                                ) * 700);
+                        }
+
+                        // move the stuff!
+                        // TODO: Do This correctly
+                        if (Math.Abs(finalArmPosition - currentForearmPosition) >= positionDeltaThreshold)
+                        {
+                            currentArmPosition = finalArmPosition;
+                            move(SHOULDER_PITCH, currentArmPosition,300);
+                        }
                     }
 
                     if (arm != null)
@@ -220,33 +256,32 @@ namespace ArmController.Robot_Arm_Module
                         // scale to the valid range (800 - 2200)
                         if (arm.Pitch > 0)
                         {
-                            finalArmPosition = 1500 - (int)((
+                            finalShoulderPosition = 1500 - (int)((
                                 (arm.Pitch /
                                     (SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG)
-                                ) * (((float)Math.Abs(SHOULDER_PITCH_MAX_DEG)) / 90)
+                                ) * (90 / ((float)Math.Abs(SHOULDER_PITCH_MIN_DEG_PHYSICAL)))
                                 ) * 700);
                         }
                         else
                         {
-                            finalArmPosition = 1500 + (int)((
+                            finalShoulderPosition = 1500 + (int)((
                                 (Math.Abs(arm.Pitch) /
-                                    (Math.Abs(SHOULDER_PITCH_MIN_DEG) * RAD_PER_DEG)
-                                ) * (((float)Math.Abs(SHOULDER_PITCH_MIN_DEG)) / 90)
+                                    (Math.Abs(SHOULDER_PITCH_MAX_DEG) * RAD_PER_DEG)
+                                ) * (90 / ((float)Math.Abs(SHOULDER_PITCH_MIN_DEG_PHYSICAL)))
                                 ) * 700);
                         }
 
                         // move the stuff!
                         // TODO: Do This correctly
-                        if (Math.Abs(finalArmPosition - currentForearmPosition) >= positionDeltaThreshold)
+                        if (Math.Abs(finalShoulderPosition - currentShoulderPosition) >= positionDeltaThreshold)
                         {
-                            currentArmPosition = finalArmPosition;
-                            //move(SHOULDER_PITCH, currentArmPosition);
+                            currentShoulderPosition = finalShoulderPosition;
+                            move(SHOULDER_YAW, finalShoulderPosition, 300);
                         }
                     }
                 }
 
-                if (true)
-                // if (node == BusNode.CLAW_OPEN_PERCENT)
+                 if (node == BusNode.CLAW_OPEN_PERCENT)
                 {
                     // scale to the valid range (1000 - 2000)
                     finalHandPosition = 1500 + ((-hand + 50) * 10);
@@ -256,19 +291,18 @@ namespace ArmController.Robot_Arm_Module
                     if (Math.Abs(finalHandPosition - currentHandPosition) >= positionDeltaThreshold)
                     {
                         currentHandPosition = finalHandPosition;
-                        move(FINGERS, currentHandPosition);
+                        move(FINGERS, currentHandPosition,300);
                     }
                 }
 
-                if (true)
-                // if (node == BusNode.WRIST_PERCENT)
+                 if (node == BusNode.WRIST_PERCENT)
                 {
                     finalWristPosition = 1380 + (int)((-wrist_hand + 50) * 12.4f);
 
                     if (Math.Abs(finalWristPosition - currentWristPosition) >= positionDeltaThreshold)
                     {
                         currentWristPosition = finalWristPosition;
-                        move(WRIST_JOINT, currentWristPosition);
+                        move(WRIST_JOINT, currentWristPosition,300);
                     }
                 }
                 
@@ -276,7 +310,7 @@ namespace ArmController.Robot_Arm_Module
             }
         }
 
-        private void move(int servo, int pos)
+        private void move(int servo, int pos, int speed)
         {
             if (pos < 800 || pos > 2200)
             {
@@ -284,8 +318,6 @@ namespace ArmController.Robot_Arm_Module
                 pos = (pos < 800) ? 800 : 2200;
             }
 
-            // TODO: Don't hardcode this
-            int speed = 400;
             //Debug.WriteLine("Moving servo " + servo + " to position " + pos);
 
             string command = "#" + servo + "P" + pos + "S" + speed + "\r\n";

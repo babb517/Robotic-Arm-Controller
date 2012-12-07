@@ -4,3 +4,9 @@ C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmContr
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ServoTester\obj\Debug\ServoTester.csprojResolveAssemblyReference.cache
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ServoTester\obj\Debug\ServoTester.exe
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ServoTester\obj\Debug\ServoTester.pdb
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ServoTester\bin\Debug\ServoTester.exe.config
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ServoTester\bin\Debug\ServoTester.exe
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ServoTester\bin\Debug\ServoTester.pdb
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ServoTester\obj\Debug\ServoTester.csprojResolveAssemblyReference.cache
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ServoTester\obj\Debug\ServoTester.exe
+C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ServoTester\obj\Debug\ServoTester.pdb

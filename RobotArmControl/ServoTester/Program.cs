@@ -15,11 +15,11 @@ namespace ServoTester
 
         static void Main(string[] args)
         {
-            sp = new SerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
+            sp = new SerialPort("COM5", 115200, Parity.None, 8, StopBits.One);
             sp.Open();
 
-            int servo = 2;
-            int pos = 1505;
+            int servo = 1;
+            int pos = 1500;
             int speed = 500;
 
             char key;
