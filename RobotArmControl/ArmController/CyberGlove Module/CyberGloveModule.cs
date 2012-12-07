@@ -25,9 +25,9 @@ namespace ArmController.CyberGloveLibrary
         //    "Thumb abduction"
         //};
 
-        Thread gloveThread;
-        bool running;
-        SerialPort sp;
+        Thread gloveThread;         // primary thread, started in OnInitialize() and joined in OnFinalize()
+        bool running;               // flag set by OnFinalize() to let thread know to gracefully finish
+        SerialPort sp;              // serial port used to communicate with the CyberGlove
 
         protected override void OnInitialize()
         {
