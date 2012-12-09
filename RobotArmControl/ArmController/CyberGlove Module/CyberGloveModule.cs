@@ -34,10 +34,10 @@ namespace ArmController.CyberGloveLibrary
             // //Console.WriteLine("Hi");
 
             //Declare the serial port that the glove is using and open it.
-            sp = new SerialPort("COM5", 115200, Parity.None, 8, StopBits.One);
+            sp = new SerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
             sp.Open();
 
-            Bus.Publish(BusNode.ROBOT_ACTIVE, true);
+            Bus.Publish(BusNode.ROBOT_ACTIVE, false);
 
             gloveThread = new Thread(new ThreadStart(readGlove));
             gloveThread.Start();
@@ -54,7 +54,7 @@ namespace ArmController.CyberGloveLibrary
         protected void readGlove()
         {
             string msg = "";
-            bool moving = true;
+            bool moving = false;
             bool movingGesture = false;
             bool pinkyGesture = false;
 
@@ -177,8 +177,9 @@ namespace ArmController.CyberGloveLibrary
                         //if (moving == true)
                         //{
                             //Console.WriteLine("The claw is open " + percent + " percent");
-                            Debug.WriteLine("The index finger is at " + (100 - (int)index_percent));
-                            Debug.WriteLine("Raw wrist: " + wrist + ", percent: " + (int)wrist_percent);
+                            //Debug.WriteLine("The index finger is at " + (100 - (int)index_percent));
+                            //Debug.WriteLine("Raw wrist: " + wrist + ", percent: " + (int)wrist_percent);
+                            Debug.WriteLine("Moving" + movingGesture);
                             Bus.Publish(BusNode.CLAW_OPEN_PERCENT, 100 - (int)index_percent);
                             Bus.Publish(BusNode.WRIST_PERCENT, (int)wrist_percent);
                         //}
