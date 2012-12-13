@@ -29,12 +29,15 @@ namespace ArmController.CyberGloveLibrary
         bool running;               // flag set by OnFinalize() to let thread know to gracefully finish
         SerialPort sp;              // serial port used to communicate with the CyberGlove
 
+        /// <summary>
+        /// Open CyberGlove serial port and start data collection thread.
+        /// </summary>
         protected override void OnInitialize()
         {
             // //Console.WriteLine("Hi");
 
             //Declare the serial port that the glove is using and open it.
-            sp = new SerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
+            sp = new SerialPort("COM1", 115200, Parity.None, 8, StopBits.One);
             sp.Open();
 
             Bus.Publish(BusNode.ROBOT_ACTIVE, false);
@@ -44,6 +47,9 @@ namespace ArmController.CyberGloveLibrary
 
         } // end OnInitialize()
 
+        /// <summary>
+        /// Stop streaming CyberGlove and close the data collection thread.
+        /// </summary>
         protected override void OnFinalize()
         {
             running = false;
@@ -51,6 +57,9 @@ namespace ArmController.CyberGloveLibrary
             gloveThread.Join();
         }
 
+        /// <summary>
+        /// Method to endlessly stream data from a CyberGlove.  Should be threaded.
+        /// </summary>
         protected void readGlove()
         {
             string msg = "";
@@ -69,14 +78,14 @@ namespace ArmController.CyberGloveLibrary
                 //This is sent to the glove to begin receiving commands.
 
                 //sp.Write("G");  // tell glove to start streaming
-                sp.Write("g");
+                sp.Write("g");  // request a single sample
 
                 try
                 {
                     Debug.WriteLine("Reading...");
                     msg = sp.ReadLine();
                     Debug.WriteLine("Yay!");
-                    ////Console.WriteLine(msg);
+                    //Console.WriteLine(msg);
 
                     /* Sensor 5 - Index MPJ - byte 4 in manual - clamp control
                      *  125 (open) to 180 (closed) (craig)

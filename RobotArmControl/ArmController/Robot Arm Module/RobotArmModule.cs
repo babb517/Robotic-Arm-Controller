@@ -98,7 +98,7 @@ namespace ArmController.Robot_Arm_Module
         /**********************************************************************/
 
         protected override void OnInitialize() {
-            _serialPort = new SerialPort("COM5", 115200, Parity.None, 8, StopBits.One);
+            _serialPort = new SerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
 
             _serialPort.Handshake = Handshake.None;
             _serialPort.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
