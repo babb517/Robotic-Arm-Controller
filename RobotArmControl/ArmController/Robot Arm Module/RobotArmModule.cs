@@ -6,69 +6,133 @@ using System.Threading.Tasks;
 using System.IO.Ports;
 using System.Threading;
 using System.Diagnostics;
-
 using ArmController.Integration;
 using ArmController.Kinect_Module;
 
 namespace ArmController.Robot_Arm_Module
 {
+    /// <summary>
+    /// This class contains the logic used to control the robot arm with the use of data which is provided by
+    /// the CyberGlove Module and the Kinect Module.
+    /// </summary>
     class RobotArmModule : ArmController.Integration.Module
     {
         #region Private Constants
         /**********************************************************************/
-        /* Private Members */
+        /* Private Constants */
         /**********************************************************************/
 
+        #region Servo Positions
+
         /// <summary>
-        /// Current positions
+        /// The current position of the shoulder servo.
         /// </summary>
-        int currentBasePosition = 0;
-        int currentArmPosition = 0;
-        int currentForearmPosition = 0;
-        int currentWristPosition = 0;
-        int currentHandPosition = 0;
         int currentShoulderPosition = 0;
 
         /// <summary>
-        /// Minimum movement amount
+        /// The current position of the arm servo.
+        /// </summary>
+        int currentArmPosition = 0;
+
+        /// <summary>
+        /// The current position of the forearm servo.
+        /// </summary>
+        int currentForearmPosition = 0;
+
+        /// <summary>
+        /// The current position of the wrist servo.
+        /// </summary>
+        int currentWristPosition = 0;
+
+        /// <summary>
+        /// The current position of the hand servo.
+        /// </summary>
+        int currentHandPosition = 0;
+
+        #endregion
+
+        /// <summary>
+        /// Minimum movement amount that the robot arm can move a servo.
         /// </summary>
         private const int positionDeltaThreshold = 0;
 
         /// <summary>
-        /// Radians per degree...
+        /// Radians per degree.
         /// </summary>
         private const double RAD_PER_DEG = 0.0174532925;
 
         /// <summary>
-        /// milliseconds to wait between command updates.
+        /// Milliseconds to wait between command updates.
         /// </summary>
         private const long MIN_UPDATE_INTERVAL = 100;
 
+        #region Servo Channel Numbers
+
         /// <summary>
-        ///  Servo constants
+        ///  Base servo channel number on the robot arm.
         /// </summary>
-        #region Servos
         private const int SHOULDER_YAW = 0;
+
+        /// <summary>
+        /// Arm servo channel number on the robot arm.
+        /// </summary>
         private const int SHOULDER_PITCH = 1;
+
+        /// <summary>
+        /// Forearm servo channel number on the robot arm.
+        /// </summary>
         private const int ELBOW_JOINT = 2;
+
+        /// <summary>
+        /// Wrist servo channel number on the robot arm.
+        /// </summary>
         private const int WRIST_JOINT = 3;
+
+        /// <summary>
+        /// Hand servo channel number on the robot arm.
+        /// </summary>
         private const int FINGERS = 4;
+
         #endregion Servos
 
         #region Input Extrema
+
+        /// <summary>
+        /// The maximum amount of degrees that the forearm servo can move.
+        /// </summary>
         private const int ELBOW_PITCH_MAX_DEG = 140;
+
+        /// <summary>
+        /// The minimum amount of degrees that the forearm servo can move.
+        /// </summary>
         private const int ELBOW_PITCH_MIN_DEG = 0;
 
+        /// <summary>
+        /// The maximum amount of degrees that the arm servo can move.
+        /// </summary>
         private const int SHOULDER_PITCH_MAX_DEG = 60;
+
+        /// <summary>
+        /// The minimum amount of degrees that the arm servo can move.
+        /// </summary>
         private const int SHOULDER_PITCH_MIN_DEG = -30;
-        private const int SHOULDER_PITCH_MIN_DEG_PHYSICAL = -40;        // The intended minimum shoulder pitch, corresponds to human physical limits.
 
+        /// <summary>
+        /// The intended minimum shoulder pitch which corresponds to human physical limits.
+        /// </summary>
+        private const int SHOULDER_PITCH_MIN_DEG_PHYSICAL = -40;
+
+        /// <summary>
+        /// The maximum amount of degrees that the shoulder servo can move.
+        /// </summary>
         private const int SHOULDER_YAW_MAX_DEG = 45;
+
+        /// <summary>
+        /// The minimum amount of degrees that the shoulder servo can move.
+        /// </summary>
         private const int SHOULDER_YAW_MIN_DEG = 0;
+
         #endregion Input Extrema
-
-
-
 
         #endregion Private Constants
 
@@ -77,8 +141,14 @@ namespace ArmController.Robot_Arm_Module
         /* Private Members */
         /**********************************************************************/
 
+        /// <summary>
+        /// The serial port used to send commands to the robot arm.
+        /// </summary>
         SerialPort _serialPort;
 
+        /// <summary>
+        /// The last time that a command was sent to the robot arm.
+        /// </summary>
         long _lastUpdateTime;
 
         #endregion Private Members
@@ -92,44 +162,49 @@ namespace ArmController.Robot_Arm_Module
         #endregion Constructors
 
         #region Event Handling
-
         /**********************************************************************/
         /* Event Handling */
         /**********************************************************************/
 
+        /// <summary>
+        /// Initialization function that is called when the thread is created. Opens the serial port used to 
+        /// communicate with the robot arm, sets the initial servo positions, and subscribes to the appropriate 
+        /// data nodes on the Virtual Bus.
+        /// </summary>
         protected override void OnInitialize() {
+            //Open the serial port to communicate with the robot arm.
             _serialPort = new SerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
-
             _serialPort.Handshake = Handshake.None;
             _serialPort.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
             _serialPort.ReadTimeout = 500;
             _serialPort.WriteTimeout = 500;
             _serialPort.Open();
-
             _lastUpdateTime = 0;
 
-            //Initialize the robot arm position
+            //Initialize the robot arm position.
             move(SHOULDER_PITCH, 1500,100);
             move(SHOULDER_YAW, 1500, 100);
             move(ELBOW_JOINT, 1500,100);
             move(WRIST_JOINT, 1500, 100);
             move(FINGERS, 1500, 100);
+            
+            //Subscribe to the nodes published by the Kinect Module.
+            Bus.Subscribe(BusNode.POSITION_TICK, OnValuePublished);
 
-          //  // Subscribe to the kinect data tick
-          Bus.Subscribe(BusNode.POSITION_TICK, OnValuePublished);
-          Bus.Subscribe(BusNode.CLAW_OPEN_PERCENT, OnValuePublished);
-          Bus.Subscribe(BusNode.ROBOT_ACTIVE, OnValuePublished);
-          Bus.Subscribe(BusNode.WRIST_PERCENT, OnValuePublished);
+            //Subscribe to the nodes published by the CyberGlove Module.
+            Bus.Subscribe(BusNode.CLAW_OPEN_PERCENT, OnValuePublished);
+            Bus.Subscribe(BusNode.ROBOT_ACTIVE, OnValuePublished);
+            Bus.Subscribe(BusNode.WRIST_PERCENT, OnValuePublished);
 
        }
 
         /// <summary>
         /// An event handling method called when the controller has requested that the module finalize its state.
+        /// Closes the serial port that is used to communicate with the robot arm.
         /// </summary>
         protected override void OnFinalize() { _serialPort.Close(); }
 
         #endregion EventHandling
-
 
         #region Private Methods
         /**********************************************************************/
@@ -163,7 +238,6 @@ namespace ArmController.Robot_Arm_Module
         /// <param name="value"></param>
         private void OnValuePublished(BusNode node, object value)
         {
-            int finalBasePosition = 0;
             int finalArmPosition = 0;
             int finalForearmPosition = 0;
             int finalWristPosition = 0;
@@ -185,18 +259,15 @@ namespace ArmController.Robot_Arm_Module
             bool armMoving = Bus.Get<bool>(BusNode.ROBOT_ACTIVE);
             int wrist_hand = Bus.Get<int>(BusNode.WRIST_PERCENT);
 
-
             // we should now convert these orientations to the values expected by the servo controller.
 
             if (armMoving)
             {
-
                 if (node == BusNode.POSITION_TICK)
                 {
                     // TODO: All the other joints
                     if (forearm != null)
                     {
-
                         //Debug.WriteLine("forearm: " + (forearm.Roll * 180) / Math.PI + " / " + (forearm.Pitch * 180) / Math.PI + " / " + (forearm.Yaw * 180) / Math.PI);
                         if (forearm.Pitch > ELBOW_PITCH_MAX_DEG * RAD_PER_DEG) forearm.Pitch = (float)(ELBOW_PITCH_MAX_DEG * RAD_PER_DEG);
                         if (forearm.Pitch < ELBOW_PITCH_MIN_DEG * RAD_PER_DEG) forearm.Pitch = (float)(ELBOW_PITCH_MIN_DEG * RAD_PER_DEG);
@@ -215,7 +286,6 @@ namespace ArmController.Robot_Arm_Module
                             move(ELBOW_JOINT, currentForearmPosition,200);
                             Debug.WriteLine("Got " + currentForearmPosition);
                         }
-                        
                     }
 
                     if (arm != null)
@@ -232,6 +302,7 @@ namespace ArmController.Robot_Arm_Module
                                 )
                                 ) * 700);
                         }
+
                         else
                         {
                             finalArmPosition = 1500 + (int)((
@@ -312,6 +383,12 @@ namespace ArmController.Robot_Arm_Module
             }
         }
 
+        /// <summary>
+        /// This method is used to move a servo to a new position at a desired speed.
+        /// </summary>
+        /// <param name="servo"></param>
+        /// <param name="pos"></param>
+        /// <param name="speed"></param>
         private void move(int servo, int pos, int speed)
         {
             if (pos < 800 || pos > 2200)
@@ -326,7 +403,10 @@ namespace ArmController.Robot_Arm_Module
             send(command);
         }
 
-
+        /// <summary>
+        /// This helper method sends a command to the robot arm through a serial port.
+        /// </summary>
+        /// <param name="command"></param>
         private void send(string command)
         {
             string tempcommand = command + "\r\n";
@@ -346,14 +426,6 @@ namespace ArmController.Robot_Arm_Module
         }
 
         #endregion Private Methods
-
-
-
-
-
-
-
-
 
     }
 }
