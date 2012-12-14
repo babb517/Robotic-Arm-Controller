@@ -1,0 +1,73 @@
+.TH "ArmController.CyberGloveLibrary.GloveModule" 3 "Fri Dec 14 2012" "Version 0.5" "Robot Arm Controller" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArmController.CyberGloveLibrary.GloveModule \- 
+.PP
+A simple class to constantly read data from a CyberGlove\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBArmController\&.Integration\&.Module\fP\&.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override void \fBOnInitialize\fP ()"
+.br
+.RI "\fIOpen CyberGlove serial port and start data collection thread\&. \fP"
+.ti -1c
+.RI "override void \fBOnFinalize\fP ()"
+.br
+.RI "\fIStop streaming CyberGlove and close the data collection thread\&. \fP"
+.ti -1c
+.RI "void \fBreadGlove\fP ()"
+.br
+.RI "\fIMethod to endlessly stream data from a CyberGlove\&. Should be threaded\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Thread \fBgloveThread\fP"
+.br
+.RI "\fIprimary thread, started in \fBOnInitialize()\fP and joined in \fBOnFinalize()\fP \fP"
+.ti -1c
+.RI "bool \fBrunning\fP"
+.br
+.RI "\fIflag set by \fBOnFinalize()\fP to let thread know to gracefully finish \fP"
+.ti -1c
+.RI "SerialPort \fBsp\fP"
+.br
+.RI "\fIserial port used to communicate with the CyberGlove \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+A simple class to constantly read data from a CyberGlove\&. 
+
+
+.SH "Member Function Documentation"
+.PP 
+.SS "override void ArmController\&.CyberGloveLibrary\&.GloveModule\&.OnFinalize ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Stop streaming CyberGlove and close the data collection thread\&. 
+.PP
+Implements \fBArmController\&.Integration\&.Module\fP\&.
+.SS "override void ArmController\&.CyberGloveLibrary\&.GloveModule\&.OnInitialize ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Open CyberGlove serial port and start data collection thread\&. 
+.PP
+Implements \fBArmController\&.Integration\&.Module\fP\&.
+.SS "void ArmController\&.CyberGloveLibrary\&.GloveModule\&.readGlove ()\fC [protected]\fP"
+
+.PP
+Method to endlessly stream data from a CyberGlove\&. Should be threaded\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Robot Arm Controller from the source code\&.

@@ -1,0 +1,4 @@
+<map id="ArmController.Kinect_Module.PositionalTracker" name="ArmController.Kinect_Module.PositionalTracker">
+<area shape="rect" id="node2" href="$class_arm_controller_1_1_integration_1_1_module.html" title="An abstract interface for each of the modules. " alt="" coords="5,13,69,40"/>
+<area shape="rect" id="node4" href="$class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer.html" title="This class provides us with a means to render a skeleton on a screen. This is based on the example pr..." alt="" coords="93,6,272,47"/>
+</map>

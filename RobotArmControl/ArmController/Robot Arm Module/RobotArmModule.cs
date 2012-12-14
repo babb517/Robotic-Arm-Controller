@@ -234,8 +234,8 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// This is called when a subscribed value is published on the virtual bus.
         /// </summary>
-        /// <param name="node"></param>
-        /// <param name="value"></param>
+        /// <param name="node">The node that has been published.</param>
+        /// <param name="value">The new value of the node.</param>
         private void OnValuePublished(BusNode node, object value)
         {
             int finalArmPosition = 0;
@@ -386,9 +386,9 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// This method is used to move a servo to a new position at a desired speed.
         /// </summary>
-        /// <param name="servo"></param>
-        /// <param name="pos"></param>
-        /// <param name="speed"></param>
+        /// <param name="servo">The servo to move.</param>
+        /// <param name="pos">The new position of the servo.</param>
+        /// <param name="speed">The speed to move the servo.</param>
         private void move(int servo, int pos, int speed)
         {
             if (pos < 800 || pos > 2200)
@@ -406,7 +406,7 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// This helper method sends a command to the robot arm through a serial port.
         /// </summary>
-        /// <param name="command"></param>
+        /// <param name="command">The command to send over the serial port.</param>
         private void send(string command)
         {
             string tempcommand = command + "\r\n";

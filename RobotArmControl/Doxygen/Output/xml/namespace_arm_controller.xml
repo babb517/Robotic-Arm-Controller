@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="namespace_arm_controller" kind="namespace">
+    <compoundname>ArmController</compoundname>
+    <innerclass refid="class_arm_controller_1_1_app" prot="public">ArmController::App</innerclass>
+    <innerclass refid="class_arm_controller_1_1_main_window" prot="public">ArmController::MainWindow</innerclass>
+    <innernamespace refid="namespace_arm_controller_1_1_cyber_glove_library">ArmController::CyberGloveLibrary</innernamespace>
+    <innernamespace refid="namespace_arm_controller_1_1_integration">ArmController::Integration</innernamespace>
+    <innernamespace refid="namespace_arm_controller_1_1_kinect___module">ArmController::Kinect_Module</innernamespace>
+    <innernamespace refid="namespace_arm_controller_1_1_robot___arm___module">ArmController::Robot_Arm_Module</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/App.xaml.cs" line="10"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,55 @@
+﻿/*! \mainpage
+\section sec_about About
+
+<p>
+  The Robot Arm Controller allows for a human to control a robotic arm from a remote location using just the natural movements of one of their arms. 
+  This is accomplished by utilizing a number of peripheral devices, such as a <a href="http://www.cyberglovesystems.com/">CyberGlove</a>, 
+  <a href="http://www.microsoft.com/en-us/kinectforwindows/">Microsoft Kinect</a>, and <a href="http://en.wikipedia.org/wiki/Inertial_measurement_unit">Inertial Measurement Units (IMUs)</a>,
+  in order to track the position of ther user's arm and hand. This information is then used to command the robot arm to attempt to mimic the position.
+</p>
+
+<p>
+  A complete description of the current system can be found <a href="Armed and Dangerous Report - Fall 2012.pdf">here</a> in the development team's final semester report. 
+  An overview can be found <a href="Armed and Dangerous Presentation - Fall 2012.pdf">here</a> in our presentation slides.
+</p>
+
+\section sec_architecture Architecture
+
+<p>
+  At a high level, the Robot Arm Controller is designed to be highly modular, allowing for rapid extension and modification of the functionality of the program. 
+  This is done by using a Publish / Subscribe architecture, where each piece of functionality is implemented in a single independent module. These modules then
+  use a shared medium (the <see cref="ArmController.Integration.VirtualBus">VirtualBus</see>) in order to communicate with each other. Each module subscribes
+  and publishes to nodes on the virtual bus in order to pass data to each other. A high level diagram of the system architecture can be seen below.
+</p>
+
+<center>
+  <img src="Architecture Diagram.png" width="680" />
+  <p>A high level diagram depicting the architecture of the Arm Controller.</p>
+</center>
+
+
+\subsection sec_adding_module Adding a Module
+
+In order to add a module to the project, you should follow the following guidelines:
+
+<ul>
+  <li>Have your top level class inherit from the <see cref="ArmController.Integration.Module" >Module</see> class and override the 
+    <see cref="ArmController.Integration.Module.OnInitialize" >OnInitialize()</see> and <see cref="ArmController.Integration.Module.OnFinalize" >OnFinalize()</see> functions, 
+    which are used to start and stop your module.</li>
+  <li>Add your module to the <see cref="ArmController.MainWindow._modules" >_modules</see> list in the <see cref="ArmController.MainWindow.WindowLoaded" /> method.</li>
+  <ul>
+    <li>You should subscribe to the relevant data points on the bus by calling 
+      <see cref="ArmController.Integration.VirtualBus.Subscribe" >Bus.Subscribe(BusNode,VirtualBus.OnValueChangedCallback)</see> method for each node. 
+      Typically this would be done in the <see cref="ArmController.Integration.Module.OnInitialize" >OnInitialize()</see> method."</li>
+    <li>Whenever a value is published to these nodes, the callback method you provided will be called on the GUI thread.</li>
+  </ul>
+  <li>If you're generating data:</li>
+  <ul>
+    <li>You should add the appropriate nodes to the <see cref="ArmController.Integration.BusNode" >BusNode</see> class as static readonly members."</li>
+    <li>The type for each node should be provided and must be Serializable.</li>
+    <li>You may need to also start a thread in your module used to poll some data source periodically. 
+      This would typically be done in the <see cref="ArmController.Integration.Module.OnInitialize" >OnInitialize()</see> method.</li>
+    <li>Call <see cref="ArmController.Integration.VirtualBus.Publish<T>" >Bus.Publish(BusNode,Object)</see> each time you have an update for each data point."</li>
+  </ul>
+</ul>
+*/

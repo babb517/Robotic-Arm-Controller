@@ -1,0 +1,570 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module" kind="class" prot="public">
+    <compoundname>ArmController::Robot_Arm_Module::RobotArmModule</compoundname>
+    <basecompoundref refid="class_arm_controller_1_1_integration_1_1_module" prot="public" virt="non-virtual">ArmController.Integration.Module</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a1aa41015cfa3adf2002d12293ad52b45" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ArmController.Robot_Arm_Module.RobotArmModule.currentShoulderPosition</definition>
+        <argsstring></argsstring>
+        <name>currentShoulderPosition</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The current position of the shoulder servo. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="30" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a9c5af6cf2412c9bd8eed3695241c262b" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ArmController.Robot_Arm_Module.RobotArmModule.currentArmPosition</definition>
+        <argsstring></argsstring>
+        <name>currentArmPosition</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The current position of the arm servo. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="35" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a5bb0cb166479c8d9c043995f4cf5457e" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ArmController.Robot_Arm_Module.RobotArmModule.currentForearmPosition</definition>
+        <argsstring></argsstring>
+        <name>currentForearmPosition</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The current position of the forearm servo. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="40" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1acce38e73a3697cfa024632ceb6e86379" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ArmController.Robot_Arm_Module.RobotArmModule.currentWristPosition</definition>
+        <argsstring></argsstring>
+        <name>currentWristPosition</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The current position of the wrist servo. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="45" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1ac5037bdfbb9942599de0a3e9ed7fd6d8" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int ArmController.Robot_Arm_Module.RobotArmModule.currentHandPosition</definition>
+        <argsstring></argsstring>
+        <name>currentHandPosition</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The current position of the hand servo. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="50" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a646fcaa261ff6cccd5a530d3de97ead6" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.positionDeltaThreshold</definition>
+        <argsstring></argsstring>
+        <name>positionDeltaThreshold</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Minimum movement amount that the robot arm can move a servo. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="57" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="57" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a4ee95907be4415e6915eead30985abb6" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double ArmController.Robot_Arm_Module.RobotArmModule.RAD_PER_DEG</definition>
+        <argsstring></argsstring>
+        <name>RAD_PER_DEG</name>
+        <initializer>= 0.0174532925</initializer>
+        <briefdescription>
+<para>Radians per degree. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="62" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a12c200b3b52bd65e8d76bb5adfb420db" prot="private" static="no" mutable="no">
+        <type>const long</type>
+        <definition>const long ArmController.Robot_Arm_Module.RobotArmModule.MIN_UPDATE_INTERVAL</definition>
+        <argsstring></argsstring>
+        <name>MIN_UPDATE_INTERVAL</name>
+        <initializer>= 100</initializer>
+        <briefdescription>
+<para>Milliseconds to wait between command updates. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="67" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1af3649f73c6b311d44eaac92038539331" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.SHOULDER_YAW</definition>
+        <argsstring></argsstring>
+        <name>SHOULDER_YAW</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>Base servo channel number on the robot arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="74" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a6dcda404e165001a01f3908d57fb86e0" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.SHOULDER_PITCH</definition>
+        <argsstring></argsstring>
+        <name>SHOULDER_PITCH</name>
+        <initializer>= 1</initializer>
+        <briefdescription>
+<para>Arm servo channel number on the robot arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="79" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a1c22b23d5bd2cfb06faff67d92521e3c" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.ELBOW_JOINT</definition>
+        <argsstring></argsstring>
+        <name>ELBOW_JOINT</name>
+        <initializer>= 2</initializer>
+        <briefdescription>
+<para>Forearm servo channel number on the robot arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="84" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="84" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a119bb962777f764ad787c9a9fbcb9e30" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.WRIST_JOINT</definition>
+        <argsstring></argsstring>
+        <name>WRIST_JOINT</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Wrist servo channel number on the robot arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="89" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a8cdf28765ba6c528d221a812e8a9adbd" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.FINGERS</definition>
+        <argsstring></argsstring>
+        <name>FINGERS</name>
+        <initializer>= 4</initializer>
+        <briefdescription>
+<para>Hand servo channel number on the robot arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="94" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="94" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a0b42c7d26d217f97af2347ef9c63edb2" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.ELBOW_PITCH_MAX_DEG</definition>
+        <argsstring></argsstring>
+        <name>ELBOW_PITCH_MAX_DEG</name>
+        <initializer>= 140</initializer>
+        <briefdescription>
+<para>The maximum amount of degrees that the forearm servo can move. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="103" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a6755231d72f4d69377a687248dfbd95a" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.ELBOW_PITCH_MIN_DEG</definition>
+        <argsstring></argsstring>
+        <name>ELBOW_PITCH_MIN_DEG</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The minimum amount of degrees that the forearm servo can move. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="108" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="108" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a9e329a3d7665fd3c6592800a472315a5" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.SHOULDER_PITCH_MAX_DEG</definition>
+        <argsstring></argsstring>
+        <name>SHOULDER_PITCH_MAX_DEG</name>
+        <initializer>= 60</initializer>
+        <briefdescription>
+<para>The maximum amount of degrees that the arm servo can move. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="113" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="113" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a0741bf48d3ff2ae5d985bfff6670d557" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.SHOULDER_PITCH_MIN_DEG</definition>
+        <argsstring></argsstring>
+        <name>SHOULDER_PITCH_MIN_DEG</name>
+        <initializer>= -30</initializer>
+        <briefdescription>
+<para>The minimum amount of degrees that the arm servo can move. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="118" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="118" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a8d7a951736f6387dbc74d7b8e5d1a677" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.SHOULDER_PITCH_MIN_DEG_PHYSICAL</definition>
+        <argsstring></argsstring>
+        <name>SHOULDER_PITCH_MIN_DEG_PHYSICAL</name>
+        <initializer>= -40</initializer>
+        <briefdescription>
+<para>The intended minimum shoulder pitch which corresponds to human physical limits. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="123" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="123" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1ad1c119bbc9409161ed5ffd7d461fce47" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.SHOULDER_YAW_MAX_DEG</definition>
+        <argsstring></argsstring>
+        <name>SHOULDER_YAW_MAX_DEG</name>
+        <initializer>= 45</initializer>
+        <briefdescription>
+<para>The maximum amount of degrees that the shoulder servo can move. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="128" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="128" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a5e20d2e99d823b215285bd319f1ea880" prot="private" static="no" mutable="no">
+        <type>const int</type>
+        <definition>const int ArmController.Robot_Arm_Module.RobotArmModule.SHOULDER_YAW_MIN_DEG</definition>
+        <argsstring></argsstring>
+        <name>SHOULDER_YAW_MIN_DEG</name>
+        <initializer>= 0</initializer>
+        <briefdescription>
+<para>The minimum amount of degrees that the shoulder servo can move. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="133" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1adf5901330828f6358f81d2027c189465" prot="private" static="no" mutable="no">
+        <type>SerialPort</type>
+        <definition>SerialPort ArmController.Robot_Arm_Module.RobotArmModule._serialPort</definition>
+        <argsstring></argsstring>
+        <name>_serialPort</name>
+        <briefdescription>
+<para>The serial port used to send commands to the robot arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="147" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="147" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1ad4973733346e7f818d5d4060a8e7be17" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long ArmController.Robot_Arm_Module.RobotArmModule._lastUpdateTime</definition>
+        <argsstring></argsstring>
+        <name>_lastUpdateTime</name>
+        <briefdescription>
+<para>The last time that a command was sent to the robot arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="152" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="152" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1aaeaa6716114e8f14d32773f97c169e96" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ArmController.Robot_Arm_Module.RobotArmModule.RobotArmModule</definition>
+        <argsstring>()</argsstring>
+        <name>RobotArmModule</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="160" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="160" bodyend="160"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1af9e17b98244ad675871c13be1ef0b447" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ArmController.Robot_Arm_Module.RobotArmModule.OnInitialize</definition>
+        <argsstring>()</argsstring>
+        <name>OnInitialize</name>
+        <reimplements refid="class_arm_controller_1_1_integration_1_1_module_1aeadaad361df957dd7a6fb9ec3d9137fb">OnInitialize</reimplements>
+        <briefdescription>
+<para>Initialization function that is called when the thread is created. Opens the serial port used to communicate with the robot arm, sets the initial servo positions, and subscribes to the appropriate data nodes on the Virtual Bus. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="174" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="174" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a45d5fd16a5381c3a1d10641d15e05c73" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ArmController.Robot_Arm_Module.RobotArmModule.OnFinalize</definition>
+        <argsstring>()</argsstring>
+        <name>OnFinalize</name>
+        <reimplements refid="class_arm_controller_1_1_integration_1_1_module_1ae74177423f7caf9b58e76d9186207a7c">OnFinalize</reimplements>
+        <briefdescription>
+<para>An event handling method called when the controller has requested that the module finalize its state. Closes the serial port that is used to communicate with the robot arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="205" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="205" bodyend="205"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a177dec5466195becab30be08cc580481" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Robot_Arm_Module.RobotArmModule.sp_DataReceived</definition>
+        <argsstring>(object sender, SerialDataReceivedEventArgs e)</argsstring>
+        <name>sp_DataReceived</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SerialDataReceivedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>This is called when data is received from the robot arm via serial bus. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="220" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="219" bodyend="232"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a8fd4022517773ebb8b56c5692837264b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Robot_Arm_Module.RobotArmModule.OnValuePublished</definition>
+        <argsstring>(BusNode node, object value)</argsstring>
+        <name>OnValuePublished</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>This is called when a subscribed value is published on the virtual bus. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node that has been published.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the node.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="240" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="239" bodyend="384"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1ab59d33338c621a9ca2977631bad03f7f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Robot_Arm_Module.RobotArmModule.move</definition>
+        <argsstring>(int servo, int pos, int speed)</argsstring>
+        <name>move</name>
+        <param>
+          <type>int</type>
+          <declname>servo</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>pos</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>speed</declname>
+        </param>
+        <briefdescription>
+<para>This method is used to move a servo to a new position at a desired speed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>servo</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The servo to move.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pos</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new position of the servo.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>speed</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The speed to move the servo.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="393" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="392" bodyend="404"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a4670ff7373dc756050f9364a360b030e" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Robot_Arm_Module.RobotArmModule.send</definition>
+        <argsstring>(string command)</argsstring>
+        <name>send</name>
+        <param>
+          <type>string</type>
+          <declname>command</declname>
+        </param>
+        <briefdescription>
+<para>This helper method sends a command to the robot arm through a serial port. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>command</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The command to send over the serial port.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="411" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="410" bodyend="426"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class contains the logic used to control the robot arm with the use of data which is provided by the CyberGlove Module and the Kinect Module. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="76">
+        <label>ArmController.Robot_Arm_Module.RobotArmModule</label>
+        <link refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module"/>
+        <childnode refid="77" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="77">
+        <label>ArmController::Integration::Module</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_module"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="78">
+        <label>ArmController.Robot_Arm_Module.RobotArmModule</label>
+        <link refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module"/>
+        <childnode refid="79" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="79">
+        <label>ArmController::Integration::Module</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_module"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="19" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" bodystart="18" bodyend="430"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1ad4973733346e7f818d5d4060a8e7be17" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>_lastUpdateTime</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1adf5901330828f6358f81d2027c189465" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>_serialPort</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1a7531038d76af01631231aeabb3066cbb" prot="protected" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>Bus</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a9c5af6cf2412c9bd8eed3695241c262b" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>currentArmPosition</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a5bb0cb166479c8d9c043995f4cf5457e" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>currentForearmPosition</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1ac5037bdfbb9942599de0a3e9ed7fd6d8" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>currentHandPosition</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a1aa41015cfa3adf2002d12293ad52b45" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>currentShoulderPosition</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1acce38e73a3697cfa024632ceb6e86379" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>currentWristPosition</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a1c22b23d5bd2cfb06faff67d92521e3c" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>ELBOW_JOINT</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a0b42c7d26d217f97af2347ef9c63edb2" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>ELBOW_PITCH_MAX_DEG</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a6755231d72f4d69377a687248dfbd95a" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>ELBOW_PITCH_MIN_DEG</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae9bf825ee97dc743d0012d58fdde0f43" prot="public" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>FinalizeModule</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a8cdf28765ba6c528d221a812e8a9adbd" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>FINGERS</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae1258c83da93b28a6c1e1f245d0ecda0" prot="public" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>InitializeModule</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a12c200b3b52bd65e8d76bb5adfb420db" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>MIN_UPDATE_INTERVAL</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1ab59d33338c621a9ca2977631bad03f7f" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>move</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a45d5fd16a5381c3a1d10641d15e05c73" prot="protected" virt="virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>OnFinalize</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1af9e17b98244ad675871c13be1ef0b447" prot="protected" virt="virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>OnInitialize</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a8fd4022517773ebb8b56c5692837264b" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>OnValuePublished</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a646fcaa261ff6cccd5a530d3de97ead6" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>positionDeltaThreshold</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a4ee95907be4415e6915eead30985abb6" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>RAD_PER_DEG</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1aea049ab02d612a5e9a7f64d62a6f7bf8" prot="protected" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>RequestStop</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1aaeaa6716114e8f14d32773f97c169e96" prot="public" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>RobotArmModule</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a4670ff7373dc756050f9364a360b030e" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>send</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a6dcda404e165001a01f3908d57fb86e0" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>SHOULDER_PITCH</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a9e329a3d7665fd3c6592800a472315a5" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>SHOULDER_PITCH_MAX_DEG</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a0741bf48d3ff2ae5d985bfff6670d557" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>SHOULDER_PITCH_MIN_DEG</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a8d7a951736f6387dbc74d7b8e5d1a677" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>SHOULDER_PITCH_MIN_DEG_PHYSICAL</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1af3649f73c6b311d44eaac92038539331" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>SHOULDER_YAW</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1ad1c119bbc9409161ed5ffd7d461fce47" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>SHOULDER_YAW_MAX_DEG</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a5e20d2e99d823b215285bd319f1ea880" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>SHOULDER_YAW_MIN_DEG</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a177dec5466195becab30be08cc580481" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>sp_DataReceived</name></member>
+      <member refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a119bb962777f764ad787c9a9fbcb9e30" prot="private" virt="non-virtual"><scope>ArmController::Robot_Arm_Module::RobotArmModule</scope><name>WRIST_JOINT</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

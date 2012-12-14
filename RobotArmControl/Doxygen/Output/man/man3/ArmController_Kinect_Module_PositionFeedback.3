@@ -1,0 +1,139 @@
+.TH "ArmController.Kinect_Module.PositionFeedback" 3 "Fri Dec 14 2012" "Version 0.5" "Robot Arm Controller" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArmController.Kinect_Module.PositionFeedback \- 
+.PP
+This module is used for debugging purposes\&. It listens for the orientations of the user's right arm on the virtual bus and displays them on screen\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBArmController\&.Integration\&.Module\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPositionFeedback\fP (TextBox upperArmDisplay, TextBox lowerArmDisplay, TextBox handDisplay)"
+.br
+.RI "\fIInitializes the position feedback module to output the provided text boxes\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override void \fBOnInitialize\fP ()"
+.br
+.RI "\fIAn event handling method called when the controller has requested that the module initialize its state\&. \fP"
+.ti -1c
+.RI "override void \fBOnFinalize\fP ()"
+.br
+.RI "\fIAn event handling method called when the controller has requested that the module finalize its state\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBOnValuePublished\fP (\fBBusNode\fP node, object value)"
+.br
+.RI "\fICalled when a value is published to the virtual bus\&. \fP"
+.ti -1c
+.RI "string \fBOrientationToString\fP (\fBOrientation\fP or)"
+.br
+.RI "\fIConstructs a string describing the provided orientation\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "TextBox \fB_upperArmDisplay\fP"
+.br
+.RI "\fIA reference to the text box used to display the upper arm orientation\&. \fP"
+.ti -1c
+.RI "TextBox \fB_lowerArmDisplay\fP"
+.br
+.RI "\fIA reference to the text box used to display lower arm orientation\&. \fP"
+.ti -1c
+.RI "TextBox \fB_handDisplay\fP"
+.br
+.RI "\fIA reference to the text box used to display hand orientation\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This module is used for debugging purposes\&. It listens for the orientations of the user's right arm on the virtual bus and displays them on screen\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ArmController\&.Kinect_Module\&.PositionFeedback\&.PositionFeedback (TextBoxupperArmDisplay, TextBoxlowerArmDisplay, TextBoxhandDisplay)"
+
+.PP
+Initializes the position feedback module to output the provided text boxes\&. \fBParameters:\fP
+.RS 4
+\fIupperArmDisplay\fP The text box to display upper arm orientation\&.
+.br
+\fIlowerArmDisplay\fP The text box to display lower arm orientation\&.
+.br
+\fIhandDisplay\fP The text box to display hand orientation\&.
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "override void ArmController\&.Kinect_Module\&.PositionFeedback\&.OnFinalize ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+An event handling method called when the controller has requested that the module finalize its state\&. 
+.PP
+Implements \fBArmController\&.Integration\&.Module\fP\&.
+.SS "override void ArmController\&.Kinect_Module\&.PositionFeedback\&.OnInitialize ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+An event handling method called when the controller has requested that the module initialize its state\&. 
+.PP
+Implements \fBArmController\&.Integration\&.Module\fP\&.
+.SS "void ArmController\&.Kinect_Module\&.PositionFeedback\&.OnValuePublished (\fBBusNode\fPnode, objectvalue)\fC [private]\fP"
+
+.PP
+Called when a value is published to the virtual bus\&. \fBParameters:\fP
+.RS 4
+\fInode\fP The node that has been published\&.
+.br
+\fIvalue\fP The new value of the node\&.
+.RE
+.PP
+
+.SS "string ArmController\&.Kinect_Module\&.PositionFeedback\&.OrientationToString (\fBOrientation\fPor)\fC [private]\fP"
+
+.PP
+Constructs a string describing the provided orientation\&. \fBParameters:\fP
+.RS 4
+\fIor\fP The orientation to construct the string from\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A string of the form 'ROLL / PITCH / YAW'\&.
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "TextBox ArmController\&.Kinect_Module\&.PositionFeedback\&._handDisplay\fC [private]\fP"
+
+.PP
+A reference to the text box used to display hand orientation\&. 
+.SS "TextBox ArmController\&.Kinect_Module\&.PositionFeedback\&._lowerArmDisplay\fC [private]\fP"
+
+.PP
+A reference to the text box used to display lower arm orientation\&. 
+.SS "TextBox ArmController\&.Kinect_Module\&.PositionFeedback\&._upperArmDisplay\fC [private]\fP"
+
+.PP
+A reference to the text box used to display the upper arm orientation\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Robot Arm Controller from the source code\&.

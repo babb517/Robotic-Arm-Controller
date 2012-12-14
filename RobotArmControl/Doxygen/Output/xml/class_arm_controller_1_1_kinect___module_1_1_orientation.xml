@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_kinect___module_1_1_orientation" kind="class" prot="public">
+    <compoundname>ArmController::Kinect_Module::Orientation</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_arm_controller_1_1_kinect___module_1_1_orientation_1ae8b52f043a21096e4f45d04eff9b9130" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>float</type>
+        <definition>float ArmController.Kinect_Module.Orientation.Roll</definition>
+        <argsstring></argsstring>
+        <name>Roll</name>
+        <briefdescription>
+<para>The roll of the orientation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" line="18" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_arm_controller_1_1_kinect___module_1_1_orientation_1a2c36ca57eddcd73132dc2661f4756e46" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>float</type>
+        <definition>float ArmController.Kinect_Module.Orientation.Pitch</definition>
+        <argsstring></argsstring>
+        <name>Pitch</name>
+        <briefdescription>
+<para>The pitch of the orientation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" line="23" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_arm_controller_1_1_kinect___module_1_1_orientation_1aed4020661a5e7f98467a0aa054171545" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>float</type>
+        <definition>float ArmController.Kinect_Module.Orientation.Yaw</definition>
+        <argsstring></argsstring>
+        <name>Yaw</name>
+        <briefdescription>
+<para>The yaw of the orientation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" line="28" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_orientation_1a05b4e43c4ace385d47bd08fcec261a5d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ArmController.Kinect_Module.Orientation.Orientation</definition>
+        <argsstring>(float roll, float pitch, float yaw)</argsstring>
+        <name>Orientation</name>
+        <param>
+          <type>float</type>
+          <declname>roll</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>pitch</declname>
+        </param>
+        <param>
+          <type>float</type>
+          <declname>yaw</declname>
+        </param>
+        <briefdescription>
+<para>Construct a new orientation descriptor. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>roll</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The roll of the orientation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>pitch</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The pitch of the orientation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>yaw</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The yaw of the orientation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" line="37" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" bodystart="36" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A simple structure used to describe the orientation of an object in 3d space. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" line="14" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" bodystart="13" bodyend="42"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_orientation_1a05b4e43c4ace385d47bd08fcec261a5d" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::Orientation</scope><name>Orientation</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_orientation_1a2c36ca57eddcd73132dc2661f4756e46" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::Orientation</scope><name>Pitch</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_orientation_1ae8b52f043a21096e4f45d04eff9b9130" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::Orientation</scope><name>Roll</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_orientation_1aed4020661a5e7f98467a0aa054171545" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::Orientation</scope><name>Yaw</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

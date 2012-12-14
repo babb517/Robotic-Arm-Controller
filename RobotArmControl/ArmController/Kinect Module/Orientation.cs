@@ -12,10 +12,27 @@ namespace ArmController.Kinect_Module
     [Serializable]
     class Orientation
     {
+        /// <summary>
+        /// The roll of the orientation.
+        /// </summary>
         public float Roll { get; set; }
+
+        /// <summary>
+        /// The pitch of the orientation.
+        /// </summary>
         public float Pitch { get; set; }
+
+        /// <summary>
+        /// The yaw of the orientation.
+        /// </summary>
         public float Yaw { get; set; }
 
+        /// <summary>
+        /// Construct a new orientation descriptor.
+        /// </summary>
+        /// <param name="roll">The roll of the orientation.</param>
+        /// <param name="pitch">The pitch of the orientation.</param>
+        /// <param name="yaw">The yaw of the orientation.</param>
         public Orientation(float roll, float pitch, float yaw)
         {
             Roll = roll;

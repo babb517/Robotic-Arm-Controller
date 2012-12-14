@@ -1,0 +1,281 @@
+.TH "ArmController.Integration.VirtualBus" 3 "Fri Dec 14 2012" "Version 0.5" "Robot Arm Controller" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArmController.Integration.VirtualBus \- 
+.PP
+The virtual bus implements a publish / subscribe architecture to facilitate extensible communication between modules\&. Each module is responsible for subscribing to any relevant nodes, listening for any value-changed events, and publishing any results they may have\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "class \fBNodeEntry\fP"
+.br
+.RI "\fIA single entry in the node table\&. \fP"
+.in -1c
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "delegate void \fBOnValueChangedCallback\fP (\fBBusNode\fP node, Object value)"
+.br
+.RI "\fIA delegate used for subscribing to nodes in the virtual bus\&. This delegate is called when the value of the subscribed node has been changed\&. \fP"
+.ti -1c
+.RI "\fBVirtualBus\fP (System\&.Windows\&.Threading\&.Dispatcher dispatcher)"
+.br
+.RI "\fIInitializes a shared virtual bus to act as a communication channel between modules\&. \fP"
+.ti -1c
+.RI "T \fBGet< T >\fP (\fBBusNode\fP node)"
+.br
+.RI "\fIReturns the current value of a node\&. \fP"
+.ti -1c
+.RI "void \fBPublish< T >\fP (\fBBusNode\fP node, T value)"
+.br
+.RI "\fIAttempts to attach a value to a node in the virtual bus\&. Notifies subscribed parties if successful\&. \fP"
+.ti -1c
+.RI "void \fBSubscribe\fP (\fBBusNode\fP node, \fBOnValueChangedCallback\fP callback)"
+.br
+.RI "\fIAttempts to subscribe a value-changed listener to a node\&. \fP"
+.ti -1c
+.RI "void \fBUnsubscribe\fP (\fBBusNode\fP node, \fBOnValueChangedCallback\fP callback, bool strict=true)"
+.br
+.RI "\fIAttempts to unsubscribe a value-changed listener from a node\&. \fP"
+.ti -1c
+.RI "void \fBQueueNotification\fP (\fBBusNode\fP node)"
+.br
+.RI "\fIQueues a node to be notified \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBNotifyNodes\fP ()"
+.br
+.RI "\fINotifies all currently queued nodes\&. \fP"
+.ti -1c
+.RI "void \fBNotify\fP (\fBBusNode\fP node)"
+.br
+.RI "\fICalls any listeners for a node\&. \fP"
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static bool \fBIsValidType\fP (Type type)"
+.br
+.RI "\fIDetermines if the provided type is valid\&. \fP"
+.ti -1c
+.RI "static bool \fBSerializeCopy< T >\fP (T original, out T copy)"
+.br
+.RI "\fIPerforms a deep copy on the object by serializing an unserializing it\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "ConcurrentDictionary< \fBBusNode\fP, 
+.br
+\fBNodeEntry\fP > \fB_nodes\fP"
+.br
+.RI "\fIThis is the set of all nodes active nodes in the virtual bus\&. \fP"
+.ti -1c
+.RI "Queue \fB_updatedNodes\fP"
+.br
+.RI "\fIA set of the nodes which have been recently updated with notifications that need to be sent\&. \fP"
+.ti -1c
+.RI "Dispatcher \fB_dispatcher\fP"
+.br
+.RI "\fIA dispatcher used for notifying everything on the GUI thread\&. \fP"
+.ti -1c
+.RI "DispatcherOperation \fB_notification\fP"
+.br
+.RI "\fIAn object used to track an active notification request\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+The virtual bus implements a publish / subscribe architecture to facilitate extensible communication between modules\&. Each module is responsible for subscribing to any relevant nodes, listening for any value-changed events, and publishing any results they may have\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ArmController\&.Integration\&.VirtualBus\&.VirtualBus (System\&.Windows\&.Threading\&.Dispatcherdispatcher)"
+
+.PP
+Initializes a shared virtual bus to act as a communication channel between modules\&. \fBParameters:\fP
+.RS 4
+\fIdispatcher\fP A dispatcher used to run event notifications on the GUI thread\&.
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "T ArmController\&.Integration\&.VirtualBus\&.Get< T > (\fBBusNode\fPnode)"
+
+.PP
+Returns the current value of a node\&. \fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP The type of the node to retrieve\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fInode\fP The node to retrieve\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The value of the node cast to the parameterized type\&. Must be a serializable type\&.
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIInvalidCastException\fP Thrown if the node can't be cast to the parameterized type\&.
+.br
+\fIArgumentException\fP Thrown if T is not a valid type\&.
+.RE
+.PP
+
+.SS "static bool ArmController\&.Integration\&.VirtualBus\&.IsValidType (Typetype)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Determines if the provided type is valid\&. \fBParameters:\fP
+.RS 4
+\fItype\fP The type to check\&.
+.RE
+.PP
+
+.SS "void ArmController\&.Integration\&.VirtualBus\&.Notify (\fBBusNode\fPnode)\fC [private]\fP"
+
+.PP
+Calls any listeners for a node\&. \fBParameters:\fP
+.RS 4
+\fInode\fP The node to call the listeners for\&.
+.RE
+.PP
+
+.SS "void ArmController\&.Integration\&.VirtualBus\&.NotifyNodes ()\fC [private]\fP"
+
+.PP
+Notifies all currently queued nodes\&. 
+.SS "delegate void ArmController\&.Integration\&.VirtualBus\&.OnValueChangedCallback (\fBBusNode\fPnode, Objectvalue)"
+
+.PP
+A delegate used for subscribing to nodes in the virtual bus\&. This delegate is called when the value of the subscribed node has been changed\&. \fBParameters:\fP
+.RS 4
+\fInode\fP The node which has been changed\&.
+.br
+\fIvalue\fP 
+.RE
+.PP
+
+.SS "void ArmController\&.Integration\&.VirtualBus\&.Publish< T > (\fBBusNode\fPnode, Tvalue)"
+
+.PP
+Attempts to attach a value to a node in the virtual bus\&. Notifies subscribed parties if successful\&. \fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP The type of the object to attach to the node\&. Must be a serializable type\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fInode\fP The node to attach the value to\&.
+.br
+\fIvalue\fP The new value of the node\&.
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIArgumentException\fP Thrown if the type of T is not valid or is not compatible with the declared type of the node\&.
+.RE
+.PP
+
+.SS "void ArmController\&.Integration\&.VirtualBus\&.QueueNotification (\fBBusNode\fPnode)"
+
+.PP
+Queues a node to be notified \fBParameters:\fP
+.RS 4
+\fInode\fP The node to call the listeners for\&.
+.RE
+.PP
+
+.SS "static bool ArmController\&.Integration\&.VirtualBus\&.SerializeCopy< T > (Toriginal, out Tcopy)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Performs a deep copy on the object by serializing an unserializing it\&. \fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP The type of the object to copy\&. Must be serializable\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fIoriginal\fP The original object\&.
+.br
+\fIcopy\fP The copy of the object\&. Passed in uniitialized\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+True if successful, false otherwise\&.
+.RE
+.PP
+
+.SS "void ArmController\&.Integration\&.VirtualBus\&.Subscribe (\fBBusNode\fPnode, \fBOnValueChangedCallback\fPcallback)"
+
+.PP
+Attempts to subscribe a value-changed listener to a node\&. \fBTemplate Parameters:\fP
+.RS 4
+\fIT\fP The type of the object to attach to the node\&. Must be a serializable type\&.
+.RE
+.PP
+\fBParameters:\fP
+.RS 4
+\fInode\fP The node to subscribe the listener to\&.
+.br
+\fIcallback\fP The delegate to call when a node has been changed\&.
+.RE
+.PP
+
+.SS "void ArmController\&.Integration\&.VirtualBus\&.Unsubscribe (\fBBusNode\fPnode, \fBOnValueChangedCallback\fPcallback, boolstrict = \fCtrue\fP)"
+
+.PP
+Attempts to unsubscribe a value-changed listener from a node\&. \fBParameters:\fP
+.RS 4
+\fInode\fP The node to unsubscribe the listener from\&.
+.br
+\fIcallback\fP The listener to unsubscribe\&.
+.br
+\fIstrict\fP Whether to throw an exception if something goes wrong\&.
+.RE
+.PP
+\fBExceptions:\fP
+.RS 4
+\fIArgumentException\fP Thrown if operating in strict mode and the callback wasn't registered to the node\&.
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "Dispatcher ArmController\&.Integration\&.VirtualBus\&._dispatcher\fC [private]\fP"
+
+.PP
+A dispatcher used for notifying everything on the GUI thread\&. 
+.SS "ConcurrentDictionary<\fBBusNode\fP, \fBNodeEntry\fP> ArmController\&.Integration\&.VirtualBus\&._nodes\fC [private]\fP"
+
+.PP
+This is the set of all nodes active nodes in the virtual bus\&. 
+.SS "DispatcherOperation ArmController\&.Integration\&.VirtualBus\&._notification\fC [private]\fP"
+
+.PP
+An object used to track an active notification request\&. 
+.SS "Queue ArmController\&.Integration\&.VirtualBus\&._updatedNodes\fC [private]\fP"
+
+.PP
+A set of the nodes which have been recently updated with notifications that need to be sent\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Robot Arm Controller from the source code\&.

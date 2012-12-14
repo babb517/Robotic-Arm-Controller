@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_integration_1_1_module" kind="class" prot="public" abstract="yes">
+    <compoundname>ArmController::Integration::Module</compoundname>
+    <derivedcompoundref refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module" prot="public" virt="non-virtual">ArmController.CyberGloveLibrary.GloveModule</derivedcompoundref>
+    <derivedcompoundref refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker" prot="public" virt="non-virtual">ArmController.Kinect_Module.PositionalTracker</derivedcompoundref>
+    <derivedcompoundref refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback" prot="public" virt="non-virtual">ArmController.Kinect_Module.PositionFeedback</derivedcompoundref>
+    <derivedcompoundref refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module" prot="public" virt="non-virtual">ArmController.Robot_Arm_Module.RobotArmModule</derivedcompoundref>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_arm_controller_1_1_integration_1_1_module_1a7531038d76af01631231aeabb3066cbb" prot="protected" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus" kindref="compound">VirtualBus</ref></type>
+        <definition>VirtualBus ArmController.Integration.Module.Bus</definition>
+        <argsstring></argsstring>
+        <name>Bus</name>
+        <briefdescription>
+<para>A reference to the virtual bus shared between the modules. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" line="24" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_module_1ae1258c83da93b28a6c1e1f245d0ecda0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Integration.Module.InitializeModule</definition>
+        <argsstring>(VirtualBus bus)</argsstring>
+        <name>InitializeModule</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus" kindref="compound">VirtualBus</ref></type>
+          <declname>bus</declname>
+        </param>
+        <briefdescription>
+<para>Requests that the module be initialized and begins communicating on the specified virtual bus. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>bus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The virtual bus to communicate on.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" line="35" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" bodystart="34" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_module_1ae9bf825ee97dc743d0012d58fdde0f43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Integration.Module.FinalizeModule</definition>
+        <argsstring>()</argsstring>
+        <name>FinalizeModule</name>
+        <briefdescription>
+<para>Requests that the module finalize its state in preparation to exit the program. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" line="44" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" bodystart="43" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_module_1aea049ab02d612a5e9a7f64d62a6f7bf8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Integration.Module.RequestStop</definition>
+        <argsstring>()</argsstring>
+        <name>RequestStop</name>
+        <briefdescription>
+<para>Sends a message to the controller requesting that the program exit. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" line="56" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" bodystart="55" bodyend="62"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_module_1aeadaad361df957dd7a6fb9ec3d9137fb" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ArmController.Integration.Module.OnInitialize</definition>
+        <argsstring>()</argsstring>
+        <name>OnInitialize</name>
+        <reimplementedby refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a6bfb8ca943f5730540404447896286e4">OnInitialize</reimplementedby>
+        <reimplementedby refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a03bda0a6a1e8580d36f6cfa8aa88effc">OnInitialize</reimplementedby>
+        <reimplementedby refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a016a741289847dc805d5be56fec76753">OnInitialize</reimplementedby>
+        <reimplementedby refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1af9e17b98244ad675871c13be1ef0b447">OnInitialize</reimplementedby>
+        <briefdescription>
+<para>An event handling method called when the controller has requested that the module initialize its state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" line="67"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_module_1ae74177423f7caf9b58e76d9186207a7c" prot="protected" static="no" const="no" explicit="no" inline="no" virt="pure-virtual">
+        <type>abstract void</type>
+        <definition>abstract void ArmController.Integration.Module.OnFinalize</definition>
+        <argsstring>()</argsstring>
+        <name>OnFinalize</name>
+        <reimplementedby refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a3505c0bcc00518d40f09250361ebae22">OnFinalize</reimplementedby>
+        <reimplementedby refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1ac30472076307382be82bec726a1e98dd">OnFinalize</reimplementedby>
+        <reimplementedby refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1aa8cc9faaede58f3cae115eb9b2d0b1ad">OnFinalize</reimplementedby>
+        <reimplementedby refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module_1a45d5fd16a5381c3a1d10641d15e05c73">OnFinalize</reimplementedby>
+        <briefdescription>
+<para>An event handling method called when the controller has requested that the module finalize its state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" line="72"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>An abstract interface for each of the modules. </para>    </briefdescription>
+    <detaileddescription>
+<para>New modules should inherit from this class and should be instantiated in <ref refid="class_arm_controller_1_1_main_window_1a2ecab4a3c580c643e351c304795c1c6d" kindref="member">MainWindow.WindowLoaded</ref>.</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="57">
+        <label>ArmController.Integration.Module</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_module"/>
+      </node>
+      <node id="61">
+        <label>ArmController.Robot_Arm_Module.RobotArmModule</label>
+        <link refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="60">
+        <label>ArmController.Kinect_Module.PositionFeedback</label>
+        <link refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="58">
+        <label>ArmController.CyberGloveLibrary.GloveModule</label>
+        <link refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="59">
+        <label>ArmController.Kinect_Module.PositionalTracker</label>
+        <link refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker"/>
+        <childnode refid="57" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" line="15" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/Module.cs" bodystart="14" bodyend="74"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1a7531038d76af01631231aeabb3066cbb" prot="protected" virt="non-virtual"><scope>ArmController::Integration::Module</scope><name>Bus</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae9bf825ee97dc743d0012d58fdde0f43" prot="public" virt="non-virtual"><scope>ArmController::Integration::Module</scope><name>FinalizeModule</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae1258c83da93b28a6c1e1f245d0ecda0" prot="public" virt="non-virtual"><scope>ArmController::Integration::Module</scope><name>InitializeModule</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae74177423f7caf9b58e76d9186207a7c" prot="protected" virt="pure-virtual"><scope>ArmController::Integration::Module</scope><name>OnFinalize</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1aeadaad361df957dd7a6fb9ec3d9137fb" prot="protected" virt="pure-virtual"><scope>ArmController::Integration::Module</scope><name>OnInitialize</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1aea049ab02d612a5e9a7f64d62a6f7bf8" prot="protected" virt="non-virtual"><scope>ArmController::Integration::Module</scope><name>RequestStop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="indexpage" kind="page">
+    <compoundname>index</compoundname>
+    <title></title>
+    <detaileddescription>
+<sect1 id="index_1sec_about">
+<title>About</title>
+<para>The Robot Arm Controller allows for a human to control a robotic arm from a remote location using just the natural movements of one of their arms. This is accomplished by utilizing a number of peripheral devices, such as a <ulink url="http://www.cyberglovesystems.com/">CyberGlove</ulink>, <ulink url="http://www.microsoft.com/en-us/kinectforwindows/">Microsoft Kinect</ulink>, and <ulink url="http://en.wikipedia.org/wiki/Inertial_measurement_unit">Inertial Measurement Units (IMUs)</ulink>, in order to track the position of ther user&apos;s arm and hand. This information is then used to command the robot arm to attempt to mimic the position. </para><para>A complete description of the current system can be found <ulink url="Armed and Dangerous Report - Fall 2012.pdf">here</ulink> in the development team&apos;s final semester report. An overview can be found <ulink url="Armed and Dangerous Presentation - Fall 2012.pdf">here</ulink> in our presentation slides. </para></sect1>
+<sect1 id="index_1sec_architecture">
+<title>Architecture</title>
+<para>At a high level, the Robot Arm Controller is designed to be highly modular, allowing for rapid extension and modification of the functionality of the program. This is done by using a Publish / Subscribe architecture, where each piece of functionality is implemented in a single independent module. These modules then use a shared medium (the <ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus" kindref="compound">VirtualBus</ref>) in order to communicate with each other. Each module subscribes and publishes to nodes on the virtual bus in order to pass data to each other. A high level diagram of the system architecture can be seen below. </para><para><center> <image type="html" name="Architecture Diagram.png"></image>
+ </center></para><para><center>A high level diagram depicting the architecture of the Arm Controller.</center></para><para><center> </center></para><sect2 id="index_1sec_adding_module">
+<title>Adding a Module</title>
+<para>In order to add a module to the project, you should follow the following guidelines:</para><para><itemizedlist>
+<listitem>
+<para>Have your top level class inherit from the <ref refid="class_arm_controller_1_1_integration_1_1_module" kindref="compound">Module</ref> class and override the <ref refid="class_arm_controller_1_1_integration_1_1_module_1aeadaad361df957dd7a6fb9ec3d9137fb" kindref="member">OnInitialize()</ref> and <ref refid="class_arm_controller_1_1_integration_1_1_module_1ae74177423f7caf9b58e76d9186207a7c" kindref="member">OnFinalize()</ref> functions, which are used to start and stop your module. </para></listitem>
+<listitem>
+<para>Add your module to the <ref refid="class_arm_controller_1_1_main_window_1a3c9920fae8c0e4a8dce9bd01883d4fb8" kindref="member">_modules</ref> list in the <ref refid="class_arm_controller_1_1_main_window_1a2ecab4a3c580c643e351c304795c1c6d" kindref="member">ArmController.MainWindow.WindowLoaded</ref> method. <itemizedlist>
+<listitem>
+<para>You should subscribe to the relevant data points on the bus by calling <ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1a2e7ed24e3f18e6c53d4a18fa8399f9b1" kindref="member">Bus.Subscribe(BusNode,VirtualBus.OnValueChangedCallback)</ref> method for each node. Typically this would be done in the <ref refid="class_arm_controller_1_1_integration_1_1_module_1aeadaad361df957dd7a6fb9ec3d9137fb" kindref="member">OnInitialize()</ref> method." </para></listitem>
+<listitem>
+<para>Whenever a value is published to these nodes, the callback method you provided will be called on the GUI thread. </para></listitem>
+</itemizedlist>
+</para></listitem>
+<listitem>
+<para>If you&apos;re generating data: <itemizedlist>
+<listitem>
+<para>You should add the appropriate nodes to the <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref> class as static readonly members." </para></listitem>
+<listitem>
+<para>The type for each node should be provided and must be Serializable. </para></listitem>
+<listitem>
+<para>You may need to also start a thread in your module used to poll some data source periodically. This would typically be done in the <ref refid="class_arm_controller_1_1_integration_1_1_module_1aeadaad361df957dd7a6fb9ec3d9137fb" kindref="member">OnInitialize()</ref> method. </para></listitem>
+<listitem>
+<para>Call <ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1ac6b1087650bafb95b3efaeb1626d612d" kindref="member">Bus.Publish(BusNode,Object)</ref> each time you have an update for each data point." </para></listitem>
+</itemizedlist>
+</para></listitem>
+</itemizedlist>
+</para></sect2>
+</sect1>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

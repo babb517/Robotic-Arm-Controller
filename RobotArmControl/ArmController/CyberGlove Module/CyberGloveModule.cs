@@ -19,9 +19,9 @@ namespace ArmController.CyberGloveLibrary
     class GloveModule : ArmController.Integration.Module
     {
 
-        Thread gloveThread;         // primary thread, started in OnInitialize() and joined in OnFinalize()
-        bool running;               // flag set by OnFinalize() to let thread know to gracefully finish
-        SerialPort sp;              // serial port used to communicate with the CyberGlove
+        Thread gloveThread;         ///< primary thread, started in OnInitialize() and joined in OnFinalize()
+        bool running;               ///< flag set by OnFinalize() to let thread know to gracefully finish
+        SerialPort sp;              ///< serial port used to communicate with the CyberGlove
 
         /// <summary>
         /// Open CyberGlove serial port and start data collection thread.

@@ -1,0 +1,230 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_main_window" kind="class" prot="public">
+    <compoundname>ArmController::MainWindow</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Window</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_arm_controller_1_1_main_window_1a3c9920fae8c0e4a8dce9bd01883d4fb8" prot="private" static="no" mutable="no">
+        <type>List&lt; <ref refid="class_arm_controller_1_1_integration_1_1_module" kindref="compound">Module</ref> &gt;</type>
+        <definition>List&lt;Module&gt; ArmController.MainWindow._modules</definition>
+        <argsstring></argsstring>
+        <name>_modules</name>
+        <briefdescription>
+<para>The modules which are being managed by the application. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" line="36" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" bodystart="36" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_main_window_1a3a4ed79a190b72d6aa45c00949a2ca82" prot="private" static="no" mutable="no">
+        <type><ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus" kindref="compound">VirtualBus</ref></type>
+        <definition>VirtualBus ArmController.MainWindow._bus</definition>
+        <argsstring></argsstring>
+        <name>_bus</name>
+        <briefdescription>
+<para>The bus used to communicate between modules. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" line="41" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" bodystart="41" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_main_window_1ab2a115f81d0ad75c6ad69d7f67a62b9e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ArmController.MainWindow.MainWindow</definition>
+        <argsstring>()</argsstring>
+        <name>MainWindow</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" line="48" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" bodystart="47" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_main_window_1a2ecab4a3c580c643e351c304795c1c6d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.MainWindow.WindowLoaded</definition>
+        <argsstring>(object sender, RoutedEventArgs e)</argsstring>
+        <name>WindowLoaded</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>RoutedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Execute startup tasks </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>object sending the event</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>event arguments</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para><para>New modules should inherit from <ref refid="class_arm_controller_1_1_integration_1_1_module" kindref="compound">Integration.Module</ref> and should be instantiated here.</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" line="63" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" bodystart="62" bodyend="84"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_main_window_1a122f35768f1e4405576446798388e529" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.MainWindow.WindowClosing</definition>
+        <argsstring>(object sender, System.ComponentModel.CancelEventArgs e)</argsstring>
+        <name>WindowClosing</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>System.ComponentModel.CancelEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Finalizes the states of all modules in preparation for the program exiting. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" line="92" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" bodystart="91" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_main_window_1a31306fcff0339957e81d412b671e59e5" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.MainWindow.OnBusValueChanged</definition>
+        <argsstring>(BusNode node, Object value)</argsstring>
+        <name>OnBusValueChanged</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>Object</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Handles bus </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" line="103" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" bodystart="102" bodyend="109"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_main_window_1af3a712fda92322ede4f0104707fe149c" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.MainWindow.InitializeModules</definition>
+        <argsstring>()</argsstring>
+        <name>InitializeModules</name>
+        <briefdescription>
+<para>Initializes the states of all the modules. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" line="119" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" bodystart="118" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_main_window_1a0f1de895b89e34c227827240deeb81db" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.MainWindow.FinalizeModules</definition>
+        <argsstring>()</argsstring>
+        <name>FinalizeModules</name>
+        <briefdescription>
+<para>Requests that all modules finalize their states in preparation to close. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" line="130" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" bodystart="129" bodyend="135"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Interaction logic for MainWindow.xaml </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="53">
+        <label>Window</label>
+      </node>
+      <node id="52">
+        <label>ArmController.MainWindow</label>
+        <link refid="class_arm_controller_1_1_main_window"/>
+        <childnode refid="53" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="55">
+        <label>Window</label>
+      </node>
+      <node id="56">
+        <label>ArmController.Integration.VirtualBus</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_virtual_bus"/>
+      </node>
+      <node id="54">
+        <label>ArmController.MainWindow</label>
+        <link refid="class_arm_controller_1_1_main_window"/>
+        <childnode refid="55" relation="public-inheritance">
+        </childnode>
+        <childnode refid="56" relation="usage">
+          <edgelabel>_bus</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" line="28" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/MainWindow.xaml.cs" bodystart="27" bodyend="137"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_main_window_1a3a4ed79a190b72d6aa45c00949a2ca82" prot="private" virt="non-virtual"><scope>ArmController::MainWindow</scope><name>_bus</name></member>
+      <member refid="class_arm_controller_1_1_main_window_1a3c9920fae8c0e4a8dce9bd01883d4fb8" prot="private" virt="non-virtual"><scope>ArmController::MainWindow</scope><name>_modules</name></member>
+      <member refid="class_arm_controller_1_1_main_window_1a0f1de895b89e34c227827240deeb81db" prot="private" virt="non-virtual"><scope>ArmController::MainWindow</scope><name>FinalizeModules</name></member>
+      <member refid="class_arm_controller_1_1_main_window_1af3a712fda92322ede4f0104707fe149c" prot="private" virt="non-virtual"><scope>ArmController::MainWindow</scope><name>InitializeModules</name></member>
+      <member refid="class_arm_controller_1_1_main_window_1ab2a115f81d0ad75c6ad69d7f67a62b9e" prot="public" virt="non-virtual"><scope>ArmController::MainWindow</scope><name>MainWindow</name></member>
+      <member refid="class_arm_controller_1_1_main_window_1a31306fcff0339957e81d412b671e59e5" prot="private" virt="non-virtual"><scope>ArmController::MainWindow</scope><name>OnBusValueChanged</name></member>
+      <member refid="class_arm_controller_1_1_main_window_1a122f35768f1e4405576446798388e529" prot="private" virt="non-virtual"><scope>ArmController::MainWindow</scope><name>WindowClosing</name></member>
+      <member refid="class_arm_controller_1_1_main_window_1a2ecab4a3c580c643e351c304795c1c6d" prot="private" virt="non-virtual"><scope>ArmController::MainWindow</scope><name>WindowLoaded</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

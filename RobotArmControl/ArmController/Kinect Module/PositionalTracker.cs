@@ -14,6 +14,9 @@ using ArmController.Integration;
 
 namespace ArmController.Kinect_Module
 {
+    /// <summary>
+    /// This module uses the Kinect to track the position and orientation of the major sections of the user's upper torso.
+    /// </summary>
     class PositionalTracker : Module
     {
         #region Constants

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="namespace_arm_controller_1_1_cyber_glove_library" kind="namespace">
+    <compoundname>ArmController::CyberGloveLibrary</compoundname>
+    <innerclass refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module" prot="public">ArmController::CyberGloveLibrary::GloveModule</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" line="15"/>
+  </compounddef>
+</doxygen>

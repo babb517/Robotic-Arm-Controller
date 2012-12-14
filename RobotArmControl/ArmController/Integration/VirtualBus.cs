@@ -21,7 +21,7 @@ namespace ArmController.Integration
     /// is responsible for subscribing to any relevant nodes, listening for
     /// any value-changed events, and publishing any results they may have.
     /// </summary>
-    class VirtualBus
+    public class VirtualBus
     {
         #region Constants
         /************************************************************************************************************************************/
@@ -48,6 +48,12 @@ namespace ArmController.Integration
         /// </summary>
         private class NodeEntry
         {
+            /// <summary>
+            /// Initializes the node entry.
+            /// </summary>
+            /// <param name="node">The node the entry corresponds to.</param>
+            /// <param name="value">The initial value of the node.</param>
+            /// <param name="subscribers">The initial list of subscribers for the node.</param>
             public NodeEntry(BusNode node, Object value, List<VirtualBus.OnValueChangedCallback> subscribers)
             {
                 Node = node;
@@ -55,8 +61,19 @@ namespace ArmController.Integration
                 Subscribers = subscribers;
             }
 
+            /// <summary>
+            /// The name of the node.
+            /// </summary>
             public BusNode Node { get; private set; }
+
+            /// <summary>
+            /// The current value of the node.
+            /// </summary>
             public Object Value { get; set; }
+
+            /// <summary>
+            /// The node's subscribers.
+            /// </summary>
             public List<VirtualBus.OnValueChangedCallback> Subscribers { get; set; }
         }
 
@@ -71,7 +88,6 @@ namespace ArmController.Integration
         /// This is the set of all nodes active nodes in the virtual bus.
         /// </summary>
         private ConcurrentDictionary<BusNode, NodeEntry> _nodes;
-
 
         /// <summary>
         /// A set of the nodes which have been recently updated with notifications that need to be sent.
@@ -94,6 +110,10 @@ namespace ArmController.Integration
         /************************************************************************************************************************************/
         /* Constructors */
         /************************************************************************************************************************************/
+        /// <summary>
+        /// Initializes a shared virtual bus to act as a communication channel between modules.
+        /// </summary>
+        /// <param name="dispatcher">A dispatcher used to run event notifications on the GUI thread.</param>
         public VirtualBus(System.Windows.Threading.Dispatcher dispatcher)
         {
             Debug.Write("Initializing the virtual bus...\n");

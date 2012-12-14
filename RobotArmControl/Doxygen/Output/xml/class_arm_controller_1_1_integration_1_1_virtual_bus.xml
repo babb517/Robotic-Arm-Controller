@@ -1,0 +1,484 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_integration_1_1_virtual_bus" kind="class" prot="public">
+    <compoundname>ArmController::Integration::VirtualBus</compoundname>
+    <innerclass refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry" prot="private">ArmController::Integration::VirtualBus::NodeEntry</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1a8293293b8d60329fd77804bbe7f57b40" prot="private" static="no" mutable="no">
+        <type>ConcurrentDictionary&lt; <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>, <ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry" kindref="compound">NodeEntry</ref> &gt;</type>
+        <definition>ConcurrentDictionary&lt;BusNode, NodeEntry&gt; ArmController.Integration.VirtualBus._nodes</definition>
+        <argsstring></argsstring>
+        <name>_nodes</name>
+        <briefdescription>
+<para>This is the set of all nodes active nodes in the virtual bus. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="90" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1adc73150d8b4a3374f6636aedd95e5c47" prot="private" static="no" mutable="no">
+        <type>Queue</type>
+        <definition>Queue ArmController.Integration.VirtualBus._updatedNodes</definition>
+        <argsstring></argsstring>
+        <name>_updatedNodes</name>
+        <briefdescription>
+<para>A set of the nodes which have been recently updated with notifications that need to be sent. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="95" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="95" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1a69883547d92c354e13f61f2236d2bfb9" prot="private" static="no" mutable="no">
+        <type>Dispatcher</type>
+        <definition>Dispatcher ArmController.Integration.VirtualBus._dispatcher</definition>
+        <argsstring></argsstring>
+        <name>_dispatcher</name>
+        <briefdescription>
+<para>A dispatcher used for notifying everything on the GUI thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="100" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="100" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1af0e37cbfa66b20982717d12c75348a93" prot="private" static="no" mutable="no">
+        <type>DispatcherOperation</type>
+        <definition>DispatcherOperation ArmController.Integration.VirtualBus._notification</definition>
+        <argsstring></argsstring>
+        <name>_notification</name>
+        <briefdescription>
+<para>An object used to track an active notification request. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="105" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1aa38b746a6f0744d9486024f01b1c82fe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>delegate void</type>
+        <definition>delegate void ArmController.Integration.VirtualBus.OnValueChangedCallback</definition>
+        <argsstring>(BusNode node, Object value)</argsstring>
+        <name>OnValueChangedCallback</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>Object</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>A delegate used for subscribing to nodes in the virtual bus. This delegate is called when the value of the subscribed node has been changed. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node which has been changed.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="44"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1a129a54afc10a18b7613c41dbd27934d3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ArmController.Integration.VirtualBus.VirtualBus</definition>
+        <argsstring>(System.Windows.Threading.Dispatcher dispatcher)</argsstring>
+        <name>VirtualBus</name>
+        <param>
+          <type>System.Windows.Threading.Dispatcher</type>
+          <declname>dispatcher</declname>
+        </param>
+        <briefdescription>
+<para>Initializes a shared virtual bus to act as a communication channel between modules. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>dispatcher</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A dispatcher used to run event notifications on the GUI thread.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="118" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="117" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1a6bc624259935df4e7ea16a26641e622a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T ArmController.Integration.VirtualBus.Get&lt; T &gt;</definition>
+        <argsstring>(BusNode node)</argsstring>
+        <name>Get&lt; T &gt;</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Returns the current value of a node. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the node to retrieve.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node to retrieve.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The value of the node cast to the parameterized type. Must be a serializable type.</para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>InvalidCastException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the node can&apos;t be cast to the parameterized type.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if T is not a valid type.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="147" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="146" bodyend="171"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1ac6b1087650bafb95b3efaeb1626d612d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Integration.VirtualBus.Publish&lt; T &gt;</definition>
+        <argsstring>(BusNode node, T value)</argsstring>
+        <name>Publish&lt; T &gt;</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Attempts to attach a value to a node in the virtual bus. Notifies subscribed parties if successful. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the object to attach to the node. Must be a serializable type.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node to attach the value to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the node.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if the type of T is not valid or is not compatible with the declared type of the node.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="181" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="180" bodyend="200"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1a2e7ed24e3f18e6c53d4a18fa8399f9b1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Integration.VirtualBus.Subscribe</definition>
+        <argsstring>(BusNode node, OnValueChangedCallback callback)</argsstring>
+        <name>Subscribe</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1aa38b746a6f0744d9486024f01b1c82fe" kindref="member">OnValueChangedCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <briefdescription>
+<para>Attempts to subscribe a value-changed listener to a node. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the object to attach to the node. Must be a serializable type.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node to subscribe the listener to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delegate to call when a node has been changed.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="209" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="208" bodyend="221"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1ad9f85cd618075c17e391ae9bae5eb477" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Integration.VirtualBus.Unsubscribe</definition>
+        <argsstring>(BusNode node, OnValueChangedCallback callback, bool strict=true)</argsstring>
+        <name>Unsubscribe</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1aa38b746a6f0744d9486024f01b1c82fe" kindref="member">OnValueChangedCallback</ref></type>
+          <declname>callback</declname>
+        </param>
+        <param>
+          <type>bool</type>
+          <declname>strict</declname>
+          <defval>true</defval>
+        </param>
+        <briefdescription>
+<para>Attempts to unsubscribe a value-changed listener from a node. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node to unsubscribe the listener from.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The listener to unsubscribe.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>strict</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Whether to throw an exception if something goes wrong.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown if operating in strict mode and the callback wasn&apos;t registered to the node.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="231" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="230" bodyend="242"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1aa15f7a709d57a69a75f73ae5393fc053" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Integration.VirtualBus.QueueNotification</definition>
+        <argsstring>(BusNode node)</argsstring>
+        <name>QueueNotification</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Queues a node to be notified </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node to call the listeners for.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="250" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="249" bodyend="263"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1a0abc2f230fe9a5caaa85f71cef4fc8d8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Integration.VirtualBus.NotifyNodes</definition>
+        <argsstring>()</argsstring>
+        <name>NotifyNodes</name>
+        <briefdescription>
+<para>Notifies all currently queued nodes. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="276" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="275" bodyend="287"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1a4c09abfd4e3078e617a596f70e6ff82a" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Integration.VirtualBus.Notify</definition>
+        <argsstring>(BusNode node)</argsstring>
+        <name>Notify</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <briefdescription>
+<para>Calls any listeners for a node. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node to call the listeners for.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="294" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="293" bodyend="312"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1a6c44ce0a43163767de6fd4e75c89568d" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool ArmController.Integration.VirtualBus.IsValidType</definition>
+        <argsstring>(Type type)</argsstring>
+        <name>IsValidType</name>
+        <param>
+          <type>Type</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+<para>Determines if the provided type is valid. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>type</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type to check.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="319" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="318" bodyend="321"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1aeac6c61ed6054b32d47414762de2eea1" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>static bool ArmController.Integration.VirtualBus.SerializeCopy&lt; T &gt;</definition>
+        <argsstring>(T original, out T copy)</argsstring>
+        <name>SerializeCopy&lt; T &gt;</name>
+        <param>
+          <type>T</type>
+          <declname>original</declname>
+        </param>
+        <param>
+          <type>out T</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+<para>Performs a deep copy on the object by serializing an unserializing it. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="templateparam"><parameteritem>
+<parameternamelist>
+<parametername>T</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the object to copy. Must be serializable.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>original</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The original object.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>copy</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The copy of the object. Passed in uniitialized.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>True if successful, false otherwise.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="332" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="331" bodyend="361"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The virtual bus implements a publish / subscribe architecture to facilitate extensible communication between modules. Each module is responsible for subscribing to any relevant nodes, listening for any value-changed events, and publishing any results they may have. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="25" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="24" bodyend="364"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1a69883547d92c354e13f61f2236d2bfb9" prot="private" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>_dispatcher</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1a8293293b8d60329fd77804bbe7f57b40" prot="private" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>_nodes</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1af0e37cbfa66b20982717d12c75348a93" prot="private" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>_notification</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1adc73150d8b4a3374f6636aedd95e5c47" prot="private" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>_updatedNodes</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1a6bc624259935df4e7ea16a26641e622a" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>Get&lt; T &gt;</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1a6c44ce0a43163767de6fd4e75c89568d" prot="private" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>IsValidType</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1a4c09abfd4e3078e617a596f70e6ff82a" prot="private" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>Notify</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1a0abc2f230fe9a5caaa85f71cef4fc8d8" prot="private" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>NotifyNodes</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1aa38b746a6f0744d9486024f01b1c82fe" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>OnValueChangedCallback</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1ac6b1087650bafb95b3efaeb1626d612d" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>Publish&lt; T &gt;</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1aa15f7a709d57a69a75f73ae5393fc053" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>QueueNotification</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1aeac6c61ed6054b32d47414762de2eea1" prot="private" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>SerializeCopy&lt; T &gt;</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1a2e7ed24e3f18e6c53d4a18fa8399f9b1" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>Subscribe</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1ad9f85cd618075c17e391ae9bae5eb477" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>Unsubscribe</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1a129a54afc10a18b7613c41dbd27934d3" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus</scope><name>VirtualBus</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

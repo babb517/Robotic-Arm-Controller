@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="dir_3c76746faac44159e087da9183077692" kind="dir">
+    <compoundname>ArmController/Integration</compoundname>
+    <innerfile refid="_bus_node_8cs">BusNode.cs</innerfile>
+    <innerfile refid="_module_8cs">Module.cs</innerfile>
+    <innerfile refid="_virtual_bus_8cs">VirtualBus.cs</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/"/>
+  </compounddef>
+</doxygen>

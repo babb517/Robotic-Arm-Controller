@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module" kind="class" prot="public">
+    <compoundname>ArmController::CyberGloveLibrary::GloveModule</compoundname>
+    <basecompoundref refid="class_arm_controller_1_1_integration_1_1_module" prot="public" virt="non-virtual">ArmController.Integration.Module</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a52aee2ca4bd632e4fcbbaadf48ab689d" prot="private" static="no" mutable="no">
+        <type>Thread</type>
+        <definition>Thread ArmController.CyberGloveLibrary.GloveModule.gloveThread</definition>
+        <argsstring></argsstring>
+        <name>gloveThread</name>
+        <briefdescription>
+<para>primary thread, started in <ref refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a6bfb8ca943f5730540404447896286e4" kindref="member">OnInitialize()</ref> and joined in <ref refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a3505c0bcc00518d40f09250361ebae22" kindref="member">OnFinalize()</ref> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" line="22" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a8259cb4be84ceab0d521639a56fe7a27" prot="private" static="no" mutable="no">
+        <type>bool</type>
+        <definition>bool ArmController.CyberGloveLibrary.GloveModule.running</definition>
+        <argsstring></argsstring>
+        <name>running</name>
+        <briefdescription>
+<para>flag set by <ref refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a3505c0bcc00518d40f09250361ebae22" kindref="member">OnFinalize()</ref> to let thread know to gracefully finish </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" line="23" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a338ecbbf6122de996cbe3817ca754aba" prot="private" static="no" mutable="no">
+        <type>SerialPort</type>
+        <definition>SerialPort ArmController.CyberGloveLibrary.GloveModule.sp</definition>
+        <argsstring></argsstring>
+        <name>sp</name>
+        <briefdescription>
+<para>serial port used to communicate with the CyberGlove </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" line="24" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a6bfb8ca943f5730540404447896286e4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ArmController.CyberGloveLibrary.GloveModule.OnInitialize</definition>
+        <argsstring>()</argsstring>
+        <name>OnInitialize</name>
+        <reimplements refid="class_arm_controller_1_1_integration_1_1_module_1aeadaad361df957dd7a6fb9ec3d9137fb">OnInitialize</reimplements>
+        <briefdescription>
+<para>Open CyberGlove serial port and start data collection thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" line="30" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" bodystart="29" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a3505c0bcc00518d40f09250361ebae22" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ArmController.CyberGloveLibrary.GloveModule.OnFinalize</definition>
+        <argsstring>()</argsstring>
+        <name>OnFinalize</name>
+        <reimplements refid="class_arm_controller_1_1_integration_1_1_module_1ae74177423f7caf9b58e76d9186207a7c">OnFinalize</reimplements>
+        <briefdescription>
+<para>Stop streaming CyberGlove and close the data collection thread. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" line="47" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" bodystart="46" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1ae6f6ab99a2059f088bb31e8934b28f76" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.CyberGloveLibrary.GloveModule.readGlove</definition>
+        <argsstring>()</argsstring>
+        <name>readGlove</name>
+        <briefdescription>
+<para>Method to endlessly stream data from a CyberGlove. Should be threaded. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" line="56" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" bodystart="55" bodyend="199"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A simple class to constantly read data from a CyberGlove. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="48">
+        <label>ArmController.CyberGloveLibrary.GloveModule</label>
+        <link refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module"/>
+        <childnode refid="49" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="49">
+        <label>ArmController::Integration::Module</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_module"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="50">
+        <label>ArmController.CyberGloveLibrary.GloveModule</label>
+        <link refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module"/>
+        <childnode refid="51" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="51">
+        <label>ArmController::Integration::Module</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_module"/>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" line="20" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/CyberGlove Module/CyberGloveModule.cs" bodystart="19" bodyend="201"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1a7531038d76af01631231aeabb3066cbb" prot="protected" virt="non-virtual"><scope>ArmController::CyberGloveLibrary::GloveModule</scope><name>Bus</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae9bf825ee97dc743d0012d58fdde0f43" prot="public" virt="non-virtual"><scope>ArmController::CyberGloveLibrary::GloveModule</scope><name>FinalizeModule</name></member>
+      <member refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a52aee2ca4bd632e4fcbbaadf48ab689d" prot="private" virt="non-virtual"><scope>ArmController::CyberGloveLibrary::GloveModule</scope><name>gloveThread</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae1258c83da93b28a6c1e1f245d0ecda0" prot="public" virt="non-virtual"><scope>ArmController::CyberGloveLibrary::GloveModule</scope><name>InitializeModule</name></member>
+      <member refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a3505c0bcc00518d40f09250361ebae22" prot="protected" virt="virtual"><scope>ArmController::CyberGloveLibrary::GloveModule</scope><name>OnFinalize</name></member>
+      <member refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a6bfb8ca943f5730540404447896286e4" prot="protected" virt="virtual"><scope>ArmController::CyberGloveLibrary::GloveModule</scope><name>OnInitialize</name></member>
+      <member refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1ae6f6ab99a2059f088bb31e8934b28f76" prot="protected" virt="non-virtual"><scope>ArmController::CyberGloveLibrary::GloveModule</scope><name>readGlove</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1aea049ab02d612a5e9a7f64d62a6f7bf8" prot="protected" virt="non-virtual"><scope>ArmController::CyberGloveLibrary::GloveModule</scope><name>RequestStop</name></member>
+      <member refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a8259cb4be84ceab0d521639a56fe7a27" prot="private" virt="non-virtual"><scope>ArmController::CyberGloveLibrary::GloveModule</scope><name>running</name></member>
+      <member refid="class_arm_controller_1_1_cyber_glove_library_1_1_glove_module_1a338ecbbf6122de996cbe3817ca754aba" prot="private" virt="non-virtual"><scope>ArmController::CyberGloveLibrary::GloveModule</scope><name>sp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

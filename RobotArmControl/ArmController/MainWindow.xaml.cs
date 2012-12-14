@@ -58,6 +58,7 @@ namespace ArmController
         /// </summary>
         /// <param name="sender">object sending the event</param>
         /// <param name="e">event arguments</param>
+        /// <remarks>New modules should inherit from <see cref="Integration.Module"/> and should be instantiated here.</remarks>
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
             // setup the virtual bus.
@@ -133,9 +134,5 @@ namespace ArmController
             }
         }
 
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

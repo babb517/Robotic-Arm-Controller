@@ -1,0 +1,269 @@
+.TH "ArmController.Kinect_Module.PositionalTracker" 3 "Fri Dec 14 2012" "Version 0.5" "Robot Arm Controller" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArmController.Kinect_Module.PositionalTracker \- 
+.PP
+This module uses the Kinect to track the position and orientation of the major sections of the user's upper torso\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBArmController\&.Integration\&.Module\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPositionalTracker\fP (DrawingGroup canvas=null)"
+.br
+.RI "\fIInitializes the tracker object\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override void \fBOnInitialize\fP ()"
+.br
+.RI "\fIAn event handling method called when the controller has requested that the module initialize its state\&. \fP"
+.ti -1c
+.RI "override void \fBOnFinalize\fP ()"
+.br
+.RI "\fIAn event handling method called when the controller has requested that the module finalize its state\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBOnKinectSensorChanged\fP (object sender, KinectChangedEventArgs e)"
+.br
+.RI "\fIA handler to take care of the sensor changing during operation\&. \fP"
+.ti -1c
+.RI "void \fBOnKinectPropertyChanged\fP (object sender, PropertyChangedEventArgs e)"
+.br
+.RI "\fIA handler used to track the status of the kinect chooser interface and report it to the debug console\&. \fP"
+.ti -1c
+.RI "void \fBOnKinectDataReady\fP (object sender, SkeletonFrameReadyEventArgs e)"
+.br
+.RI "\fIAcquires the skeletal data from the kinect frame, processes the data, and publishes the relevent data to the virtual bus\&. \fP"
+.ti -1c
+.RI "void \fBStartKinectST\fP ()"
+.br
+.RI "\fIStarts the kinect sensor and starts listening for the kinect publishing data\&. This method is taken almost directly from the MSDN example: http://msdn.microsoft.com/en-us/library/jj131025.aspx \fP"
+.ti -1c
+.RI "void \fBStopKinectST\fP ()"
+.br
+.RI "\fIStops the kinect sensor\&. \fP"
+.ti -1c
+.RI "void \fBSetupKinect\fP (KinectSensor snsr)"
+.br
+.RI "\fISets up a kinect sensor for used\&. Currently only one sensor may be in use at a time\&. \fP"
+.ti -1c
+.RI "bool \fBSelectPlayerOne\fP ()"
+.br
+.RI "\fIScans through our skeletons and selects player one based on our previous selection and the position of each skeleton\&. \fP"
+.ti -1c
+.RI "void \fBProcessSkeletalData\fP ()"
+.br
+.RI "\fIPrepocesses the skeleton data giving us information like the appropriate joint angles\&. \fP"
+.ti -1c
+.RI "Point \fBSkeletonPointToScreen\fP (SkeletonPoint skelpoint)"
+.br
+.RI "\fIMaps a SkeletonPoint to lie within our render space and converts to Point \fP"
+.ti -1c
+.RI "SkeletonPoint \fBGetUnitDirection\fP (JointType terminus)"
+.br
+.RI "\fIGets the (relative) direction of the bone identified by the provided terminal joint\&. \fP"
+.ti -1c
+.RI "\fBOrientation\fP \fBGetOrientation\fP (JointType terminus)"
+.br
+.RI "\fIGets the (relative) orientation of the bone identified by the provided terminal joint\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "KinectSensorChooser \fB_snsr\fP"
+.br
+.RI "\fIThe kinect sensor\&. \fP"
+.ti -1c
+.RI "Skeleton[] \fB_skeletonData\fP"
+.br
+.RI "\fIThe skeleton data from the kinect\&. \fP"
+.ti -1c
+.RI "\fBSkeletonRenderer\fP \fB_renderer\fP"
+.br
+.RI "\fIThe rendering object used to display rendering output \fP"
+.ti -1c
+.RI "EventHandler
+.br
+< SkeletonFrameReadyEventArgs > \fB_skeletonReadyHandler\fP"
+.br
+.RI "\fIA handler used to handle kinect data once it's ready\&. \fP"
+.ti -1c
+.RI "Skeleton \fB_playerOne\fP"
+.br
+.RI "\fIA member used to track the player we're currently working with\&. A value of null indicates that a player hasn't been found and then next available player will be registered as player one\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This module uses the Kinect to track the position and orientation of the major sections of the user's upper torso\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ArmController\&.Kinect_Module\&.PositionalTracker\&.PositionalTracker (DrawingGroupcanvas = \fCnull\fP)"
+
+.PP
+Initializes the tracker object\&. \fBParameters:\fP
+.RS 4
+\fIcanvas\fP The canvas to draw vision data onto if applicable, null otherwise\&.
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBOrientation\fP ArmController\&.Kinect_Module\&.PositionalTracker\&.GetOrientation (JointTypeterminus)\fC [private]\fP"
+
+.PP
+Gets the (relative) orientation of the bone identified by the provided terminal joint\&. \fBParameters:\fP
+.RS 4
+\fIterminus\fP The joint at which the bone terminates\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A 3d point representing a unit vector in the relative direction of the bone\&.
+.RE
+.PP
+NOTE: The bones are indexed by their terminal joint\&. http://msdn.microsoft.com/en-us/library/hh973073.aspx The Z axis extends directly in front of the player\&. The elbow is restricted to a postive yawing motion\&. The shoulder can move in all directions\&.
+.SS "SkeletonPoint ArmController\&.Kinect_Module\&.PositionalTracker\&.GetUnitDirection (JointTypeterminus)\fC [private]\fP"
+
+.PP
+Gets the (relative) direction of the bone identified by the provided terminal joint\&. \fBParameters:\fP
+.RS 4
+\fIterminus\fP The joint at which the bone terminates\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+A 3d point representing a unit vector in the relative direction of the bone\&.
+.RE
+.PP
+
+.SS "override void ArmController\&.Kinect_Module\&.PositionalTracker\&.OnFinalize ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+An event handling method called when the controller has requested that the module finalize its state\&. 
+.PP
+Implements \fBArmController\&.Integration\&.Module\fP\&.
+.SS "override void ArmController\&.Kinect_Module\&.PositionalTracker\&.OnInitialize ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+An event handling method called when the controller has requested that the module initialize its state\&. 
+.PP
+Implements \fBArmController\&.Integration\&.Module\fP\&.
+.SS "void ArmController\&.Kinect_Module\&.PositionalTracker\&.OnKinectDataReady (objectsender, SkeletonFrameReadyEventArgse)\fC [private]\fP"
+
+.PP
+Acquires the skeletal data from the kinect frame, processes the data, and publishes the relevent data to the virtual bus\&. \fBParameters:\fP
+.RS 4
+\fIsender\fP 
+.br
+\fIe\fP An event object containing the most recent skeletal frame\&.
+.RE
+.PP
+
+.SS "void ArmController\&.Kinect_Module\&.PositionalTracker\&.OnKinectPropertyChanged (objectsender, PropertyChangedEventArgse)\fC [private]\fP"
+
+.PP
+A handler used to track the status of the kinect chooser interface and report it to the debug console\&. \fBParameters:\fP
+.RS 4
+\fIsender\fP 
+.br
+\fIe\fP 
+.RE
+.PP
+
+.SS "void ArmController\&.Kinect_Module\&.PositionalTracker\&.OnKinectSensorChanged (objectsender, KinectChangedEventArgse)\fC [private]\fP"
+
+.PP
+A handler to take care of the sensor changing during operation\&. \fBParameters:\fP
+.RS 4
+\fIsender\fP 
+.br
+\fIe\fP 
+.RE
+.PP
+
+.SS "void ArmController\&.Kinect_Module\&.PositionalTracker\&.ProcessSkeletalData ()\fC [private]\fP"
+
+.PP
+Prepocesses the skeleton data giving us information like the appropriate joint angles\&. 
+.SS "bool ArmController\&.Kinect_Module\&.PositionalTracker\&.SelectPlayerOne ()\fC [private]\fP"
+
+.PP
+Scans through our skeletons and selects player one based on our previous selection and the position of each skeleton\&. \fBReturns:\fP
+.RS 4
+True if a new player has been selected, false otherwise\&.
+.RE
+.PP
+
+.SS "void ArmController\&.Kinect_Module\&.PositionalTracker\&.SetupKinect (KinectSensorsnsr)\fC [private]\fP"
+
+.PP
+Sets up a kinect sensor for used\&. Currently only one sensor may be in use at a time\&. \fBParameters:\fP
+.RS 4
+\fIsnsr\fP The kinect sensor to setup\&.
+.RE
+.PP
+
+.SS "Point ArmController\&.Kinect_Module\&.PositionalTracker\&.SkeletonPointToScreen (SkeletonPointskelpoint)\fC [private]\fP"
+
+.PP
+Maps a SkeletonPoint to lie within our render space and converts to Point \fBParameters:\fP
+.RS 4
+\fIskelpoint\fP point to map
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+mapped point
+.RE
+.PP
+
+.SS "void ArmController\&.Kinect_Module\&.PositionalTracker\&.StartKinectST ()\fC [private]\fP"
+
+.PP
+Starts the kinect sensor and starts listening for the kinect publishing data\&. This method is taken almost directly from the MSDN example: http://msdn.microsoft.com/en-us/library/jj131025.aspx 
+.SS "void ArmController\&.Kinect_Module\&.PositionalTracker\&.StopKinectST ()\fC [private]\fP"
+
+.PP
+Stops the kinect sensor\&. 
+.SH "Member Data Documentation"
+.PP 
+.SS "Skeleton ArmController\&.Kinect_Module\&.PositionalTracker\&._playerOne\fC [private]\fP"
+
+.PP
+A member used to track the player we're currently working with\&. A value of null indicates that a player hasn't been found and then next available player will be registered as player one\&. 
+.SS "\fBSkeletonRenderer\fP ArmController\&.Kinect_Module\&.PositionalTracker\&._renderer\fC [private]\fP"
+
+.PP
+The rendering object used to display rendering output 
+.SS "Skeleton [] ArmController\&.Kinect_Module\&.PositionalTracker\&._skeletonData\fC [private]\fP"
+
+.PP
+The skeleton data from the kinect\&. 
+.SS "EventHandler<SkeletonFrameReadyEventArgs> ArmController\&.Kinect_Module\&.PositionalTracker\&._skeletonReadyHandler\fC [private]\fP"
+
+.PP
+A handler used to handle kinect data once it's ready\&. 
+.SS "KinectSensorChooser ArmController\&.Kinect_Module\&.PositionalTracker\&._snsr\fC [private]\fP"
+
+.PP
+The kinect sensor\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Robot Arm Controller from the source code\&.

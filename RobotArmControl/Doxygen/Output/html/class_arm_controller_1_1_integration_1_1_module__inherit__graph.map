@@ -1,0 +1,6 @@
+<map id="ArmController.Integration.Module" name="ArmController.Integration.Module">
+<area shape="rect" id="node3" href="$class_arm_controller_1_1_cyber_glove_library_1_1_glove_module.html" title="A simple class to constantly read data from a CyberGlove. " alt="" coords="243,5,413,46"/>
+<area shape="rect" id="node5" href="$class_arm_controller_1_1_kinect___module_1_1_positional_tracker.html" title="This module uses the Kinect to track the position and orientation of the major sections of the user&#39;s..." alt="" coords="241,70,415,111"/>
+<area shape="rect" id="node7" href="$class_arm_controller_1_1_kinect___module_1_1_position_feedback.html" title="This module is used for debugging purposes. It listens for the orientations of the user&#39;s right arm o..." alt="" coords="239,135,417,177"/>
+<area shape="rect" id="node9" href="$class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module.html" title="This class contains the logic used to control the robot arm with the use of data which is provided by..." alt="" coords="225,201,431,242"/>
+</map>

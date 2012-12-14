@@ -7,6 +7,10 @@ using System.Diagnostics;
 
 namespace ArmController.Integration
 {
+    /// <summary>
+    /// An abstract interface for each of the modules.
+    /// </summary>
+    /// <remarks>New modules should inherit from this class and should be instantiated in <see cref="MainWindow.WindowLoaded"/>.</remarks>
     abstract class Module
     {
 
@@ -14,6 +18,9 @@ namespace ArmController.Integration
         /* Protected Members */
         /**************************************************************************************/
 
+        /// <summary>
+        /// A reference to the virtual bus shared between the modules.
+        /// </summary>
         protected VirtualBus Bus { get; private set; }
 
         /**************************************************************************************/

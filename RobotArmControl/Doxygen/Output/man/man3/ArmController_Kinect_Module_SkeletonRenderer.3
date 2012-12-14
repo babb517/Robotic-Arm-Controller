@@ -1,0 +1,241 @@
+.TH "ArmController.Kinect_Module.SkeletonRenderer" 3 "Fri Dec 14 2012" "Version 0.5" "Robot Arm Controller" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArmController.Kinect_Module.SkeletonRenderer \- 
+.PP
+This class provides us with a means to render a skeleton on a screen\&. This is based on the example provided by the Kinect SDK\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "delegate Point \fBPointResolverDelegate\fP (SkeletonPoint point)"
+.br
+.RI "\fIA delegate used to map the 3d position of a skeletal point onto a 2d canvas\&. \fP"
+.ti -1c
+.RI "\fBSkeletonRenderer\fP (\fBPointResolverDelegate\fP pointResolver, DrawingGroup canvas=null)"
+.br
+.RI "\fIInitializes the rendering helper\&. \fP"
+.ti -1c
+.RI "void \fBDrawSkeletons\fP (Skeleton[] skeletons)"
+.br
+.RI "\fIDraws a set of skeletons on the canvas\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "DrawingGroup \fBCanvas\fP\fC [get, set]\fP"
+.br
+.RI "\fIThe canvas to render the skeleton on\&. \fP"
+.ti -1c
+.RI "bool \fBIsReady\fP\fC [get]\fP"
+.br
+.RI "\fIVirtual member used to determine if the renderer is ready to draw something\&. \fP"
+.ti -1c
+.RI "\fBPointResolverDelegate\fP \fBPointResolver\fP\fC [get, set]\fP"
+.br
+.RI "\fIThe delegate used to resolve the 2d position of skeletal points\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDrawSkeleton\fP (DrawingContext context, Skeleton skeleton)"
+.br
+.RI "\fIDraws a skeleton's bones and joints \fP"
+.ti -1c
+.RI "void \fBDrawBone\fP (DrawingContext context, Joint joint0, Joint joint1)"
+.br
+.RI "\fIDraws a bone line between two joints \fP"
+.ti -1c
+.RI "void \fBRenderClippedEdges\fP (DrawingContext context, Skeleton skeleton)"
+.br
+.RI "\fIDraws indicators to show which edges are clipping skeleton data \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const float \fBRenderWidth\fP = 480\&.0f"
+.br
+.RI "\fIWidth of output drawing \fP"
+.ti -1c
+.RI "const float \fBRenderHeight\fP = 480\&.0f"
+.br
+.RI "\fIHeight of our output drawing \fP"
+.ti -1c
+.RI "const double \fBJointThickness\fP = 3"
+.br
+.RI "\fIThickness of drawn joint lines \fP"
+.ti -1c
+.RI "const double \fBBodyCenterThickness\fP = 10"
+.br
+.RI "\fIThickness of body center ellipse \fP"
+.ti -1c
+.RI "const double \fBClipBoundsThickness\fP = 10"
+.br
+.RI "\fIThickness of clip edge rectangles \fP"
+.ti -1c
+.RI "readonly Brush \fBcenterPointBrush\fP = Brushes\&.Blue"
+.br
+.RI "\fIBrush used to draw skeleton center point \fP"
+.ti -1c
+.RI "readonly Brush \fBtrackedJointBrush\fP = new SolidColorBrush(Color\&.FromArgb(255, 68, 192, 68))"
+.br
+.RI "\fIBrush used for drawing joints that are currently tracked \fP"
+.ti -1c
+.RI "readonly Brush \fBinferredJointBrush\fP = Brushes\&.Yellow"
+.br
+.RI "\fIBrush used for drawing joints that are currently inferred \fP"
+.ti -1c
+.RI "readonly Pen \fBtrackedBonePen\fP = new Pen(Brushes\&.Green, 6)"
+.br
+.RI "\fIPen used for drawing bones that are currently tracked \fP"
+.ti -1c
+.RI "readonly Pen \fBinferredBonePen\fP = new Pen(Brushes\&.Gray, 1)"
+.br
+.RI "\fIPen used for drawing bones that are currently inferred \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This class provides us with a means to render a skeleton on a screen\&. This is based on the example provided by the Kinect SDK\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ArmController\&.Kinect_Module\&.SkeletonRenderer\&.SkeletonRenderer (\fBPointResolverDelegate\fPpointResolver, DrawingGroupcanvas = \fCnull\fP)"
+
+.PP
+Initializes the rendering helper\&. \fBParameters:\fP
+.RS 4
+\fIpointResolver\fP The delegate used to resolve the 2d position of skeletal points\&.
+.br
+\fIcanvas\fP The canvas to draw on, or null\&.
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ArmController\&.Kinect_Module\&.SkeletonRenderer\&.DrawBone (DrawingContextcontext, Jointjoint0, Jointjoint1)\fC [private]\fP"
+
+.PP
+Draws a bone line between two joints \fBParameters:\fP
+.RS 4
+\fIcontext\fP The context for the canvas to draw on\&.
+.br
+\fIjoint0\fP joint to start drawing from
+.br
+\fIjoint1\fP joint to end drawing at
+.RE
+.PP
+
+.SS "void ArmController\&.Kinect_Module\&.SkeletonRenderer\&.DrawSkeleton (DrawingContextcontext, Skeletonskeleton)\fC [private]\fP"
+
+.PP
+Draws a skeleton's bones and joints \fBParameters:\fP
+.RS 4
+\fIcontext\fP The context for the canvas to draw on\&.
+.br
+\fIskeleton\fP skeleton to draw
+.RE
+.PP
+
+.SS "void ArmController\&.Kinect_Module\&.SkeletonRenderer\&.DrawSkeletons (Skeleton[]skeletons)"
+
+.PP
+Draws a set of skeletons on the canvas\&. \fBParameters:\fP
+.RS 4
+\fIskeletons\fP The skeletons to draw\&.
+.RE
+.PP
+
+.SS "delegate Point ArmController\&.Kinect_Module\&.SkeletonRenderer\&.PointResolverDelegate (SkeletonPointpoint)"
+
+.PP
+A delegate used to map the 3d position of a skeletal point onto a 2d canvas\&. \fBParameters:\fP
+.RS 4
+\fIpoint\fP The skeletal point to map\&.
+.RE
+.PP
+\fBReturns:\fP
+.RS 4
+The 2d position of that point on a canvas\&.
+.RE
+.PP
+
+.SS "void ArmController\&.Kinect_Module\&.SkeletonRenderer\&.RenderClippedEdges (DrawingContextcontext, Skeletonskeleton)\fC [private]\fP"
+
+.PP
+Draws indicators to show which edges are clipping skeleton data \fBParameters:\fP
+.RS 4
+\fIcontext\fP The context for the canvas to draw on\&.
+.br
+\fIskeleton\fP skeleton to draw clipping information for
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const double ArmController\&.Kinect_Module\&.SkeletonRenderer\&.BodyCenterThickness = 10\fC [private]\fP"
+
+.PP
+Thickness of body center ellipse 
+.SS "readonly Brush ArmController\&.Kinect_Module\&.SkeletonRenderer\&.centerPointBrush = Brushes\&.Blue\fC [private]\fP"
+
+.PP
+Brush used to draw skeleton center point 
+.SS "const double ArmController\&.Kinect_Module\&.SkeletonRenderer\&.ClipBoundsThickness = 10\fC [private]\fP"
+
+.PP
+Thickness of clip edge rectangles 
+.SS "readonly Pen ArmController\&.Kinect_Module\&.SkeletonRenderer\&.inferredBonePen = new Pen(Brushes\&.Gray, 1)\fC [private]\fP"
+
+.PP
+Pen used for drawing bones that are currently inferred 
+.SS "readonly Brush ArmController\&.Kinect_Module\&.SkeletonRenderer\&.inferredJointBrush = Brushes\&.Yellow\fC [private]\fP"
+
+.PP
+Brush used for drawing joints that are currently inferred 
+.SS "const double ArmController\&.Kinect_Module\&.SkeletonRenderer\&.JointThickness = 3\fC [private]\fP"
+
+.PP
+Thickness of drawn joint lines 
+.SS "const float ArmController\&.Kinect_Module\&.SkeletonRenderer\&.RenderHeight = 480\&.0f\fC [private]\fP"
+
+.PP
+Height of our output drawing 
+.SS "const float ArmController\&.Kinect_Module\&.SkeletonRenderer\&.RenderWidth = 480\&.0f\fC [private]\fP"
+
+.PP
+Width of output drawing 
+.SS "readonly Pen ArmController\&.Kinect_Module\&.SkeletonRenderer\&.trackedBonePen = new Pen(Brushes\&.Green, 6)\fC [private]\fP"
+
+.PP
+Pen used for drawing bones that are currently tracked 
+.SS "readonly Brush ArmController\&.Kinect_Module\&.SkeletonRenderer\&.trackedJointBrush = new SolidColorBrush(Color\&.FromArgb(255, 68, 192, 68))\fC [private]\fP"
+
+.PP
+Brush used for drawing joints that are currently tracked 
+.SH "Property Documentation"
+.PP 
+.SS "DrawingGroup ArmController\&.Kinect_Module\&.SkeletonRenderer\&.Canvas\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The canvas to render the skeleton on\&. 
+.SS "bool ArmController\&.Kinect_Module\&.SkeletonRenderer\&.IsReady\fC [get]\fP"
+
+.PP
+Virtual member used to determine if the renderer is ready to draw something\&. 
+.SS "\fBPointResolverDelegate\fP ArmController\&.Kinect_Module\&.SkeletonRenderer\&.PointResolver\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The delegate used to resolve the 2d position of skeletal points\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Robot Arm Controller from the source code\&.

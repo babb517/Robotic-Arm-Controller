@@ -1,0 +1,75 @@
+.TH "ArmController.Integration.VirtualBus.NodeEntry" 3 "Fri Dec 14 2012" "Version 0.5" "Robot Arm Controller" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArmController.Integration.VirtualBus.NodeEntry \- 
+.PP
+A single entry in the node table\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBNodeEntry\fP (\fBBusNode\fP node, Object value, List< \fBVirtualBus\&.OnValueChangedCallback\fP > subscribers)"
+.br
+.RI "\fIInitializes the node entry\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBBusNode\fP \fBNode\fP\fC [get, set]\fP"
+.br
+.RI "\fIThe name of the node\&. \fP"
+.ti -1c
+.RI "Object \fBValue\fP\fC [get, set]\fP"
+.br
+.RI "\fIThe current value of the node\&. \fP"
+.ti -1c
+.RI "List
+.br
+< \fBVirtualBus\&.OnValueChangedCallback\fP > \fBSubscribers\fP\fC [get, set]\fP"
+.br
+.RI "\fIThe node's subscribers\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+A single entry in the node table\&. 
+
+
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ArmController\&.Integration\&.VirtualBus\&.NodeEntry\&.NodeEntry (\fBBusNode\fPnode, Objectvalue, List< \fBVirtualBus\&.OnValueChangedCallback\fP >subscribers)"
+
+.PP
+Initializes the node entry\&. \fBParameters:\fP
+.RS 4
+\fInode\fP The node the entry corresponds to\&.
+.br
+\fIvalue\fP The initial value of the node\&.
+.br
+\fIsubscribers\fP The initial list of subscribers for the node\&.
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "\fBBusNode\fP ArmController\&.Integration\&.VirtualBus\&.NodeEntry\&.Node\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The name of the node\&. 
+.SS "List<\fBVirtualBus\&.OnValueChangedCallback\fP> ArmController\&.Integration\&.VirtualBus\&.NodeEntry\&.Subscribers\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The node's subscribers\&. 
+.SS "Object ArmController\&.Integration\&.VirtualBus\&.NodeEntry\&.Value\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The current value of the node\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Robot Arm Controller from the source code\&.

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="namespace_arm_controller_1_1_kinect___module" kind="namespace">
+    <compoundname>ArmController::Kinect_Module</compoundname>
+    <innerclass refid="class_arm_controller_1_1_kinect___module_1_1_orientation" prot="public">ArmController::Kinect_Module::Orientation</innerclass>
+    <innerclass refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker" prot="public">ArmController::Kinect_Module::PositionalTracker</innerclass>
+    <innerclass refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback" prot="public">ArmController::Kinect_Module::PositionFeedback</innerclass>
+    <innerclass refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer" prot="public">ArmController::Kinect_Module::SkeletonRenderer</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/Orientation.cs" line="8"/>
+  </compounddef>
+</doxygen>

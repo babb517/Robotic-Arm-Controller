@@ -1,0 +1,295 @@
+.TH "ArmController.Robot_Arm_Module.RobotArmModule" 3 "Fri Dec 14 2012" "Version 0.5" "Robot Arm Controller" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArmController.Robot_Arm_Module.RobotArmModule \- 
+.PP
+This class contains the logic used to control the robot arm with the use of data which is provided by the CyberGlove Module and the Kinect Module\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits \fBArmController\&.Integration\&.Module\fP\&.
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "override void \fBOnInitialize\fP ()"
+.br
+.RI "\fIInitialization function that is called when the thread is created\&. Opens the serial port used to communicate with the robot arm, sets the initial servo positions, and subscribes to the appropriate data nodes on the Virtual Bus\&. \fP"
+.ti -1c
+.RI "override void \fBOnFinalize\fP ()"
+.br
+.RI "\fIAn event handling method called when the controller has requested that the module finalize its state\&. Closes the serial port that is used to communicate with the robot arm\&. \fP"
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBsp_DataReceived\fP (object sender, SerialDataReceivedEventArgs e)"
+.br
+.RI "\fIThis is called when data is received from the robot arm via serial bus\&. \fP"
+.ti -1c
+.RI "void \fBOnValuePublished\fP (\fBBusNode\fP node, object value)"
+.br
+.RI "\fIThis is called when a subscribed value is published on the virtual bus\&. \fP"
+.ti -1c
+.RI "void \fBmove\fP (int servo, int pos, int speed)"
+.br
+.RI "\fIThis method is used to move a servo to a new position at a desired speed\&. \fP"
+.ti -1c
+.RI "void \fBsend\fP (string command)"
+.br
+.RI "\fIThis helper method sends a command to the robot arm through a serial port\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "int \fBcurrentShoulderPosition\fP = 0"
+.br
+.RI "\fIThe current position of the shoulder servo\&. \fP"
+.ti -1c
+.RI "int \fBcurrentArmPosition\fP = 0"
+.br
+.RI "\fIThe current position of the arm servo\&. \fP"
+.ti -1c
+.RI "int \fBcurrentForearmPosition\fP = 0"
+.br
+.RI "\fIThe current position of the forearm servo\&. \fP"
+.ti -1c
+.RI "int \fBcurrentWristPosition\fP = 0"
+.br
+.RI "\fIThe current position of the wrist servo\&. \fP"
+.ti -1c
+.RI "int \fBcurrentHandPosition\fP = 0"
+.br
+.RI "\fIThe current position of the hand servo\&. \fP"
+.ti -1c
+.RI "const int \fBpositionDeltaThreshold\fP = 0"
+.br
+.RI "\fIMinimum movement amount that the robot arm can move a servo\&. \fP"
+.ti -1c
+.RI "const double \fBRAD_PER_DEG\fP = 0\&.0174532925"
+.br
+.RI "\fIRadians per degree\&. \fP"
+.ti -1c
+.RI "const long \fBMIN_UPDATE_INTERVAL\fP = 100"
+.br
+.RI "\fIMilliseconds to wait between command updates\&. \fP"
+.ti -1c
+.RI "const int \fBSHOULDER_YAW\fP = 0"
+.br
+.RI "\fIBase servo channel number on the robot arm\&. \fP"
+.ti -1c
+.RI "const int \fBSHOULDER_PITCH\fP = 1"
+.br
+.RI "\fIArm servo channel number on the robot arm\&. \fP"
+.ti -1c
+.RI "const int \fBELBOW_JOINT\fP = 2"
+.br
+.RI "\fIForearm servo channel number on the robot arm\&. \fP"
+.ti -1c
+.RI "const int \fBWRIST_JOINT\fP = 3"
+.br
+.RI "\fIWrist servo channel number on the robot arm\&. \fP"
+.ti -1c
+.RI "const int \fBFINGERS\fP = 4"
+.br
+.RI "\fIHand servo channel number on the robot arm\&. \fP"
+.ti -1c
+.RI "const int \fBELBOW_PITCH_MAX_DEG\fP = 140"
+.br
+.RI "\fIThe maximum amount of degrees that the forearm servo can move\&. \fP"
+.ti -1c
+.RI "const int \fBELBOW_PITCH_MIN_DEG\fP = 0"
+.br
+.RI "\fIThe minimum amount of degrees that the forearm servo can move\&. \fP"
+.ti -1c
+.RI "const int \fBSHOULDER_PITCH_MAX_DEG\fP = 60"
+.br
+.RI "\fIThe maximum amount of degrees that the arm servo can move\&. \fP"
+.ti -1c
+.RI "const int \fBSHOULDER_PITCH_MIN_DEG\fP = -30"
+.br
+.RI "\fIThe minimum amount of degrees that the arm servo can move\&. \fP"
+.ti -1c
+.RI "const int \fBSHOULDER_PITCH_MIN_DEG_PHYSICAL\fP = -40"
+.br
+.RI "\fIThe intended minimum shoulder pitch which corresponds to human physical limits\&. \fP"
+.ti -1c
+.RI "const int \fBSHOULDER_YAW_MAX_DEG\fP = 45"
+.br
+.RI "\fIThe maximum amount of degrees that the shoulder servo can move\&. \fP"
+.ti -1c
+.RI "const int \fBSHOULDER_YAW_MIN_DEG\fP = 0"
+.br
+.RI "\fIThe minimum amount of degrees that the shoulder servo can move\&. \fP"
+.ti -1c
+.RI "SerialPort \fB_serialPort\fP"
+.br
+.RI "\fIThe serial port used to send commands to the robot arm\&. \fP"
+.ti -1c
+.RI "long \fB_lastUpdateTime\fP"
+.br
+.RI "\fIThe last time that a command was sent to the robot arm\&. \fP"
+.in -1c
+.SS "Additional Inherited Members"
+.SH "Detailed Description"
+.PP 
+This class contains the logic used to control the robot arm with the use of data which is provided by the CyberGlove Module and the Kinect Module\&. 
+
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.move (intservo, intpos, intspeed)\fC [private]\fP"
+
+.PP
+This method is used to move a servo to a new position at a desired speed\&. \fBParameters:\fP
+.RS 4
+\fIservo\fP The servo to move\&.
+.br
+\fIpos\fP The new position of the servo\&.
+.br
+\fIspeed\fP The speed to move the servo\&.
+.RE
+.PP
+
+.SS "override void ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.OnFinalize ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+An event handling method called when the controller has requested that the module finalize its state\&. Closes the serial port that is used to communicate with the robot arm\&. 
+.PP
+Implements \fBArmController\&.Integration\&.Module\fP\&.
+.SS "override void ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.OnInitialize ()\fC [protected]\fP, \fC [virtual]\fP"
+
+.PP
+Initialization function that is called when the thread is created\&. Opens the serial port used to communicate with the robot arm, sets the initial servo positions, and subscribes to the appropriate data nodes on the Virtual Bus\&. 
+.PP
+Implements \fBArmController\&.Integration\&.Module\fP\&.
+.SS "void ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.OnValuePublished (\fBBusNode\fPnode, objectvalue)\fC [private]\fP"
+
+.PP
+This is called when a subscribed value is published on the virtual bus\&. \fBParameters:\fP
+.RS 4
+\fInode\fP The node that has been published\&.
+.br
+\fIvalue\fP The new value of the node\&.
+.RE
+.PP
+
+.SS "void ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.send (stringcommand)\fC [private]\fP"
+
+.PP
+This helper method sends a command to the robot arm through a serial port\&. \fBParameters:\fP
+.RS 4
+\fIcommand\fP The command to send over the serial port\&.
+.RE
+.PP
+
+.SS "void ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.sp_DataReceived (objectsender, SerialDataReceivedEventArgse)\fC [private]\fP"
+
+.PP
+This is called when data is received from the robot arm via serial bus\&. \fBParameters:\fP
+.RS 4
+\fIsender\fP 
+.br
+\fIe\fP 
+.RE
+.PP
+
+.SH "Member Data Documentation"
+.PP 
+.SS "long ArmController\&.Robot_Arm_Module\&.RobotArmModule\&._lastUpdateTime\fC [private]\fP"
+
+.PP
+The last time that a command was sent to the robot arm\&. 
+.SS "SerialPort ArmController\&.Robot_Arm_Module\&.RobotArmModule\&._serialPort\fC [private]\fP"
+
+.PP
+The serial port used to send commands to the robot arm\&. 
+.SS "int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.currentArmPosition = 0\fC [private]\fP"
+
+.PP
+The current position of the arm servo\&. 
+.SS "int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.currentForearmPosition = 0\fC [private]\fP"
+
+.PP
+The current position of the forearm servo\&. 
+.SS "int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.currentHandPosition = 0\fC [private]\fP"
+
+.PP
+The current position of the hand servo\&. 
+.SS "int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.currentShoulderPosition = 0\fC [private]\fP"
+
+.PP
+The current position of the shoulder servo\&. 
+.SS "int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.currentWristPosition = 0\fC [private]\fP"
+
+.PP
+The current position of the wrist servo\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.ELBOW_JOINT = 2\fC [private]\fP"
+
+.PP
+Forearm servo channel number on the robot arm\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.ELBOW_PITCH_MAX_DEG = 140\fC [private]\fP"
+
+.PP
+The maximum amount of degrees that the forearm servo can move\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.ELBOW_PITCH_MIN_DEG = 0\fC [private]\fP"
+
+.PP
+The minimum amount of degrees that the forearm servo can move\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.FINGERS = 4\fC [private]\fP"
+
+.PP
+Hand servo channel number on the robot arm\&. 
+.SS "const long ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.MIN_UPDATE_INTERVAL = 100\fC [private]\fP"
+
+.PP
+Milliseconds to wait between command updates\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.positionDeltaThreshold = 0\fC [private]\fP"
+
+.PP
+Minimum movement amount that the robot arm can move a servo\&. 
+.SS "const double ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.RAD_PER_DEG = 0\&.0174532925\fC [private]\fP"
+
+.PP
+Radians per degree\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.SHOULDER_PITCH = 1\fC [private]\fP"
+
+.PP
+Arm servo channel number on the robot arm\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.SHOULDER_PITCH_MAX_DEG = 60\fC [private]\fP"
+
+.PP
+The maximum amount of degrees that the arm servo can move\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.SHOULDER_PITCH_MIN_DEG = -30\fC [private]\fP"
+
+.PP
+The minimum amount of degrees that the arm servo can move\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.SHOULDER_PITCH_MIN_DEG_PHYSICAL = -40\fC [private]\fP"
+
+.PP
+The intended minimum shoulder pitch which corresponds to human physical limits\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.SHOULDER_YAW = 0\fC [private]\fP"
+
+.PP
+Base servo channel number on the robot arm\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.SHOULDER_YAW_MAX_DEG = 45\fC [private]\fP"
+
+.PP
+The maximum amount of degrees that the shoulder servo can move\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.SHOULDER_YAW_MIN_DEG = 0\fC [private]\fP"
+
+.PP
+The minimum amount of degrees that the shoulder servo can move\&. 
+.SS "const int ArmController\&.Robot_Arm_Module\&.RobotArmModule\&.WRIST_JOINT = 3\fC [private]\fP"
+
+.PP
+Wrist servo channel number on the robot arm\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Robot Arm Controller from the source code\&.

@@ -1,0 +1,173 @@
+.TH "ArmController.Integration.BusNode" 3 "Fri Dec 14 2012" "Version 0.5" "Robot Arm Controller" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArmController.Integration.BusNode \- 
+.PP
+This enumeration stores known data points which may be queried using the virtual bus\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBBusNode\fP (Type nodeType)"
+.br
+.RI "\fIInstantiates of a descriptor for a bus node\&. \fP"
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBSTOP_REQUESTED\fP = new \fBBusNode\fP(typeof(Boolean))"
+.br
+.RI "\fI(Boolean) A flag used to request that the program controller ends program execution\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBPOSITION_TICK\fP = new \fBBusNode\fP(typeof(Object))"
+.br
+.RI "\fI(null) A value that's published once every output from the position detection module has been published\&. Subscribe to this to avoid getting notified when each value has been changed\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBPLAYER_ONE_ID\fP = new \fBBusNode\fP(typeof(int))"
+.br
+.RI "\fI(Integer) ID for player one according to the Kinect \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBPOS_LEFT_SHOULDER\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) the 3d point of the left shoulder in space\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBPOS_LEFT_ELBOW\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) the 3d point of the left elbow in space\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBPOS_LEFT_WRIST\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) the 3d point of the left wrist in space\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBPOS_LEFT_HAND\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) the 3d point of the left hand in space\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBDIR_LEFT_UPPER_ARM\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) A unit vector providing the direction the left upper arm is pointing relative to the left collar bone\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBORIENTATION_LEFT_UPPER_ARM\fP = new \fBBusNode\fP(typeof(\fBOrientation\fP))"
+.br
+.RI "\fI(Orientation) The orientation of the left upper-arm relative to the left collar bone\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBDIR_LEFT_LOWER_ARM\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) A unit vector providing the direction the left lower arm is pointing relative to the left upper arm\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBORIENTATION_LEFT_LOWER_ARM\fP = new \fBBusNode\fP(typeof(\fBOrientation\fP))"
+.br
+.RI "\fI(Orientation) The orientation of the left lower-arm relative to the left upper-arm\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBDIR_LEFT_HAND\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) A unit vector providing the direction the left hand is pointing relative to the left lower arm\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBORIENTATION_LEFT_HAND\fP = new \fBBusNode\fP(typeof(\fBOrientation\fP))"
+.br
+.RI "\fI(Orientation) The orientation of the left hand relative to the left lower-arm\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBPOS_RIGHT_SHOULDER\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) giving the 3d point of the right shoulder in space\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBPOS_RIGHT_ELBOW\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) giving the 3d point of the right elbow in space\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBPOS_RIGHT_WRIST\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) giving the 3d point of the right wrist in space\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBPOS_RIGHT_HAND\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) giving the 3d point of the right hand in space\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBDIR_RIGHT_UPPER_ARM\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) A unit vector providing the direction the right upper arm is pointing relative to the right collar bone\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBORIENTATION_RIGHT_UPPER_ARM\fP = new \fBBusNode\fP(typeof(\fBOrientation\fP))"
+.br
+.RI "\fI(Orientation) The orientation of the right upper-arm relative to the right collar bone\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBDIR_RIGHT_LOWER_ARM\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) A unit vector providing the direction the right lower arm is pointing relative to the right upper arm\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBORIENTATION_RIGHT_LOWER_ARM\fP = new \fBBusNode\fP(typeof(\fBOrientation\fP))"
+.br
+.RI "\fI(Orientation) The orientation of the right lower-arm relative to the right upper-arm\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBDIR_RIGHT_HAND\fP = new \fBBusNode\fP(typeof(SkeletonPoint))"
+.br
+.RI "\fI(SkeletonPoint) A unit vector providing the direction the right hand is pointing relative to the right lower arm\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBORIENTATION_RIGHT_HAND\fP = new \fBBusNode\fP(typeof(\fBOrientation\fP))"
+.br
+.RI "\fI(Orientation) The orientation of the right hand relative to the right lower-arm\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBCLAW_OPEN_PERCENT\fP = new \fBBusNode\fP(typeof(int))"
+.br
+.RI "\fI(Integer) The percent which the user's hand is open (0% = fully closed) \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBWRIST_PERCENT\fP = new \fBBusNode\fP(typeof(int))"
+.br
+.RI "\fI(Integer) The percent which the user's wrist is pitched (100% = 90 degrees upward, 50% = straight, 0% = 90 degrees downward)\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBROBOT_ACTIVE\fP = new \fBBusNode\fP(typeof(bool))"
+.br
+.RI "\fI(bool) A flag indicating whether the robot arm should be tracking the user's position\&. \fP"
+.ti -1c
+.RI "static readonly \fBBusNode\fP \fBROBOT_RESET\fP = new \fBBusNode\fP(typeof(object))"
+.br
+.RI "\fI(null) A value published to indicate that the robot arm should reset to its default position\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "Type \fBNodeType\fP\fC [get, set]\fP"
+.br
+.RI "\fIThe type of the node\&. \fP"
+.ti -1c
+.RI "static IEnumerable< \fBBusNode\fP > \fBValues\fP\fC [get]\fP"
+.br
+.RI "\fIIterates through the nodes on the bus\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+This enumeration stores known data points which may be queried using the virtual bus\&. 
+
+New nodes required for communication between modules should be added as static members to this class\&.
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "ArmController\&.Integration\&.BusNode\&.BusNode (TypenodeType)"
+
+.PP
+Instantiates of a descriptor for a bus node\&. \fBParameters:\fP
+.RS 4
+\fInodeType\fP The type of the node\&.
+.RE
+.PP
+
+.SH "Property Documentation"
+.PP 
+.SS "Type ArmController\&.Integration\&.BusNode\&.NodeType\fC [get]\fP, \fC [set]\fP"
+
+.PP
+The type of the node\&. 
+.SS "IEnumerable<\fBBusNode\fP> ArmController\&.Integration\&.BusNode\&.Values\fC [static]\fP, \fC [get]\fP"
+
+.PP
+Iterates through the nodes on the bus\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Robot Arm Controller from the source code\&.

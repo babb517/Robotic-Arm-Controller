@@ -11,11 +11,11 @@ using ArmController.Kinect_Module;
 
 namespace ArmController.Integration
 {
-        /// <summary>
     /// <summary>
     /// This enumeration stores known data points which may be queried
     /// using the virtual bus.
     /// </summary>
+    /// <remarks>New nodes required for communication between modules should be added as static members to this class.</remarks>
     public class BusNode
     {
         #region Private Members
@@ -42,7 +42,7 @@ namespace ArmController.Integration
 
         #region Position Module Output
         // Output from the Position Detection Module (Kinect)
-        public static readonly BusNode POSITION_TICK = new BusNode(typeof(Object));                         ///< (Object) A value that's published once every output from the position detection module has been published. Subscribe to this to avoid getting notified when each value has been changed.
+        public static readonly BusNode POSITION_TICK = new BusNode(typeof(Object));                         ///< (null) A value that's published once every output from the position detection module has been published. Subscribe to this to avoid getting notified when each value has been changed.
 
         public static readonly BusNode PLAYER_ONE_ID = new BusNode(typeof(int));                            ///< (Integer) ID for player one according to the Kinect
 
@@ -83,10 +83,10 @@ namespace ArmController.Integration
 
         #region CyberGlove Nodes
 
-        public static readonly BusNode CLAW_OPEN_PERCENT = new BusNode(typeof(int));
-        public static readonly BusNode WRIST_PERCENT = new BusNode(typeof(int));
-        public static readonly BusNode ROBOT_ACTIVE = new BusNode(typeof(bool));
-        public static readonly BusNode ROBOT_RESET = new BusNode(typeof(object));
+        public static readonly BusNode CLAW_OPEN_PERCENT = new BusNode(typeof(int));                ///< (Integer) The percent which the user's hand is open (0% = fully closed)
+        public static readonly BusNode WRIST_PERCENT = new BusNode(typeof(int));                    ///< (Integer) The percent which the user's wrist is pitched (100% = 90 degrees upward, 50% = straight, 0% = 90 degrees downward).
+        public static readonly BusNode ROBOT_ACTIVE = new BusNode(typeof(bool));                    ///< (bool) A flag indicating whether the robot arm should be tracking the user's position.
+        public static readonly BusNode ROBOT_RESET = new BusNode(typeof(object));                   ///< (null) A value published to indicate that the robot arm should reset to its default position.
 
         #endregion CyberGlove Nodes
 
@@ -115,6 +115,9 @@ namespace ArmController.Integration
         /* Public Members */
         /************************************************************/
 
+        /// <summary>
+        /// Iterates through the nodes on the bus.
+        /// </summary>
         public static IEnumerable<BusNode> Values
         {
             get

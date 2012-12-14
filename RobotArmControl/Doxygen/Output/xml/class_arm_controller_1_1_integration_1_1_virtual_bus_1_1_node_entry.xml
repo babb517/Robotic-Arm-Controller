@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry" kind="class" prot="private">
+    <compoundname>ArmController::Integration::VirtualBus::NodeEntry</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry_1a3088de1777a06d8fcd9b152b9f852f3e" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>BusNode ArmController.Integration.VirtualBus.NodeEntry.Node</definition>
+        <argsstring></argsstring>
+        <name>Node</name>
+        <briefdescription>
+<para>The name of the node. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="67" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry_1a64e3ab0571b9b7b596802f8a00c5a984" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Object</type>
+        <definition>Object ArmController.Integration.VirtualBus.NodeEntry.Value</definition>
+        <argsstring></argsstring>
+        <name>Value</name>
+        <briefdescription>
+<para>The current value of the node. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="72" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry_1afcb57ed26afad08e72f14f6d71ecdc08" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>List&lt; <ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1aa38b746a6f0744d9486024f01b1c82fe" kindref="member">VirtualBus.OnValueChangedCallback</ref> &gt;</type>
+        <definition>List&lt;VirtualBus.OnValueChangedCallback&gt; ArmController.Integration.VirtualBus.NodeEntry.Subscribers</definition>
+        <argsstring></argsstring>
+        <name>Subscribers</name>
+        <briefdescription>
+<para>The node&apos;s subscribers. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="77" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="77" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry_1abe1176a433894f21a54d9adebab7dc89" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ArmController.Integration.VirtualBus.NodeEntry.NodeEntry</definition>
+        <argsstring>(BusNode node, Object value, List&lt; VirtualBus.OnValueChangedCallback &gt; subscribers)</argsstring>
+        <name>NodeEntry</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>Object</type>
+          <declname>value</declname>
+        </param>
+        <param>
+          <type>List&lt; <ref refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1aa38b746a6f0744d9486024f01b1c82fe" kindref="member">VirtualBus.OnValueChangedCallback</ref> &gt;</type>
+          <declname>subscribers</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the node entry. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node the entry corresponds to.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial value of the node.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>subscribers</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The initial list of subscribers for the node.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="58" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="57" bodyend="62"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A single entry in the node table. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" line="50" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/VirtualBus.cs" bodystart="49" bodyend="78"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry_1a3088de1777a06d8fcd9b152b9f852f3e" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus::NodeEntry</scope><name>Node</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry_1abe1176a433894f21a54d9adebab7dc89" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus::NodeEntry</scope><name>NodeEntry</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry_1afcb57ed26afad08e72f14f6d71ecdc08" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus::NodeEntry</scope><name>Subscribers</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_virtual_bus_1_1_node_entry_1a64e3ab0571b9b7b596802f8a00c5a984" prot="public" virt="non-virtual"><scope>ArmController::Integration::VirtualBus::NodeEntry</scope><name>Value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

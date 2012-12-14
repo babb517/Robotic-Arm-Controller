@@ -1,0 +1,459 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker" kind="class" prot="public">
+    <compoundname>ArmController::Kinect_Module::PositionalTracker</compoundname>
+    <basecompoundref refid="class_arm_controller_1_1_integration_1_1_module" prot="public" virt="non-virtual">ArmController.Integration.Module</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a2568b3817a48d8018028981cee80b2bb" prot="private" static="no" mutable="no">
+        <type>KinectSensorChooser</type>
+        <definition>KinectSensorChooser ArmController.Kinect_Module.PositionalTracker._snsr</definition>
+        <argsstring></argsstring>
+        <name>_snsr</name>
+        <briefdescription>
+<para>The kinect sensor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="37" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a3991b020316211d58c0a4e16a97a4afe" prot="private" static="no" mutable="no">
+        <type>Skeleton[]</type>
+        <definition>Skeleton [] ArmController.Kinect_Module.PositionalTracker._skeletonData</definition>
+        <argsstring></argsstring>
+        <name>_skeletonData</name>
+        <briefdescription>
+<para>The skeleton data from the kinect. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="42" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="42" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a0852eb66e546e9cee3d6014b0e59fdaa" prot="private" static="no" mutable="no">
+        <type><ref refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer" kindref="compound">SkeletonRenderer</ref></type>
+        <definition>SkeletonRenderer ArmController.Kinect_Module.PositionalTracker._renderer</definition>
+        <argsstring></argsstring>
+        <name>_renderer</name>
+        <briefdescription>
+<para>The rendering object used to display rendering output </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="47" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1ad91314be6babff97c4b04bde617834f2" prot="private" static="no" mutable="no">
+        <type>EventHandler&lt; SkeletonFrameReadyEventArgs &gt;</type>
+        <definition>EventHandler&lt;SkeletonFrameReadyEventArgs&gt; ArmController.Kinect_Module.PositionalTracker._skeletonReadyHandler</definition>
+        <argsstring></argsstring>
+        <name>_skeletonReadyHandler</name>
+        <briefdescription>
+<para>A handler used to handle kinect data once it&apos;s ready. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="52" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a0b20eb698dbcd664dd97db4016b2c2ae" prot="private" static="no" mutable="no">
+        <type>Skeleton</type>
+        <definition>Skeleton ArmController.Kinect_Module.PositionalTracker._playerOne</definition>
+        <argsstring></argsstring>
+        <name>_playerOne</name>
+        <briefdescription>
+<para>A member used to track the player we&apos;re currently working with. A value of null indicates that a player hasn&apos;t been found and then next available player will be registered as player one. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="58" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a8237e1db3e9f5607823a4b0cf090f1ed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ArmController.Kinect_Module.PositionalTracker.PositionalTracker</definition>
+        <argsstring>(DrawingGroup canvas=null)</argsstring>
+        <name>PositionalTracker</name>
+        <param>
+          <type>DrawingGroup</type>
+          <declname>canvas</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+<para>Initializes the tracker object. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>canvas</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The canvas to draw vision data onto if applicable, null otherwise.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="72" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="71" bodyend="87"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a016a741289847dc805d5be56fec76753" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ArmController.Kinect_Module.PositionalTracker.OnInitialize</definition>
+        <argsstring>()</argsstring>
+        <name>OnInitialize</name>
+        <reimplements refid="class_arm_controller_1_1_integration_1_1_module_1aeadaad361df957dd7a6fb9ec3d9137fb">OnInitialize</reimplements>
+        <briefdescription>
+<para>An event handling method called when the controller has requested that the module initialize its state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="97" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="96" bodyend="100"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1aa8cc9faaede58f3cae115eb9b2d0b1ad" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ArmController.Kinect_Module.PositionalTracker.OnFinalize</definition>
+        <argsstring>()</argsstring>
+        <name>OnFinalize</name>
+        <reimplements refid="class_arm_controller_1_1_integration_1_1_module_1ae74177423f7caf9b58e76d9186207a7c">OnFinalize</reimplements>
+        <briefdescription>
+<para>An event handling method called when the controller has requested that the module finalize its state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="103" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="102" bodyend="106"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a214ac98da8d6f18bf92e113afbb91cb6" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.PositionalTracker.OnKinectSensorChanged</definition>
+        <argsstring>(object sender, KinectChangedEventArgs e)</argsstring>
+        <name>OnKinectSensorChanged</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>KinectChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>A handler to take care of the sensor changing during operation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="114" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="113" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1ab91e41bf60763233a3eb40e0dbc906f2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.PositionalTracker.OnKinectPropertyChanged</definition>
+        <argsstring>(object sender, PropertyChangedEventArgs e)</argsstring>
+        <name>OnKinectPropertyChanged</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>PropertyChangedEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>A handler used to track the status of the kinect chooser interface and report it to the debug console. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="136" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="135" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a8e56674278f8de9b56c0a03d016a45fd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.PositionalTracker.OnKinectDataReady</definition>
+        <argsstring>(object sender, SkeletonFrameReadyEventArgs e)</argsstring>
+        <name>OnKinectDataReady</name>
+        <param>
+          <type>object</type>
+          <declname>sender</declname>
+        </param>
+        <param>
+          <type>SkeletonFrameReadyEventArgs</type>
+          <declname>e</declname>
+        </param>
+        <briefdescription>
+<para>Acquires the skeletal data from the kinect frame, processes the data, and publishes the relevent data to the virtual bus. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>sender</parametername>
+</parameternamelist>
+<parameterdescription>
+</parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>e</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An event object containing the most recent skeletal frame.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="157" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="156" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a7c1754f70e32ff83b2eb8a8301a7e4eb" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.PositionalTracker.StartKinectST</definition>
+        <argsstring>()</argsstring>
+        <name>StartKinectST</name>
+        <briefdescription>
+<para>Starts the kinect sensor and starts listening for the kinect publishing data. This method is taken almost directly from the MSDN example: <ulink url="http://msdn.microsoft.com/en-us/library/jj131025.aspx">http://msdn.microsoft.com/en-us/library/jj131025.aspx</ulink> </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="184" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="183" bodyend="187"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1ada08f643ee2cb135c65327074c87ca85" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.PositionalTracker.StopKinectST</definition>
+        <argsstring>()</argsstring>
+        <name>StopKinectST</name>
+        <briefdescription>
+<para>Stops the kinect sensor. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="193" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="192" bodyend="196"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a0f2770354ab992d8c4f075f32bfca217" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.PositionalTracker.SetupKinect</definition>
+        <argsstring>(KinectSensor snsr)</argsstring>
+        <name>SetupKinect</name>
+        <param>
+          <type>KinectSensor</type>
+          <declname>snsr</declname>
+        </param>
+        <briefdescription>
+<para>Sets up a kinect sensor for used. Currently only one sensor may be in use at a time. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>snsr</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The kinect sensor to setup.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="204" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="203" bodyend="219"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a321217e14468ab4837fbff1a6d1da90b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>bool</type>
+        <definition>bool ArmController.Kinect_Module.PositionalTracker.SelectPlayerOne</definition>
+        <argsstring>()</argsstring>
+        <name>SelectPlayerOne</name>
+        <briefdescription>
+<para>Scans through our skeletons and selects player one based on our previous selection and the position of each skeleton. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>True if a new player has been selected, false otherwise.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="226" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="225" bodyend="258"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a427b45ebde93373ad7afc59a65f75f41" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.PositionalTracker.ProcessSkeletalData</definition>
+        <argsstring>()</argsstring>
+        <name>ProcessSkeletalData</name>
+        <briefdescription>
+<para>Prepocesses the skeleton data giving us information like the appropriate joint angles. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="264" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="263" bodyend="335"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1af8eaa21ef04654d87565fc3914207e8f" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Point</type>
+        <definition>Point ArmController.Kinect_Module.PositionalTracker.SkeletonPointToScreen</definition>
+        <argsstring>(SkeletonPoint skelpoint)</argsstring>
+        <name>SkeletonPointToScreen</name>
+        <param>
+          <type>SkeletonPoint</type>
+          <declname>skelpoint</declname>
+        </param>
+        <briefdescription>
+<para>Maps a SkeletonPoint to lie within our render space and converts to Point </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>skelpoint</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>point to map</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>mapped point</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="343" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="342" bodyend="353"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a89b405304d04811cf0b96c3e56853256" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SkeletonPoint</type>
+        <definition>SkeletonPoint ArmController.Kinect_Module.PositionalTracker.GetUnitDirection</definition>
+        <argsstring>(JointType terminus)</argsstring>
+        <name>GetUnitDirection</name>
+        <param>
+          <type>JointType</type>
+          <declname>terminus</declname>
+        </param>
+        <briefdescription>
+<para>Gets the (relative) direction of the bone identified by the provided terminal joint. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>terminus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The joint at which the bone terminates.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A 3d point representing a unit vector in the relative direction of the bone.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="361" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="360" bodyend="372"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1acc3f90d3b76f395a6f9a21c0dbad9934" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="class_arm_controller_1_1_kinect___module_1_1_orientation" kindref="compound">Orientation</ref></type>
+        <definition>Orientation ArmController.Kinect_Module.PositionalTracker.GetOrientation</definition>
+        <argsstring>(JointType terminus)</argsstring>
+        <name>GetOrientation</name>
+        <param>
+          <type>JointType</type>
+          <declname>terminus</declname>
+        </param>
+        <briefdescription>
+<para>Gets the (relative) orientation of the bone identified by the provided terminal joint. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>terminus</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The joint at which the bone terminates.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A 3d point representing a unit vector in the relative direction of the bone.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+<para>NOTE: The bones are indexed by their terminal joint. <ulink url="http://msdn.microsoft.com/en-us/library/hh973073.aspx">http://msdn.microsoft.com/en-us/library/hh973073.aspx</ulink> The Z axis extends directly in front of the player. The elbow is restricted to a postive yawing motion. The shoulder can move in all directions.</para>        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="380" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="379" bodyend="403"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This module uses the Kinect to track the position and orientation of the major sections of the user&apos;s upper torso. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="68">
+        <label>Module</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_module"/>
+      </node>
+      <node id="67">
+        <label>ArmController.Kinect_Module.PositionalTracker</label>
+        <link refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="71">
+        <label>ArmController.Kinect_Module.SkeletonRenderer</label>
+        <link refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer"/>
+      </node>
+      <node id="70">
+        <label>Module</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_module"/>
+      </node>
+      <node id="69">
+        <label>ArmController.Kinect_Module.PositionalTracker</label>
+        <link refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker"/>
+        <childnode refid="70" relation="public-inheritance">
+        </childnode>
+        <childnode refid="71" relation="usage">
+          <edgelabel>_renderer</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" line="21" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionalTracker.cs" bodystart="20" bodyend="414"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a0b20eb698dbcd664dd97db4016b2c2ae" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>_playerOne</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a0852eb66e546e9cee3d6014b0e59fdaa" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>_renderer</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a3991b020316211d58c0a4e16a97a4afe" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>_skeletonData</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1ad91314be6babff97c4b04bde617834f2" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>_skeletonReadyHandler</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a2568b3817a48d8018028981cee80b2bb" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>_snsr</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1a7531038d76af01631231aeabb3066cbb" prot="protected" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>Bus</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae9bf825ee97dc743d0012d58fdde0f43" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>FinalizeModule</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1acc3f90d3b76f395a6f9a21c0dbad9934" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>GetOrientation</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a89b405304d04811cf0b96c3e56853256" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>GetUnitDirection</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae1258c83da93b28a6c1e1f245d0ecda0" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>InitializeModule</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1aa8cc9faaede58f3cae115eb9b2d0b1ad" prot="protected" virt="virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>OnFinalize</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a016a741289847dc805d5be56fec76753" prot="protected" virt="virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>OnInitialize</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a8e56674278f8de9b56c0a03d016a45fd" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>OnKinectDataReady</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1ab91e41bf60763233a3eb40e0dbc906f2" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>OnKinectPropertyChanged</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a214ac98da8d6f18bf92e113afbb91cb6" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>OnKinectSensorChanged</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a8237e1db3e9f5607823a4b0cf090f1ed" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>PositionalTracker</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a427b45ebde93373ad7afc59a65f75f41" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>ProcessSkeletalData</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1aea049ab02d612a5e9a7f64d62a6f7bf8" prot="protected" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>RequestStop</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a321217e14468ab4837fbff1a6d1da90b" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>SelectPlayerOne</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a0f2770354ab992d8c4f075f32bfca217" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>SetupKinect</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1af8eaa21ef04654d87565fc3914207e8f" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>SkeletonPointToScreen</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1a7c1754f70e32ff83b2eb8a8301a7e4eb" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>StartKinectST</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_positional_tracker_1ada08f643ee2cb135c65327074c87ca85" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionalTracker</scope><name>StopKinectST</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

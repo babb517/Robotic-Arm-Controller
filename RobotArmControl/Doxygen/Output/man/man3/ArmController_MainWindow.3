@@ -1,0 +1,112 @@
+.TH "ArmController.MainWindow" 3 "Fri Dec 14 2012" "Version 0.5" "Robot Arm Controller" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArmController.MainWindow \- 
+.PP
+Interaction logic for MainWindow\&.xaml  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherits Window\&.
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBWindowLoaded\fP (object sender, RoutedEventArgs e)"
+.br
+.RI "\fIExecute startup tasks \fP"
+.ti -1c
+.RI "void \fBWindowClosing\fP (object sender, System\&.ComponentModel\&.CancelEventArgs e)"
+.br
+.RI "\fIFinalizes the states of all modules in preparation for the program exiting\&. \fP"
+.ti -1c
+.RI "void \fBOnBusValueChanged\fP (\fBBusNode\fP node, Object value)"
+.br
+.RI "\fIHandles bus \fP"
+.ti -1c
+.RI "void \fBInitializeModules\fP ()"
+.br
+.RI "\fIInitializes the states of all the modules\&. \fP"
+.ti -1c
+.RI "void \fBFinalizeModules\fP ()"
+.br
+.RI "\fIRequests that all modules finalize their states in preparation to close\&. \fP"
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "List< \fBModule\fP > \fB_modules\fP"
+.br
+.RI "\fIThe modules which are being managed by the application\&. \fP"
+.ti -1c
+.RI "\fBVirtualBus\fP \fB_bus\fP"
+.br
+.RI "\fIThe bus used to communicate between modules\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interaction logic for MainWindow\&.xaml 
+
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void ArmController\&.MainWindow\&.FinalizeModules ()\fC [private]\fP"
+
+.PP
+Requests that all modules finalize their states in preparation to close\&. 
+.SS "void ArmController\&.MainWindow\&.InitializeModules ()\fC [private]\fP"
+
+.PP
+Initializes the states of all the modules\&. 
+.SS "void ArmController\&.MainWindow\&.OnBusValueChanged (\fBBusNode\fPnode, Objectvalue)\fC [private]\fP"
+
+.PP
+Handles bus \fBParameters:\fP
+.RS 4
+\fInode\fP 
+.br
+\fIvalue\fP 
+.RE
+.PP
+
+.SS "void ArmController\&.MainWindow\&.WindowClosing (objectsender, System\&.ComponentModel\&.CancelEventArgse)\fC [private]\fP"
+
+.PP
+Finalizes the states of all modules in preparation for the program exiting\&. \fBParameters:\fP
+.RS 4
+\fIsender\fP 
+.br
+\fIe\fP 
+.RE
+.PP
+
+.SS "void ArmController\&.MainWindow\&.WindowLoaded (objectsender, RoutedEventArgse)\fC [private]\fP"
+
+.PP
+Execute startup tasks \fBParameters:\fP
+.RS 4
+\fIsender\fP object sending the event
+.br
+\fIe\fP event arguments
+.RE
+.PP
+.PP
+New modules should inherit from \fBIntegration\&.Module\fP and should be instantiated here\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "\fBVirtualBus\fP ArmController\&.MainWindow\&._bus\fC [private]\fP"
+
+.PP
+The bus used to communicate between modules\&. 
+.SS "List<\fBModule\fP> ArmController\&.MainWindow\&._modules\fC [private]\fP"
+
+.PP
+The modules which are being managed by the application\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Robot Arm Controller from the source code\&.

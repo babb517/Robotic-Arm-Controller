@@ -1,0 +1,234 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_kinect___module_1_1_position_feedback" kind="class" prot="public">
+    <compoundname>ArmController::Kinect_Module::PositionFeedback</compoundname>
+    <basecompoundref refid="class_arm_controller_1_1_integration_1_1_module" prot="public" virt="non-virtual">ArmController.Integration.Module</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a916fe362bcdac7ecea4ef55f00f4bcf0" prot="private" static="no" mutable="no">
+        <type>TextBox</type>
+        <definition>TextBox ArmController.Kinect_Module.PositionFeedback._upperArmDisplay</definition>
+        <argsstring></argsstring>
+        <name>_upperArmDisplay</name>
+        <briefdescription>
+<para>A reference to the text box used to display the upper arm orientation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" line="25" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a9bc9ccfb373472014241031fb62a60aa" prot="private" static="no" mutable="no">
+        <type>TextBox</type>
+        <definition>TextBox ArmController.Kinect_Module.PositionFeedback._lowerArmDisplay</definition>
+        <argsstring></argsstring>
+        <name>_lowerArmDisplay</name>
+        <briefdescription>
+<para>A reference to the text box used to display lower arm orientation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" line="30" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a71fb27100ff46d5b6a4da72f689ce9cc" prot="private" static="no" mutable="no">
+        <type>TextBox</type>
+        <definition>TextBox ArmController.Kinect_Module.PositionFeedback._handDisplay</definition>
+        <argsstring></argsstring>
+        <name>_handDisplay</name>
+        <briefdescription>
+<para>A reference to the text box used to display hand orientation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" line="35" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a8c6f342b26d806d2fac468f21d1ef27c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ArmController.Kinect_Module.PositionFeedback.PositionFeedback</definition>
+        <argsstring>(TextBox upperArmDisplay, TextBox lowerArmDisplay, TextBox handDisplay)</argsstring>
+        <name>PositionFeedback</name>
+        <param>
+          <type>TextBox</type>
+          <declname>upperArmDisplay</declname>
+        </param>
+        <param>
+          <type>TextBox</type>
+          <declname>lowerArmDisplay</declname>
+        </param>
+        <param>
+          <type>TextBox</type>
+          <declname>handDisplay</declname>
+        </param>
+        <briefdescription>
+<para>Initializes the position feedback module to output the provided text boxes. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>upperArmDisplay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text box to display upper arm orientation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>lowerArmDisplay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text box to display lower arm orientation.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>handDisplay</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The text box to display hand orientation.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" line="51" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" bodystart="50" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a03bda0a6a1e8580d36f6cfa8aa88effc" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ArmController.Kinect_Module.PositionFeedback.OnInitialize</definition>
+        <argsstring>()</argsstring>
+        <name>OnInitialize</name>
+        <reimplements refid="class_arm_controller_1_1_integration_1_1_module_1aeadaad361df957dd7a6fb9ec3d9137fb">OnInitialize</reimplements>
+        <briefdescription>
+<para>An event handling method called when the controller has requested that the module initialize its state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" line="66" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" bodystart="65" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1ac30472076307382be82bec726a1e98dd" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="virtual">
+        <type>override void</type>
+        <definition>override void ArmController.Kinect_Module.PositionFeedback.OnFinalize</definition>
+        <argsstring>()</argsstring>
+        <name>OnFinalize</name>
+        <reimplements refid="class_arm_controller_1_1_integration_1_1_module_1ae74177423f7caf9b58e76d9186207a7c">OnFinalize</reimplements>
+        <briefdescription>
+<para>An event handling method called when the controller has requested that the module finalize its state. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" line="77" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" bodystart="76" bodyend="79"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a087105c5c8c3d76776f091022e62a058" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.PositionFeedback.OnValuePublished</definition>
+        <argsstring>(BusNode node, object value)</argsstring>
+        <name>OnValuePublished</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+          <declname>node</declname>
+        </param>
+        <param>
+          <type>object</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Called when a value is published to the virtual bus. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>node</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The node that has been published.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the node.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" line="87" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" bodystart="86" bodyend="103"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a93013cf936e0baf43fa67ad5631a5b07" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>string</type>
+        <definition>string ArmController.Kinect_Module.PositionFeedback.OrientationToString</definition>
+        <argsstring>(Orientation or)</argsstring>
+        <name>OrientationToString</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_kinect___module_1_1_orientation" kindref="compound">Orientation</ref></type>
+          <declname>or</declname>
+        </param>
+        <briefdescription>
+<para>Constructs a string describing the provided orientation. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>or</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The orientation to construct the string from.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A string of the form &apos;ROLL / PITCH / YAW&apos;.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" line="111" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" bodystart="110" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This module is used for debugging purposes. It listens for the orientations of the user&apos;s right arm on the virtual bus and displays them on screen. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="73">
+        <label>Module</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_module"/>
+      </node>
+      <node id="72">
+        <label>ArmController.Kinect_Module.PositionFeedback</label>
+        <link refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback"/>
+        <childnode refid="73" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="75">
+        <label>Module</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_module"/>
+      </node>
+      <node id="74">
+        <label>ArmController.Kinect_Module.PositionFeedback</label>
+        <link refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback"/>
+        <childnode refid="75" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" line="16" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/PositionFeedback.cs" bodystart="15" bodyend="116"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a71fb27100ff46d5b6a4da72f689ce9cc" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>_handDisplay</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a9bc9ccfb373472014241031fb62a60aa" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>_lowerArmDisplay</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a916fe362bcdac7ecea4ef55f00f4bcf0" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>_upperArmDisplay</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1a7531038d76af01631231aeabb3066cbb" prot="protected" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>Bus</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae9bf825ee97dc743d0012d58fdde0f43" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>FinalizeModule</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1ae1258c83da93b28a6c1e1f245d0ecda0" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>InitializeModule</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1ac30472076307382be82bec726a1e98dd" prot="protected" virt="virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>OnFinalize</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a03bda0a6a1e8580d36f6cfa8aa88effc" prot="protected" virt="virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>OnInitialize</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a087105c5c8c3d76776f091022e62a058" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>OnValuePublished</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a93013cf936e0baf43fa67ad5631a5b07" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>OrientationToString</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_position_feedback_1a8c6f342b26d806d2fac468f21d1ef27c" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>PositionFeedback</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_module_1aea049ab02d612a5e9a7f64d62a6f7bf8" prot="protected" virt="non-virtual"><scope>ArmController::Kinect_Module::PositionFeedback</scope><name>RequestStop</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

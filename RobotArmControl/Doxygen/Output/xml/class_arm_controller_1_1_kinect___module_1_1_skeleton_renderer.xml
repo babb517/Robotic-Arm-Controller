@@ -1,0 +1,426 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer" kind="class" prot="public">
+    <compoundname>ArmController::Kinect_Module::SkeletonRenderer</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1aeab2fa9e88ef279bdf62a604f30cc671" prot="private" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ArmController.Kinect_Module.SkeletonRenderer.RenderWidth</definition>
+        <argsstring></argsstring>
+        <name>RenderWidth</name>
+        <initializer>= 480.0f</initializer>
+        <briefdescription>
+<para>Width of output drawing </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="29" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1ab609fe91136c1fbf9a669c889ecd14a9" prot="private" static="no" mutable="no">
+        <type>const float</type>
+        <definition>const float ArmController.Kinect_Module.SkeletonRenderer.RenderHeight</definition>
+        <argsstring></argsstring>
+        <name>RenderHeight</name>
+        <initializer>= 480.0f</initializer>
+        <briefdescription>
+<para>Height of our output drawing </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="34" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a27017e846d9edc538d72586358bb9a01" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double ArmController.Kinect_Module.SkeletonRenderer.JointThickness</definition>
+        <argsstring></argsstring>
+        <name>JointThickness</name>
+        <initializer>= 3</initializer>
+        <briefdescription>
+<para>Thickness of drawn joint lines </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="39" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="39" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1ac356520cb0b3a28b4a93902fdcd878f8" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double ArmController.Kinect_Module.SkeletonRenderer.BodyCenterThickness</definition>
+        <argsstring></argsstring>
+        <name>BodyCenterThickness</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+<para>Thickness of body center ellipse </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="44" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="44" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a4d2ae0f9c664addc5934cdae57a70cac" prot="private" static="no" mutable="no">
+        <type>const double</type>
+        <definition>const double ArmController.Kinect_Module.SkeletonRenderer.ClipBoundsThickness</definition>
+        <argsstring></argsstring>
+        <name>ClipBoundsThickness</name>
+        <initializer>= 10</initializer>
+        <briefdescription>
+<para>Thickness of clip edge rectangles </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="49" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="49" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1aba76a27c1099c0f15cb91dd86ab3ce2f" prot="private" static="no" mutable="no">
+        <type>readonly Brush</type>
+        <definition>readonly Brush ArmController.Kinect_Module.SkeletonRenderer.centerPointBrush</definition>
+        <argsstring></argsstring>
+        <name>centerPointBrush</name>
+        <initializer>= Brushes.Blue</initializer>
+        <briefdescription>
+<para>Brush used to draw skeleton center point </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="54" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="54" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a11cab79cb41a43e6695e289e9219dacd" prot="private" static="no" mutable="no">
+        <type>readonly Brush</type>
+        <definition>readonly Brush ArmController.Kinect_Module.SkeletonRenderer.trackedJointBrush</definition>
+        <argsstring></argsstring>
+        <name>trackedJointBrush</name>
+        <initializer>= new SolidColorBrush(Color.FromArgb(255, 68, 192, 68))</initializer>
+        <briefdescription>
+<para>Brush used for drawing joints that are currently tracked </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="59" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a74dc8056f9b8a874391fbfa9ec360908" prot="private" static="no" mutable="no">
+        <type>readonly Brush</type>
+        <definition>readonly Brush ArmController.Kinect_Module.SkeletonRenderer.inferredJointBrush</definition>
+        <argsstring></argsstring>
+        <name>inferredJointBrush</name>
+        <initializer>= Brushes.Yellow</initializer>
+        <briefdescription>
+<para>Brush used for drawing joints that are currently inferred </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="64" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="64" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a242e1d7d203fb43c9eb30abb2c70b0f8" prot="private" static="no" mutable="no">
+        <type>readonly Pen</type>
+        <definition>readonly Pen ArmController.Kinect_Module.SkeletonRenderer.trackedBonePen</definition>
+        <argsstring></argsstring>
+        <name>trackedBonePen</name>
+        <initializer>= new Pen(Brushes.Green, 6)</initializer>
+        <briefdescription>
+<para>Pen used for drawing bones that are currently tracked </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="69" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a90870228483e26984d501af8bcff8fe8" prot="private" static="no" mutable="no">
+        <type>readonly Pen</type>
+        <definition>readonly Pen ArmController.Kinect_Module.SkeletonRenderer.inferredBonePen</definition>
+        <argsstring></argsstring>
+        <name>inferredBonePen</name>
+        <initializer>= new Pen(Brushes.Gray, 1)</initializer>
+        <briefdescription>
+<para>Pen used for drawing bones that are currently inferred </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="74" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="74" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1aceb0b4d3bec06a971430b44b62c9cb76" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>DrawingGroup</type>
+        <definition>DrawingGroup ArmController.Kinect_Module.SkeletonRenderer.Canvas</definition>
+        <argsstring></argsstring>
+        <name>Canvas</name>
+        <briefdescription>
+<para>The canvas to render the skeleton on. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="85" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1ae4b23af08e07ab45ece165700b9ecc40" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="no">
+        <type>bool</type>
+        <definition>bool ArmController.Kinect_Module.SkeletonRenderer.IsReady</definition>
+        <argsstring></argsstring>
+        <name>IsReady</name>
+        <briefdescription>
+<para>Virtual member used to determine if the renderer is ready to draw something. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="96" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="91" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a9bb2c1235cdff5cad2d0b8a2eeca4ee5" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type><ref refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a6e46c342f1a8cd0ce53998f5629a6534" kindref="member">PointResolverDelegate</ref></type>
+        <definition>PointResolverDelegate ArmController.Kinect_Module.SkeletonRenderer.PointResolver</definition>
+        <argsstring></argsstring>
+        <name>PointResolver</name>
+        <briefdescription>
+<para>The delegate used to resolve the 2d position of skeletal points. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="101" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a6e46c342f1a8cd0ce53998f5629a6534" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>delegate Point</type>
+        <definition>delegate Point ArmController.Kinect_Module.SkeletonRenderer.PointResolverDelegate</definition>
+        <argsstring>(SkeletonPoint point)</argsstring>
+        <name>PointResolverDelegate</name>
+        <param>
+          <type>SkeletonPoint</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+<para>A delegate used to map the 3d position of a skeletal point onto a 2d canvas. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>point</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The skeletal point to map.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The 2d position of that point on a canvas.</para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="114"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1af05244f491414354905771d56ffba7f8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ArmController.Kinect_Module.SkeletonRenderer.SkeletonRenderer</definition>
+        <argsstring>(PointResolverDelegate pointResolver, DrawingGroup canvas=null)</argsstring>
+        <name>SkeletonRenderer</name>
+        <param>
+          <type><ref refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a6e46c342f1a8cd0ce53998f5629a6534" kindref="member">PointResolverDelegate</ref></type>
+          <declname>pointResolver</declname>
+        </param>
+        <param>
+          <type>DrawingGroup</type>
+          <declname>canvas</declname>
+          <defval>null</defval>
+        </param>
+        <briefdescription>
+<para>Initializes the rendering helper. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>pointResolver</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The delegate used to resolve the 2d position of skeletal points.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>canvas</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The canvas to draw on, or null.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="128" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="127" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a866b3b0704bf4b402c328cb91259bbbf" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.SkeletonRenderer.DrawSkeletons</definition>
+        <argsstring>(Skeleton[] skeletons)</argsstring>
+        <name>DrawSkeletons</name>
+        <param>
+          <type>Skeleton[]</type>
+          <declname>skeletons</declname>
+        </param>
+        <briefdescription>
+<para>Draws a set of skeletons on the canvas. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>skeletons</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The skeletons to draw.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="145" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="144" bodyend="165"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a4e28bf6335f05f820334afde60559904" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.SkeletonRenderer.DrawSkeleton</definition>
+        <argsstring>(DrawingContext context, Skeleton skeleton)</argsstring>
+        <name>DrawSkeleton</name>
+        <param>
+          <type>DrawingContext</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>Skeleton</type>
+          <declname>skeleton</declname>
+        </param>
+        <briefdescription>
+<para>Draws a skeleton&apos;s bones and joints </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The context for the canvas to draw on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>skeleton</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>skeleton to draw</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="180" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="179" bodyend="229"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a28fc3e98340589872687f297117b7bd8" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.SkeletonRenderer.DrawBone</definition>
+        <argsstring>(DrawingContext context, Joint joint0, Joint joint1)</argsstring>
+        <name>DrawBone</name>
+        <param>
+          <type>DrawingContext</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>Joint</type>
+          <declname>joint0</declname>
+        </param>
+        <param>
+          <type>Joint</type>
+          <declname>joint1</declname>
+        </param>
+        <briefdescription>
+<para>Draws a bone line between two joints </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The context for the canvas to draw on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>joint0</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>joint to start drawing from</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>joint1</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>joint to end drawing at</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="238" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="237" bodyend="261"/>
+      </memberdef>
+      <memberdef kind="function" id="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a81da559b20387ed82bab40b606fc18b2" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void ArmController.Kinect_Module.SkeletonRenderer.RenderClippedEdges</definition>
+        <argsstring>(DrawingContext context, Skeleton skeleton)</argsstring>
+        <name>RenderClippedEdges</name>
+        <param>
+          <type>DrawingContext</type>
+          <declname>context</declname>
+        </param>
+        <param>
+          <type>Skeleton</type>
+          <declname>skeleton</declname>
+        </param>
+        <briefdescription>
+<para>Draws indicators to show which edges are clipping skeleton data </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>context</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The context for the canvas to draw on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>skeleton</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>skeleton to draw clipping information for</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="269" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="268" bodyend="301"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This class provides us with a means to render a skeleton on a screen. This is based on the example provided by the Kinect SDK. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" line="21" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Kinect Module/SkeletonRenderer.cs" bodystart="20" bodyend="305"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1ac356520cb0b3a28b4a93902fdcd878f8" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>BodyCenterThickness</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1aceb0b4d3bec06a971430b44b62c9cb76" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>Canvas</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1aba76a27c1099c0f15cb91dd86ab3ce2f" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>centerPointBrush</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a4d2ae0f9c664addc5934cdae57a70cac" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>ClipBoundsThickness</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a28fc3e98340589872687f297117b7bd8" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>DrawBone</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a4e28bf6335f05f820334afde60559904" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>DrawSkeleton</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a866b3b0704bf4b402c328cb91259bbbf" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>DrawSkeletons</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a90870228483e26984d501af8bcff8fe8" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>inferredBonePen</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a74dc8056f9b8a874391fbfa9ec360908" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>inferredJointBrush</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1ae4b23af08e07ab45ece165700b9ecc40" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>IsReady</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a27017e846d9edc538d72586358bb9a01" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>JointThickness</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a9bb2c1235cdff5cad2d0b8a2eeca4ee5" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>PointResolver</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a6e46c342f1a8cd0ce53998f5629a6534" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>PointResolverDelegate</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a81da559b20387ed82bab40b606fc18b2" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>RenderClippedEdges</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1ab609fe91136c1fbf9a669c889ecd14a9" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>RenderHeight</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1aeab2fa9e88ef279bdf62a604f30cc671" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>RenderWidth</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1af05244f491414354905771d56ffba7f8" prot="public" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>SkeletonRenderer</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a242e1d7d203fb43c9eb30abb2c70b0f8" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>trackedBonePen</name></member>
+      <member refid="class_arm_controller_1_1_kinect___module_1_1_skeleton_renderer_1a11cab79cb41a43e6695e289e9219dacd" prot="private" virt="non-virtual"><scope>ArmController::Kinect_Module::SkeletonRenderer</scope><name>trackedJointBrush</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

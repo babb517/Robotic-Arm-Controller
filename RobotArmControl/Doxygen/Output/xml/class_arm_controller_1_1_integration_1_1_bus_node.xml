@@ -1,0 +1,497 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="class_arm_controller_1_1_integration_1_1_bus_node" kind="class" prot="public">
+    <compoundname>ArmController::Integration::BusNode</compoundname>
+      <sectiondef kind="property">
+      <memberdef kind="property" id="class_arm_controller_1_1_integration_1_1_bus_node_1ac2b7fe4c25cfcd7b44f04b05855ceeb3" prot="public" static="no" readable="no" writable="no" gettable="yes" settable="yes">
+        <type>Type</type>
+        <definition>Type ArmController.Integration.BusNode.NodeType</definition>
+        <argsstring></argsstring>
+        <name>NodeType</name>
+        <briefdescription>
+<para>The type of the node. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="29" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="property" id="class_arm_controller_1_1_integration_1_1_bus_node_1a7d0ed7766c7774a1d456724a296e1240" prot="public" static="yes" readable="no" writable="no" gettable="yes" settable="no">
+        <type>IEnumerable&lt; <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref> &gt;</type>
+        <definition>IEnumerable&lt;BusNode&gt; ArmController.Integration.BusNode.Values</definition>
+        <argsstring></argsstring>
+        <name>Values</name>
+        <briefdescription>
+<para>Iterates through the nodes on the bus. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="136" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="122" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a13418a087f1f9ce82cf0704644dcb1c2" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.STOP_REQUESTED</definition>
+        <argsstring></argsstring>
+        <name>STOP_REQUESTED</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(Boolean))</initializer>
+        <briefdescription>
+<para>(Boolean) A flag used to request that the program controller ends program execution. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="40" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="40" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a6355cda717bb7b81e4a99750d30b1460" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.POSITION_TICK</definition>
+        <argsstring></argsstring>
+        <name>POSITION_TICK</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(Object))</initializer>
+        <briefdescription>
+<para>(null) A value that&apos;s published once every output from the position detection module has been published. Subscribe to this to avoid getting notified when each value has been changed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="45" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="45" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1af88f5edcd59774feead51eb9e4dac571" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.PLAYER_ONE_ID</definition>
+        <argsstring></argsstring>
+        <name>PLAYER_ONE_ID</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(int))</initializer>
+        <briefdescription>
+<para>(Integer) ID for player one according to the Kinect </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="47" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="47" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a84b883c3690c0f6c4df6da472865833b" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.POS_LEFT_SHOULDER</definition>
+        <argsstring></argsstring>
+        <name>POS_LEFT_SHOULDER</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) the 3d point of the left shoulder in space. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="50" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="50" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a94f8e4bcc7923e29a1be4546d28c3625" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.POS_LEFT_ELBOW</definition>
+        <argsstring></argsstring>
+        <name>POS_LEFT_ELBOW</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) the 3d point of the left elbow in space. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="51" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="51" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1aff48a462b19cff8bcabfb3e0581c8f59" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.POS_LEFT_WRIST</definition>
+        <argsstring></argsstring>
+        <name>POS_LEFT_WRIST</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) the 3d point of the left wrist in space. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="52" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1ada2308c1571f268357147be25efde6c5" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.POS_LEFT_HAND</definition>
+        <argsstring></argsstring>
+        <name>POS_LEFT_HAND</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) the 3d point of the left hand in space. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="53" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="53" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1ac4f674ad367241ff5c04c2dd3c5adf6a" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.DIR_LEFT_UPPER_ARM</definition>
+        <argsstring></argsstring>
+        <name>DIR_LEFT_UPPER_ARM</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) A unit vector providing the direction the left upper arm is pointing relative to the left collar bone. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="55" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="55" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a8ef203eea87cc657d89633c08c64f530" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.ORIENTATION_LEFT_UPPER_ARM</definition>
+        <argsstring></argsstring>
+        <name>ORIENTATION_LEFT_UPPER_ARM</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(<ref refid="class_arm_controller_1_1_kinect___module_1_1_orientation" kindref="compound">Orientation</ref>))</initializer>
+        <briefdescription>
+<para>(Orientation) The orientation of the left upper-arm relative to the left collar bone. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="56" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="56" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1afd2cd8836d1457e54c0713fade669379" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.DIR_LEFT_LOWER_ARM</definition>
+        <argsstring></argsstring>
+        <name>DIR_LEFT_LOWER_ARM</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) A unit vector providing the direction the left lower arm is pointing relative to the left upper arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="58" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a7fa4f871065ca6e3f1aed7057ffcd126" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.ORIENTATION_LEFT_LOWER_ARM</definition>
+        <argsstring></argsstring>
+        <name>ORIENTATION_LEFT_LOWER_ARM</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(<ref refid="class_arm_controller_1_1_kinect___module_1_1_orientation" kindref="compound">Orientation</ref>))</initializer>
+        <briefdescription>
+<para>(Orientation) The orientation of the left lower-arm relative to the left upper-arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="59" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="59" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a14b81bc4580952589091b029dee0ca27" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.DIR_LEFT_HAND</definition>
+        <argsstring></argsstring>
+        <name>DIR_LEFT_HAND</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) A unit vector providing the direction the left hand is pointing relative to the left lower arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="61" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a4ca4d87dbb1c0f2d79a545b9778dbd8e" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.ORIENTATION_LEFT_HAND</definition>
+        <argsstring></argsstring>
+        <name>ORIENTATION_LEFT_HAND</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(<ref refid="class_arm_controller_1_1_kinect___module_1_1_orientation" kindref="compound">Orientation</ref>))</initializer>
+        <briefdescription>
+<para>(Orientation) The orientation of the left hand relative to the left lower-arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="62" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1ac475a977121a0adeffb3d95de5d24f9e" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.POS_RIGHT_SHOULDER</definition>
+        <argsstring></argsstring>
+        <name>POS_RIGHT_SHOULDER</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) giving the 3d point of the right shoulder in space. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="67" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="67" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1acf14524382a2379f228b0dbdb4a6bb5f" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.POS_RIGHT_ELBOW</definition>
+        <argsstring></argsstring>
+        <name>POS_RIGHT_ELBOW</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) giving the 3d point of the right elbow in space. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="68" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="68" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a13a94456f892e7d9d75b7349cba2e828" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.POS_RIGHT_WRIST</definition>
+        <argsstring></argsstring>
+        <name>POS_RIGHT_WRIST</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) giving the 3d point of the right wrist in space. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="69" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="69" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a758da88fd8c6ce1999364ffe339809f5" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.POS_RIGHT_HAND</definition>
+        <argsstring></argsstring>
+        <name>POS_RIGHT_HAND</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) giving the 3d point of the right hand in space. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="70" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="70" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1ae3509ea61427391c93e2206b3f04ffb2" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.DIR_RIGHT_UPPER_ARM</definition>
+        <argsstring></argsstring>
+        <name>DIR_RIGHT_UPPER_ARM</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) A unit vector providing the direction the right upper arm is pointing relative to the right collar bone. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="72" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="72" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1ab1ebd5bf7d8f9f9f75d5e49a279990c5" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.ORIENTATION_RIGHT_UPPER_ARM</definition>
+        <argsstring></argsstring>
+        <name>ORIENTATION_RIGHT_UPPER_ARM</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(<ref refid="class_arm_controller_1_1_kinect___module_1_1_orientation" kindref="compound">Orientation</ref>))</initializer>
+        <briefdescription>
+<para>(Orientation) The orientation of the right upper-arm relative to the right collar bone. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="73" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="73" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a06c40dd64bf3988f69ec3932bca4f41b" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.DIR_RIGHT_LOWER_ARM</definition>
+        <argsstring></argsstring>
+        <name>DIR_RIGHT_LOWER_ARM</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) A unit vector providing the direction the right lower arm is pointing relative to the right upper arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="75" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="75" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1af8d64c903ff0ba351cd80dbeda15f63d" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.ORIENTATION_RIGHT_LOWER_ARM</definition>
+        <argsstring></argsstring>
+        <name>ORIENTATION_RIGHT_LOWER_ARM</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(<ref refid="class_arm_controller_1_1_kinect___module_1_1_orientation" kindref="compound">Orientation</ref>))</initializer>
+        <briefdescription>
+<para>(Orientation) The orientation of the right lower-arm relative to the right upper-arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="76" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a93e15d69e6a394147d8b3171ca7bf754" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.DIR_RIGHT_HAND</definition>
+        <argsstring></argsstring>
+        <name>DIR_RIGHT_HAND</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(SkeletonPoint))</initializer>
+        <briefdescription>
+<para>(SkeletonPoint) A unit vector providing the direction the right hand is pointing relative to the right lower arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="78" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="78" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1ae36dbcd7e13f9433a90809a8357497e9" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.ORIENTATION_RIGHT_HAND</definition>
+        <argsstring></argsstring>
+        <name>ORIENTATION_RIGHT_HAND</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(<ref refid="class_arm_controller_1_1_kinect___module_1_1_orientation" kindref="compound">Orientation</ref>))</initializer>
+        <briefdescription>
+<para>(Orientation) The orientation of the right hand relative to the right lower-arm. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="79" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="79" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a84b697fb04d21bcc9c955dce9d122a92" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.CLAW_OPEN_PERCENT</definition>
+        <argsstring></argsstring>
+        <name>CLAW_OPEN_PERCENT</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(int))</initializer>
+        <briefdescription>
+<para>(Integer) The percent which the user&apos;s hand is open (0% = fully closed) </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="86" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="86" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a02c33eddeb08df00afe3168a86f8ec90" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.WRIST_PERCENT</definition>
+        <argsstring></argsstring>
+        <name>WRIST_PERCENT</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(int))</initializer>
+        <briefdescription>
+<para>(Integer) The percent which the user&apos;s wrist is pitched (100% = 90 degrees upward, 50% = straight, 0% = 90 degrees downward). </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="87" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="87" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1a122974d96d42ea9f2d9e98ad7d98f2de" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.ROBOT_ACTIVE</definition>
+        <argsstring></argsstring>
+        <name>ROBOT_ACTIVE</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(bool))</initializer>
+        <briefdescription>
+<para>(bool) A flag indicating whether the robot arm should be tracking the user&apos;s position. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="88" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="class_arm_controller_1_1_integration_1_1_bus_node_1ae03e4910cf46f8e9e37c22747b46911a" prot="public" static="yes" mutable="no">
+        <type>readonly <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref></type>
+        <definition>readonly BusNode ArmController.Integration.BusNode.ROBOT_RESET</definition>
+        <argsstring></argsstring>
+        <name>ROBOT_RESET</name>
+        <initializer>= new <ref refid="class_arm_controller_1_1_integration_1_1_bus_node" kindref="compound">BusNode</ref>(typeof(object))</initializer>
+        <briefdescription>
+<para>(null) A value published to indicate that the robot arm should reset to its default position. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="89" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="89" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="class_arm_controller_1_1_integration_1_1_bus_node_1aede754ff8d64fafd79585b4a7d8d8499" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>ArmController.Integration.BusNode.BusNode</definition>
+        <argsstring>(Type nodeType)</argsstring>
+        <name>BusNode</name>
+        <param>
+          <type>Type</type>
+          <declname>nodeType</declname>
+        </param>
+        <briefdescription>
+<para>Instantiates of a descriptor for a bus node. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>nodeType</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The type of the node.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="107" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="107" bodyend="109"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>This enumeration stores known data points which may be queried using the virtual bus. </para>    </briefdescription>
+    <detaileddescription>
+<para>New nodes required for communication between modules should be added as static members to this class.</para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="47">
+        <label>ArmController.Integration.BusNode</label>
+        <link refid="class_arm_controller_1_1_integration_1_1_bus_node"/>
+        <childnode refid="47" relation="usage">
+          <edgelabel>POS_RIGHT_WRIST</edgelabel>
+          <edgelabel>DIR_LEFT_UPPER_ARM</edgelabel>
+          <edgelabel>ORIENTATION_RIGHT_HAND</edgelabel>
+          <edgelabel>POS_LEFT_WRIST</edgelabel>
+          <edgelabel>POS_RIGHT_ELBOW</edgelabel>
+          <edgelabel>ORIENTATION_RIGHT_UPPER_ARM</edgelabel>
+          <edgelabel>STOP_REQUESTED</edgelabel>
+          <edgelabel>ROBOT_RESET</edgelabel>
+          <edgelabel>POS_LEFT_ELBOW</edgelabel>
+          <edgelabel>ORIENTATION_RIGHT_LOWER_ARM</edgelabel>
+          <edgelabel>...</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" line="20" bodyfile="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Integration/BusNode.cs" bodystart="19" bodyend="139"/>
+    <listofallmembers>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1aede754ff8d64fafd79585b4a7d8d8499" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>BusNode</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a84b697fb04d21bcc9c955dce9d122a92" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>CLAW_OPEN_PERCENT</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a14b81bc4580952589091b029dee0ca27" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>DIR_LEFT_HAND</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1afd2cd8836d1457e54c0713fade669379" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>DIR_LEFT_LOWER_ARM</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1ac4f674ad367241ff5c04c2dd3c5adf6a" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>DIR_LEFT_UPPER_ARM</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a93e15d69e6a394147d8b3171ca7bf754" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>DIR_RIGHT_HAND</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a06c40dd64bf3988f69ec3932bca4f41b" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>DIR_RIGHT_LOWER_ARM</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1ae3509ea61427391c93e2206b3f04ffb2" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>DIR_RIGHT_UPPER_ARM</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1ac2b7fe4c25cfcd7b44f04b05855ceeb3" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>NodeType</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a4ca4d87dbb1c0f2d79a545b9778dbd8e" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>ORIENTATION_LEFT_HAND</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a7fa4f871065ca6e3f1aed7057ffcd126" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>ORIENTATION_LEFT_LOWER_ARM</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a8ef203eea87cc657d89633c08c64f530" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>ORIENTATION_LEFT_UPPER_ARM</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1ae36dbcd7e13f9433a90809a8357497e9" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>ORIENTATION_RIGHT_HAND</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1af8d64c903ff0ba351cd80dbeda15f63d" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>ORIENTATION_RIGHT_LOWER_ARM</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1ab1ebd5bf7d8f9f9f75d5e49a279990c5" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>ORIENTATION_RIGHT_UPPER_ARM</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1af88f5edcd59774feead51eb9e4dac571" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>PLAYER_ONE_ID</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a94f8e4bcc7923e29a1be4546d28c3625" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>POS_LEFT_ELBOW</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1ada2308c1571f268357147be25efde6c5" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>POS_LEFT_HAND</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a84b883c3690c0f6c4df6da472865833b" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>POS_LEFT_SHOULDER</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1aff48a462b19cff8bcabfb3e0581c8f59" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>POS_LEFT_WRIST</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1acf14524382a2379f228b0dbdb4a6bb5f" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>POS_RIGHT_ELBOW</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a758da88fd8c6ce1999364ffe339809f5" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>POS_RIGHT_HAND</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1ac475a977121a0adeffb3d95de5d24f9e" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>POS_RIGHT_SHOULDER</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a13a94456f892e7d9d75b7349cba2e828" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>POS_RIGHT_WRIST</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a6355cda717bb7b81e4a99750d30b1460" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>POSITION_TICK</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a122974d96d42ea9f2d9e98ad7d98f2de" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>ROBOT_ACTIVE</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1ae03e4910cf46f8e9e37c22747b46911a" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>ROBOT_RESET</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a13418a087f1f9ce82cf0704644dcb1c2" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>STOP_REQUESTED</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a7d0ed7766c7774a1d456724a296e1240" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>Values</name></member>
+      <member refid="class_arm_controller_1_1_integration_1_1_bus_node_1a02c33eddeb08df00afe3168a86f8ec90" prot="public" virt="non-virtual"><scope>ArmController::Integration::BusNode</scope><name>WRIST_PERCENT</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

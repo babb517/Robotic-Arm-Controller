@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.2">
+  <compounddef id="namespace_arm_controller_1_1_robot___arm___module" kind="namespace">
+    <compoundname>ArmController::Robot_Arm_Module</compoundname>
+    <innerclass refid="class_arm_controller_1_1_robot___arm___module_1_1_robot_arm_module" prot="public">ArmController::Robot_Arm_Module::RobotArmModule</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/Users/jbabb1/Documents/GitHub/Robotic-Arm-Controller/RobotArmControl/ArmController/Robot Arm Module/RobotArmModule.cs" line="13"/>
+  </compounddef>
+</doxygen>

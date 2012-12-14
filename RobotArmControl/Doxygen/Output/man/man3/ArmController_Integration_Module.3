@@ -1,0 +1,95 @@
+.TH "ArmController.Integration.Module" 3 "Fri Dec 14 2012" "Version 0.5" "Robot Arm Controller" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ArmController.Integration.Module \- 
+.PP
+An abstract interface for each of the modules\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+Inherited by \fBArmController\&.CyberGloveLibrary\&.GloveModule\fP, \fBArmController\&.Kinect_Module\&.PositionalTracker\fP, \fBArmController\&.Kinect_Module\&.PositionFeedback\fP, and \fBArmController\&.Robot_Arm_Module\&.RobotArmModule\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBInitializeModule\fP (\fBVirtualBus\fP bus)"
+.br
+.RI "\fIRequests that the module be initialized and begins communicating on the specified virtual bus\&. \fP"
+.ti -1c
+.RI "void \fBFinalizeModule\fP ()"
+.br
+.RI "\fIRequests that the module finalize its state in preparation to exit the program\&. \fP"
+.in -1c
+.SS "Protected Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBRequestStop\fP ()"
+.br
+.RI "\fISends a message to the controller requesting that the program exit\&. \fP"
+.ti -1c
+.RI "abstract void \fBOnInitialize\fP ()"
+.br
+.RI "\fIAn event handling method called when the controller has requested that the module initialize its state\&. \fP"
+.ti -1c
+.RI "abstract void \fBOnFinalize\fP ()"
+.br
+.RI "\fIAn event handling method called when the controller has requested that the module finalize its state\&. \fP"
+.in -1c
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "\fBVirtualBus\fP \fBBus\fP\fC [get, set]\fP"
+.br
+.RI "\fIA reference to the virtual bus shared between the modules\&. \fP"
+.in -1c
+.SH "Detailed Description"
+.PP 
+An abstract interface for each of the modules\&. 
+
+New modules should inherit from this class and should be instantiated in \fBMainWindow\&.WindowLoaded\fP\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "void ArmController\&.Integration\&.Module\&.FinalizeModule ()"
+
+.PP
+Requests that the module finalize its state in preparation to exit the program\&. 
+.SS "void ArmController\&.Integration\&.Module\&.InitializeModule (\fBVirtualBus\fPbus)"
+
+.PP
+Requests that the module be initialized and begins communicating on the specified virtual bus\&. \fBParameters:\fP
+.RS 4
+\fIbus\fP The virtual bus to communicate on\&.
+.RE
+.PP
+
+.SS "abstract void ArmController\&.Integration\&.Module\&.OnFinalize ()\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+An event handling method called when the controller has requested that the module finalize its state\&. 
+.PP
+Implemented in \fBArmController\&.Robot_Arm_Module\&.RobotArmModule\fP, \fBArmController\&.Kinect_Module\&.PositionalTracker\fP, \fBArmController\&.Kinect_Module\&.PositionFeedback\fP, and \fBArmController\&.CyberGloveLibrary\&.GloveModule\fP\&.
+.SS "abstract void ArmController\&.Integration\&.Module\&.OnInitialize ()\fC [protected]\fP, \fC [pure virtual]\fP"
+
+.PP
+An event handling method called when the controller has requested that the module initialize its state\&. 
+.PP
+Implemented in \fBArmController\&.Robot_Arm_Module\&.RobotArmModule\fP, \fBArmController\&.Kinect_Module\&.PositionalTracker\fP, \fBArmController\&.Kinect_Module\&.PositionFeedback\fP, and \fBArmController\&.CyberGloveLibrary\&.GloveModule\fP\&.
+.SS "void ArmController\&.Integration\&.Module\&.RequestStop ()\fC [protected]\fP"
+
+.PP
+Sends a message to the controller requesting that the program exit\&. 
+.SH "Property Documentation"
+.PP 
+.SS "\fBVirtualBus\fP ArmController\&.Integration\&.Module\&.Bus\fC [get]\fP, \fC [set]\fP, \fC [protected]\fP"
+
+.PP
+A reference to the virtual bus shared between the modules\&. 
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Robot Arm Controller from the source code\&.
