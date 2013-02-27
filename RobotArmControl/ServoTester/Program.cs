@@ -15,10 +15,10 @@ namespace ServoTester
 
         static void Main(string[] args)
         {
-            sp = new SerialPort("COM5", 115200, Parity.None, 8, StopBits.One);
+            sp = new SerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
             sp.Open();
 
-            int servo = 2;
+            int servo = 3;
             int pos = 1500;
             int speed = 100;
 
@@ -52,8 +52,15 @@ namespace ServoTester
                     case '6':
                         pos -= 1;
                         break;
-                }
+                    case 'c':
+                        servo = Console.Read()-48;
+                        Console.WriteLine("Servo : " + servo + " chosen");
+                        pos = 1500;
+                        speed = 100;
+                        break;
 
+                }
+                key = 'a';
                 Console.WriteLine("Position: " + pos);
 
                 string command = "#" + servo + "P" + pos + "S" + speed + "\r\n";

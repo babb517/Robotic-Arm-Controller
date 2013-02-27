@@ -55,6 +55,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CyberGlove Module\CyberGloveModule.cs" />
+    <Compile Include="IMU Module\IMUModule.cs" />
+    <Compile Include="IMU Module\Matrix33.cs" />
     <Compile Include="Robot Arm Module\RobotArmModule.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -67,7 +69,7 @@
     <Compile Include="Integration\BusNode.cs" />
     <Compile Include="Integration\Module.cs" />
     <Compile Include="Integration\VirtualBus.cs" />
-    <Compile Include="Kinect Module\Orientation.cs" />
+    <Compile Include="Integration\Orientation.cs" />
     <Compile Include="Kinect Module\PositionalTracker.cs" />
     <Compile Include="Kinect Module\PositionFeedback.cs" />
     <Compile Include="Kinect Module\SkeletonRenderer.cs" />

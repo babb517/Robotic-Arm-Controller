@@ -259,8 +259,6 @@ namespace ArmController.Kinect_Module
         /// </summary>
         private void ProcessSkeletalData()
         {
-            if (SelectPlayerOne() && _playerOne != null ) { Bus.Publish(BusNode.PLAYER_ONE_ID, (_playerOne != null) ? _playerOne.TrackingId : -1); }
-
             if (_playerOne == null || _playerOne.TrackingState != SkeletonTrackingState.Tracked)
             {
                 Debug.WriteLine("Player not found...");
@@ -270,47 +268,12 @@ namespace ArmController.Kinect_Module
                 // there is an active player 1, let's publish his information...
 
                 // positions
-                if (_playerOne.Joints[JointType.ShoulderLeft].TrackingState == JointTrackingState.Tracked) 
-                    Bus.Publish(BusNode.POS_LEFT_SHOULDER, _playerOne.Joints[JointType.ShoulderLeft].Position);
-                if (_playerOne.Joints[JointType.ElbowLeft].TrackingState == JointTrackingState.Tracked) 
-                    Bus.Publish(BusNode.POS_LEFT_ELBOW, _playerOne.Joints[JointType.ElbowLeft].Position);
-                if (_playerOne.Joints[JointType.WristLeft].TrackingState == JointTrackingState.Tracked) 
-                    Bus.Publish(BusNode.POS_LEFT_WRIST, _playerOne.Joints[JointType.WristLeft].Position);
-                if (_playerOne.Joints[JointType.HandLeft].TrackingState == JointTrackingState.Tracked) 
-                    Bus.Publish(BusNode.POS_LEFT_HAND, _playerOne.Joints[JointType.HandLeft].Position);
-
-                if (_playerOne.Joints[JointType.ShoulderRight].TrackingState == JointTrackingState.Tracked)
-                    Bus.Publish(BusNode.POS_RIGHT_SHOULDER, _playerOne.Joints[JointType.ShoulderRight].Position);
-                if (_playerOne.Joints[JointType.ElbowRight].TrackingState == JointTrackingState.Tracked)
-                    Bus.Publish(BusNode.POS_RIGHT_ELBOW, _playerOne.Joints[JointType.ElbowRight].Position);
-                if (_playerOne.Joints[JointType.WristRight].TrackingState == JointTrackingState.Tracked)
-                    Bus.Publish(BusNode.POS_RIGHT_WRIST, _playerOne.Joints[JointType.WristRight].Position);
-                if (_playerOne.Joints[JointType.HandRight].TrackingState == JointTrackingState.Tracked)
-                    Bus.Publish(BusNode.POS_RIGHT_HAND, _playerOne.Joints[JointType.HandRight].Position);
-
-                // directions
-                if (_playerOne.Joints[JointType.ElbowLeft].TrackingState == JointTrackingState.Tracked)
-                    Bus.Publish(BusNode.DIR_LEFT_UPPER_ARM, GetUnitDirection(JointType.ElbowLeft));
-                if (_playerOne.Joints[JointType.WristLeft].TrackingState == JointTrackingState.Tracked)
-                    Bus.Publish(BusNode.DIR_LEFT_LOWER_ARM, GetUnitDirection(JointType.WristLeft));
-                if (_playerOne.Joints[JointType.HandLeft].TrackingState == JointTrackingState.Tracked)
-                    Bus.Publish(BusNode.DIR_LEFT_HAND, GetUnitDirection(JointType.HandLeft));
-
                 if (_playerOne.Joints[JointType.ElbowRight].TrackingState == JointTrackingState.Tracked)
                     Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, GetUnitDirection(JointType.ElbowRight));
                 if (_playerOne.Joints[JointType.WristRight].TrackingState == JointTrackingState.Tracked)
                     Bus.Publish(BusNode.DIR_RIGHT_LOWER_ARM, GetUnitDirection(JointType.WristRight));
                 if (_playerOne.Joints[JointType.HandRight].TrackingState == JointTrackingState.Tracked)
                     Bus.Publish(BusNode.DIR_RIGHT_HAND, GetUnitDirection(JointType.HandRight));
-
-
-                // orientations
-                if (_playerOne.Joints[JointType.ElbowLeft].TrackingState == JointTrackingState.Tracked)
-                    Bus.Publish(BusNode.ORIENTATION_LEFT_UPPER_ARM, GetOrientation(JointType.ElbowLeft));
-                if (_playerOne.Joints[JointType.WristLeft].TrackingState == JointTrackingState.Tracked)
-                    Bus.Publish(BusNode.ORIENTATION_LEFT_LOWER_ARM, GetOrientation(JointType.WristLeft));
-                if (_playerOne.Joints[JointType.HandLeft].TrackingState == JointTrackingState.Tracked)
-                    Bus.Publish(BusNode.ORIENTATION_LEFT_HAND, GetOrientation(JointType.HandLeft));
 
                 if (_playerOne.Joints[JointType.ElbowRight].TrackingState == JointTrackingState.Tracked)
                     Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, GetOrientation(JointType.ElbowRight));
