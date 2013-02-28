@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ArmController.Kinect_Module
+namespace ArmController.Integration
 {
     /// <summary>
     /// A simple structure used to describe the orientation of an object in 3d space.

@@ -203,7 +203,7 @@ namespace ArmController.Kinect_Module
             {
                 snsr.SkeletonStream.Enable();                                                    // Enable skeletal tracking
             }
-            catch (InvalidOperationException e)
+            catch (InvalidOperationException)
             {
                 // These are caused by a conflict between multiple applications trying to control the same kinect.
                 _snsr.Stop();

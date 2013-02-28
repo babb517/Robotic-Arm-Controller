@@ -55,6 +55,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CyberGlove Module\CyberGloveModule.cs" />
+    <Compile Include="IMU Module\Vector3.cs" />
     <Compile Include="IMU Module\IMUModule.cs" />
     <Compile Include="IMU Module\Matrix33.cs" />
     <Compile Include="Robot Arm Module\RobotArmModule.cs" />

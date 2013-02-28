@@ -7,8 +7,6 @@ using System.Reflection;
 using System.Diagnostics;
 using Microsoft.Kinect;
 
-using ArmController.Kinect_Module;
-
 namespace ArmController.Integration
 {
         /// <summary>

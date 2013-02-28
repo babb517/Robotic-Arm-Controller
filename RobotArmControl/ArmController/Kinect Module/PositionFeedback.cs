@@ -60,7 +60,7 @@ namespace ArmController.Kinect_Module
 
         private void OnValuePublished(BusNode node, object value)
         {
-            Orientation or = (Orientation)value;
+            Integration.Orientation or = (Integration.Orientation)value;
 
             if (node == BusNode.ORIENTATION_RIGHT_UPPER_ARM)
             {
@@ -73,12 +73,12 @@ namespace ArmController.Kinect_Module
             else if (node == BusNode.ORIENTATION_RIGHT_HAND)
             {
                 //_handDisplay.Text = OrientationToString(or);
-                _handDisplay.Text = OrientationToString(Bus.Get<Orientation>(BusNode.ORIENTATION_RIGHT_HAND));
+                _handDisplay.Text = OrientationToString(Bus.Get<Integration.Orientation>(BusNode.ORIENTATION_RIGHT_HAND));
             }
         }
 
 
-        private string OrientationToString(Orientation or)
+        private string OrientationToString(Integration.Orientation or)
         {
             return (or.Roll * (180 / Math.PI)).ToString("F2") + " / " + (or.Pitch * (180 / Math.PI)).ToString("F2") + " / " + (or.Yaw * (180 / Math.PI)).ToString("F2");
         }

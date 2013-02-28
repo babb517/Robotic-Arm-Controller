@@ -18,6 +18,7 @@ using ArmController.Kinect_Module;
 using ArmController.Integration;
 using ArmController.Robot_Arm_Module;
 using ArmController.CyberGloveLibrary;
+using ArmController.IMU_Module;
 
 namespace ArmController
 {
@@ -73,7 +74,9 @@ namespace ArmController
             _modules = new List<Module>();
 
             // TODO: Add each module to the list here.
-            _modules.Add(new PositionalTracker(drawingGroup));
+
+            //_modules.Add(new PositionalTracker(drawingGroup));
+            _modules.Add(new IMUModule());
             _modules.Add(new PositionFeedback(this.UpperArmOrientation, this.LowerArmOrientaiton, this.HandOrientation));
             _modules.Add(new RobotArmModule());
             _modules.Add(new GloveModule());
