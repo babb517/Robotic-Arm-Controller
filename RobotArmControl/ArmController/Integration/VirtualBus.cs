@@ -228,16 +228,19 @@ namespace ArmController.Integration
         /// <param name="node">The node to call the listeners for.</param>
         public void QueueNotification(BusNode node)
         {
-            
-            if (!_updatedNodes.Contains(node))
+            lock (_updatedNodes)
             {
-                //Debug.WriteLine("Queueing notification...");
-                _updatedNodes.Enqueue(node);
-            }
-            // add the node to the queue and start the notifier if neccessary.
-            if (_notification == null)
-            {
-               _notification = _dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, new Action(NotifyNodes));
+                if (!_updatedNodes.Contains(node))
+                {
+                    //Debug.WriteLine("Queueing notification...");
+                    _updatedNodes.Enqueue(node);
+                }
+
+                // add the node to the queue and start the notifier if neccessary.
+                if (_notification == null)
+                {
+                    _notification = _dispatcher.BeginInvoke(DispatcherPriority.ApplicationIdle, new Action(NotifyNodes));
+                }
             }
 
         }
@@ -256,14 +259,17 @@ namespace ArmController.Integration
         {
             BusNode node;
 
-            while (_updatedNodes.Count > 0)
+            lock (_updatedNodes)
             {
-                //Debug.WriteLine("Notifying nodes.");
-                node = (BusNode)_updatedNodes.Dequeue();
-                Notify(node);
-            }
+                while (_updatedNodes.Count > 0)
+                {
+                    //Debug.WriteLine("Notifying nodes.");
+                    node = (BusNode)_updatedNodes.Dequeue();
+                    Notify(node);
+                }
 
-            _notification = null;
+                _notification = null;
+            }
         }
 
         /// <summary>

@@ -4,6 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Microsoft.Xna;
+using Microsoft.Xna.Framework;
+using Microsoft.Kinect;
+
 using ArmController.Integration;
 
 namespace ArmController.IMU_Module
@@ -11,6 +15,7 @@ namespace ArmController.IMU_Module
     /// <summary>
     /// A simple matrix class used to perform some basic 3D operations.
     /// </summary>
+    [Serializable]
     class Matrix33
     {
         #region Private Members
@@ -20,7 +25,7 @@ namespace ArmController.IMU_Module
         /// <summary>
         /// Our actual matrix that we're wrapping.
         /// </summary>
-        private float[,] _matrix;
+        private Matrix _matrix;
 
         #endregion Private Members
 
@@ -36,15 +41,7 @@ namespace ArmController.IMU_Module
         public Matrix33()
         {
             /// initialize matrix
-            _matrix = new float[3,3];
-
-            // Default to the identity matrix
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    if (i == j) _matrix[i,j] = 1;
-                    else _matrix[i,j] = 0;
-                }
-            }
+            _matrix = Matrix.CreateFromYawPitchRoll(0, 0, 0);
         }
 
 
@@ -57,13 +54,7 @@ namespace ArmController.IMU_Module
         /// <param name="roll">The initial roll of the matrix.</param>
         public Matrix33(float yaw, float pitch, float roll)
         {
-            /// initialize matrix
-            _matrix = new float[3,3];
-
-            // calculate the rotational matrix
-            // see http://en.wikipedia.org/wiki/Rotation_matrix
-
-            setRotation(yaw, pitch, roll);
+            Matrix.CreateFromYawPitchRoll(yaw * (((float)Math.PI) / 180), pitch * (((float)Math.PI) / 180), roll * (((float)Math.PI) / 180));
         }
 
         #endregion Constructors
@@ -73,26 +64,7 @@ namespace ArmController.IMU_Module
         /**************************************************************************************/
         /* Public Methods */
         /**************************************************************************************/
-        
-        /// <summary>
-        /// Indexing operator for working with the underlying array.
-        /// </summary>
-        /// <param name="i">The row to access.</param>
-        /// <param name="j">The column to access.</param>
-        /// <returns>The value at that row/column.</returns>
-        public float this[int i,int j]
-        {
-            get 
-            {
-                return _matrix[i,j];
-            }
-
-            set 
-            {
-                _matrix[i,j] = value;
-            }
-
-        }
+    
 
 
         /// <summary>
@@ -104,24 +76,8 @@ namespace ArmController.IMU_Module
         public static Matrix33 operator*(Matrix33 A, Matrix33 B)
         {
             Matrix33 ret = new Matrix33();
-
-            // The result A*B is defined s.t. for each i,j
-            //   AB_ij = \sum_{k=0,k<3} A_ik * B_kj
-
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                    // initialize the result.
-                    ret[i,j] = 0;
-
-                    // sum
-                    for (int k = 0; k < 3; k++) {
-                        ret[i,j] += A[i,k] * B[k,j];
-                    }
-                }
-            }
-
+            ret._matrix = Matrix.Multiply(A._matrix, B._matrix);
             return ret;
-
         }
 
         /// <summary>
@@ -133,13 +89,7 @@ namespace ArmController.IMU_Module
         public static Matrix33 operator-(Matrix33 A, Matrix33 B)
         {
             Matrix33 ret = new Matrix33();
-
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                     ret[i,j] = A[i,j] - B[i,j];
-                }
-            }
-
+            ret._matrix = Matrix.Subtract(A._matrix, B._matrix);
             return ret;
 
         }
@@ -153,13 +103,7 @@ namespace ArmController.IMU_Module
         public static Matrix33 operator+(Matrix33 A, Matrix33 B)
         {
             Matrix33 ret = new Matrix33();
-
-            for (int i = 0; i < 3; i++) {
-                for (int j = 0; j < 3; j++) {
-                     ret[i,j] = A[i,j] + B[i,j];
-                }
-            }
-
+            ret._matrix = Matrix.Add(A._matrix, B._matrix);
             return ret;
 
         }
@@ -172,7 +116,8 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return (float)Math.Atan2(this[0,1], this[0,0]);
+                return (float)Math.Atan2(_matrix.M12, _matrix.M11);
+
             }
         }
 
@@ -183,9 +128,33 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return (float)Math.Atan2(this[2,1], this[2,2]);
+                return (float)Math.Atan2(_matrix.M23, _matrix.M33);
             }
         }
+
+
+        /// <summary>
+        /// Gets the roll represented by the rotational matrix.
+        /// </summary>
+        public float Roll
+        {
+            get
+            {
+                return (float)Math.Atan2(-_matrix.M13, Math.Sqrt(_matrix.M23 * _matrix.M23 + _matrix.M33 * _matrix.M33));
+            }
+        }
+
+        /// <summary>
+        /// Gets the orientation of the matrix.
+        /// </summary>
+        public Orientation Orientation
+        {
+            get
+            {
+                return new Orientation(Roll, Pitch, Yaw);
+            }
+        }
+
 
         /// <summary>
         /// Gets the vector corresponding to the X axis from this matrix.
@@ -194,7 +163,23 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return Col(0);
+                return _matrix.Right;
+            }
+        }
+
+        /// <summary>
+        /// Gets the point corresponding to the X axis from this matrix.
+        /// </summary>
+        public SkeletonPoint XPoint
+        {
+            get
+            {
+                SkeletonPoint ret = new SkeletonPoint();
+                Vector3 vec = XVector;
+                ret.X = vec.X;
+                ret.Y = vec.Y;
+                ret.Z = vec.Z;
+                return ret;
             }
         }
 
@@ -205,7 +190,23 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return Col(1);
+                return _matrix.Forward;
+            }
+        }
+
+        /// <summary>
+        /// Gets the point corresponding to the Y axis from this matrix.
+        /// </summary>
+        public SkeletonPoint YPoint
+        {
+            get
+            {
+                SkeletonPoint ret = new SkeletonPoint();
+                Vector3 vec = YVector;
+                ret.X = vec.X;
+                ret.Y = vec.Y;
+                ret.Z = vec.Z;
+                return ret;
             }
         }
 
@@ -216,52 +217,25 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return Col(2);
+                return _matrix.Up;
             }
         }
 
         /// <summary>
-        /// Gets the roll represented by the rotational matrix.
+        /// Gets the point corresponding to the Z axis from this matrix.
         /// </summary>
-        public float Roll
+        public SkeletonPoint ZPoint
         {
             get
             {
-                return (float)Math.Atan2(-this[2,0], Math.Sqrt(this[2,1] * this[2,1] + this[2,2] * this[2,2]));
+                SkeletonPoint ret = new SkeletonPoint();
+                Vector3 vec = ZVector;
+                ret.X = vec.X;
+                ret.Y = vec.Y;
+                ret.Z = vec.Z;
+                return ret;
             }
         }
-
-        /// <summary>
-        /// Accesses a single row in the matrix.
-        /// </summary>
-        /// <param name="i">The matrix to access.</param>
-        /// <returns>A copy of the data from that row.</returns>
-        public Vector3 Row(int i)
-        {
-            Vector3 ret = new Vector3();
-
-            for (int j = 0; j < 3; j++)
-                ret[j] = this[i,j];
-
-            return ret;
-
-        }
-
-        /// <summary>
-        /// Accesses a single column in the matrix.
-        /// </summary>
-        /// <param name="j">The column to access.</param>
-        /// <returns>A copy of the data from the column.</returns>
-        public Vector3 Col(int j)
-        {
-            Vector3 ret = new Vector3();
-
-            for (int i = 0; i < 3; i++)
-                ret[j] = this[i,j];
-
-            return ret;
-        }
-
 
         /// <summary>
         /// Calculates and returns the transposed matrix, obtained by swapping the row/column of each
@@ -273,17 +247,24 @@ namespace ArmController.IMU_Module
             get
             {
                 Matrix33 result = new Matrix33();
-
-                for (int i = 0; i < 3; i++) {
-                    for (int j = 0; j < 3; j++) {
-                        result[j,i] = this[i,j];
-                    }
-                }
-
+                result._matrix = Matrix.Transpose(_matrix);
                 return result;
             }
         }
 
+        /// <summary>
+        /// Calculates and returns the inverse matrix.
+        /// </summary>
+        /// <returns>The inverse of this matrix. <returns>
+        public Matrix33 Invert
+        {
+            get
+            {
+                Matrix33 result = new Matrix33();
+                result._matrix = Matrix.Invert(_matrix);
+                return result;
+            }
+        }
 
         /// <summary>
         /// Rotates the matrix by the provided yaw, pitch, and roll.
@@ -294,6 +275,7 @@ namespace ArmController.IMU_Module
         /// <returns>The result of the rotation.</returns>
         public Matrix33 Rotate(float yaw, float pitch, float roll)
         {
+            
             Matrix33 rotationMatrix = new Matrix33(yaw, pitch, roll);
 
             // TODO: Is this the correct order, or is it rotationMatrix * this.
@@ -309,7 +291,7 @@ namespace ArmController.IMU_Module
         public Matrix33 RelativeFrame(Matrix33 parent)
         {
             // TODO: Is this the correect order?
-            return this * parent.Transpose;
+            return this * parent.Invert;
         }
 
         /// <summary>
@@ -320,28 +302,8 @@ namespace ArmController.IMU_Module
         /// <param name="roll">The new roll.</param>
         public void setRotation(float yaw, float pitch, float roll)
         {
-            float sin_yaw = (float)Math.Sin(yaw);
-            float cos_yaw = (float)Math.Cos(yaw);
-            float sin_pitch = (float)Math.Sin(pitch);
-            float cos_pitch = (float)Math.Cos(pitch);
-            float sin_roll = (float)Math.Sin(roll);
-            float cos_roll = (float)Math.Cos(roll);
-
-
-            this[0, 0] = cos_roll * cos_yaw;
-            this[1, 0] = sin_pitch * sin_roll * cos_yaw - cos_pitch * sin_yaw;
-            this[2, 0] = sin_pitch * sin_yaw + cos_pitch * sin_roll * sin_yaw;
-
-            this[0, 1] = cos_roll * sin_yaw;
-            this[1, 1] = cos_pitch * cos_yaw + sin_pitch * sin_roll * sin_yaw;
-            this[2, 1] = cos_pitch * sin_roll * sin_yaw - sin_pitch * cos_yaw;
-
-            this[0, 2] = -sin_roll;
-            this[1, 2] = sin_pitch * cos_roll;
-            this[2, 2] = cos_pitch * cos_roll;
-
+            Matrix.CreateFromYawPitchRoll(yaw * (((float)Math.PI) / 180), pitch * (((float)Math.PI) / 180), roll * (((float)Math.PI) / 180), out _matrix);
         }
-
 
         #endregion Public Methods
 

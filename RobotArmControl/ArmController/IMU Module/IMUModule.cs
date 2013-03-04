@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.IO.Ports;                  // for SerialPort
 using System.Threading;                 // for threads.
 using System.IO;
-
+using Microsoft.Kinect;
 using ArmController.Integration;
 
 namespace ArmController.IMU_Module
@@ -21,13 +21,28 @@ namespace ArmController.IMU_Module
         /// <summary>
         /// The com port to use to communicate with the lily pad.
         /// </summary>
-        private static readonly string LILY_COM = "COM1";
+        private static readonly string LILY_COM = "COM5";
 
         /// <summary>
         /// The baud rate to communicate with the lily pad with.
         /// </summary>
         private static readonly int LILY_BAUD = 19200;
+        #endregion Constants
 
+
+        #region Private Members
+        /**************************************************************************************/
+        /* Private Members */
+        /**************************************************************************************/
+        /// <summary>
+        /// The serial port that we are using to communicate with the lily pad.
+        /// </summary>
+        SerialPort _lilySerial;
+
+        /// <summary>
+        /// The thread which is responsible for reading from the lilypad and publishing results.
+        /// </summary>
+        Thread _readerThread;
 
         /// <summary>
         /// (Absolute) Rotation matrix for the shoulder.
@@ -45,23 +60,6 @@ namespace ArmController.IMU_Module
         /// </summary>
         private Matrix33 _rotationForearm;
 
-
-        #endregion Constants
-
-
-        #region Private Members
-        /**************************************************************************************/
-        /* Private Members */
-        /**************************************************************************************/
-        /// <summary>
-        /// The serial port that we are using to communicate with the lily pad.
-        /// </summary>
-        SerialPort _lilySerial;
-
-        /// <summary>
-        /// The thread which is responsible for reading from the lilypad and publishing results.
-        /// </summary>
-        Thread _readerThread;
 
         /// <summary>
         /// A flag used to indicate that we should be running the reader thread.
@@ -103,7 +101,6 @@ namespace ArmController.IMU_Module
 
         #endregion Protected Methods
 
-
         #region Private Methods
         /**************************************************************************************/
         /* Private Methods */
@@ -138,17 +135,16 @@ namespace ArmController.IMU_Module
                  *    Y - Indicates the yaw of the IMU in degrees.
                  */
 
+                Console.Write("Reading IMU input: " + currentLine);
+
 
                 switch (currentLine[0])
                 {
-                    case 'W':
-                        // wrist
-                        // we don't track the wrist.
-
-                        break;
                     case 'F':
                         // forearm
-                        good = updateMatrix(currentLine, _rotationForearm);
+                        Console.WriteLine("Got forearm.");
+                        good = updateMatrix(currentLine, ref _rotationForearm);
+                        
 
                         // update the position of the forearm
                         updateBusForearm();
@@ -157,16 +153,24 @@ namespace ArmController.IMU_Module
                         break;
                     case 'B':
                         // bicep
-                        good = updateMatrix(currentLine, _rotationBicep);
+                        Console.WriteLine("Got bicep.");
+                        good = updateMatrix(currentLine, ref _rotationBicep);
 
                         // update the position of the forearm and bicep
                         updateBusBicep();
                         updateBusForearm();
 
                         break;
+                    case 'W':   
+                        // wrist
+                        // we don't track the wrist.
+
+                        // TODO: This is a hack because we're using the 'wrist' IMU for the shoulder.
+                        //  break;
                     case 'S':
                         // shoulder
-                        good = updateMatrix(currentLine, _rotationShoulder);
+                        Console.WriteLine("Got shoulder.");
+                        good = updateMatrix(currentLine, ref  _rotationShoulder);
 
 
                         // update the position of the forearm, bicep, and shoulder
@@ -176,6 +180,7 @@ namespace ArmController.IMU_Module
 
                         break;
                     default:
+                          Console.WriteLine("Got unknown.");
                         // who knows what this is.
                         // The input is corrupt.
                         good = false;
@@ -207,7 +212,7 @@ namespace ArmController.IMU_Module
         /// <param name="input">The string to read the yaw, pitch, and roll from. </param>
         /// <param name="outMatrix">The matrix to output the results to.</param>
         /// <returns>True if successful, false otherwise.</returns>
-        private bool updateMatrix(string input, Matrix33 outMatrix)
+        private bool updateMatrix(string input, ref Matrix33 outMatrix)
         {
             bool ret = true;
 
@@ -228,10 +233,7 @@ namespace ArmController.IMU_Module
             float yaw = 0, pitch = 0, roll = 0;
             string[] arr = input.Substring(1).Split(',');
 
-            if (arr.Length != 3)
-                throw new FormatException("The string \"" + input + "\" is not a valid yaw/pitch/roll specifier.");
-
-
+            if (arr.Length != 3) ret = false;
 
             ret = ret && float.TryParse(arr[0], out yaw);
             ret = ret && float.TryParse(arr[1], out pitch);
@@ -256,8 +258,8 @@ namespace ArmController.IMU_Module
         {
             Matrix33 relative = _rotationBicep.RelativeFrame(_rotationShoulder);
 
-            Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, relative.YVector);
-            Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, new Orientation(relative.Roll, relative.Pitch, relative.Yaw));
+            Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, relative.YPoint);
+            Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, relative.Orientation);
 
         }
 
@@ -266,10 +268,12 @@ namespace ArmController.IMU_Module
         /// </summary>
         private void updateBusForearm()
         {
-            Matrix33 relative = _rotationForearm.RelativeFrame(_rotationBicep);   
-            Bus.Publish(BusNode.DIR_RIGHT_LOWER_ARM, relative.YVector);
-            Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, new Orientation(relative.Roll, relative.Pitch, relative.Yaw));
+            Matrix33 relative = _rotationForearm.RelativeFrame(_rotationBicep);
+
+            Bus.Publish(BusNode.DIR_RIGHT_LOWER_ARM, relative.YPoint);
+            Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, relative.Orientation);
         }
+
 
 
 

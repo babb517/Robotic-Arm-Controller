@@ -7,8 +7,6 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Media;
 using System.Diagnostics;
-
-
 using Microsoft.Kinect;
 
 namespace ArmController.Kinect_Module

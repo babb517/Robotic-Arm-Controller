@@ -58,3 +58,5 @@ C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmContr
 C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\ArmController.csproj.GenerateResource.Cache
 C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\ArmController.exe
 C:\Users\jbabb1\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\Debug\ArmController.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\Debug\Microsoft.Xna.Framework.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\Debug\Microsoft.Xna.Framework.xml
