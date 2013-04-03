@@ -77,9 +77,9 @@ namespace ArmController
 
             //_modules.Add(new PositionalTracker(drawingGroup));
             _modules.Add(new IMUModule());
-            _modules.Add(new PositionFeedback(this.UpperArmOrientation, this.LowerArmOrientaiton, this.HandOrientation));
-            _modules.Add(new RobotArmModule());
-            _modules.Add(new GloveModule());
+            _modules.Add(new PositionFeedback());
+           // _modules.Add(new RobotArmModule());
+           // _modules.Add(new GloveModule());
             
             // start everything!
             InitializeModules();

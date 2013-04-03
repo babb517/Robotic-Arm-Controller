@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Controls;
 using System.Threading.Tasks;
+using System.Windows;
 
 using ArmController.Integration;
 
@@ -16,10 +17,6 @@ namespace ArmController.Kinect_Module
         /* Private Members */
         /**********************************************************************/
 
-        TextBox _upperArmDisplay;
-        TextBox _lowerArmDisplay;
-        TextBox _handDisplay;
-
         #endregion Private Members
 
 
@@ -27,11 +24,9 @@ namespace ArmController.Kinect_Module
         /**********************************************************************/
         /* Constructors */
         /**********************************************************************/
-        public PositionFeedback(TextBox upperArmDisplay, TextBox lowerArmDisplay, TextBox handDisplay)
+        public PositionFeedback()
         {
-            _upperArmDisplay = upperArmDisplay;
-            _lowerArmDisplay = lowerArmDisplay;
-            _handDisplay = handDisplay;
+
         }
 
         #endregion Constructors
@@ -44,13 +39,14 @@ namespace ArmController.Kinect_Module
 
         protected override void OnInitialize()
         {
-            _upperArmDisplay.Text = "No Data";
-            _lowerArmDisplay.Text = "No Data";
-            _handDisplay.Text = "No Data";
 
             Bus.Subscribe(BusNode.ORIENTATION_RIGHT_UPPER_ARM, OnValuePublished);
+            Bus.Subscribe(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, OnValuePublished);
             Bus.Subscribe(BusNode.ORIENTATION_RIGHT_LOWER_ARM, OnValuePublished);
+            Bus.Subscribe(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, OnValuePublished);
             Bus.Subscribe(BusNode.ORIENTATION_RIGHT_HAND, OnValuePublished);
+            Bus.Subscribe(BusNode.ABSOLUTE_ORIENTATION_RIGHT_HAND, OnValuePublished);
+
         }
 
         protected override void OnFinalize()
@@ -64,23 +60,48 @@ namespace ArmController.Kinect_Module
 
             if (node == BusNode.ORIENTATION_RIGHT_UPPER_ARM)
             {
-                _upperArmDisplay.Text = OrientationToString(or);
+                ((MainWindow)(Application.Current.MainWindow)).txt_l_upper_pitch.Text = format(or.Pitch);
+                ((MainWindow)(Application.Current.MainWindow)).txt_l_upper_roll.Text = format(or.Roll);
+                ((MainWindow)(Application.Current.MainWindow)).txt_l_upper_yaw.Text = format(or.Yaw);
+            }
+            else if (node == BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM)
+            {
+                ((MainWindow)(Application.Current.MainWindow)).txt_g_upper_pitch.Text = format(or.Pitch);
+                ((MainWindow)(Application.Current.MainWindow)).txt_g_upper_roll.Text = format(or.Roll);
+                ((MainWindow)(Application.Current.MainWindow)).txt_g_upper_yaw.Text = format(or.Yaw);
             }
             else if (node == BusNode.ORIENTATION_RIGHT_LOWER_ARM)
             {
-                _lowerArmDisplay.Text = OrientationToString(or);
+                ((MainWindow)(Application.Current.MainWindow)).txt_l_lower_pitch.Text = format(or.Pitch);
+                ((MainWindow)(Application.Current.MainWindow)).txt_l_lower_roll.Text = format(or.Roll);
+                ((MainWindow)(Application.Current.MainWindow)).txt_l_lower_yaw.Text = format(or.Yaw);
+            }
+            else if (node == BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM)
+            {
+                ((MainWindow)(Application.Current.MainWindow)).txt_g_lower_pitch.Text = format(or.Pitch);
+                ((MainWindow)(Application.Current.MainWindow)).txt_g_lower_roll.Text = format(or.Roll);
+                ((MainWindow)(Application.Current.MainWindow)).txt_g_lower_yaw.Text = format(or.Yaw);
             }
             else if (node == BusNode.ORIENTATION_RIGHT_HAND)
             {
                 //_handDisplay.Text = OrientationToString(or);
-                _handDisplay.Text = OrientationToString(Bus.Get<Integration.Orientation>(BusNode.ORIENTATION_RIGHT_HAND));
+                ((MainWindow)(Application.Current.MainWindow)).txt_l_hand_pitch.Text = format(or.Pitch);
+                ((MainWindow)(Application.Current.MainWindow)).txt_l_hand_roll.Text = format(or.Roll);
+                ((MainWindow)(Application.Current.MainWindow)).txt_l_hand_yaw.Text = format(or.Yaw);
+            }
+            else if (node == BusNode.ABSOLUTE_ORIENTATION_RIGHT_HAND)
+            {
+                //_handDisplay.Text = OrientationToString(or);
+                ((MainWindow)(Application.Current.MainWindow)).txt_g_hand_pitch.Text = format(or.Pitch);
+                ((MainWindow)(Application.Current.MainWindow)).txt_g_hand_roll.Text = format(or.Roll);
+                ((MainWindow)(Application.Current.MainWindow)).txt_g_hand_yaw.Text = format(or.Yaw);
             }
         }
 
 
-        private string OrientationToString(Integration.Orientation or)
+        private string format(float or)
         {
-            return (or.Roll * (180 / Math.PI)).ToString("F2") + " / " + (or.Pitch * (180 / Math.PI)).ToString("F2") + " / " + (or.Yaw * (180 / Math.PI)).ToString("F2");
+            return (or * (180 / Math.PI)).ToString("F2");
         }
 
         #endregion Event Handling

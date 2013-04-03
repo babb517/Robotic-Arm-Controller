@@ -269,9 +269,9 @@ namespace ArmController.IMU_Module
         /// <summary>
         /// Rotates the matrix by the provided yaw, pitch, and roll.
         /// </summary>
-        /// <param name="yaw">The yaw (in radians) to rotate by.</param>
-        /// <param name="pitch">The pitch (in radians) to rotate by.</param>
-        /// <param name="roll">The roll (in radians) to rotate by.</param>
+        /// <param name="yaw">The yaw (in degrees) to rotate by.</param>
+        /// <param name="pitch">The pitch (in degrees) to rotate by.</param>
+        /// <param name="roll">The roll (in degrees) to rotate by.</param>
         /// <returns>The result of the rotation.</returns>
         public Matrix33 Rotate(float yaw, float pitch, float roll)
         {
@@ -279,7 +279,7 @@ namespace ArmController.IMU_Module
             Matrix33 rotationMatrix = new Matrix33(yaw, pitch, roll);
 
             // TODO: Is this the correct order, or is it rotationMatrix * this.
-            return this * rotationMatrix;
+            return rotationMatrix * this;
         }
 
 
@@ -291,7 +291,7 @@ namespace ArmController.IMU_Module
         public Matrix33 RelativeFrame(Matrix33 parent)
         {
             // TODO: Is this the correect order?
-            return this * parent.Invert;
+            return parent.Invert * this;
         }
 
         /// <summary>

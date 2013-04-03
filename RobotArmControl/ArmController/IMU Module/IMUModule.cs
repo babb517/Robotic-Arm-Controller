@@ -260,7 +260,7 @@ namespace ArmController.IMU_Module
 
             Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, relative.YPoint);
             Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, relative.Orientation);
-
+            Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, _rotationBicep.Orientation);
         }
 
         /// <summary>
@@ -272,6 +272,7 @@ namespace ArmController.IMU_Module
 
             Bus.Publish(BusNode.DIR_RIGHT_LOWER_ARM, relative.YPoint);
             Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, relative.Orientation);
+            Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, _rotationForearm.Orientation);
         }
 
 

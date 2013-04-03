@@ -45,12 +45,17 @@ namespace ArmController.Integration
         #region Right Arm
         public static readonly BusNode DIR_RIGHT_UPPER_ARM = new BusNode(typeof(SkeletonPoint));        ///< (SkeletonPoint) A unit vector providing the direction the right upper arm is pointing relative to the right collar bone.
         public static readonly BusNode ORIENTATION_RIGHT_UPPER_ARM = new BusNode(typeof(Orientation));   ///< (Orientation) The orientation of the right upper-arm relative to the right collar bone.
+        public static readonly BusNode ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM = new BusNode(typeof(Orientation));   ///< (Orientation) The absolute orientation of the right upper-arm.
 
         public static readonly BusNode DIR_RIGHT_LOWER_ARM = new BusNode(typeof(SkeletonPoint));        ///< (SkeletonPoint) A unit vector providing the direction the right lower arm is pointing relative to the right upper arm.
         public static readonly BusNode ORIENTATION_RIGHT_LOWER_ARM = new BusNode(typeof(Orientation));      ///< (Orientation) The orientation of the right lower-arm relative to the right upper-arm.
+        public static readonly BusNode ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM = new BusNode(typeof(Orientation));      ///< (Orientation) The absolute orientation of the right lower arm.
 
         public static readonly BusNode DIR_RIGHT_HAND = new BusNode(typeof(SkeletonPoint));             ///< (SkeletonPoint) A unit vector providing the direction the right hand is pointing relative to the right lower arm.
         public static readonly BusNode ORIENTATION_RIGHT_HAND = new BusNode(typeof(Orientation));      ///< (Orientation) The orientation of the right hand relative to the right lower-arm.
+        public static readonly BusNode ABSOLUTE_ORIENTATION_RIGHT_HAND = new BusNode(typeof(Orientation));      ///< (Orientation) The absolute orientation of the right hand.
+
+        
         #endregion Right Arms
 
         #endregion Position Module Output
