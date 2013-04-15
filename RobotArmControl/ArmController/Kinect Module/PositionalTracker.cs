@@ -160,8 +160,11 @@ namespace ArmController.Kinect_Module
                 if (skeletonFrame != null && this._skeletonData != null)         // check that a frame is available
                 {
                     skeletonFrame.CopySkeletonDataTo(this._skeletonData);        // get the skeletal information in this frame
+                    SelectPlayerOne();
+
                 }
             }
+
 
             ProcessSkeletalData();
         }
@@ -266,7 +269,6 @@ namespace ArmController.Kinect_Module
             else
             {
                 // there is an active player 1, let's publish his information...
-
                 // positions
                 if (_playerOne.Joints[JointType.ElbowRight].TrackingState == JointTrackingState.Tracked)
                     Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, GetUnitDirection(JointType.ElbowRight));
@@ -309,6 +311,7 @@ namespace ArmController.Kinect_Module
             // Convert point to depth space.  
             // We are not using depth directly, but we do want the points in our 640x480 output resolution.
             DepthImagePoint depthPoint = _snsr.Kinect.MapSkeletonPointToDepth(skelpoint, DepthImageFormat.Resolution640x480Fps30);
+            //DepthImagePoint depthPoint = _snsr.Kinect.CoordinateMapper.MapSkeletonPointToDepth(skelpoint, DepthImageFormat.Resolution640x480Fps30);
             return new Point(depthPoint.X, depthPoint.Y);
         }
 
