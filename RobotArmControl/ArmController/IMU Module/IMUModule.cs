@@ -256,11 +256,18 @@ namespace ArmController.IMU_Module
         /// </summary>
         private void updateBusBicep()
         {
-            Matrix33 relative = _rotationBicep.RelativeFrame(_rotationShoulder);
+            Matrix33 tmp = new Matrix33();
+
+            // dirty hacks
+            tmp.setRotation(_rotationShoulder.Yaw, _rotationShoulder.Pitch, _rotationShoulder.Roll + 90);
+
+            Matrix33 relative = _rotationBicep.RelativeFrame(tmp);
+            Orientation relOrientation = relative.Orientation;
+            Orientation absOrientation = _rotationBicep.Orientation;
 
             Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, relative.YPoint);
-            Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, relative.Orientation);
-            Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, _rotationBicep.Orientation);
+            Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, relOrientation);
+            Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, absOrientation);
         }
 
         /// <summary>
@@ -269,10 +276,13 @@ namespace ArmController.IMU_Module
         private void updateBusForearm()
         {
             Matrix33 relative = _rotationForearm.RelativeFrame(_rotationBicep);
+            Orientation relOrientation = relative.Orientation;
+            Orientation absOrientation = _rotationForearm.Orientation;
+
 
             Bus.Publish(BusNode.DIR_RIGHT_LOWER_ARM, relative.YPoint);
-            Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, relative.Orientation);
-            Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, _rotationForearm.Orientation);
+            Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, new Orientation(relOrientation.Roll, relOrientation.Yaw, relOrientation.Pitch));
+            Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, new Orientation(absOrientation.Roll, absOrientation.Yaw, absOrientation.Pitch));
         }
 
 
