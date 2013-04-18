@@ -1,0 +1,21 @@
+c:\users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\Capstone GUI.exe.config
+c:\users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\Capstone GUI.exe
+c:\users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\Capstone GUI.pdb
+c:\users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\obj\Debug\Capstone GUI.csprojResolveAssemblyReference.cache
+c:\users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\obj\Debug\Capstone_GUI.Form1.resources
+c:\users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\obj\Debug\Capstone_GUI.Properties.Resources.resources
+c:\users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\obj\Debug\Capstone GUI.csproj.GenerateResource.Cache
+c:\users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\obj\Debug\Capstone GUI.exe
+c:\users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\obj\Debug\Capstone GUI.pdb
+C:\Users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\Touchless.Vision.dll
+C:\Users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\WebCamLib.dll
+C:\Users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\WebCamLib.pdb
+C:\Users\max\documents\visual studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\Touchless.Vision.pdb
+C:\Users\max\Documents\Visual Studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\TCPCam.dll
+C:\Users\max\Documents\Visual Studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\TCPCamActivex.dll
+C:\Users\max\Documents\Visual Studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\TCPCam.xml
+C:\Users\max\Documents\Visual Studio 2012\Projects\Capstone GUI\Capstone GUI\bin\Debug\TCPCamActivex.xml
+G:\Capstone GUI\Capstone GUI\bin\Debug\Capstone GUI.exe.config
+G:\Capstone GUI\Capstone GUI\obj\Debug\Capstone GUI.exe
+G:\Capstone GUI\Capstone GUI\obj\Debug\Capstone GUI.pdb

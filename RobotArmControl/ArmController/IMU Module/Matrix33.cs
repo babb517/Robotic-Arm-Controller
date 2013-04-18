@@ -40,8 +40,8 @@ namespace ArmController.IMU_Module
         /// </summary>
         public Matrix33()
         {
-            /// initialize matrix
-            _matrix = Matrix.CreateFromYawPitchRoll(0, 0, 0);
+            _matrix = new Matrix();
+            Matrix.CreateFromYawPitchRoll(0, 0, 0, out _matrix);
         }
 
 
@@ -54,7 +54,8 @@ namespace ArmController.IMU_Module
         /// <param name="roll">The initial roll of the matrix.</param>
         public Matrix33(float yaw, float pitch, float roll)
         {
-            Matrix.CreateFromYawPitchRoll(yaw * (((float)Math.PI) / 180), pitch * (((float)Math.PI) / 180), roll * (((float)Math.PI) / 180));
+            _matrix = new Matrix();
+           Matrix.CreateFromYawPitchRoll(yaw, pitch, roll, out _matrix);
         }
 
         #endregion Constructors
@@ -116,7 +117,7 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return (float)Math.Atan2(_matrix.M12, _matrix.M11);
+                return (float)Math.Atan2(_matrix.M21, _matrix.M11);
 
             }
         }
@@ -128,7 +129,7 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return (float)Math.Atan2(_matrix.M23, _matrix.M33);
+                return (float)Math.Atan2(_matrix.M32, _matrix.M33);
             }
         }
 
@@ -140,7 +141,7 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return (float)Math.Atan2(-_matrix.M13, Math.Sqrt(_matrix.M23 * _matrix.M23 + _matrix.M33 * _matrix.M33));
+                return (float)Math.Atan2(-_matrix.M31, Math.Sqrt(_matrix.M32 * _matrix.M32 + _matrix.M33 * _matrix.M33));
             }
         }
 
@@ -269,17 +270,19 @@ namespace ArmController.IMU_Module
         /// <summary>
         /// Rotates the matrix by the provided yaw, pitch, and roll.
         /// </summary>
-        /// <param name="yaw">The yaw (in degrees) to rotate by.</param>
-        /// <param name="pitch">The pitch (in degrees) to rotate by.</param>
-        /// <param name="roll">The roll (in degrees) to rotate by.</param>
+        /// <param name="yaw">The yaw to rotate by.</param>
+        /// <param name="pitch">The pitch to rotate by.</param>
+        /// <param name="roll">The roll to rotate by.</param>
         /// <returns>The result of the rotation.</returns>
         public Matrix33 Rotate(float yaw, float pitch, float roll)
         {
-            
-            Matrix33 rotationMatrix = new Matrix33(yaw, pitch, roll);
+            Matrix33 ret = new Matrix33();
+
+            Matrix x = Matrix.CreateFromYawPitchRoll(yaw, pitch, roll);
+            ret._matrix = Matrix.Multiply(this._matrix, x);
 
             // TODO: Is this the correct order, or is it rotationMatrix * this.
-            return rotationMatrix * this;
+            return ret;
         }
 
 
@@ -302,7 +305,7 @@ namespace ArmController.IMU_Module
         /// <param name="roll">The new roll.</param>
         public void setRotation(float yaw, float pitch, float roll)
         {
-            Matrix.CreateFromYawPitchRoll(yaw * (((float)Math.PI) / 180), pitch * (((float)Math.PI) / 180), roll * (((float)Math.PI) / 180), out _matrix);
+            Matrix.CreateFromYawPitchRoll(yaw, pitch, roll, out _matrix);
         }
 
         #endregion Public Methods

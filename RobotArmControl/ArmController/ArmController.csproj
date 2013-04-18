@@ -58,6 +58,8 @@
     <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -65,6 +67,18 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Xaml">
       <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="TCPCam">
+      <HintPath>..\Capstone GUI\bin\Debug\TCPCam.dll</HintPath>
+    </Reference>
+    <Reference Include="TCPCamActivex">
+      <HintPath>..\Capstone GUI\bin\Debug\TCPCamActivex.dll</HintPath>
+    </Reference>
+    <Reference Include="Touchless.Vision">
+      <HintPath>..\Capstone GUI\bin\Debug\Touchless.Vision.dll</HintPath>
+    </Reference>
+    <Reference Include="WebCamLib">
+      <HintPath>..\Capstone GUI\bin\Debug\WebCamLib.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
@@ -76,6 +90,12 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="CyberGlove Module\CyberGloveModule.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="IMU Module\IMUModule.cs" />
     <Compile Include="IMU Module\Matrix33.cs" />
     <Compile Include="Robot Arm Module\RobotArmModule.cs" />
@@ -113,6 +133,9 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -131,6 +154,108 @@
       <Project>{c6f9c31b-6130-4443-a5cc-ef0664552ecd}</Project>
       <Name>Microsoft.Kinect.Toolkit</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ASU_Ira_A._Fulton_Logo.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\black Page.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chrome_icon copy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\chrome_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fireFox_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ic-settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\kinect_logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\max1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pic5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\r3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\robot Arm1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\robot_arm.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\robotControl.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\setting Logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_pic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Settings_pic1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\settings2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start Button.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start Button1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\start Button2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\startBTN.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\startBTN2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watever.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watever2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watever3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\watever5.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

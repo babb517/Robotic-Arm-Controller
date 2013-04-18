@@ -54,7 +54,7 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// Minimum movement amount that the robot arm can move a servo.
         /// </summary>
-        private const int positionDeltaThreshold = 0;
+        private const int positionDeltaThreshold = 20;
 
         /// <summary>
         /// Radians per degree.
@@ -115,7 +115,7 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// The minimum amount of degrees that the arm servo can move.
         /// </summary>
-        private const int SHOULDER_PITCH_MIN_DEG = -30;
+        private const int SHOULDER_PITCH_MIN_DEG = -45; // -30;
 
         /// <summary>
         /// The intended minimum shoulder pitch which corresponds to human physical limits.
@@ -125,7 +125,7 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// The maximum amount of degrees that the shoulder servo can move.
         /// </summary>
-        private const int SHOULDER_YAW_MAX_DEG = 45;
+        private const int SHOULDER_YAW_MAX_DEG = 100;
 
         /// <summary>
         /// The minimum amount of degrees that the shoulder servo can move.
@@ -246,8 +246,8 @@ namespace ArmController.Robot_Arm_Module
 
             // Let's limit the rate at which we send commands
             // TODO: Do this right!
-            //if (System.DateTime.Now.Ticks < _lastUpdateTime + MIN_UPDATE_INTERVAL * System.TimeSpan.TicksPerMillisecond) return;
-            //_lastUpdateTime = System.DateTime.Now.Millisecond;
+            if (System.DateTime.Now.Ticks < _lastUpdateTime + MIN_UPDATE_INTERVAL * System.TimeSpan.TicksPerMillisecond) return;
+            _lastUpdateTime = System.DateTime.Now.Millisecond;
 
             // What we want to do here is update our 'goal' position based on the data we can read from the virtual bus.
             // Since we've subscribed to the POSITION_TICK, the 'value' parameter has no meaning, we should get the value directly from the bus.
@@ -317,7 +317,8 @@ namespace ArmController.Robot_Arm_Module
                         if (Math.Abs(finalArmPosition - currentForearmPosition) >= positionDeltaThreshold)
                         {
                             currentArmPosition = finalArmPosition;
-                            //move(SHOULDER_PITCH, currentArmPosition, 200);
+                            move(SHOULDER_PITCH, currentArmPosition, 200);
+                            Debug.WriteLine("SHOULDER_PITCH: " + SHOULDER_PITCH + ", currentArmPosition: " + currentArmPosition);
                         }
                     }
 
@@ -349,9 +350,10 @@ namespace ArmController.Robot_Arm_Module
                         if (Math.Abs(finalShoulderPosition - currentShoulderPosition) >= positionDeltaThreshold)
                         {
                             currentShoulderPosition = finalShoulderPosition;
-                            //move(SHOULDER_YAW, finalShoulderPosition, 200);
+                            move(SHOULDER_YAW, finalShoulderPosition, 200);
                         }
                     }
+
                 }
 
                  if (node == BusNode.CLAW_OPEN_PERCENT)
@@ -368,7 +370,7 @@ namespace ArmController.Robot_Arm_Module
                     }
                 }
 
-                 if (node == BusNode.WRIST_PERCENT)
+                 if (node == BusNode.WRIST_PERCENT) // flexion/extension
                 {
                     finalWristPosition = 1380 + (int)((-wrist_hand + 50) * 12.4f);
 
