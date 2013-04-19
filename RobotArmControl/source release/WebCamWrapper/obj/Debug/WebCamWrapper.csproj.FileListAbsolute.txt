@@ -1,0 +1,32 @@
+C:\Users\jake\Desktop\source\WebCamWrapper\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jake\Desktop\source\WebCamWrapper\obj\Debug\Camera\Configuration\CameraFrameSourceConfigurationElement.baml
+C:\Users\jake\Desktop\source\WebCamWrapper\obj\Debug\Camera\Configuration\CameraFrameSourceConfigurationElement.g.cs
+C:\Users\jake\Desktop\source\WebCamWrapper\obj\Debug\Touchless.Vision_MarkupCompile.cache
+C:\Users\jake\Desktop\source\WebCamWrapper\obj\Debug\Touchless.Vision.g.resources
+C:\Users\jake\Desktop\source\WebCamWrapper\bin\Debug\Touchless.Vision.dll
+C:\Users\jake\Desktop\source\WebCamWrapper\bin\Debug\Touchless.Vision.pdb
+C:\Users\jake\Desktop\source\WebCamWrapper\bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\jake\Desktop\source\WebCamWrapper\bin\Debug\WebCamLib.dll
+C:\Users\jake\Desktop\source\WebCamWrapper\obj\Debug\Touchless.Vision.dll
+C:\Users\jake\Desktop\source\WebCamWrapper\obj\Debug\Touchless.Vision.pdb
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\bin\Debug\Touchless.Vision.dll
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\bin\Debug\Touchless.Vision.pdb
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\bin\Debug\WebCamLib.dll
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Debug\WebCamWrapper.csprojResolveAssemblyReference.cache
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Debug\Camera\Configuration\CameraFrameSourceConfigurationElement.baml
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Debug\Camera\Configuration\CameraFrameSourceConfigurationElement.g.cs
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Debug\Touchless.Vision_MarkupCompile.cache
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Debug\Touchless.Vision.g.resources
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Debug\Touchless.Vision.dll
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Debug\Touchless.Vision.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\bin\Debug\Touchless.Vision.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\bin\Debug\Touchless.Vision.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\WebCamWrapper.csprojResolveAssemblyReference.cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Camera\Configuration\CameraFrameSourceConfigurationElement.baml
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Camera\Configuration\CameraFrameSourceConfigurationElement.g.cs
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision_MarkupCompile.cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision.g.resources
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision.pdb

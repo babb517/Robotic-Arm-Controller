@@ -56,6 +56,7 @@
             this.camStartBtn = new System.Windows.Forms.Button();
             this.canStopBtn = new System.Windows.Forms.Button();
             this.webCamGroupBx = new System.Windows.Forms.GroupBox();
+            this.remoteStopBtn = new System.Windows.Forms.Button();
             this.remoteStartBtn = new System.Windows.Forms.Button();
             this.ip_label = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
@@ -141,7 +142,6 @@
             this.kinect_console = new System.Windows.Forms.PictureBox();
             this.webcamGroupbx2 = new System.Windows.Forms.GroupBox();
             this.label48 = new System.Windows.Forms.Label();
-            this.remoteStopBtn = new System.Windows.Forms.Button();
             this.IMU_Configuration.SuspendLayout();
             this.glove_configuration.SuspendLayout();
             this.kinect_configuration.SuspendLayout();
@@ -487,6 +487,16 @@
             this.webCamGroupBx.Text = "Remote Functionality ";
             this.webCamGroupBx.Visible = false;
             // 
+            // remoteStopBtn
+            // 
+            this.remoteStopBtn.Location = new System.Drawing.Point(57, 152);
+            this.remoteStopBtn.Name = "remoteStopBtn";
+            this.remoteStopBtn.Size = new System.Drawing.Size(127, 23);
+            this.remoteStopBtn.TabIndex = 3;
+            this.remoteStopBtn.Text = "Stop the Camera";
+            this.remoteStopBtn.UseVisualStyleBackColor = true;
+            this.remoteStopBtn.Click += new System.EventHandler(this.remoteStopBtn_Click);
+            // 
             // remoteStartBtn
             // 
             this.remoteStartBtn.Location = new System.Drawing.Point(57, 126);
@@ -500,11 +510,11 @@
             // ip_label
             // 
             this.ip_label.AutoSize = true;
-            this.ip_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ip_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ip_label.ForeColor = System.Drawing.Color.Red;
-            this.ip_label.Location = new System.Drawing.Point(16, 67);
+            this.ip_label.Location = new System.Drawing.Point(31, 67);
             this.ip_label.Name = "ip_label";
-            this.ip_label.Size = new System.Drawing.Size(216, 42);
+            this.ip_label.Size = new System.Drawing.Size(184, 37);
             this.ip_label.TabIndex = 1;
             this.ip_label.Text = "192.168.2.6";
             // 
@@ -1308,16 +1318,6 @@
             this.label48.Size = new System.Drawing.Size(211, 26);
             this.label48.TabIndex = 0;
             this.label48.Text = "In order to connect locally, please connect \r\nthe camera and press start";
-            // 
-            // remoteStopBtn
-            // 
-            this.remoteStopBtn.Location = new System.Drawing.Point(57, 152);
-            this.remoteStopBtn.Name = "remoteStopBtn";
-            this.remoteStopBtn.Size = new System.Drawing.Size(127, 23);
-            this.remoteStopBtn.TabIndex = 3;
-            this.remoteStopBtn.Text = "Stop the Camera";
-            this.remoteStopBtn.UseVisualStyleBackColor = true;
-            this.remoteStopBtn.Click += new System.EventHandler(this.remoteStopBtn_Click);
             // 
             // Form1
             // 

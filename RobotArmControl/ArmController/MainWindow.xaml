@@ -4,33 +4,37 @@
         Title="Robot Arm Controller" Height="640" Width="480"
         Loaded="WindowLoaded" Closing="WindowClosing">
     <Grid>
-        <Image Name="KinectRenderFeedback" HorizontalAlignment="Left" Width="480" Margin="0,0,-8,0" Height="311" VerticalAlignment="Top"/>
-        <Label HorizontalAlignment="Left" Height="33" Margin="10,346,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Upper (G)"/>
-        <TextBox IsEnabled="false" Name="txt_g_upper_roll" HorizontalAlignment="Left" Height="33" Margin="157,346,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_g_upper_pitch" HorizontalAlignment="Left" Height="33" Margin="254,346,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_g_upper_yaw" HorizontalAlignment="Left" Height="33" Margin="350,346,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <Label Content="Roll" HorizontalAlignment="Left" Margin="157,311,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Pitch" HorizontalAlignment="Left" Margin="254,311,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label Content="Yaw" HorizontalAlignment="Left" Margin="350,311,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label HorizontalAlignment="Left" Height="33" Margin="10,384,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Upper (L)"/>
-        <TextBox IsEnabled="false" x:Name="txt_l_upper_roll" HorizontalAlignment="Left" Height="33" Margin="157,384,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_l_upper_pitch" HorizontalAlignment="Left" Height="33" Margin="254,384,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_l_upper_yaw" HorizontalAlignment="Left" Height="33" Margin="350,384,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <Label HorizontalAlignment="Left" Height="33" Margin="10,422,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Lower (G)"/>
-        <TextBox IsEnabled="false" x:Name="txt_g_lower_roll" HorizontalAlignment="Left" Height="33" Margin="157,422,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_g_lower_pitch" HorizontalAlignment="Left" Height="33" Margin="254,422,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_g_lower_yaw" HorizontalAlignment="Left" Height="33" Margin="350,422,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <Label HorizontalAlignment="Left" Height="33" Margin="10,460,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Lower (L)"/>
-        <TextBox IsEnabled="false" x:Name="txt_l_lower_roll" HorizontalAlignment="Left" Height="33" Margin="157,460,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_l_lower_pitch" HorizontalAlignment="Left" Height="33" Margin="254,460,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_l_lower_yaw" HorizontalAlignment="Left" Height="33" Margin="350,460,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <Label HorizontalAlignment="Left" Height="33" Margin="10,499,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Hand (G)"/>
-        <TextBox IsEnabled="false" x:Name="txt_g_hand_roll" HorizontalAlignment="Left" Height="33" Margin="157,499,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_g_hand_pitch" HorizontalAlignment="Left" Height="33" Margin="254,499,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_g_hand_yaw" HorizontalAlignment="Left" Height="33" Margin="350,499,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <Label HorizontalAlignment="Left" Height="33" Margin="10,537,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Hand (L)"/>
-        <TextBox IsEnabled="false" x:Name="txt_l_hand_roll" HorizontalAlignment="Left" Height="33" Margin="157,537,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_l_hand_pitch" HorizontalAlignment="Left" Height="33" Margin="254,537,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
-        <TextBox IsEnabled="false" x:Name="txt_l_hand_yaw" HorizontalAlignment="Left" Height="33" Margin="350,537,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="229*"/>
+            <RowDefinition Height="381*"/>
+        </Grid.RowDefinitions>
+        <Image Name="KinectRenderFeedback" HorizontalAlignment="Left" Width="480" Margin="0,0,-8,0" Height="311" VerticalAlignment="Top" Grid.RowSpan="2"/>
+        <Label HorizontalAlignment="Left" Height="33" Margin="10,116.776,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Upper (G)" Grid.Row="1"/>
+        <TextBox IsEnabled="false" Name="txt_g_upper_roll" HorizontalAlignment="Left" Height="33" Margin="157,116.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_g_upper_pitch" HorizontalAlignment="Left" Height="33" Margin="254,116.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_g_upper_yaw" HorizontalAlignment="Left" Height="33" Margin="350,116.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <Label Content="Roll" HorizontalAlignment="Left" Margin="157,81.776,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1"/>
+        <Label Content="Pitch" HorizontalAlignment="Left" Margin="254,81.776,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1"/>
+        <Label Content="Yaw" HorizontalAlignment="Left" Margin="350,81.776,0,0" VerticalAlignment="Top" Width="75" Grid.Row="1"/>
+        <Label HorizontalAlignment="Left" Height="33" Margin="10,154.776,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Upper (L)" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_l_upper_roll" HorizontalAlignment="Left" Height="33" Margin="157,154.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_l_upper_pitch" HorizontalAlignment="Left" Height="33" Margin="254,154.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_l_upper_yaw" HorizontalAlignment="Left" Height="33" Margin="350,154.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <Label HorizontalAlignment="Left" Height="33" Margin="10,192.776,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Lower (G)" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_g_lower_roll" HorizontalAlignment="Left" Height="33" Margin="157,192.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_g_lower_pitch" HorizontalAlignment="Left" Height="33" Margin="254,192.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_g_lower_yaw" HorizontalAlignment="Left" Height="33" Margin="350,192.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <Label HorizontalAlignment="Left" Height="33" Margin="10,230.776,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Lower (L)" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_l_lower_roll" HorizontalAlignment="Left" Height="33" Margin="157,230.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_l_lower_pitch" HorizontalAlignment="Left" Height="33" Margin="254,230.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_l_lower_yaw" HorizontalAlignment="Left" Height="33" Margin="350,230.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <Label HorizontalAlignment="Left" Height="33" Margin="10,269.776,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Hand (G)" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_g_hand_roll" HorizontalAlignment="Left" Height="33" Margin="157,269.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_g_hand_pitch" HorizontalAlignment="Left" Height="33" Margin="254,269.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_g_hand_yaw" HorizontalAlignment="Left" Height="33" Margin="350,269.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <Label HorizontalAlignment="Left" Height="33" Margin="10,307.776,0,0" VerticalAlignment="Top" Width="142" FontSize="20" Content="Hand (L)" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_l_hand_roll" HorizontalAlignment="Left" Height="33" Margin="157,307.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_l_hand_pitch" HorizontalAlignment="Left" Height="33" Margin="254,307.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
+        <TextBox IsEnabled="false" x:Name="txt_l_hand_yaw" HorizontalAlignment="Left" Height="33" Margin="350,307.776,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="75" FontSize="16" TextAlignment="Center" Grid.Row="1"/>
     </Grid>
 </Window>

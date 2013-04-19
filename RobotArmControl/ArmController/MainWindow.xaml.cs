@@ -13,12 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
-
-using ArmController.Kinect_Module;
-using ArmController.Integration;
-using ArmController.Robot_Arm_Module;
-using ArmController.CyberGloveLibrary;
-using ArmController.IMU_Module;
+using System.Windows.Forms;
 
 namespace ArmController
 {
@@ -30,17 +25,10 @@ namespace ArmController
         /**************************************************************************/
         /* Private Members */
         /**************************************************************************/
-
         /// <summary>
-        /// The modules which are being managed by the application.
+        /// The actual main form.
         /// </summary>
-        List<Module> _modules;
-
-        /// <summary>
-        /// The bus used to communicate between modules.
-        /// </summary>
-        VirtualBus _bus;
-
+        Form _main;
 
         /**************************************************************************/
         /* Constructors */
@@ -61,84 +49,25 @@ namespace ArmController
         /// <param name="e">event arguments</param>
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            // setup the virtual bus.
-            _bus = new VirtualBus(Dispatcher);
-            _bus.Subscribe(BusNode.STOP_REQUESTED, OnBusValueChanged);
+            Hide();
 
-
-            // setup the image
-            DrawingGroup drawingGroup = new DrawingGroup();
-            KinectRenderFeedback.Source = new DrawingImage(drawingGroup);
-
-            // setup each of the modules.
-            _modules = new List<Module>();
-
-            // TODO: Add each module to the list here.
-
-            //_modules.Add(new PositionalTracker(drawingGroup)); // Kinect
-            _modules.Add(new IMUModule());
-            _modules.Add(new PositionFeedback());
-            _modules.Add(new RobotArmModule());
-            _modules.Add(new GloveModule());
-            
-            // start everything!
-            InitializeModules();
+            // Boot Strap hack.
+            _main = new Form1();
+            _main.Show();
         }
 
         /// <summary>
-        /// Finalizes the states of all modules in preparation for the program exiting.
+        /// Closes the main window.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void WindowClosing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            // stop the kinect
-            FinalizeModules();
-        }
-
-        /// <summary>
-        /// Handles bus
-        /// </summary>
-        /// <param name="node"></param>
-        /// <param name="value"></param>
-        private void OnBusValueChanged(BusNode node, Object value)
-        {
-            if (node == BusNode.STOP_REQUESTED)
-            {
-                Debug.WriteLine("Caught a program stop request");
-                this.Close();
-            }
+            _main.Close();
         }
 
         /**************************************************************************/
         /* Private Members */
         /**************************************************************************/
-
-        /// <summary>
-        /// Initializes the states of all the modules.
-        /// </summary>
-        private void InitializeModules()
-        {
-            foreach (Module module in _modules)
-            {
-                module.InitializeModule(_bus);
-            }
-        }
-
-        /// <summary>
-        /// Requests that all modules finalize their states in preparation to close.
-        /// </summary>
-        private void FinalizeModules()
-        {
-            foreach (Module module in _modules)
-            {
-                module.FinalizeModule();
-            }
-        }
-
-        private void TextBox_TextChanged_1(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

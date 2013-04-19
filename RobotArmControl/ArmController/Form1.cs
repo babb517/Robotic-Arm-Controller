@@ -13,20 +13,74 @@ using System.Net;
 using TCPCam;
 using TCPCamActivex;
 
+using ArmController.Kinect_Module;
+using ArmController.Integration;
+using ArmController.Robot_Arm_Module;
+using ArmController.CyberGloveLibrary;
+using ArmController.IMU_Module;
+using System.Windows.Threading;
+using System.Windows.Media;
+
 namespace ArmController // Capstone_GUI
 {
     public partial class Form1 : Form
     {
+        /**************************************************************************/
+        /* Private Members */
+        /**************************************************************************/
+        /// <summary>
+        /// TODO
+        /// </summary>
         private CameraFrameSource _frameSource;
+
+        /// <summary>
+        /// TODO
+        /// </summary>
         private static Bitmap _latestFrame;
 
+        /// <summary>
+        /// The modules which are being managed by the application.
+        /// </summary>
+        List<Module> _modules;
+
+        /// <summary>
+        /// The bus used to communicate between modules.
+        /// </summary>
+        VirtualBus _bus;
+
+        /// <summary>
+        /// The drawing for the kinect to use.
+        /// </summary>
+        DrawingGroup _kinectOutput;
+
+
+        /// <summary>
+        /// TODO
+        /// </summary>
         TCPCam.Host Host;
 
+
+        /**************************************************************************/
+        /* Constructors */
+        /**************************************************************************/
+        /// <summary>
+        /// TODO
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
         }
 
+
+        /**************************************************************************/
+        /* Lifecycle Management */
+        /**************************************************************************/
+
+        /// <summary>
+        /// TODO
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
             if (!DesignMode)
@@ -42,9 +96,36 @@ namespace ArmController // Capstone_GUI
             }
 
             ip_label.Text = GetLocalIP();
+
+            // Startup (from mainwindow).
+
+            // setup the virtual bus.
+            _bus = new VirtualBus(Dispatcher.CurrentDispatcher);
+            _bus.Subscribe(BusNode.STOP_REQUESTED, OnBusValueChanged);
+
+            // setup kinect output
+            _kinectOutput = new DrawingGroup();
+           // kinect_console.Image = new DrawingImage(_kinectOutput);
+
+            _modules = new List<Module>();
+
         }
 
+        /// <summary>
+        /// Finalizes the states of all modules in preparation for the program exiting.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_Close(object sender, FormClosingEventArgs e)
+        {
+            // stop the kinect
+            FinalizeModules();
 
+        }
+
+        /**************************************************************************/
+        /* Event Management */
+        /**************************************************************************/
       
         private void btn_robbotCtrl_Click(object sender, EventArgs e)
         {
@@ -99,6 +180,7 @@ namespace ArmController // Capstone_GUI
             forarmGpBox.Visible = true;
             wrist_gpBox.Visible = true;
             shoulderGP.Visible = true;
+            elbowGP.Visible = true;
         }
         private void hide_servoPanel()
         {
@@ -107,6 +189,7 @@ namespace ArmController // Capstone_GUI
             forarmGpBox.Visible = false;
             wrist_gpBox.Visible = false;
             shoulderGP.Visible = false;
+            elbowGP.Visible = false;
         }
 
         private void btn_ports_Click(object sender, EventArgs e)
@@ -134,9 +217,13 @@ namespace ArmController // Capstone_GUI
             hide_firstPanel();
             enable_debugPanel();
         }
+
+
         private void enable_debugPanel()
         {
             debugGp.Visible = true;
+            System.Windows.Application.Current.MainWindow.Show();
+
         }
 
        
@@ -167,7 +254,9 @@ namespace ArmController // Capstone_GUI
             hide_servoPanel();
             hide_kinect();
             debugGp.Visible = false;
+            System.Windows.Application.Current.MainWindow.Hide();
             enable_homePanel();
+            FinalizeModules();
         }
         private void hide_webcamPanel()
         {
@@ -328,8 +417,110 @@ namespace ArmController // Capstone_GUI
         {
             Host.CloseConnection();
         }
-          
-        
+
+        private void startBtn_Click(object sender, EventArgs e)
+        {
+            // TODO: Add each module to the list here.
+
+            /*
+            _bus.Publish(BusNode.WRIST_SERVO_MIN_RANGE, Convert.ToInt32(wristServoMinRange.Text));
+            _bus.Publish(BusNode.WRIST_SERVO_MAX_RANGE, Convert.ToInt32(wristMax.Text));
+            _bus.Publish(BusNode.WRIST_SERVO_SPEED, Convert.ToInt32(wristSpeed.Text));
+            _bus.Publish(BusNode.WRIST_SERVO_ENABLE, wristEnable.Checked);
+            */
+
+
+            _bus.Publish(BusNode.HAND_SERVO_MIN_RANGE, Convert.ToInt32(handMin.Text));
+            _bus.Publish(BusNode.HAND_SERVO_MAX_RANGE, Convert.ToInt32(handMax.Text));
+            _bus.Publish(BusNode.HAND_SERVO_SPEED, Convert.ToInt32(handSpeed.Text));
+            _bus.Publish(BusNode.HAND_SERVO_ENABLE, handEnable.Checked);
+
+            /*
+            _bus.Publish(BusNode.WRIST_ROTATE_SERVO_MIN_RANGE, Convert.ToInt32(wristRotateMinRange.Text));
+            _bus.Publish(BusNode.WRIST_ROTATE_SERVO_MAX_RANGE, Convert.ToInt32(wristRotateMaxRange.Text));
+            _bus.Publish(BusNode.WRIST_ROTATE_SERVO_SPEED, Convert.ToInt32(wristRotateSpeed.Text));
+            _bus.Publish(BusNode.WRIST_ROTATE_SERVO_ENABLE, wristRotateEnable.Checked);
+
+            _bus.Publish(BusNode.FOREARM_SERVO_MIN_RANGE, Convert.ToInt32(forearmServoMinRange.Text));
+            _bus.Publish(BusNode.FOREARM_SERVO_MAX_RANGE, Convert.ToInt32(forearmServoMaxRange.Text));
+            _bus.Publish(BusNode.FOREARM_SERVO_SPEED, Convert.ToInt32(forearmServoSpeed.Text));
+            _bus.Publish(BusNode.FOREARM_SERVO_ENABLE, forearmServoEnable.Checked);
+
+
+            _bus.Publish(BusNode.ELBOW_SERVO_MIN_RANGE, Convert.ToInt32(elbowMin.Text));
+            _bus.Publish(BusNode.ELBOW_SERVO_MAX_RANGE, Convert.ToInt32(elbowMax.Text));
+            _bus.Publish(BusNode.ELBOW_SERVO_SPEED, Convert.ToInt32(elbowSpeed.Text));
+            _bus.Publish(BusNode.ELBOW_SERVO_ENABLE, elbowEnable.Checked);
+
+            _bus.Publish(BusNode.SHOULDER_SERVO_MIN_RANGE, Convert.ToInt32(shoulderMin.Text));
+            _bus.Publish(BusNode.SHOULDER_SERVO_MAX_RANGE, Convert.ToInt32(shoulderMax.Text));
+            _bus.Publish(BusNode.SHOULDER_SERVO_SPEED, Convert.ToInt32(shoulderSpeed.Text));
+            _bus.Publish(BusNode.SHOULDER_SERVO_ENABLE, shoulderEnable.Checked);
+
+            //_bus.Publish(BusNode.KINECT_ENABLE,)
+           */
+
+            InitializeModules();
+        }
+
+
+        /**************************************************************************/
+        /* Private Methods */
+        /**************************************************************************/
+
+        /// <summary>
+        /// Initializes the states of all the modules.
+        /// </summary>
+        private void InitializeModules()
+        {
+            if (_bus.Get<bool>(BusNode.KINECT_ENABLE))
+                _modules.Add(new PositionalTracker(_kinectOutput)); // Kinect
+
+           // if (_bus.Get<bool>(BusNode.IMU_ENABLE))
+                _modules.Add(new IMUModule());
+
+            _modules.Add(new PositionFeedback());
+            _modules.Add(new RobotArmModule());
+
+           // if (_bus.Get<bool>(BusNode.CYBERGLOVE_ENABLE))
+                _modules.Add(new GloveModule());
+
+
+            foreach (Module module in _modules)
+            {
+                module.InitializeModule(_bus);
+            }
+        }
+
+        /// <summary>
+        /// Requests that all modules finalize their states in preparation to close.
+        /// </summary>
+        private void FinalizeModules()
+        {
+            foreach (Module module in _modules)
+            {
+                module.FinalizeModule();
+            }
+
+            _modules.Clear();
+        }
+
+
+        /// <summary>
+        /// Handles bus
+        /// </summary>
+        /// <param name="node"></param>
+        /// <param name="value"></param>
+        private void OnBusValueChanged(BusNode node, Object value)
+        {
+            if (node == BusNode.STOP_REQUESTED)
+            {
+                Debug.WriteLine("Caught a program stop request");
+                this.Close();
+            }
+        }
+
+
         
     }
 }

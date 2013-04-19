@@ -99,8 +99,9 @@ namespace ArmController.IMU_Module
 
         protected override void OnFinalize()
         {
-            _lilySerial.Close();
             _running = false;
+            Thread.Sleep(1);
+            _lilySerial.Close();
             _readerThread.Join();
         }
 
@@ -121,15 +122,17 @@ namespace ArmController.IMU_Module
             // Whether everything is A-OK
             bool good = true;
 
-            /*
+            
+           /*
             while (true)
             {
                 Thread.Sleep(100);
-                Matrix33 tmp = new Matrix33((float)(-20.0 * Math.PI / 180.0), (float)(10.0 * Math.PI / 180.0), (float)(-00.0 * Math.PI / 180.0));
-               // tmp.setRotation((float)(30 * Math.PI / 180), (float)(40 * Math.PI / 180), (float)(-50 * Math.PI / 180));
+                Matrix33 tmp = new Matrix33((float)(-00.0 * Math.PI / 180.0), (float)(00.0 * Math.PI / 180.0), (float)(-0.0 * Math.PI / 180.0));
+                tmp.setRotation((float)(30 * Math.PI / 180), (float)(40 * Math.PI / 180), (float)(-50 * Math.PI / 180));
                 Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, tmp.Orientation);
                 Bus.Publish<object>(BusNode.POSITION_TICK, null);
             } */
+            
 
             while (_running)
             {

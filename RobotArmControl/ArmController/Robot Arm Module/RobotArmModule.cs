@@ -178,7 +178,7 @@ namespace ArmController.Robot_Arm_Module
             _serialPort.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
             _serialPort.ReadTimeout = 500;
             _serialPort.WriteTimeout = 500;
-            _serialPort.Open();
+            _serialPort.Open(); 
             _lastUpdateTime = 0;
 
             //Initialize the robot arm position.
@@ -258,6 +258,8 @@ namespace ArmController.Robot_Arm_Module
             int hand = Bus.Get<int>(BusNode.CLAW_OPEN_PERCENT);
             bool armMoving = Bus.Get<bool>(BusNode.ROBOT_ACTIVE);
             int wrist_hand = Bus.Get<int>(BusNode.WRIST_PERCENT);
+            bool handEnabled = Bus.Get<bool>(BusNode.HAND_SERVO_ENABLE);
+            int handServoSpeed = Bus.Get<int>(BusNode.HAND_SERVO_SPEED);
 
             // we should now convert these orientations to the values expected by the servo controller.
 
@@ -356,7 +358,7 @@ namespace ArmController.Robot_Arm_Module
 
                 }
 
-                 if (node == BusNode.CLAW_OPEN_PERCENT)
+                 if (node == BusNode.CLAW_OPEN_PERCENT && handEnabled)
                 {
                     // scale to the valid range (1000 - 2000)
                     finalHandPosition = 1500 + ((-hand + 50) * 10);
@@ -366,7 +368,7 @@ namespace ArmController.Robot_Arm_Module
                     if (Math.Abs(finalHandPosition - currentHandPosition) >= positionDeltaThreshold)
                     {
                         currentHandPosition = finalHandPosition;
-                        move(FINGERS, currentHandPosition, 400);
+                        move(FINGERS, currentHandPosition, handServoSpeed);
                     }
                 }
 

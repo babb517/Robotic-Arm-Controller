@@ -41,7 +41,9 @@ namespace ArmController.IMU_Module
         public Matrix33()
         {
             _matrix = new Matrix();
-            Matrix.CreateFromYawPitchRoll(0, 0, 0, out _matrix);
+            //Matrix.CreateFromYawPitchRoll(0, 0, 0, out _matrix);
+            setRotation(0, 0, 0);
+
         }
 
 
@@ -55,7 +57,9 @@ namespace ArmController.IMU_Module
         public Matrix33(float yaw, float pitch, float roll)
         {
             _matrix = new Matrix();
-           Matrix.CreateFromYawPitchRoll(yaw, pitch, roll, out _matrix);
+           //Matrix.CreateFromYawPitchRoll(yaw, pitch, roll, out _matrix);
+            setRotation(yaw, pitch, roll);
+
         }
 
         #endregion Constructors
@@ -77,7 +81,7 @@ namespace ArmController.IMU_Module
         public static Matrix33 operator*(Matrix33 A, Matrix33 B)
         {
             Matrix33 ret = new Matrix33();
-            ret._matrix = Matrix.Multiply(A._matrix, B._matrix);
+            Matrix.Multiply(ref A._matrix, ref B._matrix, out ret._matrix);
             return ret;
         }
 
@@ -248,7 +252,7 @@ namespace ArmController.IMU_Module
             get
             {
                 Matrix33 result = new Matrix33();
-                result._matrix = Matrix.Transpose(_matrix);
+                Matrix.Transpose(ref _matrix, out result._matrix);
                 return result;
             }
         }
@@ -256,16 +260,18 @@ namespace ArmController.IMU_Module
         /// <summary>
         /// Calculates and returns the inverse matrix.
         /// </summary>
-        /// <returns>The inverse of this matrix. <returns>
+        /// <returns>The inverse of this matrix. </returns>
         public Matrix33 Invert
         {
             get
             {
                 Matrix33 result = new Matrix33();
-                result._matrix = Matrix.Invert(_matrix);
+                Matrix.Invert(ref _matrix, out result._matrix);
                 return result;
             }
         }
+
+
 
         /// <summary>
         /// Rotates the matrix by the provided yaw, pitch, and roll.
@@ -276,13 +282,10 @@ namespace ArmController.IMU_Module
         /// <returns>The result of the rotation.</returns>
         public Matrix33 Rotate(float yaw, float pitch, float roll)
         {
-            Matrix33 ret = new Matrix33();
-
-            Matrix x = Matrix.CreateFromYawPitchRoll(yaw, pitch, roll);
-            ret._matrix = Matrix.Multiply(this._matrix, x);
-
-            // TODO: Is this the correct order, or is it rotationMatrix * this.
-            return ret;
+            //Matrix x = Matrix.CreateFromYawPitchRoll(yaw, pitch, roll);
+            //ret._matrix = Matrix.Multiply(this._matrix, x);
+            Matrix33 x = new Matrix33(yaw, pitch, roll);
+            return this * x;
         }
 
 
@@ -294,7 +297,8 @@ namespace ArmController.IMU_Module
         public Matrix33 RelativeFrame(Matrix33 parent)
         {
             // TODO: Is this the correect order?
-            return parent.Invert * this;
+            return parent.Invert *this;
+            //return this * parent.Transpose;
         }
 
         /// <summary>
@@ -306,10 +310,44 @@ namespace ArmController.IMU_Module
         public void setRotation(float yaw, float pitch, float roll)
         {
             Matrix.CreateFromYawPitchRoll(yaw, pitch, roll, out _matrix);
+
+            /*
+            float cos_pitch, cos_yaw, cos_roll;
+            float sin_pitch, sin_yaw, sin_roll;
+
+            cos_pitch = (float)Math.Cos(pitch);
+            cos_yaw = (float)Math.Cos(yaw);
+            cos_roll = (float)Math.Cos(roll);
+
+            sin_pitch = (float)Math.Sin(pitch);
+            sin_yaw = (float)Math.Sin(yaw);
+            sin_roll = (float)Math.Sin(roll);
+
+            //Top row
+            _matrix.M11 = (cos_roll * cos_yaw);
+            _matrix.M12 = (-sin_yaw * cos_pitch + cos_yaw * sin_roll * sin_pitch);
+            _matrix.M13 = (sin_pitch * sin_yaw + cos_yaw * sin_roll * cos_pitch);
+
+            //Middle row
+            _matrix.M21 = (cos_roll * sin_yaw);
+            _matrix.M22 = (cos_yaw * cos_pitch + sin_roll * sin_yaw * sin_pitch);
+            _matrix.M23 = (-sin_pitch * cos_yaw + sin_roll * sin_yaw * cos_pitch);
+
+            //Bottom row
+            _matrix.M31 = (-sin_roll);
+            _matrix.M32 = (cos_roll * sin_pitch);
+            _matrix.M33 = (cos_roll * cos_pitch);
+             
+            _matrix.M44 = 1;
+             
+             * */
+
         }
 
         #endregion Public Methods
 
+
+        
 
     }
 }

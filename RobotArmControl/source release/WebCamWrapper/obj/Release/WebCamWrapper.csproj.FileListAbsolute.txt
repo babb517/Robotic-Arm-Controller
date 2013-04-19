@@ -1,0 +1,22 @@
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\bin\Release\Touchless.Vision.dll
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\bin\Release\Touchless.Vision.pdb
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\bin\Release\System.ComponentModel.Composition.dll
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\bin\Release\WebCamLib.dll
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\bin\Release\WebCamLib.pdb
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\obj\Release\ResolveAssemblyReference.cache
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\obj\Release\Camera\Configuration\CameraFrameSourceConfigurationElement.baml
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\obj\Release\Camera\Configuration\CameraFrameSourceConfigurationElement.g.cs
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\obj\Release\Touchless.Vision_MarkupCompile.cache
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\obj\Release\Touchless.Vision.g.resources
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\obj\Release\Touchless.Vision.dll
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\WebCamWrapper\obj\Release\Touchless.Vision.pdb
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\bin\Release\Touchless.Vision.dll
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\bin\Release\Touchless.Vision.pdb
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\bin\Release\System.ComponentModel.Composition.dll
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\bin\Release\WebCamLib.dll
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Release\Camera\Configuration\CameraFrameSourceConfigurationElement.baml
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Release\Camera\Configuration\CameraFrameSourceConfigurationElement.g.cs
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Release\Touchless.Vision_MarkupCompile.cache
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Release\Touchless.Vision.g.resources
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Release\Touchless.Vision.dll
+C:\Users\max\Downloads\source release2\source release\WebCamWrapper\obj\Release\Touchless.Vision.pdb

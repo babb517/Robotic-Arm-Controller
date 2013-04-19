@@ -69,6 +69,70 @@ namespace ArmController.Integration
 
         #endregion CyberGlove Nodes
 
+        #region GUI Nodes
+
+        #region CyberGlove Configuration
+        public static readonly BusNode CYBERGLOVE_COM_PORT = new BusNode(typeof(int));
+        public static readonly BusNode CYBERGLOVE_BAUD_RATE = new BusNode(typeof(int));
+        public static readonly BusNode CYBERGLOVE_ENABLE = new BusNode(typeof(bool));
+        #endregion CyberGlove Configuration
+
+        #region IMU Configuration
+
+        public static readonly BusNode IMU_COM_PORT = new BusNode(typeof(int));
+        public static readonly BusNode IMU_BAUD_RATE = new BusNode(typeof(int));
+        public static readonly BusNode IMU_ENABLE = new BusNode(typeof(bool));
+
+        #endregion IMU Configuration
+
+        #region Kinect Configuration
+
+        public static readonly BusNode KINECT_ENABLE = new BusNode(typeof(bool));
+
+        #endregion Kinect Configuration
+
+        #region Servos
+
+        public static readonly BusNode WRIST_SERVO_MIN_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode WRIST_SERVO_MAX_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode WRIST_SERVO_SPEED = new BusNode(typeof(int));
+        public static readonly BusNode WRIST_SERVO_ENABLE = new BusNode(typeof(bool));
+
+        public static readonly BusNode WRIST_ROTATE_SERVO_MIN_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode WRIST_ROTATE_SERVO_MAX_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode WRIST_ROTATE_SERVO_SPEED = new BusNode(typeof(int));
+        public static readonly BusNode WRIST_ROTATE_SERVO_ENABLE = new BusNode(typeof(bool));
+
+        public static readonly BusNode HAND_SERVO_MIN_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode HAND_SERVO_MAX_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode HAND_SERVO_SPEED = new BusNode(typeof(int));
+        public static readonly BusNode HAND_SERVO_ENABLE = new BusNode(typeof(bool));
+
+        public static readonly BusNode SHOULDER_SERVO_MIN_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode SHOULDER_SERVO_MAX_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode SHOULDER_SERVO_SPEED = new BusNode(typeof(int));
+        public static readonly BusNode SHOULDER_SERVO_ENABLE = new BusNode(typeof(bool));
+
+        public static readonly BusNode FOREARM_SERVO_MIN_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode FOREARM_SERVO_MAX_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode FOREARM_SERVO_SPEED = new BusNode(typeof(int));
+        public static readonly BusNode FOREARM_SERVO_ENABLE = new BusNode(typeof(bool));
+
+        public static readonly BusNode ELBOW_SERVO_MIN_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode ELBOW_SERVO_MAX_RANGE = new BusNode(typeof(int));
+        public static readonly BusNode ELBOW_SERVO_SPEED = new BusNode(typeof(int));
+        public static readonly BusNode ELBOW_SERVO_ENABLE = new BusNode(typeof(bool));
+
+        #endregion Servos
+
+        #endregion GUI Nodes
+
+        #region Kinect Nodes
+
+        public static readonly BusNode KINECT_DEBUG_OUTPUT = new BusNode(typeof(String));
+        
+        #endregion Kinect Nodes
+
         // TODO: Populate the nodes with appropriate values.
 
 

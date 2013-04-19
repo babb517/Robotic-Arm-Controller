@@ -1,0 +1,32 @@
+C:\Users\jake\Desktop\source\Demo\bin\Debug\Demo.exe.config
+C:\Users\jake\Desktop\source\Demo\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jake\Desktop\source\Demo\obj\Debug\Demo.MainForm.resources
+C:\Users\jake\Desktop\source\Demo\obj\Debug\Demo.Properties.Resources.resources
+C:\Users\jake\Desktop\source\Demo\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\jake\Desktop\source\Demo\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\jake\Desktop\source\Demo\bin\Debug\Demo.exe
+C:\Users\jake\Desktop\source\Demo\bin\Debug\Demo.pdb
+C:\Users\jake\Desktop\source\Demo\bin\Debug\Touchless.Vision.dll
+C:\Users\jake\Desktop\source\Demo\bin\Debug\WebCamLib.dll
+C:\Users\jake\Desktop\source\Demo\bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\jake\Desktop\source\Demo\bin\Debug\Touchless.Vision.pdb
+C:\Users\jake\Desktop\source\Demo\obj\Debug\Demo.exe
+C:\Users\jake\Desktop\source\Demo\obj\Debug\Demo.pdb
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\bin\Debug\Demo.exe.config
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\obj\Debug\Demo.exe
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\obj\Debug\Demo.pdb
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\bin\Debug\Demo.exe
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\bin\Debug\Demo.pdb
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\bin\Debug\Touchless.Vision.dll
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\bin\Debug\WebCamLib.dll
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\bin\Debug\WebCamLib.pdb
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\bin\Debug\Touchless.Vision.pdb
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\obj\Debug\Demo.MainForm.resources
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\obj\Debug\Demo.Properties.Resources.resources
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\obj\Debug\GenerateResource.read.1.tlog
+C:\Users\jake\Desktop\Tumble Tracker Versions\Web Cam Demo Projects\Web Cam Blog\source release\Demo\obj\Debug\GenerateResource.write.1.tlog
+C:\Users\max\Downloads\source release2\source release\Demo\bin\Debug\Demo.exe.config
+C:\Users\max\Downloads\source release2\source release\Demo\obj\Debug\Demo.exe
+C:\Users\max\Downloads\source release2\source release\Demo\obj\Debug\Demo.pdb

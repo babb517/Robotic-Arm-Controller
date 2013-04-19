@@ -56,52 +56,53 @@
             this.camStartBtn = new System.Windows.Forms.Button();
             this.canStopBtn = new System.Windows.Forms.Button();
             this.webCamGroupBx = new System.Windows.Forms.GroupBox();
+            this.remoteStopBtn = new System.Windows.Forms.Button();
             this.remoteStartBtn = new System.Windows.Forms.Button();
             this.ip_label = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.hand_groupBx = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.handSpeed = new System.Windows.Forms.TextBox();
+            this.handMax = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.handMin = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.handEnable = new System.Windows.Forms.CheckBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.wrist_gpBox = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.wristSpeed = new System.Windows.Forms.TextBox();
+            this.wristMax = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.wristServoMinRange = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
+            this.wristEnable = new System.Windows.Forms.CheckBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.gripGpBox = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.wristRotateSpeed = new System.Windows.Forms.TextBox();
+            this.wristRotateMaxRange = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.wristRotateMinRange = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.checkBox5 = new System.Windows.Forms.CheckBox();
+            this.wristRotateEnable = new System.Windows.Forms.CheckBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.forarmGpBox = new System.Windows.Forms.GroupBox();
-            this.textBox11 = new System.Windows.Forms.TextBox();
-            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.forearmServoSpeed = new System.Windows.Forms.TextBox();
+            this.forearmServoMaxRange = new System.Windows.Forms.TextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.forearmServoMinRange = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.checkBox6 = new System.Windows.Forms.CheckBox();
+            this.forearmServoEnable = new System.Windows.Forms.CheckBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.shoulderGP = new System.Windows.Forms.GroupBox();
-            this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.shoulderSpeed = new System.Windows.Forms.TextBox();
+            this.shoulderMax = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.shoulderMin = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.checkBox7 = new System.Windows.Forms.CheckBox();
+            this.shoulderEnable = new System.Windows.Forms.CheckBox();
             this.label28 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
             this.kinect_Gp = new System.Windows.Forms.GroupBox();
@@ -141,7 +142,15 @@
             this.kinect_console = new System.Windows.Forms.PictureBox();
             this.webcamGroupbx2 = new System.Windows.Forms.GroupBox();
             this.label48 = new System.Windows.Forms.Label();
-            this.remoteStopBtn = new System.Windows.Forms.Button();
+            this.elbowGP = new System.Windows.Forms.GroupBox();
+            this.elbowSpeed = new System.Windows.Forms.TextBox();
+            this.elbowMax = new System.Windows.Forms.TextBox();
+            this.label47 = new System.Windows.Forms.Label();
+            this.elbowMin = new System.Windows.Forms.TextBox();
+            this.label49 = new System.Windows.Forms.Label();
+            this.elbowEnable = new System.Windows.Forms.CheckBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
             this.IMU_Configuration.SuspendLayout();
             this.glove_configuration.SuspendLayout();
             this.kinect_configuration.SuspendLayout();
@@ -169,6 +178,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.webcam_pictureBx)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kinect_console)).BeginInit();
             this.webcamGroupbx2.SuspendLayout();
+            this.elbowGP.SuspendLayout();
             this.SuspendLayout();
             // 
             // IMU_Configuration
@@ -487,6 +497,16 @@
             this.webCamGroupBx.Text = "Remote Functionality ";
             this.webCamGroupBx.Visible = false;
             // 
+            // remoteStopBtn
+            // 
+            this.remoteStopBtn.Location = new System.Drawing.Point(57, 152);
+            this.remoteStopBtn.Name = "remoteStopBtn";
+            this.remoteStopBtn.Size = new System.Drawing.Size(127, 23);
+            this.remoteStopBtn.TabIndex = 3;
+            this.remoteStopBtn.Text = "Stop the Camera";
+            this.remoteStopBtn.UseVisualStyleBackColor = true;
+            this.remoteStopBtn.Click += new System.EventHandler(this.remoteStopBtn_Click);
+            // 
             // remoteStartBtn
             // 
             this.remoteStartBtn.Location = new System.Drawing.Point(57, 126);
@@ -521,12 +541,12 @@
             // hand_groupBx
             // 
             this.hand_groupBx.BackColor = System.Drawing.SystemColors.Window;
-            this.hand_groupBx.Controls.Add(this.textBox4);
-            this.hand_groupBx.Controls.Add(this.textBox3);
+            this.hand_groupBx.Controls.Add(this.handSpeed);
+            this.hand_groupBx.Controls.Add(this.handMax);
             this.hand_groupBx.Controls.Add(this.label11);
-            this.hand_groupBx.Controls.Add(this.textBox2);
+            this.hand_groupBx.Controls.Add(this.handMin);
             this.hand_groupBx.Controls.Add(this.label10);
-            this.hand_groupBx.Controls.Add(this.checkBox3);
+            this.hand_groupBx.Controls.Add(this.handEnable);
             this.hand_groupBx.Controls.Add(this.label12);
             this.hand_groupBx.Controls.Add(this.label13);
             this.hand_groupBx.Location = new System.Drawing.Point(19, 18);
@@ -537,19 +557,21 @@
             this.hand_groupBx.Text = "Hand Servo";
             this.hand_groupBx.Visible = false;
             // 
-            // textBox4
+            // handSpeed
             // 
-            this.textBox4.Location = new System.Drawing.Point(93, 72);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(120, 20);
-            this.textBox4.TabIndex = 11;
+            this.handSpeed.Location = new System.Drawing.Point(93, 72);
+            this.handSpeed.Name = "handSpeed";
+            this.handSpeed.Size = new System.Drawing.Size(120, 20);
+            this.handSpeed.TabIndex = 11;
+            this.handSpeed.Text = "400";
             // 
-            // textBox3
+            // handMax
             // 
-            this.textBox3.Location = new System.Drawing.Point(169, 45);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(44, 20);
-            this.textBox3.TabIndex = 10;
+            this.handMax.Location = new System.Drawing.Point(169, 45);
+            this.handMax.Name = "handMax";
+            this.handMax.Size = new System.Drawing.Size(44, 20);
+            this.handMax.TabIndex = 10;
+            this.handMax.Text = "2200";
             // 
             // label11
             // 
@@ -560,12 +582,13 @@
             this.label11.TabIndex = 9;
             this.label11.Text = "To";
             // 
-            // textBox2
+            // handMin
             // 
-            this.textBox2.Location = new System.Drawing.Point(93, 45);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(44, 20);
-            this.textBox2.TabIndex = 8;
+            this.handMin.Location = new System.Drawing.Point(93, 45);
+            this.handMin.Name = "handMin";
+            this.handMin.Size = new System.Drawing.Size(44, 20);
+            this.handMin.TabIndex = 8;
+            this.handMin.Text = "0";
             // 
             // label10
             // 
@@ -576,14 +599,16 @@
             this.label10.TabIndex = 7;
             this.label10.Text = "Speed";
             // 
-            // checkBox3
+            // handEnable
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(93, 101);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(15, 14);
-            this.checkBox3.TabIndex = 4;
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.handEnable.AutoSize = true;
+            this.handEnable.Checked = true;
+            this.handEnable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.handEnable.Location = new System.Drawing.Point(93, 101);
+            this.handEnable.Name = "handEnable";
+            this.handEnable.Size = new System.Drawing.Size(15, 14);
+            this.handEnable.TabIndex = 4;
+            this.handEnable.UseVisualStyleBackColor = true;
             // 
             // label12
             // 
@@ -606,12 +631,12 @@
             // wrist_gpBox
             // 
             this.wrist_gpBox.BackColor = System.Drawing.SystemColors.Window;
-            this.wrist_gpBox.Controls.Add(this.textBox5);
-            this.wrist_gpBox.Controls.Add(this.textBox6);
+            this.wrist_gpBox.Controls.Add(this.wristSpeed);
+            this.wrist_gpBox.Controls.Add(this.wristMax);
             this.wrist_gpBox.Controls.Add(this.label14);
-            this.wrist_gpBox.Controls.Add(this.textBox7);
+            this.wrist_gpBox.Controls.Add(this.wristServoMinRange);
             this.wrist_gpBox.Controls.Add(this.label15);
-            this.wrist_gpBox.Controls.Add(this.checkBox4);
+            this.wrist_gpBox.Controls.Add(this.wristEnable);
             this.wrist_gpBox.Controls.Add(this.label16);
             this.wrist_gpBox.Controls.Add(this.label17);
             this.wrist_gpBox.Location = new System.Drawing.Point(275, 18);
@@ -622,19 +647,19 @@
             this.wrist_gpBox.Text = "Wrist Servo";
             this.wrist_gpBox.Visible = false;
             // 
-            // textBox5
+            // wristSpeed
             // 
-            this.textBox5.Location = new System.Drawing.Point(93, 72);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 20);
-            this.textBox5.TabIndex = 11;
+            this.wristSpeed.Location = new System.Drawing.Point(93, 72);
+            this.wristSpeed.Name = "wristSpeed";
+            this.wristSpeed.Size = new System.Drawing.Size(120, 20);
+            this.wristSpeed.TabIndex = 11;
             // 
-            // textBox6
+            // wristMax
             // 
-            this.textBox6.Location = new System.Drawing.Point(169, 45);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(44, 20);
-            this.textBox6.TabIndex = 10;
+            this.wristMax.Location = new System.Drawing.Point(169, 45);
+            this.wristMax.Name = "wristMax";
+            this.wristMax.Size = new System.Drawing.Size(44, 20);
+            this.wristMax.TabIndex = 10;
             // 
             // label14
             // 
@@ -645,12 +670,12 @@
             this.label14.TabIndex = 9;
             this.label14.Text = "To";
             // 
-            // textBox7
+            // wristServoMinRange
             // 
-            this.textBox7.Location = new System.Drawing.Point(93, 45);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(44, 20);
-            this.textBox7.TabIndex = 8;
+            this.wristServoMinRange.Location = new System.Drawing.Point(93, 45);
+            this.wristServoMinRange.Name = "wristServoMinRange";
+            this.wristServoMinRange.Size = new System.Drawing.Size(44, 20);
+            this.wristServoMinRange.TabIndex = 8;
             // 
             // label15
             // 
@@ -661,14 +686,14 @@
             this.label15.TabIndex = 7;
             this.label15.Text = "Speed";
             // 
-            // checkBox4
+            // wristEnable
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(93, 101);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(15, 14);
-            this.checkBox4.TabIndex = 4;
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.wristEnable.AutoSize = true;
+            this.wristEnable.Location = new System.Drawing.Point(93, 101);
+            this.wristEnable.Name = "wristEnable";
+            this.wristEnable.Size = new System.Drawing.Size(15, 14);
+            this.wristEnable.TabIndex = 4;
+            this.wristEnable.UseVisualStyleBackColor = true;
             // 
             // label16
             // 
@@ -691,12 +716,12 @@
             // gripGpBox
             // 
             this.gripGpBox.BackColor = System.Drawing.SystemColors.Window;
-            this.gripGpBox.Controls.Add(this.textBox8);
-            this.gripGpBox.Controls.Add(this.textBox9);
+            this.gripGpBox.Controls.Add(this.wristRotateSpeed);
+            this.gripGpBox.Controls.Add(this.wristRotateMaxRange);
             this.gripGpBox.Controls.Add(this.label18);
-            this.gripGpBox.Controls.Add(this.textBox10);
+            this.gripGpBox.Controls.Add(this.wristRotateMinRange);
             this.gripGpBox.Controls.Add(this.label19);
-            this.gripGpBox.Controls.Add(this.checkBox5);
+            this.gripGpBox.Controls.Add(this.wristRotateEnable);
             this.gripGpBox.Controls.Add(this.label20);
             this.gripGpBox.Controls.Add(this.label21);
             this.gripGpBox.Location = new System.Drawing.Point(531, 18);
@@ -704,22 +729,22 @@
             this.gripGpBox.Size = new System.Drawing.Size(250, 250);
             this.gripGpBox.TabIndex = 13;
             this.gripGpBox.TabStop = false;
-            this.gripGpBox.Text = "Grip Servo";
+            this.gripGpBox.Text = "Wrist Rotate Servo";
             this.gripGpBox.Visible = false;
             // 
-            // textBox8
+            // wristRotateSpeed
             // 
-            this.textBox8.Location = new System.Drawing.Point(93, 72);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(120, 20);
-            this.textBox8.TabIndex = 11;
+            this.wristRotateSpeed.Location = new System.Drawing.Point(93, 72);
+            this.wristRotateSpeed.Name = "wristRotateSpeed";
+            this.wristRotateSpeed.Size = new System.Drawing.Size(120, 20);
+            this.wristRotateSpeed.TabIndex = 11;
             // 
-            // textBox9
+            // wristRotateMaxRange
             // 
-            this.textBox9.Location = new System.Drawing.Point(169, 45);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(44, 20);
-            this.textBox9.TabIndex = 10;
+            this.wristRotateMaxRange.Location = new System.Drawing.Point(169, 45);
+            this.wristRotateMaxRange.Name = "wristRotateMaxRange";
+            this.wristRotateMaxRange.Size = new System.Drawing.Size(44, 20);
+            this.wristRotateMaxRange.TabIndex = 10;
             // 
             // label18
             // 
@@ -730,12 +755,12 @@
             this.label18.TabIndex = 9;
             this.label18.Text = "To";
             // 
-            // textBox10
+            // wristRotateMinRange
             // 
-            this.textBox10.Location = new System.Drawing.Point(93, 45);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(44, 20);
-            this.textBox10.TabIndex = 8;
+            this.wristRotateMinRange.Location = new System.Drawing.Point(93, 45);
+            this.wristRotateMinRange.Name = "wristRotateMinRange";
+            this.wristRotateMinRange.Size = new System.Drawing.Size(44, 20);
+            this.wristRotateMinRange.TabIndex = 8;
             // 
             // label19
             // 
@@ -746,14 +771,14 @@
             this.label19.TabIndex = 7;
             this.label19.Text = "Speed";
             // 
-            // checkBox5
+            // wristRotateEnable
             // 
-            this.checkBox5.AutoSize = true;
-            this.checkBox5.Location = new System.Drawing.Point(93, 101);
-            this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(15, 14);
-            this.checkBox5.TabIndex = 4;
-            this.checkBox5.UseVisualStyleBackColor = true;
+            this.wristRotateEnable.AutoSize = true;
+            this.wristRotateEnable.Location = new System.Drawing.Point(93, 101);
+            this.wristRotateEnable.Name = "wristRotateEnable";
+            this.wristRotateEnable.Size = new System.Drawing.Size(15, 14);
+            this.wristRotateEnable.TabIndex = 4;
+            this.wristRotateEnable.UseVisualStyleBackColor = true;
             // 
             // label20
             // 
@@ -776,12 +801,12 @@
             // forarmGpBox
             // 
             this.forarmGpBox.BackColor = System.Drawing.SystemColors.Window;
-            this.forarmGpBox.Controls.Add(this.textBox11);
-            this.forarmGpBox.Controls.Add(this.textBox12);
+            this.forarmGpBox.Controls.Add(this.forearmServoSpeed);
+            this.forarmGpBox.Controls.Add(this.forearmServoMaxRange);
             this.forarmGpBox.Controls.Add(this.label22);
-            this.forarmGpBox.Controls.Add(this.textBox13);
+            this.forarmGpBox.Controls.Add(this.forearmServoMinRange);
             this.forarmGpBox.Controls.Add(this.label23);
-            this.forarmGpBox.Controls.Add(this.checkBox6);
+            this.forarmGpBox.Controls.Add(this.forearmServoEnable);
             this.forarmGpBox.Controls.Add(this.label24);
             this.forarmGpBox.Controls.Add(this.label25);
             this.forarmGpBox.Location = new System.Drawing.Point(19, 274);
@@ -792,19 +817,19 @@
             this.forarmGpBox.Text = "Forearm Servo";
             this.forarmGpBox.Visible = false;
             // 
-            // textBox11
+            // forearmServoSpeed
             // 
-            this.textBox11.Location = new System.Drawing.Point(93, 72);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(120, 20);
-            this.textBox11.TabIndex = 11;
+            this.forearmServoSpeed.Location = new System.Drawing.Point(93, 72);
+            this.forearmServoSpeed.Name = "forearmServoSpeed";
+            this.forearmServoSpeed.Size = new System.Drawing.Size(120, 20);
+            this.forearmServoSpeed.TabIndex = 11;
             // 
-            // textBox12
+            // forearmServoMaxRange
             // 
-            this.textBox12.Location = new System.Drawing.Point(169, 45);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(44, 20);
-            this.textBox12.TabIndex = 10;
+            this.forearmServoMaxRange.Location = new System.Drawing.Point(169, 45);
+            this.forearmServoMaxRange.Name = "forearmServoMaxRange";
+            this.forearmServoMaxRange.Size = new System.Drawing.Size(44, 20);
+            this.forearmServoMaxRange.TabIndex = 10;
             // 
             // label22
             // 
@@ -815,12 +840,12 @@
             this.label22.TabIndex = 9;
             this.label22.Text = "To";
             // 
-            // textBox13
+            // forearmServoMinRange
             // 
-            this.textBox13.Location = new System.Drawing.Point(93, 45);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(44, 20);
-            this.textBox13.TabIndex = 8;
+            this.forearmServoMinRange.Location = new System.Drawing.Point(93, 45);
+            this.forearmServoMinRange.Name = "forearmServoMinRange";
+            this.forearmServoMinRange.Size = new System.Drawing.Size(44, 20);
+            this.forearmServoMinRange.TabIndex = 8;
             // 
             // label23
             // 
@@ -831,14 +856,14 @@
             this.label23.TabIndex = 7;
             this.label23.Text = "Speed";
             // 
-            // checkBox6
+            // forearmServoEnable
             // 
-            this.checkBox6.AutoSize = true;
-            this.checkBox6.Location = new System.Drawing.Point(93, 101);
-            this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(15, 14);
-            this.checkBox6.TabIndex = 4;
-            this.checkBox6.UseVisualStyleBackColor = true;
+            this.forearmServoEnable.AutoSize = true;
+            this.forearmServoEnable.Location = new System.Drawing.Point(93, 101);
+            this.forearmServoEnable.Name = "forearmServoEnable";
+            this.forearmServoEnable.Size = new System.Drawing.Size(15, 14);
+            this.forearmServoEnable.TabIndex = 4;
+            this.forearmServoEnable.UseVisualStyleBackColor = true;
             // 
             // label24
             // 
@@ -861,35 +886,35 @@
             // shoulderGP
             // 
             this.shoulderGP.BackColor = System.Drawing.SystemColors.Window;
-            this.shoulderGP.Controls.Add(this.textBox14);
-            this.shoulderGP.Controls.Add(this.textBox15);
+            this.shoulderGP.Controls.Add(this.shoulderSpeed);
+            this.shoulderGP.Controls.Add(this.shoulderMax);
             this.shoulderGP.Controls.Add(this.label26);
-            this.shoulderGP.Controls.Add(this.textBox16);
+            this.shoulderGP.Controls.Add(this.shoulderMin);
             this.shoulderGP.Controls.Add(this.label27);
-            this.shoulderGP.Controls.Add(this.checkBox7);
+            this.shoulderGP.Controls.Add(this.shoulderEnable);
             this.shoulderGP.Controls.Add(this.label28);
             this.shoulderGP.Controls.Add(this.label29);
-            this.shoulderGP.Location = new System.Drawing.Point(276, 273);
+            this.shoulderGP.Location = new System.Drawing.Point(274, 274);
             this.shoulderGP.Name = "shoulderGP";
             this.shoulderGP.Size = new System.Drawing.Size(250, 250);
             this.shoulderGP.TabIndex = 15;
             this.shoulderGP.TabStop = false;
-            this.shoulderGP.Text = "Forarm Servo";
+            this.shoulderGP.Text = "Shoulder Servo";
             this.shoulderGP.Visible = false;
             // 
-            // textBox14
+            // shoulderSpeed
             // 
-            this.textBox14.Location = new System.Drawing.Point(93, 72);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(120, 20);
-            this.textBox14.TabIndex = 11;
+            this.shoulderSpeed.Location = new System.Drawing.Point(93, 72);
+            this.shoulderSpeed.Name = "shoulderSpeed";
+            this.shoulderSpeed.Size = new System.Drawing.Size(120, 20);
+            this.shoulderSpeed.TabIndex = 11;
             // 
-            // textBox15
+            // shoulderMax
             // 
-            this.textBox15.Location = new System.Drawing.Point(169, 45);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(44, 20);
-            this.textBox15.TabIndex = 10;
+            this.shoulderMax.Location = new System.Drawing.Point(169, 45);
+            this.shoulderMax.Name = "shoulderMax";
+            this.shoulderMax.Size = new System.Drawing.Size(44, 20);
+            this.shoulderMax.TabIndex = 10;
             // 
             // label26
             // 
@@ -900,12 +925,12 @@
             this.label26.TabIndex = 9;
             this.label26.Text = "To";
             // 
-            // textBox16
+            // shoulderMin
             // 
-            this.textBox16.Location = new System.Drawing.Point(93, 45);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(44, 20);
-            this.textBox16.TabIndex = 8;
+            this.shoulderMin.Location = new System.Drawing.Point(93, 45);
+            this.shoulderMin.Name = "shoulderMin";
+            this.shoulderMin.Size = new System.Drawing.Size(44, 20);
+            this.shoulderMin.TabIndex = 8;
             // 
             // label27
             // 
@@ -916,14 +941,14 @@
             this.label27.TabIndex = 7;
             this.label27.Text = "Speed";
             // 
-            // checkBox7
+            // shoulderEnable
             // 
-            this.checkBox7.AutoSize = true;
-            this.checkBox7.Location = new System.Drawing.Point(93, 101);
-            this.checkBox7.Name = "checkBox7";
-            this.checkBox7.Size = new System.Drawing.Size(15, 14);
-            this.checkBox7.TabIndex = 4;
-            this.checkBox7.UseVisualStyleBackColor = true;
+            this.shoulderEnable.AutoSize = true;
+            this.shoulderEnable.Location = new System.Drawing.Point(93, 101);
+            this.shoulderEnable.Name = "shoulderEnable";
+            this.shoulderEnable.Size = new System.Drawing.Size(15, 14);
+            this.shoulderEnable.TabIndex = 4;
+            this.shoulderEnable.UseVisualStyleBackColor = true;
             // 
             // label28
             // 
@@ -1218,6 +1243,7 @@
             this.startBtn.TabIndex = 13;
             this.startBtn.TabStop = false;
             this.startBtn.Visible = false;
+            this.startBtn.Click += new System.EventHandler(this.startBtn_Click);
             // 
             // asu_logo
             // 
@@ -1309,15 +1335,90 @@
             this.label48.TabIndex = 0;
             this.label48.Text = "In order to connect locally, please connect \r\nthe camera and press start";
             // 
-            // remoteStopBtn
+            // elbowGP
             // 
-            this.remoteStopBtn.Location = new System.Drawing.Point(57, 152);
-            this.remoteStopBtn.Name = "remoteStopBtn";
-            this.remoteStopBtn.Size = new System.Drawing.Size(127, 23);
-            this.remoteStopBtn.TabIndex = 3;
-            this.remoteStopBtn.Text = "Stop the Camera";
-            this.remoteStopBtn.UseVisualStyleBackColor = true;
-            this.remoteStopBtn.Click += new System.EventHandler(this.remoteStopBtn_Click);
+            this.elbowGP.BackColor = System.Drawing.SystemColors.Window;
+            this.elbowGP.Controls.Add(this.elbowSpeed);
+            this.elbowGP.Controls.Add(this.elbowMax);
+            this.elbowGP.Controls.Add(this.label47);
+            this.elbowGP.Controls.Add(this.elbowMin);
+            this.elbowGP.Controls.Add(this.label49);
+            this.elbowGP.Controls.Add(this.elbowEnable);
+            this.elbowGP.Controls.Add(this.label50);
+            this.elbowGP.Controls.Add(this.label51);
+            this.elbowGP.Location = new System.Drawing.Point(791, 17);
+            this.elbowGP.Name = "elbowGP";
+            this.elbowGP.Size = new System.Drawing.Size(250, 250);
+            this.elbowGP.TabIndex = 26;
+            this.elbowGP.TabStop = false;
+            this.elbowGP.Text = "Elbow Servo";
+            this.elbowGP.Visible = false;
+            // 
+            // elbowSpeed
+            // 
+            this.elbowSpeed.Location = new System.Drawing.Point(93, 72);
+            this.elbowSpeed.Name = "elbowSpeed";
+            this.elbowSpeed.Size = new System.Drawing.Size(120, 20);
+            this.elbowSpeed.TabIndex = 11;
+            // 
+            // elbowMax
+            // 
+            this.elbowMax.Location = new System.Drawing.Point(169, 45);
+            this.elbowMax.Name = "elbowMax";
+            this.elbowMax.Size = new System.Drawing.Size(44, 20);
+            this.elbowMax.TabIndex = 10;
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Location = new System.Drawing.Point(143, 48);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(20, 13);
+            this.label47.TabIndex = 9;
+            this.label47.Text = "To";
+            // 
+            // elbowMin
+            // 
+            this.elbowMin.Location = new System.Drawing.Point(93, 45);
+            this.elbowMin.Name = "elbowMin";
+            this.elbowMin.Size = new System.Drawing.Size(44, 20);
+            this.elbowMin.TabIndex = 8;
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Location = new System.Drawing.Point(27, 75);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(38, 13);
+            this.label49.TabIndex = 7;
+            this.label49.Text = "Speed";
+            // 
+            // elbowEnable
+            // 
+            this.elbowEnable.AutoSize = true;
+            this.elbowEnable.Location = new System.Drawing.Point(93, 101);
+            this.elbowEnable.Name = "elbowEnable";
+            this.elbowEnable.Size = new System.Drawing.Size(15, 14);
+            this.elbowEnable.TabIndex = 4;
+            this.elbowEnable.UseVisualStyleBackColor = true;
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(29, 101);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(40, 13);
+            this.label50.TabIndex = 3;
+            this.label50.Text = "Enable";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(27, 48);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(39, 13);
+            this.label51.TabIndex = 1;
+            this.label51.Text = "Range";
             // 
             // Form1
             // 
@@ -1326,35 +1427,37 @@
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1046, 580);
             this.Controls.Add(this.asu_logo);
+            this.Controls.Add(this.gripGpBox);
+            this.Controls.Add(this.elbowGP);
             this.Controls.Add(this.webcamGroupbx2);
-            this.Controls.Add(this.btn_debug);
-            this.Controls.Add(this.btn_ports);
             this.Controls.Add(this.webCamGroupBx);
             this.Controls.Add(this.setting_pictureBx);
             this.Controls.Add(this.home_btn);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.setting_label);
+            this.Controls.Add(this.hand_groupBx);
+            this.Controls.Add(this.IMU_Configuration);
+            this.Controls.Add(this.forarmGpBox);
+            this.Controls.Add(this.designPictureBx);
             this.Controls.Add(this.btn_videoFeed);
-            this.Controls.Add(this.btn_robbotCtrl);
             this.Controls.Add(this.btn_servo);
             this.Controls.Add(this.setPictureBox);
-            this.Controls.Add(this.glove_configuration);
-            this.Controls.Add(this.hand_groupBx);
-            this.Controls.Add(this.wrist_gpBox);
-            this.Controls.Add(this.IMU_Configuration);
-            this.Controls.Add(this.kinect_console);
-            this.Controls.Add(this.forarmGpBox);
+            this.Controls.Add(this.robot_armPicture);
+            this.Controls.Add(this.btn_ports);
+            this.Controls.Add(this.btn_debug);
+            this.Controls.Add(this.btn_robbotCtrl);
             this.Controls.Add(this.kinect_configuration);
             this.Controls.Add(this.debugGp);
-            this.Controls.Add(this.robot_armPicture);
-            this.Controls.Add(this.gripGpBox);
-            this.Controls.Add(this.webcam_configuration);
-            this.Controls.Add(this.webcam_pictureBx);
+            this.Controls.Add(this.wrist_gpBox);
+            this.Controls.Add(this.glove_configuration);
             this.Controls.Add(this.kinect_Gp);
             this.Controls.Add(this.shoulderGP);
-            this.Controls.Add(this.designPictureBx);
+            this.Controls.Add(this.webcam_configuration);
+            this.Controls.Add(this.webcam_pictureBx);
+            this.Controls.Add(this.kinect_console);
             this.Name = "Form1";
             this.Text = "Capstone GUI";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Close);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.IMU_Configuration.ResumeLayout(false);
             this.IMU_Configuration.PerformLayout();
@@ -1396,6 +1499,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.kinect_console)).EndInit();
             this.webcamGroupbx2.ResumeLayout(false);
             this.webcamGroupbx2.PerformLayout();
+            this.elbowGP.ResumeLayout(false);
+            this.elbowGP.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1444,47 +1549,47 @@
         private System.Windows.Forms.PictureBox webcam_pictureBx;
         private System.Windows.Forms.GroupBox hand_groupBx;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.CheckBox checkBox3;
+        private System.Windows.Forms.CheckBox handEnable;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.GroupBox wrist_gpBox;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox wristSpeed;
+        private System.Windows.Forms.TextBox wristMax;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox wristServoMinRange;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.CheckBox checkBox4;
+        private System.Windows.Forms.CheckBox wristEnable;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox handSpeed;
+        private System.Windows.Forms.TextBox handMax;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox handMin;
         private System.Windows.Forms.GroupBox gripGpBox;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox wristRotateSpeed;
+        private System.Windows.Forms.TextBox wristRotateMaxRange;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox wristRotateMinRange;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.CheckBox checkBox5;
+        private System.Windows.Forms.CheckBox wristRotateEnable;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.GroupBox forarmGpBox;
         private System.Windows.Forms.GroupBox shoulderGP;
-        private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox shoulderSpeed;
+        private System.Windows.Forms.TextBox shoulderMax;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox shoulderMin;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.CheckBox checkBox7;
+        private System.Windows.Forms.CheckBox shoulderEnable;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox11;
-        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox forearmServoSpeed;
+        private System.Windows.Forms.TextBox forearmServoMaxRange;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.TextBox forearmServoMinRange;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.CheckBox checkBox6;
+        private System.Windows.Forms.CheckBox forearmServoEnable;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.PictureBox kinect_console;
@@ -1517,6 +1622,15 @@
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Button remoteStartBtn;
         private System.Windows.Forms.Button remoteStopBtn;
+        private System.Windows.Forms.GroupBox elbowGP;
+        private System.Windows.Forms.TextBox elbowSpeed;
+        private System.Windows.Forms.TextBox elbowMax;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.TextBox elbowMin;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.CheckBox elbowEnable;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
 
     }
 }
