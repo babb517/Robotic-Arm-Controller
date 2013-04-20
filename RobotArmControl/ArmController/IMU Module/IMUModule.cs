@@ -129,16 +129,18 @@ namespace ArmController.IMU_Module
             bool good = true;
 
             
-           /*
+     /*
             while (true)
             {
                 Thread.Sleep(100);
-                Matrix33 tmp = new Matrix33((float)(-00.0 * Math.PI / 180.0), (float)(00.0 * Math.PI / 180.0), (float)(-0.0 * Math.PI / 180.0));
-                tmp.setRotation((float)(30 * Math.PI / 180), (float)(40 * Math.PI / 180), (float)(-50 * Math.PI / 180));
+                Matrix33 tmp = new Matrix33((float)(-10.0 * Math.PI / 180.0), (float)(20.0 * Math.PI / 180.0), (float)(-50.0 * Math.PI / 180.0));
+                Matrix33 tmp2 = new Matrix33(0, (float)(70 * Math.PI / 180.0), 0);
+                tmp = tmp.RelativeFrame(tmp2);
+             //   tmp.setRotation((float)(30 * Math.PI / 180), (float)(40 * Math.PI / 180), (float)(-50 * Math.PI / 180));
                 Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, tmp.Orientation);
                 Bus.Publish<object>(BusNode.POSITION_TICK, null);
-            } */
-            
+            }
+       */     
 
             while (_running)
             {

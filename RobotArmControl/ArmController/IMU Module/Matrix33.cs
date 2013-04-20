@@ -122,7 +122,7 @@ namespace ArmController.IMU_Module
             get
             {
                 return (float)Math.Atan2(_matrix.M21, _matrix.M11);
-
+                //return (float)Math.Atan2(_matrix.M13, Math.Sqrt(_matrix.M23 * _matrix.M23 + _matrix.M33 * _matrix.M33));
             }
         }
 
@@ -133,7 +133,8 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return (float)Math.Atan2(_matrix.M32, _matrix.M33);
+                //return (float)Math.Atan2(_matrix.M32, _matrix.M33);
+                return 0;
             }
         }
 
@@ -145,8 +146,8 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return (float)Math.Atan2(-_matrix.M31, Math.Sqrt(_matrix.M32 * _matrix.M32 + _matrix.M33 * _matrix.M33));
-            }
+                return 0;
+            }o
         }
 
         /// <summary>
@@ -285,7 +286,7 @@ namespace ArmController.IMU_Module
             //Matrix x = Matrix.CreateFromYawPitchRoll(yaw, pitch, roll);
             //ret._matrix = Matrix.Multiply(this._matrix, x);
             Matrix33 x = new Matrix33(yaw, pitch, roll);
-            return this * x;
+            return x * this;
         }
 
 
@@ -297,7 +298,7 @@ namespace ArmController.IMU_Module
         public Matrix33 RelativeFrame(Matrix33 parent)
         {
             // TODO: Is this the correect order?
-            return parent.Invert *this;
+            return this * parent.Invert;
             //return this * parent.Transpose;
         }
 
@@ -324,24 +325,28 @@ namespace ArmController.IMU_Module
             sin_roll = (float)Math.Sin(roll);
 
             //Top row
-            _matrix.M11 = (cos_roll * cos_yaw);
-            _matrix.M12 = (-sin_yaw * cos_pitch + cos_yaw * sin_roll * sin_pitch);
-            _matrix.M13 = (sin_pitch * sin_yaw + cos_yaw * sin_roll * cos_pitch);
+            _matrix.M11 = cos_roll * cos_yaw;
+            _matrix.M12 = -sin_yaw * cos_pitch + cos_yaw * sin_roll * sin_pitch;
+            _matrix.M13 = sin_pitch * sin_yaw + cos_yaw * sin_roll * cos_pitch;
+            _matrix.M14 = 0;
 
             //Middle row
-            _matrix.M21 = (cos_roll * sin_yaw);
-            _matrix.M22 = (cos_yaw * cos_pitch + sin_roll * sin_yaw * sin_pitch);
-            _matrix.M23 = (-sin_pitch * cos_yaw + sin_roll * sin_yaw * cos_pitch);
+            _matrix.M21 = cos_roll * sin_yaw;
+            _matrix.M22 = cos_yaw * cos_pitch + sin_roll * sin_yaw * sin_pitch;
+            _matrix.M23 = -sin_pitch * cos_yaw + sin_roll * sin_yaw * cos_pitch;
+            _matrix.M24 = 0;
 
             //Bottom row
-            _matrix.M31 = (-sin_roll);
-            _matrix.M32 = (cos_roll * sin_pitch);
-            _matrix.M33 = (cos_roll * cos_pitch);
-             
-            _matrix.M44 = 1;
-             
-             * */
+            _matrix.M31 = -sin_roll;
+            _matrix.M32 = cos_roll * sin_pitch;
+            _matrix.M33 = cos_roll * cos_pitch;
+            _matrix.M34 = 0;
 
+            _matrix.M41 = 0;
+            _matrix.M42 = 0;
+            _matrix.M43 = 0;
+            _matrix.M44 = 1;
+            */
         }
 
         #endregion Public Methods
