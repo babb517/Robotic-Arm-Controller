@@ -30,3 +30,13 @@ C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmContr
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision.g.resources
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision.dll
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision.pdb
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\bin\Debug\Touchless.Vision.dll
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\bin\Debug\Touchless.Vision.pdb
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\WebCamWrapper.csprojResolveAssemblyReference.cache
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Camera\Configuration\CameraFrameSourceConfigurationElement.baml
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Camera\Configuration\CameraFrameSourceConfigurationElement.g.cs
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision_MarkupCompile.cache
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision.g.resources
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision.dll
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\Touchless.Vision.pdb

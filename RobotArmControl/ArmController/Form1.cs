@@ -39,6 +39,11 @@ namespace ArmController // Capstone_GUI
         private static Bitmap _latestFrame;
 
         /// <summary>
+        /// Check to see whether or not the modules have been initialized
+        /// </summary>
+        private bool isStarted = false;
+
+        /// <summary>
         /// The modules which are being managed by the application.
         /// </summary>
         List<Module> _modules;
@@ -223,20 +228,16 @@ namespace ArmController // Capstone_GUI
         {
             debugGp.Visible = true;
             System.Windows.Application.Current.MainWindow.Show();
-
         }
-
-       
+   
         private void setPictureBox_Click(object sender, EventArgs e)
         {
             hide_firstPanel();
             enable_Settings();
-            
-
         }
+
         private void enable_Settings()
         {
-
             IMU_Configuration.Visible = true;
             glove_configuration.Visible = true;
             webcam_configuration.Visible = true;
@@ -362,7 +363,7 @@ namespace ArmController // Capstone_GUI
         private void camStartBtn_Click(object sender, EventArgs e)
         {
            // screenSize.Maximize(this);
-            if (_frameSource != null && _frameSource.Camera == comboBox1.SelectedItem)
+            if (_frameSource != null && _frameSource.Camera == IMUCOMPort.SelectedItem)
                 return;
 
             thrashOldCamera();
@@ -422,45 +423,62 @@ namespace ArmController // Capstone_GUI
         {
             // TODO: Add each module to the list here.
 
-            /*
-            _bus.Publish(BusNode.WRIST_SERVO_MIN_RANGE, Convert.ToInt32(wristServoMinRange.Text));
-            _bus.Publish(BusNode.WRIST_SERVO_MAX_RANGE, Convert.ToInt32(wristMax.Text));
-            _bus.Publish(BusNode.WRIST_SERVO_SPEED, Convert.ToInt32(wristSpeed.Text));
-            _bus.Publish(BusNode.WRIST_SERVO_ENABLE, wristEnable.Checked);
-            */
+            if (isStarted == false)
+            {
+                //Don't allow modules to be initialized more than once
+                isStarted = true;
 
+                //Wrist servo settings
+                _bus.Publish(BusNode.WRIST_SERVO_MIN_RANGE, Convert.ToInt32(wristServoMinRange.Text));
+                _bus.Publish(BusNode.WRIST_SERVO_MAX_RANGE, Convert.ToInt32(wristServoMaxRange.Text));
+                _bus.Publish(BusNode.WRIST_SERVO_SPEED, Convert.ToInt32(wristServoSpeed.Text));
+                _bus.Publish(BusNode.WRIST_SERVO_ENABLE, wristServoEnable.Checked);
 
-            _bus.Publish(BusNode.HAND_SERVO_MIN_RANGE, Convert.ToInt32(handMin.Text));
-            _bus.Publish(BusNode.HAND_SERVO_MAX_RANGE, Convert.ToInt32(handMax.Text));
-            _bus.Publish(BusNode.HAND_SERVO_SPEED, Convert.ToInt32(handSpeed.Text));
-            _bus.Publish(BusNode.HAND_SERVO_ENABLE, handEnable.Checked);
+                //Hand servo settings
+                _bus.Publish(BusNode.HAND_SERVO_MIN_RANGE, Convert.ToInt32(handServoMinRange.Text));
+                _bus.Publish(BusNode.HAND_SERVO_MAX_RANGE, Convert.ToInt32(handServoMaxRange.Text));
+                _bus.Publish(BusNode.HAND_SERVO_SPEED, Convert.ToInt32(handServoSpeed.Text));
+                _bus.Publish(BusNode.HAND_SERVO_ENABLE, handServoEnable.Checked);
 
-            /*
-            _bus.Publish(BusNode.WRIST_ROTATE_SERVO_MIN_RANGE, Convert.ToInt32(wristRotateMinRange.Text));
-            _bus.Publish(BusNode.WRIST_ROTATE_SERVO_MAX_RANGE, Convert.ToInt32(wristRotateMaxRange.Text));
-            _bus.Publish(BusNode.WRIST_ROTATE_SERVO_SPEED, Convert.ToInt32(wristRotateSpeed.Text));
-            _bus.Publish(BusNode.WRIST_ROTATE_SERVO_ENABLE, wristRotateEnable.Checked);
+                //Wrist rotate servo settings
+                _bus.Publish(BusNode.WRIST_ROTATE_SERVO_MIN_RANGE, Convert.ToInt32(wristRotateServoMinRange.Text));
+                _bus.Publish(BusNode.WRIST_ROTATE_SERVO_MAX_RANGE, Convert.ToInt32(wristRotateServoMaxRange.Text));
+                _bus.Publish(BusNode.WRIST_ROTATE_SERVO_SPEED, Convert.ToInt32(wristRotateServoSpeed.Text));
+                _bus.Publish(BusNode.WRIST_ROTATE_SERVO_ENABLE, wristRotateServoEnable.Checked);
 
-            _bus.Publish(BusNode.FOREARM_SERVO_MIN_RANGE, Convert.ToInt32(forearmServoMinRange.Text));
-            _bus.Publish(BusNode.FOREARM_SERVO_MAX_RANGE, Convert.ToInt32(forearmServoMaxRange.Text));
-            _bus.Publish(BusNode.FOREARM_SERVO_SPEED, Convert.ToInt32(forearmServoSpeed.Text));
-            _bus.Publish(BusNode.FOREARM_SERVO_ENABLE, forearmServoEnable.Checked);
+                //Arm servo settings
+                _bus.Publish(BusNode.ARM_SERVO_MIN_RANGE, Convert.ToInt32(armServoMinRange.Text));
+                _bus.Publish(BusNode.ARM_SERVO_MAX_RANGE, Convert.ToInt32(armServoMaxRange.Text));
+                _bus.Publish(BusNode.ARM_SERVO_SPEED, Convert.ToInt32(armServoSpeed.Text));
+                _bus.Publish(BusNode.ARM_SERVO_ENABLE, armServoEnable.Checked);
 
+                //Forearm servo settings
+                _bus.Publish(BusNode.FOREARM_SERVO_MIN_RANGE, Convert.ToInt32(forearmServoMinRange.Text));
+                _bus.Publish(BusNode.FOREARM_SERVO_MAX_RANGE, Convert.ToInt32(forearmServoMaxRange.Text));
+                _bus.Publish(BusNode.FOREARM_SERVO_SPEED, Convert.ToInt32(forearmServoSpeed.Text));
+                _bus.Publish(BusNode.FOREARM_SERVO_ENABLE, forearmServoEnable.Checked);
 
-            _bus.Publish(BusNode.ELBOW_SERVO_MIN_RANGE, Convert.ToInt32(elbowMin.Text));
-            _bus.Publish(BusNode.ELBOW_SERVO_MAX_RANGE, Convert.ToInt32(elbowMax.Text));
-            _bus.Publish(BusNode.ELBOW_SERVO_SPEED, Convert.ToInt32(elbowSpeed.Text));
-            _bus.Publish(BusNode.ELBOW_SERVO_ENABLE, elbowEnable.Checked);
+                //Shoulder servo settings
+                _bus.Publish(BusNode.SHOULDER_SERVO_MIN_RANGE, Convert.ToInt32(shoulderServoMinRange.Text));
+                _bus.Publish(BusNode.SHOULDER_SERVO_MAX_RANGE, Convert.ToInt32(shoulderServoMaxRange.Text));
+                _bus.Publish(BusNode.SHOULDER_SERVO_SPEED, Convert.ToInt32(shoulderServoSpeed.Text));
+                _bus.Publish(BusNode.SHOULDER_SERVO_ENABLE, shoulderServoEnable.Checked);
 
-            _bus.Publish(BusNode.SHOULDER_SERVO_MIN_RANGE, Convert.ToInt32(shoulderMin.Text));
-            _bus.Publish(BusNode.SHOULDER_SERVO_MAX_RANGE, Convert.ToInt32(shoulderMax.Text));
-            _bus.Publish(BusNode.SHOULDER_SERVO_SPEED, Convert.ToInt32(shoulderSpeed.Text));
-            _bus.Publish(BusNode.SHOULDER_SERVO_ENABLE, shoulderEnable.Checked);
+                //CyberGlove settings
+                _bus.Publish(BusNode.CYBERGLOVE_BAUD_RATE, Convert.ToInt32(cyberGloveBaudRate));
+                _bus.Publish(BusNode.CYBERGLOVE_COM_PORT, cyberGloveCOMPort);
+                _bus.Publish(BusNode.CYBERGLOVE_ENABLE, cyberGloveEnable);
 
-            //_bus.Publish(BusNode.KINECT_ENABLE,)
-           */
+                //IMU settings
+                _bus.Publish(BusNode.IMU_BAUD_RATE, Convert.ToInt32(IMUBaudRate));
+                _bus.Publish(BusNode.IMU_COM_PORT, IMUCOMPort);
+                _bus.Publish(BusNode.IMU_ENABLE, Convert.ToInt32(IMUEnable));
 
-            InitializeModules();
+                //Kinect settings
+                _bus.Publish(BusNode.KINECT_ENABLE, kinectEnable.Checked);
+
+                InitializeModules();
+            }
         }
 
 

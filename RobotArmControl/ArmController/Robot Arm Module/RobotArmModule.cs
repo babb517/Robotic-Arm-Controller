@@ -71,27 +71,27 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         ///  Base servo channel number on the robot arm.
         /// </summary>
-        private const int SHOULDER_YAW = 0;
+        private const int SHOULDER = 0;
 
         /// <summary>
         /// Arm servo channel number on the robot arm.
         /// </summary>
-        private const int SHOULDER_PITCH = 1;
+        private const int ARM = 1;
 
         /// <summary>
         /// Forearm servo channel number on the robot arm.
         /// </summary>
-        private const int ELBOW_JOINT = 2;
+        private const int FOREARM = 2;
 
         /// <summary>
         /// Wrist servo channel number on the robot arm.
         /// </summary>
-        private const int WRIST_JOINT = 3;
+        private const int WRIST = 3;
 
         /// <summary>
         /// Hand servo channel number on the robot arm.
         /// </summary>
-        private const int FINGERS = 4;
+        private const int HAND = 4;
 
         #endregion Servos
 
@@ -182,11 +182,11 @@ namespace ArmController.Robot_Arm_Module
             _lastUpdateTime = 0;
 
             //Initialize the robot arm position.
-            move(SHOULDER_PITCH, 1500,100);
-            move(SHOULDER_YAW, 1500, 100);
-            move(ELBOW_JOINT, 1500,100);
-            move(WRIST_JOINT, 1500, 100);
-            move(FINGERS, 1500, 100);
+            move(ARM, 1500,100);
+            move(SHOULDER, 1500, 100);
+            move(FOREARM, 1500,100);
+            move(WRIST, 1500, 100);
+            move(HAND, 1500, 100);
             
             //Subscribe to the nodes published by the Kinect Module.
             Bus.Subscribe(BusNode.POSITION_TICK, OnValuePublished);
@@ -258,8 +258,43 @@ namespace ArmController.Robot_Arm_Module
             int hand = Bus.Get<int>(BusNode.CLAW_OPEN_PERCENT);
             bool armMoving = Bus.Get<bool>(BusNode.ROBOT_ACTIVE);
             int wrist_hand = Bus.Get<int>(BusNode.WRIST_PERCENT);
-            bool handEnabled = Bus.Get<bool>(BusNode.HAND_SERVO_ENABLE);
+            
+            //Hand servo nodes
+            int handServoMinRange = Bus.Get<int>(BusNode.HAND_SERVO_MIN_RANGE);
+            int handServoMaxRange = Bus.Get<int>(BusNode.HAND_SERVO_MAX_RANGE);
             int handServoSpeed = Bus.Get<int>(BusNode.HAND_SERVO_SPEED);
+            bool handServoEnabled = Bus.Get<bool>(BusNode.HAND_SERVO_ENABLE);
+
+            //Wrist servo nodes
+            int wristServoMinRange = Bus.Get<int>(BusNode.WRIST_SERVO_MIN_RANGE);
+            int wristServoMaxRange = Bus.Get<int>(BusNode.WRIST_SERVO_MAX_RANGE);
+            int wristServoSpeed = Bus.Get<int>(BusNode.WRIST_SERVO_SPEED);
+            bool wristServoEnabled = Bus.Get<bool>(BusNode.WRIST_SERVO_ENABLE);
+
+            //Wrist rotate servo nodes
+            int wristRotateServoMinRange = Bus.Get<int>(BusNode.WRIST_ROTATE_SERVO_MIN_RANGE);
+            int wristRotateServoMaxRange = Bus.Get<int>(BusNode.WRIST_ROTATE_SERVO_MAX_RANGE);
+            int wristRotateServoSpeed = Bus.Get<int>(BusNode.WRIST_ROTATE_SERVO_SPEED);
+            bool wristRotateServoEnabled = Bus.Get<bool>(BusNode.WRIST_ROTATE_SERVO_ENABLE);
+
+            //Forearm servo nodes
+            int forearmServoMinRange = Bus.Get<int>(BusNode.FOREARM_SERVO_MIN_RANGE);
+            int forearmServoMaxRange = Bus.Get<int>(BusNode.FOREARM_SERVO_MAX_RANGE);
+            int forearmServoSpeed = Bus.Get<int>(BusNode.FOREARM_SERVO_SPEED);
+            bool forearmServoEnabled = Bus.Get<bool>(BusNode.FOREARM_SERVO_ENABLE);
+
+            //Arm servo nodes
+            int armServoMinRange = Bus.Get<int>(BusNode.ARM_SERVO_MIN_RANGE);
+            int armServoMaxRange = Bus.Get<int>(BusNode.ARM_SERVO_MAX_RANGE);
+            int armServoSpeed = Bus.Get<int>(BusNode.ARM_SERVO_SPEED);
+            bool armServoEnabled = Bus.Get<bool>(BusNode.ARM_SERVO_ENABLE);
+            
+            //Shoulder servo nodes
+            int shoulderServoMinRange = Bus.Get<int>(BusNode.SHOULDER_SERVO_MIN_RANGE);
+            int shoulderServoMaxRange = Bus.Get<int>(BusNode.SHOULDER_SERVO_MAX_RANGE);
+            int shoulderServoSpeed = Bus.Get<int>(BusNode.SHOULDER_SERVO_SPEED);
+            bool shoulderServoEnabled = Bus.Get<bool>(BusNode.SHOULDER_SERVO_ENABLE);
+
 
             // we should now convert these orientations to the values expected by the servo controller.
 
@@ -268,7 +303,7 @@ namespace ArmController.Robot_Arm_Module
                 if (node == BusNode.POSITION_TICK)
                 {
                     // TODO: All the other joints
-                    if (forearm != null)
+                    if (forearm != null && forearmServoEnabled)
                     {
                         //Debug.WriteLine("forearm: " + (forearm.Roll * 180) / Math.PI + " / " + (forearm.Pitch * 180) / Math.PI + " / " + (forearm.Yaw * 180) / Math.PI);
                         if (forearm.Pitch > ELBOW_PITCH_MAX_DEG * RAD_PER_DEG) forearm.Pitch = (float)(ELBOW_PITCH_MAX_DEG * RAD_PER_DEG);
@@ -285,12 +320,12 @@ namespace ArmController.Robot_Arm_Module
                         if (Math.Abs(finalForearmPosition - currentForearmPosition) >= positionDeltaThreshold)
                         {
                             currentForearmPosition = finalForearmPosition;
-                            move(ELBOW_JOINT, currentForearmPosition,200);
+                            move(FOREARM, currentForearmPosition, forearmServoSpeed);
                             Debug.WriteLine("Got " + currentForearmPosition);
                         }
                     }
 
-                    if (arm != null)
+                    if (arm != null && armServoEnabled)
                     {
                         if (arm.Pitch > SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG) arm.Pitch = (float)(SHOULDER_PITCH_MAX_DEG * RAD_PER_DEG);
                         if (arm.Pitch < SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG) arm.Pitch = (float)(SHOULDER_PITCH_MIN_DEG * RAD_PER_DEG);
@@ -319,12 +354,12 @@ namespace ArmController.Robot_Arm_Module
                         if (Math.Abs(finalArmPosition - currentForearmPosition) >= positionDeltaThreshold)
                         {
                             currentArmPosition = finalArmPosition;
-                            move(SHOULDER_PITCH, currentArmPosition, 200);
-                            Debug.WriteLine("SHOULDER_PITCH: " + SHOULDER_PITCH + ", currentArmPosition: " + currentArmPosition);
+                            move(ARM, currentArmPosition, armServoSpeed);
+                            Debug.WriteLine("ARM: " + ARM + ", currentArmPosition: " + currentArmPosition);
                         }
                     }
 
-                    if (arm != null)
+                    if (arm != null && shoulderServoEnabled)
                     {
                         if (arm.Yaw > SHOULDER_YAW_MAX_DEG * RAD_PER_DEG) arm.Yaw = (float)(SHOULDER_YAW_MAX_DEG * RAD_PER_DEG);
                         if (arm.Yaw < SHOULDER_YAW_MIN_DEG * RAD_PER_DEG) arm.Yaw = (float)(SHOULDER_YAW_MIN_DEG * RAD_PER_DEG);
@@ -352,13 +387,13 @@ namespace ArmController.Robot_Arm_Module
                         if (Math.Abs(finalShoulderPosition - currentShoulderPosition) >= positionDeltaThreshold)
                         {
                             currentShoulderPosition = finalShoulderPosition;
-                            move(SHOULDER_YAW, finalShoulderPosition, 200);
+                            move(SHOULDER, finalShoulderPosition, shoulderServoSpeed);
                         }
                     }
 
                 }
 
-                 if (node == BusNode.CLAW_OPEN_PERCENT && handEnabled)
+                 if (node == BusNode.CLAW_OPEN_PERCENT && handServoEnabled)
                 {
                     // scale to the valid range (1000 - 2000)
                     finalHandPosition = 1500 + ((-hand + 50) * 10);
@@ -368,18 +403,18 @@ namespace ArmController.Robot_Arm_Module
                     if (Math.Abs(finalHandPosition - currentHandPosition) >= positionDeltaThreshold)
                     {
                         currentHandPosition = finalHandPosition;
-                        move(FINGERS, currentHandPosition, handServoSpeed);
+                        move(HAND, currentHandPosition, handServoSpeed);
                     }
                 }
 
-                 if (node == BusNode.WRIST_PERCENT) // flexion/extension
+                 if (node == BusNode.WRIST_PERCENT && wristServoEnabled) // flexion/extension
                 {
                     finalWristPosition = 1380 + (int)((-wrist_hand + 50) * 12.4f);
 
                     if (Math.Abs(finalWristPosition - currentWristPosition) >= positionDeltaThreshold)
                     {
                         currentWristPosition = finalWristPosition;
-                        move(WRIST_JOINT, currentWristPosition, 300);
+                        move(WRIST, currentWristPosition, wristServoSpeed);
                     }
                 }
                 

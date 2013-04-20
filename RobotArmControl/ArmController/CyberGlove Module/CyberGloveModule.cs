@@ -35,15 +35,22 @@ namespace ArmController.CyberGloveLibrary
         protected override void OnInitialize()
         {
             // //Console.WriteLine("Hi");
+            String COMPort = Bus.Get<String>(BusNode.CYBERGLOVE_COM_PORT);
+            int baudRate = Bus.Get<int>(BusNode.CYBERGLOVE_BAUD_RATE);
+            bool cyberGloveEnabled = Bus.Get<bool>(BusNode.CYBERGLOVE_ENABLE);
 
-            //Declare the serial port that the glove is using and open it.
-            sp = new SerialPort("COM1", 115200, Parity.None, 8, StopBits.One);
-            sp.Open();
+            if (cyberGloveEnabled)
+            {
+                //Declare the serial port that the glove is using and open it.
+                //sp = new SerialPort("COM1", 115200, Parity.None, 8, StopBits.One);
+                sp = new SerialPort(COMPort, baudRate, Parity.None, 8, StopBits.One);
+                sp.Open();
 
-            Bus.Publish(BusNode.ROBOT_ACTIVE, false);
+                Bus.Publish(BusNode.ROBOT_ACTIVE, false);
 
-            gloveThread = new Thread(new ThreadStart(readGlove));
-            gloveThread.Start();
+                gloveThread = new Thread(new ThreadStart(readGlove));
+                gloveThread.Start();
+            }
 
         } // end OnInitialize()
 

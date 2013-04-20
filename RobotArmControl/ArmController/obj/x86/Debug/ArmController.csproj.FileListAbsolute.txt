@@ -23,3 +23,15 @@ C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmContr
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csproj.GenerateResource.Cache
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.exe
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.pdb
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.exe.config
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.exe
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.pdb
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csprojResolveAssemblyReference.cache
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\MainWindow.baml
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\App.g.cs
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController_MarkupCompile.cache
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.g.resources
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.Form1.resources
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.Properties.Resources.resources
+C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csproj.GenerateResource.Cache
