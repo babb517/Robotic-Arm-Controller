@@ -428,6 +428,7 @@ namespace ArmController // Capstone_GUI
                 //Don't allow modules to be initialized more than once
                 isStarted = true;
 
+        
                 //Wrist servo settings
                 _bus.Publish(BusNode.WRIST_SERVO_MIN_RANGE, Convert.ToInt32(wristServoMinRange.Text));
                 _bus.Publish(BusNode.WRIST_SERVO_MAX_RANGE, Convert.ToInt32(wristServoMaxRange.Text));
@@ -465,18 +466,23 @@ namespace ArmController // Capstone_GUI
                 _bus.Publish(BusNode.SHOULDER_SERVO_ENABLE, shoulderServoEnable.Checked);
 
                 //CyberGlove settings
-                _bus.Publish(BusNode.CYBERGLOVE_BAUD_RATE, Convert.ToInt32(cyberGloveBaudRate));
-                _bus.Publish(BusNode.CYBERGLOVE_COM_PORT, cyberGloveCOMPort);
-                _bus.Publish(BusNode.CYBERGLOVE_ENABLE, cyberGloveEnable);
+                _bus.Publish(BusNode.CYBERGLOVE_BAUD_RATE, Convert.ToInt32(cyberGloveBaudRate.SelectedValue));
+                _bus.Publish(BusNode.CYBERGLOVE_COM_PORT, cyberGloveCOMPort.SelectedText);
+                _bus.Publish(BusNode.CYBERGLOVE_ENABLE, cyberGloveEnable.Checked);
+                _bus.Publish(BusNode.CYBERGLOVE_COM_PORT, "COM1");
+                _bus.Publish(BusNode.CYBERGLOVE_BAUD_RATE, 115200);
 
                 //IMU settings
-                _bus.Publish(BusNode.IMU_BAUD_RATE, Convert.ToInt32(IMUBaudRate));
-                _bus.Publish(BusNode.IMU_COM_PORT, IMUCOMPort);
-                _bus.Publish(BusNode.IMU_ENABLE, Convert.ToInt32(IMUEnable));
+                _bus.Publish(BusNode.IMU_BAUD_RATE, Convert.ToInt32(IMUBaudRate.SelectedValue));
+                _bus.Publish(BusNode.IMU_COM_PORT, IMUCOMPort.SelectedText);
+                _bus.Publish(BusNode.IMU_ENABLE, IMUEnable.Checked);
+                _bus.Publish(BusNode.IMU_COM_PORT, "COM5");
+                _bus.Publish(BusNode.IMU_BAUD_RATE, 19200);
 
                 //Kinect settings
                 _bus.Publish(BusNode.KINECT_ENABLE, kinectEnable.Checked);
 
+ 
                 InitializeModules();
             }
         }
@@ -494,13 +500,13 @@ namespace ArmController // Capstone_GUI
             if (_bus.Get<bool>(BusNode.KINECT_ENABLE))
                 _modules.Add(new PositionalTracker(_kinectOutput)); // Kinect
 
-           // if (_bus.Get<bool>(BusNode.IMU_ENABLE))
+            if (_bus.Get<bool>(BusNode.IMU_ENABLE))
                 _modules.Add(new IMUModule());
 
             _modules.Add(new PositionFeedback());
             _modules.Add(new RobotArmModule());
 
-           // if (_bus.Get<bool>(BusNode.CYBERGLOVE_ENABLE))
+            if (_bus.Get<bool>(BusNode.CYBERGLOVE_ENABLE))
                 _modules.Add(new GloveModule());
 
 

@@ -122,7 +122,7 @@ namespace ArmController.IMU_Module
             get
             {
                 return (float)Math.Atan2(_matrix.M21, _matrix.M11);
-                //return (float)Math.Atan2(_matrix.M13, Math.Sqrt(_matrix.M23 * _matrix.M23 + _matrix.M33 * _matrix.M33));
+               // return (float)Math.Atan2(_matrix.M13, Math.Sqrt(_matrix.M23 * _matrix.M23 + _matrix.M33 * _matrix.M33));
             }
         }
 
@@ -133,8 +133,8 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                //return (float)Math.Atan2(_matrix.M32, _matrix.M33);
-                return 0;
+                return (float)Math.Atan2(_matrix.M32, _matrix.M33);
+              //  return 0;
             }
         }
 
@@ -146,8 +146,8 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return 0;
-            }o
+                return (float)Math.Atan2(-_matrix.M31, Math.Sqrt(_matrix.M32 * _matrix.M32 + _matrix.M33 * _matrix.M33));
+            }
         }
 
         /// <summary>
@@ -298,7 +298,7 @@ namespace ArmController.IMU_Module
         public Matrix33 RelativeFrame(Matrix33 parent)
         {
             // TODO: Is this the correect order?
-            return this * parent.Invert;
+            return parent.Invert * this;
             //return this * parent.Transpose;
         }
 

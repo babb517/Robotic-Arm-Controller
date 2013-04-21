@@ -68,6 +68,12 @@ namespace ArmController.IMU_Module
         /// </summary>
         bool _running;
 
+
+
+        float _shoulderRoll;
+        float _bicepRoll;
+        float _forearmRoll;
+
         #endregion Private Members
 
         #region Protected Methods
@@ -144,7 +150,15 @@ namespace ArmController.IMU_Module
 
             while (_running)
             {
-                currentLine = _lilySerial.ReadLine();
+                try
+                {
+                    currentLine = _lilySerial.ReadLine();
+                }
+                catch (IOException e)
+                {
+                    Console.WriteLine(e.ToString());
+                    continue;
+                }
                 good = true;
 
                 /*
@@ -169,7 +183,7 @@ namespace ArmController.IMU_Module
                     case 'F':
                         // forearm
                         Console.WriteLine("Got forearm.");
-                        good = updateMatrix(currentLine, ref _rotationForearm);
+                        good = updateMatrix(currentLine, ref _rotationForearm, ref _forearmRoll);
                       //  good = updateOrientation(currentLine, ref _rotationForearm);
 
 
@@ -181,7 +195,7 @@ namespace ArmController.IMU_Module
                     case 'B':
                         // bicep
                         Console.WriteLine("Got bicep.");
-                        good = updateMatrix(currentLine, ref _rotationBicep);
+                        good = updateMatrix(currentLine, ref _rotationBicep, ref _bicepRoll);
                      //   good = updateOrientation(currentLine, ref _rotationBicep);
 
                         // update the position of the forearm and bicep
@@ -198,7 +212,7 @@ namespace ArmController.IMU_Module
                     case 'S':
                         // shoulder
                         Console.WriteLine("Got shoulder.");
-                        good = updateMatrix(currentLine, ref  _rotationShoulder);
+                        good = updateMatrix(currentLine, ref  _rotationShoulder, ref _shoulderRoll);
                      //   good = updateOrientation(currentLine, ref _rotationShoulder);
 
 
@@ -241,7 +255,7 @@ namespace ArmController.IMU_Module
         /// <param name="input">The string to read the yaw, pitch, and roll from. </param>
         /// <param name="outMatrix">The matrix to output the results to.</param>
         /// <returns>True if successful, false otherwise.</returns>
-        private bool updateMatrix(string input, ref Matrix33 outMatrix)
+        private bool updateMatrix(string input, ref Matrix33 outMatrix, ref float outRoll)
         {
             bool ret = true;
 
@@ -267,6 +281,11 @@ namespace ArmController.IMU_Module
             ret = ret && float.TryParse(arr[0], out yaw);
             ret = ret && float.TryParse(arr[1], out pitch);
             ret = ret && float.TryParse(arr[2], out roll);
+            outRoll = roll * (float)(Math.PI / 180.0);
+
+            // Dirty hack
+           // roll = 0;
+
 
             if (ret) outMatrix.setRotation(yaw * (float)(Math.PI / 180.0), pitch * (float)(Math.PI / 180.0), roll * (float)(Math.PI / 180.0));
             return ret;
@@ -318,15 +337,16 @@ namespace ArmController.IMU_Module
         private void updateBusShoulder()
         {
             // NOTE: Shoulder position is unused.
-        }
+        }  
 
         /// <summary>
         /// Sends the new orientation of the bicep to the bus.
         /// </summary>
         private void updateBusBicep()
         {
-            Matrix33 tmp = new Matrix33();
-            tmp.setRotation( _rotationShoulder.Yaw, _rotationShoulder.Pitch, _rotationShoulder.Roll);
+          // Matrix33 tmp = _rotationShoulder.Rotate(0, 0, -1 * (90 * (float)(Math.PI / 2)));
+          //    Matrix33 tmp = new Matrix33(_rotationShoulder.Yaw, _rotationShoulder.Pitch, _rotationShoulder.Roll);
+
           //  Orientation relOrientation = new Orientation(_rotationBicep.Roll - _rotationShoulder.Roll + (float)(Math.PI /2), 
           //      _rotationBicep.Pitch - _rotationShoulder.Pitch, 
           //      _rotationBicep.Yaw - _rotationShoulder.Yaw
@@ -335,12 +355,15 @@ namespace ArmController.IMU_Module
 
 
             Matrix33 relative = _rotationBicep.RelativeFrame(_rotationShoulder);
+            //Matrix33 relative = _rotationBicep.RelativeFrame(tmp);
             Orientation relOrientation = relative.Orientation;
             Orientation absOrientation = _rotationBicep.Orientation;
 
             Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, relative.YPoint);
-            Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, new Orientation(relOrientation.Roll, relOrientation.Pitch, relOrientation.Yaw));
+            Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, new Orientation(relOrientation.Roll, -1 * relOrientation.Pitch, relOrientation.Yaw));
             Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, new Orientation(absOrientation.Roll, absOrientation.Pitch,absOrientation.Yaw));
+           // Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, new Orientation(_bicepRoll - _shoulderRoll, relOrientation.Pitch, relOrientation.Yaw));
+           // Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, new Orientation(_bicepRoll - _shoulderRoll, absOrientation.Pitch, absOrientation.Yaw));
         }
 
         /// <summary>
@@ -363,6 +386,9 @@ namespace ArmController.IMU_Module
             Bus.Publish(BusNode.DIR_RIGHT_LOWER_ARM, relative.YPoint);
             Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, new Orientation(relOrientation.Roll, relOrientation.Yaw, relOrientation.Pitch));
             Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, new Orientation(absOrientation.Roll, absOrientation.Yaw, absOrientation.Pitch));
+          //  Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, new Orientation(_forearmRoll - _bicepRoll, relOrientation.Yaw, relOrientation.Pitch));
+          //  Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, new Orientation(_forearmRoll - _bicepRoll, absOrientation.Yaw, absOrientation.Pitch));
+
         }
 
 

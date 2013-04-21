@@ -100,7 +100,7 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// The maximum amount of degrees that the forearm servo can move.
         /// </summary>
-        private const int ELBOW_PITCH_MAX_DEG = 140;
+        private const int ELBOW_PITCH_MAX_DEG = 80;
 
         /// <summary>
         /// The minimum amount of degrees that the forearm servo can move.
@@ -115,7 +115,7 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// The minimum amount of degrees that the arm servo can move.
         /// </summary>
-        private const int SHOULDER_PITCH_MIN_DEG = -45; // -30;
+        private const int SHOULDER_PITCH_MIN_DEG = -35; // -30;
 
         /// <summary>
         /// The intended minimum shoulder pitch which corresponds to human physical limits.
@@ -125,12 +125,22 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// The maximum amount of degrees that the shoulder servo can move.
         /// </summary>
-        private const int SHOULDER_YAW_MAX_DEG = 100;
+        private const int SHOULDER_YAW_MAX_DEG = 70;
 
         /// <summary>
         /// The minimum amount of degrees that the shoulder servo can move.
         /// </summary>
-        private const int SHOULDER_YAW_MIN_DEG = 0;
+        private const int SHOULDER_YAW_MIN_DEG = -30;
+
+        /// <summary>
+        /// The maximum amount of degrees that the wrist servo can move.
+        /// </summary>
+        private const int WRIST_MAX_DEG = 90;
+
+        /// <summary>
+        /// The minimum amount of degrees that the wrist servo can move.
+        /// </summary>
+        private const int WRIST_MIN_DEG = -90;
 
         #endregion Input Extrema
 
@@ -187,7 +197,9 @@ namespace ArmController.Robot_Arm_Module
             move(FOREARM, 1500,100);
             move(WRIST, 1500, 100);
             move(HAND, 1500, 100);
-            
+
+            Thread.Sleep(100);
+
             //Subscribe to the nodes published by the Kinect Module.
             Bus.Subscribe(BusNode.POSITION_TICK, OnValuePublished);
 
@@ -369,9 +381,9 @@ namespace ArmController.Robot_Arm_Module
                         {
                             finalShoulderPosition = 1500 - (int)((
                                 (arm.Yaw /
-                                    ((SHOULDER_YAW_MAX_DEG - SHOULDER_YAW_MIN_DEG) * RAD_PER_DEG)
+                                    ((SHOULDER_YAW_MAX_DEG) * RAD_PER_DEG)
                                 ) //* (180 / ((float)Math.Abs(SHOULDER_PITC_MIN_DEG_PHYSICAL)))
-                                ) * 700);
+                                ) * 900);
                         }
                         else
                         {
@@ -379,7 +391,7 @@ namespace ArmController.Robot_Arm_Module
                                 (Math.Abs(arm.Yaw) /
                                     ((SHOULDER_YAW_MAX_DEG - SHOULDER_YAW_MIN_DEG) * RAD_PER_DEG)
                                 ) //* (180 / ((float)Math.Abs(SHOULDER_PITCH_MIN_DEG_PHYSICAL)))
-                                ) * 700);
+                                ) * 900);
                         }
 
                         // move the stuff!
@@ -388,6 +400,38 @@ namespace ArmController.Robot_Arm_Module
                         {
                             currentShoulderPosition = finalShoulderPosition;
                             move(SHOULDER, finalShoulderPosition, shoulderServoSpeed);
+                        }
+                    }
+                    //wrist
+                    if (forearm != null && wristServoEnabled)
+                    {
+                        if (forearm.Roll > WRIST_MAX_DEG * RAD_PER_DEG) forearm.Roll = (float)(WRIST_MAX_DEG * RAD_PER_DEG);
+                        if (forearm.Roll < WRIST_MIN_DEG * RAD_PER_DEG) forearm.Roll = (float)(WRIST_MIN_DEG * RAD_PER_DEG);
+
+                        // scale to the valid range (800 - 2200)
+                        if (forearm.Roll > 0)
+                        {
+                            finalWristPosition = 1500 - (int)((
+                                (forearm.Roll /
+                                    ((WRIST_MAX_DEG - WRIST_MIN_DEG) * RAD_PER_DEG)
+                                ) //* (180 / ((float)Math.Abs(SHOULDER_PITC_MIN_DEG_PHYSICAL)))
+                                ) * 700);
+                        }
+                        else
+                        {
+                            finalWristPosition = 1500 + (int)((
+                                (Math.Abs(forearm.Roll) /
+                                    ((WRIST_MAX_DEG - WRIST_MIN_DEG) * RAD_PER_DEG)
+                                ) //* (180 / ((float)Math.Abs(SHOULDER_PITCH_MIN_DEG_PHYSICAL)))
+                                ) * 700);
+                        }
+
+                        // move the stuff!
+                        // TODO: Do This correctly
+                        if (Math.Abs(finalWristPosition - currentWristPosition) >= positionDeltaThreshold)
+                        {
+                            currentWristPosition = finalWristPosition;
+                            move(WRIST, finalWristPosition, wristRotateServoSpeed);
                         }
                     }
 
