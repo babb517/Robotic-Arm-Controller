@@ -47,6 +47,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.cyberGloveBaudRate = new System.Windows.Forms.ComboBox();
             this.kinect_configuration = new System.Windows.Forms.GroupBox();
+            this.kinectEnable = new System.Windows.Forms.CheckBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.webcam_configuration = new System.Windows.Forms.GroupBox();
             this.webCamComboBx = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -149,8 +151,6 @@
             this.forearmServoEnable = new System.Windows.Forms.CheckBox();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
-            this.kinectEnable = new System.Windows.Forms.CheckBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.IMU_Configuration.SuspendLayout();
             this.glove_configuration.SuspendLayout();
             this.kinect_configuration.SuspendLayout();
@@ -216,7 +216,7 @@
             this.IMUBaudRate.Name = "IMUBaudRate";
             this.IMUBaudRate.Size = new System.Drawing.Size(121, 21);
             this.IMUBaudRate.TabIndex = 9;
-            this.IMUBaudRate.Text = "19200";
+            this.IMUBaudRate.SelectedIndexChanged += new System.EventHandler(this.IMUBaudRate_SelectedIndexChanged);
             // 
             // IMUBoardModel
             // 
@@ -243,12 +243,13 @@
             "COM1",
             "COM2",
             "COM3",
-            "COM4"});
+            "COM4",
+            "COM5"});
             this.IMUCOMPort.Location = new System.Drawing.Point(101, 75);
             this.IMUCOMPort.Name = "IMUCOMPort";
             this.IMUCOMPort.Size = new System.Drawing.Size(121, 21);
             this.IMUCOMPort.TabIndex = 6;
-            this.IMUCOMPort.Text = "COM5";
+            this.IMUCOMPort.SelectedIndexChanged += new System.EventHandler(this.IMUCOMPort_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -269,6 +270,7 @@
             this.IMUEnable.Size = new System.Drawing.Size(15, 14);
             this.IMUEnable.TabIndex = 4;
             this.IMUEnable.UseVisualStyleBackColor = true;
+            this.IMUEnable.CheckedChanged += new System.EventHandler(this.IMUEnable_CheckedChanged);
             // 
             // label1
             // 
@@ -317,6 +319,7 @@
             this.cyberGloveEnable.Size = new System.Drawing.Size(15, 14);
             this.cyberGloveEnable.TabIndex = 10;
             this.cyberGloveEnable.UseVisualStyleBackColor = true;
+            this.cyberGloveEnable.CheckedChanged += new System.EventHandler(this.cyberGloveEnable_CheckedChanged);
             // 
             // label7
             // 
@@ -334,6 +337,7 @@
             this.cyberGloveDefaultPosition.Size = new System.Drawing.Size(121, 20);
             this.cyberGloveDefaultPosition.TabIndex = 11;
             this.cyberGloveDefaultPosition.Text = "0";
+            this.cyberGloveDefaultPosition.TextChanged += new System.EventHandler(this.cyberGloveDefaultPosition_TextChanged);
             // 
             // label6
             // 
@@ -351,12 +355,13 @@
             "COM1",
             "COM2",
             "COM3",
-            "COM4"});
+            "COM4",
+            "COM5"});
             this.cyberGloveCOMPort.Location = new System.Drawing.Point(115, 78);
             this.cyberGloveCOMPort.Name = "cyberGloveCOMPort";
             this.cyberGloveCOMPort.Size = new System.Drawing.Size(121, 21);
             this.cyberGloveCOMPort.TabIndex = 10;
-            this.cyberGloveCOMPort.Text = "COM1";
+            this.cyberGloveCOMPort.SelectedIndexChanged += new System.EventHandler(this.cyberGloveCOMPort_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -392,7 +397,7 @@
             this.cyberGloveBaudRate.Name = "cyberGloveBaudRate";
             this.cyberGloveBaudRate.Size = new System.Drawing.Size(121, 21);
             this.cyberGloveBaudRate.TabIndex = 10;
-            this.cyberGloveBaudRate.Text = "115200";
+            this.cyberGloveBaudRate.SelectedIndexChanged += new System.EventHandler(this.cyberGloveBaudRate_SelectedIndexChanged);
             // 
             // kinect_configuration
             // 
@@ -406,6 +411,25 @@
             this.kinect_configuration.TabStop = false;
             this.kinect_configuration.Text = "Microsoft Kinect Configuration";
             this.kinect_configuration.Visible = false;
+            // 
+            // kinectEnable
+            // 
+            this.kinectEnable.AutoSize = true;
+            this.kinectEnable.Location = new System.Drawing.Point(82, 35);
+            this.kinectEnable.Name = "kinectEnable";
+            this.kinectEnable.Size = new System.Drawing.Size(15, 14);
+            this.kinectEnable.TabIndex = 11;
+            this.kinectEnable.UseVisualStyleBackColor = true;
+            this.kinectEnable.CheckedChanged += new System.EventHandler(this.kinectEnable_CheckedChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(24, 36);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 13);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Enable";
             // 
             // webcam_configuration
             // 
@@ -552,6 +576,7 @@
             this.handServoSpeed.Size = new System.Drawing.Size(120, 20);
             this.handServoSpeed.TabIndex = 11;
             this.handServoSpeed.Text = "400";
+            this.handServoSpeed.TextChanged += new System.EventHandler(this.handServoSpeed_TextChanged);
             // 
             // handServoMaxRange
             // 
@@ -560,6 +585,7 @@
             this.handServoMaxRange.Size = new System.Drawing.Size(44, 20);
             this.handServoMaxRange.TabIndex = 10;
             this.handServoMaxRange.Text = "2200";
+            this.handServoMaxRange.TextChanged += new System.EventHandler(this.handServoMaxRange_TextChanged);
             // 
             // label11
             // 
@@ -577,6 +603,7 @@
             this.handServoMinRange.Size = new System.Drawing.Size(44, 20);
             this.handServoMinRange.TabIndex = 8;
             this.handServoMinRange.Text = "0";
+            this.handServoMinRange.TextChanged += new System.EventHandler(this.handServoMinRange_TextChanged);
             // 
             // label10
             // 
@@ -597,6 +624,7 @@
             this.handServoEnable.Size = new System.Drawing.Size(15, 14);
             this.handServoEnable.TabIndex = 4;
             this.handServoEnable.UseVisualStyleBackColor = true;
+            this.handServoEnable.CheckedChanged += new System.EventHandler(this.handServoEnable_CheckedChanged);
             // 
             // label12
             // 
@@ -642,6 +670,7 @@
             this.wristServoSpeed.Size = new System.Drawing.Size(120, 20);
             this.wristServoSpeed.TabIndex = 11;
             this.wristServoSpeed.Text = "300";
+            this.wristServoSpeed.TextChanged += new System.EventHandler(this.wristServoSpeed_TextChanged);
             // 
             // wristServoMaxRange
             // 
@@ -650,6 +679,7 @@
             this.wristServoMaxRange.Size = new System.Drawing.Size(44, 20);
             this.wristServoMaxRange.TabIndex = 10;
             this.wristServoMaxRange.Text = "2000";
+            this.wristServoMaxRange.TextChanged += new System.EventHandler(this.wristServoMaxRange_TextChanged);
             // 
             // label14
             // 
@@ -667,6 +697,7 @@
             this.wristServoMinRange.Size = new System.Drawing.Size(44, 20);
             this.wristServoMinRange.TabIndex = 8;
             this.wristServoMinRange.Text = "0";
+            this.wristServoMinRange.TextChanged += new System.EventHandler(this.wristServoMinRange_TextChanged);
             // 
             // label15
             // 
@@ -687,6 +718,7 @@
             this.wristServoEnable.Size = new System.Drawing.Size(15, 14);
             this.wristServoEnable.TabIndex = 4;
             this.wristServoEnable.UseVisualStyleBackColor = true;
+            this.wristServoEnable.CheckedChanged += new System.EventHandler(this.wristServoEnable_CheckedChanged);
             // 
             // label16
             // 
@@ -732,6 +764,7 @@
             this.wristRotateServoSpeed.Size = new System.Drawing.Size(120, 20);
             this.wristRotateServoSpeed.TabIndex = 11;
             this.wristRotateServoSpeed.Text = "300";
+            this.wristRotateServoSpeed.TextChanged += new System.EventHandler(this.wristRotateServoSpeed_TextChanged);
             // 
             // wristRotateServoMaxRange
             // 
@@ -740,6 +773,7 @@
             this.wristRotateServoMaxRange.Size = new System.Drawing.Size(44, 20);
             this.wristRotateServoMaxRange.TabIndex = 10;
             this.wristRotateServoMaxRange.Text = "2000";
+            this.wristRotateServoMaxRange.TextChanged += new System.EventHandler(this.wristRotateServoMaxRange_TextChanged);
             // 
             // label18
             // 
@@ -757,6 +791,7 @@
             this.wristRotateServoMinRange.Size = new System.Drawing.Size(44, 20);
             this.wristRotateServoMinRange.TabIndex = 8;
             this.wristRotateServoMinRange.Text = "0";
+            this.wristRotateServoMinRange.TextChanged += new System.EventHandler(this.wristRotateServoMinRange_TextChanged);
             // 
             // label19
             // 
@@ -777,6 +812,7 @@
             this.wristRotateServoEnable.Size = new System.Drawing.Size(15, 14);
             this.wristRotateServoEnable.TabIndex = 4;
             this.wristRotateServoEnable.UseVisualStyleBackColor = true;
+            this.wristRotateServoEnable.CheckedChanged += new System.EventHandler(this.wristRotateServoEnable_CheckedChanged);
             // 
             // label20
             // 
@@ -822,6 +858,7 @@
             this.armServoSpeed.Size = new System.Drawing.Size(120, 20);
             this.armServoSpeed.TabIndex = 11;
             this.armServoSpeed.Text = "200";
+            this.armServoSpeed.TextChanged += new System.EventHandler(this.armServoSpeed_TextChanged);
             // 
             // armServoMaxRange
             // 
@@ -830,6 +867,7 @@
             this.armServoMaxRange.Size = new System.Drawing.Size(44, 20);
             this.armServoMaxRange.TabIndex = 10;
             this.armServoMaxRange.Text = "2000";
+            this.armServoMaxRange.TextChanged += new System.EventHandler(this.armServoMaxRange_TextChanged);
             // 
             // label22
             // 
@@ -847,6 +885,7 @@
             this.armServoMinRange.Size = new System.Drawing.Size(44, 20);
             this.armServoMinRange.TabIndex = 8;
             this.armServoMinRange.Text = "0";
+            this.armServoMinRange.TextChanged += new System.EventHandler(this.armServoMinRange_TextChanged);
             // 
             // label23
             // 
@@ -867,6 +906,7 @@
             this.armServoEnable.Size = new System.Drawing.Size(15, 14);
             this.armServoEnable.TabIndex = 4;
             this.armServoEnable.UseVisualStyleBackColor = true;
+            this.armServoEnable.CheckedChanged += new System.EventHandler(this.armServoEnable_CheckedChanged);
             // 
             // label24
             // 
@@ -912,6 +952,7 @@
             this.shoulderServoSpeed.Size = new System.Drawing.Size(120, 20);
             this.shoulderServoSpeed.TabIndex = 11;
             this.shoulderServoSpeed.Text = "200";
+            this.shoulderServoSpeed.TextChanged += new System.EventHandler(this.shoulderServoSpeed_TextChanged);
             // 
             // shoulderServoMaxRange
             // 
@@ -920,6 +961,7 @@
             this.shoulderServoMaxRange.Size = new System.Drawing.Size(44, 20);
             this.shoulderServoMaxRange.TabIndex = 10;
             this.shoulderServoMaxRange.Text = "2000";
+            this.shoulderServoMaxRange.TextChanged += new System.EventHandler(this.shoulderServoMaxRange_TextChanged);
             // 
             // label26
             // 
@@ -937,6 +979,7 @@
             this.shoulderServoMinRange.Size = new System.Drawing.Size(44, 20);
             this.shoulderServoMinRange.TabIndex = 8;
             this.shoulderServoMinRange.Text = "0";
+            this.shoulderServoMinRange.TextChanged += new System.EventHandler(this.shoulderServoMinRange_TextChanged);
             // 
             // label27
             // 
@@ -957,6 +1000,7 @@
             this.shoulderServoEnable.Size = new System.Drawing.Size(15, 14);
             this.shoulderServoEnable.TabIndex = 4;
             this.shoulderServoEnable.UseVisualStyleBackColor = true;
+            this.shoulderServoEnable.CheckedChanged += new System.EventHandler(this.shoulderServoEnable_CheckedChanged);
             // 
             // label28
             // 
@@ -1369,6 +1413,7 @@
             this.forearmServoSpeed.Size = new System.Drawing.Size(120, 20);
             this.forearmServoSpeed.TabIndex = 11;
             this.forearmServoSpeed.Text = "200";
+            this.forearmServoSpeed.TextChanged += new System.EventHandler(this.forearmServoSpeed_TextChanged);
             // 
             // forearmServoMaxRange
             // 
@@ -1377,6 +1422,7 @@
             this.forearmServoMaxRange.Size = new System.Drawing.Size(44, 20);
             this.forearmServoMaxRange.TabIndex = 10;
             this.forearmServoMaxRange.Text = "2000";
+            this.forearmServoMaxRange.TextChanged += new System.EventHandler(this.forearmServoMaxRange_TextChanged);
             // 
             // label47
             // 
@@ -1394,6 +1440,7 @@
             this.forearmServoMinRange.Size = new System.Drawing.Size(44, 20);
             this.forearmServoMinRange.TabIndex = 8;
             this.forearmServoMinRange.Text = "0";
+            this.forearmServoMinRange.TextChanged += new System.EventHandler(this.forearmServoMinRange_TextChanged);
             // 
             // label49
             // 
@@ -1414,6 +1461,7 @@
             this.forearmServoEnable.Size = new System.Drawing.Size(15, 14);
             this.forearmServoEnable.TabIndex = 4;
             this.forearmServoEnable.UseVisualStyleBackColor = true;
+            this.forearmServoEnable.CheckedChanged += new System.EventHandler(this.forearmServoEnable_CheckedChanged);
             // 
             // label50
             // 
@@ -1433,59 +1481,41 @@
             this.label51.TabIndex = 1;
             this.label51.Text = "Range";
             // 
-            // kinectEnable
-            // 
-            this.kinectEnable.AutoSize = true;
-            this.kinectEnable.Location = new System.Drawing.Point(82, 35);
-            this.kinectEnable.Name = "kinectEnable";
-            this.kinectEnable.Size = new System.Drawing.Size(15, 14);
-            this.kinectEnable.TabIndex = 11;
-            this.kinectEnable.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(24, 36);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 13);
-            this.label8.TabIndex = 10;
-            this.label8.Text = "Enable";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1046, 580);
-            this.Controls.Add(this.shoulderGP);
-            this.Controls.Add(this.forarmGpBox);
+            this.Controls.Add(this.elbowGP);
             this.Controls.Add(this.home_btn);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.setting_label);
-            this.Controls.Add(this.designPictureBx);
-            this.Controls.Add(this.kinect_Gp);
-            this.Controls.Add(this.asu_logo);
-            this.Controls.Add(this.hand_groupBx);
-            this.Controls.Add(this.setPictureBox);
-            this.Controls.Add(this.wrist_gpBox);
-            this.Controls.Add(this.btn_servo);
-            this.Controls.Add(this.gripGpBox);
-            this.Controls.Add(this.elbowGP);
             this.Controls.Add(this.setting_pictureBx);
-            this.Controls.Add(this.webcamGroupbx2);
+            this.Controls.Add(this.forarmGpBox);
+            this.Controls.Add(this.shoulderGP);
+            this.Controls.Add(this.hand_groupBx);
+            this.Controls.Add(this.wrist_gpBox);
+            this.Controls.Add(this.gripGpBox);
+            this.Controls.Add(this.btn_servo);
             this.Controls.Add(this.btn_robbotCtrl);
             this.Controls.Add(this.btn_debug);
             this.Controls.Add(this.btn_ports);
-            this.Controls.Add(this.kinect_configuration);
-            this.Controls.Add(this.robot_armPicture);
-            this.Controls.Add(this.webCamGroupBx);
-            this.Controls.Add(this.IMU_Configuration);
+            this.Controls.Add(this.setPictureBox);
             this.Controls.Add(this.glove_configuration);
-            this.Controls.Add(this.btn_videoFeed);
+            this.Controls.Add(this.IMU_Configuration);
+            this.Controls.Add(this.kinect_configuration);
+            this.Controls.Add(this.asu_logo);
+            this.Controls.Add(this.kinect_Gp);
+            this.Controls.Add(this.webcamGroupbx2);
             this.Controls.Add(this.webcam_pictureBx);
             this.Controls.Add(this.kinect_console);
-            this.Controls.Add(this.webcam_configuration);
             this.Controls.Add(this.debugGp);
+            this.Controls.Add(this.webcam_configuration);
+            this.Controls.Add(this.designPictureBx);
+            this.Controls.Add(this.btn_videoFeed);
+            this.Controls.Add(this.robot_armPicture);
+            this.Controls.Add(this.webCamGroupBx);
             this.Name = "Form1";
             this.Text = "Capstone GUI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Close);
