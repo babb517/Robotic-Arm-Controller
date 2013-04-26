@@ -87,26 +87,22 @@ namespace ArmController.IMU_Module
         {
             String COMPort = Bus.Get<String>(BusNode.IMU_COM_PORT);
             int baudRate = Bus.Get<int>(BusNode.IMU_BAUD_RATE);
-            bool IMUEnabled = Bus.Get<bool>(BusNode.IMU_ENABLE);
 
-            if (IMUEnabled)
-            {
-                _lilySerial = new SerialPort(COMPort, baudRate, Parity.None, 8, StopBits.One);
-                _lilySerial.Open();
+            _lilySerial = new SerialPort(COMPort, baudRate, Parity.None, 8, StopBits.One);
+            _lilySerial.Open();
 
-                //    _rotationBicep = new Orientation(0,0,0);
-                //    _rotationForearm = new Orientation(0,0,0);
-                //    _rotationShoulder = new Orientation(0,0,0);
+            //    _rotationBicep = new Orientation(0,0,0);
+            //    _rotationForearm = new Orientation(0,0,0);
+            //    _rotationShoulder = new Orientation(0,0,0);
 
-                _rotationBicep = new Matrix33();
-                _rotationForearm = new Matrix33();
-                _rotationShoulder = new Matrix33();
+            _rotationBicep = new Matrix33();
+            _rotationForearm = new Matrix33();
+            _rotationShoulder = new Matrix33();
 
-                _running = true;
+            _running = true;
 
-                _readerThread = new Thread(new ThreadStart(readIMU));
-                _readerThread.Start();
-            }
+            _readerThread = new Thread(new ThreadStart(readIMU));
+            _readerThread.Start();
         }
 
         protected override void OnFinalize()

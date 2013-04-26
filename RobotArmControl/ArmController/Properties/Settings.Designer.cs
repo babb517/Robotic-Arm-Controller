@@ -26,9 +26,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int handMinRange {
+        public string handMinRange {
             get {
-                return ((int)(this["handMinRange"]));
+                return ((string)(this["handMinRange"]));
             }
             set {
                 this["handMinRange"] = value;
@@ -38,9 +38,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2200")]
-        public int handMaxRange {
+        public string handMaxRange {
             get {
-                return ((int)(this["handMaxRange"]));
+                return ((string)(this["handMaxRange"]));
             }
             set {
                 this["handMaxRange"] = value;
@@ -50,9 +50,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("400")]
-        public int handSpeed {
+        public string handSpeed {
             get {
-                return ((int)(this["handSpeed"]));
+                return ((string)(this["handSpeed"]));
             }
             set {
                 this["handSpeed"] = value;
@@ -74,9 +74,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int wristMinRange {
+        public string wristMinRange {
             get {
-                return ((int)(this["wristMinRange"]));
+                return ((string)(this["wristMinRange"]));
             }
             set {
                 this["wristMinRange"] = value;
@@ -86,9 +86,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2000")]
-        public int wristMaxRange {
+        public string wristMaxRange {
             get {
-                return ((int)(this["wristMaxRange"]));
+                return ((string)(this["wristMaxRange"]));
             }
             set {
                 this["wristMaxRange"] = value;
@@ -98,9 +98,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("300")]
-        public int wristSpeed {
+        public string wristSpeed {
             get {
-                return ((int)(this["wristSpeed"]));
+                return ((string)(this["wristSpeed"]));
             }
             set {
                 this["wristSpeed"] = value;
@@ -122,9 +122,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int wristRotateMinRange {
+        public string wristRotateMinRange {
             get {
-                return ((int)(this["wristRotateMinRange"]));
+                return ((string)(this["wristRotateMinRange"]));
             }
             set {
                 this["wristRotateMinRange"] = value;
@@ -134,9 +134,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2000")]
-        public int wristRotateMaxRange {
+        public string wristRotateMaxRange {
             get {
-                return ((int)(this["wristRotateMaxRange"]));
+                return ((string)(this["wristRotateMaxRange"]));
             }
             set {
                 this["wristRotateMaxRange"] = value;
@@ -146,9 +146,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("300")]
-        public int wristRotateSpeed {
+        public string wristRotateSpeed {
             get {
-                return ((int)(this["wristRotateSpeed"]));
+                return ((string)(this["wristRotateSpeed"]));
             }
             set {
                 this["wristRotateSpeed"] = value;
@@ -170,9 +170,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int forearmMinRange {
+        public string forearmMinRange {
             get {
-                return ((int)(this["forearmMinRange"]));
+                return ((string)(this["forearmMinRange"]));
             }
             set {
                 this["forearmMinRange"] = value;
@@ -182,9 +182,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2000")]
-        public int forearmMaxRange {
+        public string forearmMaxRange {
             get {
-                return ((int)(this["forearmMaxRange"]));
+                return ((string)(this["forearmMaxRange"]));
             }
             set {
                 this["forearmMaxRange"] = value;
@@ -194,9 +194,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("200")]
-        public int forearmSpeed {
+        public string forearmSpeed {
             get {
-                return ((int)(this["forearmSpeed"]));
+                return ((string)(this["forearmSpeed"]));
             }
             set {
                 this["forearmSpeed"] = value;
@@ -218,9 +218,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int armMinRange {
+        public string armMinRange {
             get {
-                return ((int)(this["armMinRange"]));
+                return ((string)(this["armMinRange"]));
             }
             set {
                 this["armMinRange"] = value;
@@ -230,9 +230,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2000")]
-        public int armMaxRange {
+        public string armMaxRange {
             get {
-                return ((int)(this["armMaxRange"]));
+                return ((string)(this["armMaxRange"]));
             }
             set {
                 this["armMaxRange"] = value;
@@ -242,9 +242,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("200")]
-        public int armSpeed {
+        public string armSpeed {
             get {
-                return ((int)(this["armSpeed"]));
+                return ((string)(this["armSpeed"]));
             }
             set {
                 this["armSpeed"] = value;
@@ -266,9 +266,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int shoulderMinRange {
+        public string shoulderMinRange {
             get {
-                return ((int)(this["shoulderMinRange"]));
+                return ((string)(this["shoulderMinRange"]));
             }
             set {
                 this["shoulderMinRange"] = value;
@@ -278,9 +278,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("2000")]
-        public int shoulderMaxRange {
+        public string shoulderMaxRange {
             get {
-                return ((int)(this["shoulderMaxRange"]));
+                return ((string)(this["shoulderMaxRange"]));
             }
             set {
                 this["shoulderMaxRange"] = value;
@@ -290,9 +290,9 @@ namespace ArmController.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("200")]
-        public int shoulderSpeed {
+        public string shoulderSpeed {
             get {
-                return ((int)(this["shoulderSpeed"]));
+                return ((string)(this["shoulderSpeed"]));
             }
             set {
                 this["shoulderSpeed"] = value;
@@ -313,7 +313,7 @@ namespace ArmController.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
         public int IMUCOMPortIndex {
             get {
                 return ((int)(this["IMUCOMPortIndex"]));
@@ -325,7 +325,7 @@ namespace ArmController.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
         public int IMUBaudRateIndex {
             get {
                 return ((int)(this["IMUBaudRateIndex"]));
@@ -361,7 +361,7 @@ namespace ArmController.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
         public int cyberGloveBaudRateIndex {
             get {
                 return ((int)(this["cyberGloveBaudRateIndex"]));
@@ -385,7 +385,7 @@ namespace ArmController.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
         public int robotArmCOMPortIndex {
             get {
                 return ((int)(this["robotArmCOMPortIndex"]));
@@ -397,7 +397,7 @@ namespace ArmController.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
         public int robotArmBaudRateIndex {
             get {
                 return ((int)(this["robotArmBaudRateIndex"]));
@@ -428,18 +428,6 @@ namespace ArmController.Properties {
             }
             set {
                 this["kinectEnable"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
-        public int cyberGloveDefaultPosition {
-            get {
-                return ((int)(this["cyberGloveDefaultPosition"]));
-            }
-            set {
-                this["cyberGloveDefaultPosition"] = value;
             }
         }
     }

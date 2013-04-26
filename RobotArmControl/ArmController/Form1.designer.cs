@@ -30,8 +30,6 @@
         {
             this.IMU_Configuration = new System.Windows.Forms.GroupBox();
             this.IMUBaudRate = new System.Windows.Forms.ComboBox();
-            this.IMUBoardModel = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.IMUCOMPort = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.IMUEnable = new System.Windows.Forms.CheckBox();
@@ -40,8 +38,6 @@
             this.glove_configuration = new System.Windows.Forms.GroupBox();
             this.cyberGloveEnable = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.cyberGloveDefaultPosition = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.cyberGloveCOMPort = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -151,6 +147,13 @@
             this.forearmServoEnable = new System.Windows.Forms.CheckBox();
             this.label50 = new System.Windows.Forms.Label();
             this.label51 = new System.Windows.Forms.Label();
+            this.robotArm_Configuration = new System.Windows.Forms.GroupBox();
+            this.robotArmEnable = new System.Windows.Forms.CheckBox();
+            this.label52 = new System.Windows.Forms.Label();
+            this.robotArmCOMPort = new System.Windows.Forms.ComboBox();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.robotArmBaudRate = new System.Windows.Forms.ComboBox();
             this.IMU_Configuration.SuspendLayout();
             this.glove_configuration.SuspendLayout();
             this.kinect_configuration.SuspendLayout();
@@ -179,14 +182,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.kinect_console)).BeginInit();
             this.webcamGroupbx2.SuspendLayout();
             this.elbowGP.SuspendLayout();
+            this.robotArm_Configuration.SuspendLayout();
             this.SuspendLayout();
             // 
             // IMU_Configuration
             // 
             this.IMU_Configuration.BackColor = System.Drawing.SystemColors.Window;
             this.IMU_Configuration.Controls.Add(this.IMUBaudRate);
-            this.IMU_Configuration.Controls.Add(this.IMUBoardModel);
-            this.IMU_Configuration.Controls.Add(this.label3);
             this.IMU_Configuration.Controls.Add(this.IMUCOMPort);
             this.IMU_Configuration.Controls.Add(this.label2);
             this.IMU_Configuration.Controls.Add(this.IMUEnable);
@@ -218,24 +220,6 @@
             this.IMUBaudRate.TabIndex = 9;
             this.IMUBaudRate.SelectedIndexChanged += new System.EventHandler(this.IMUBaudRate_SelectedIndexChanged);
             // 
-            // IMUBoardModel
-            // 
-            this.IMUBoardModel.FormattingEnabled = true;
-            this.IMUBoardModel.Location = new System.Drawing.Point(101, 102);
-            this.IMUBoardModel.Name = "IMUBoardModel";
-            this.IMUBoardModel.Size = new System.Drawing.Size(121, 21);
-            this.IMUBoardModel.TabIndex = 8;
-            this.IMUBoardModel.Text = "Default";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 102);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Board Model";
-            // 
             // IMUCOMPort
             // 
             this.IMUCOMPort.FormattingEnabled = true;
@@ -265,7 +249,7 @@
             this.IMUEnable.AutoSize = true;
             this.IMUEnable.Checked = true;
             this.IMUEnable.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.IMUEnable.Location = new System.Drawing.Point(101, 128);
+            this.IMUEnable.Location = new System.Drawing.Point(101, 105);
             this.IMUEnable.Name = "IMUEnable";
             this.IMUEnable.Size = new System.Drawing.Size(15, 14);
             this.IMUEnable.TabIndex = 4;
@@ -275,7 +259,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 129);
+            this.label1.Location = new System.Drawing.Point(27, 105);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(40, 13);
             this.label1.TabIndex = 3;
@@ -295,8 +279,6 @@
             this.glove_configuration.BackColor = System.Drawing.SystemColors.Window;
             this.glove_configuration.Controls.Add(this.cyberGloveEnable);
             this.glove_configuration.Controls.Add(this.label7);
-            this.glove_configuration.Controls.Add(this.cyberGloveDefaultPosition);
-            this.glove_configuration.Controls.Add(this.label6);
             this.glove_configuration.Controls.Add(this.cyberGloveCOMPort);
             this.glove_configuration.Controls.Add(this.label5);
             this.glove_configuration.Controls.Add(this.label4);
@@ -314,7 +296,7 @@
             this.cyberGloveEnable.AutoSize = true;
             this.cyberGloveEnable.Checked = true;
             this.cyberGloveEnable.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cyberGloveEnable.Location = new System.Drawing.Point(115, 133);
+            this.cyberGloveEnable.Location = new System.Drawing.Point(115, 105);
             this.cyberGloveEnable.Name = "cyberGloveEnable";
             this.cyberGloveEnable.Size = new System.Drawing.Size(15, 14);
             this.cyberGloveEnable.TabIndex = 10;
@@ -324,29 +306,11 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(18, 134);
+            this.label7.Location = new System.Drawing.Point(17, 105);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 10;
             this.label7.Text = "Enable";
-            // 
-            // cyberGloveDefaultPosition
-            // 
-            this.cyberGloveDefaultPosition.Location = new System.Drawing.Point(115, 107);
-            this.cyberGloveDefaultPosition.Name = "cyberGloveDefaultPosition";
-            this.cyberGloveDefaultPosition.Size = new System.Drawing.Size(121, 20);
-            this.cyberGloveDefaultPosition.TabIndex = 11;
-            this.cyberGloveDefaultPosition.Text = "0";
-            this.cyberGloveDefaultPosition.TextChanged += new System.EventHandler(this.cyberGloveDefaultPosition_TextChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 107);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(81, 13);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Default Position";
             // 
             // cyberGloveCOMPort
             // 
@@ -404,7 +368,7 @@
             this.kinect_configuration.BackColor = System.Drawing.SystemColors.Window;
             this.kinect_configuration.Controls.Add(this.kinectEnable);
             this.kinect_configuration.Controls.Add(this.label8);
-            this.kinect_configuration.Location = new System.Drawing.Point(106, 304);
+            this.kinect_configuration.Location = new System.Drawing.Point(377, 303);
             this.kinect_configuration.Name = "kinect_configuration";
             this.kinect_configuration.Size = new System.Drawing.Size(250, 250);
             this.kinect_configuration.TabIndex = 9;
@@ -1481,27 +1445,106 @@
             this.label51.TabIndex = 1;
             this.label51.Text = "Range";
             // 
+            // robotArm_Configuration
+            // 
+            this.robotArm_Configuration.BackColor = System.Drawing.SystemColors.Window;
+            this.robotArm_Configuration.Controls.Add(this.robotArmEnable);
+            this.robotArm_Configuration.Controls.Add(this.label52);
+            this.robotArm_Configuration.Controls.Add(this.robotArmCOMPort);
+            this.robotArm_Configuration.Controls.Add(this.label54);
+            this.robotArm_Configuration.Controls.Add(this.label55);
+            this.robotArm_Configuration.Controls.Add(this.robotArmBaudRate);
+            this.robotArm_Configuration.Location = new System.Drawing.Point(108, 304);
+            this.robotArm_Configuration.Name = "robotArm_Configuration";
+            this.robotArm_Configuration.Size = new System.Drawing.Size(250, 250);
+            this.robotArm_Configuration.TabIndex = 27;
+            this.robotArm_Configuration.TabStop = false;
+            this.robotArm_Configuration.Text = "Robot Arm Configuration";
+            this.robotArm_Configuration.Visible = false;
+            // 
+            // robotArmEnable
+            // 
+            this.robotArmEnable.AutoSize = true;
+            this.robotArmEnable.Checked = true;
+            this.robotArmEnable.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.robotArmEnable.Location = new System.Drawing.Point(115, 108);
+            this.robotArmEnable.Name = "robotArmEnable";
+            this.robotArmEnable.Size = new System.Drawing.Size(15, 14);
+            this.robotArmEnable.TabIndex = 10;
+            this.robotArmEnable.UseVisualStyleBackColor = true;
+            this.robotArmEnable.CheckedChanged += new System.EventHandler(this.robotArmEnable_CheckedChanged);
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Location = new System.Drawing.Point(18, 108);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(40, 13);
+            this.label52.TabIndex = 10;
+            this.label52.Text = "Enable";
+            // 
+            // robotArmCOMPort
+            // 
+            this.robotArmCOMPort.FormattingEnabled = true;
+            this.robotArmCOMPort.Items.AddRange(new object[] {
+            "COM1",
+            "COM2",
+            "COM3",
+            "COM4",
+            "COM5"});
+            this.robotArmCOMPort.Location = new System.Drawing.Point(115, 78);
+            this.robotArmCOMPort.Name = "robotArmCOMPort";
+            this.robotArmCOMPort.Size = new System.Drawing.Size(121, 21);
+            this.robotArmCOMPort.TabIndex = 10;
+            this.robotArmCOMPort.SelectedIndexChanged += new System.EventHandler(this.robotArmCOMPort_SelectedIndexChanged);
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Location = new System.Drawing.Point(18, 78);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(53, 13);
+            this.label54.TabIndex = 10;
+            this.label54.Text = "COM Port";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(17, 48);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(58, 13);
+            this.label55.TabIndex = 10;
+            this.label55.Text = "Baud Rate";
+            // 
+            // robotArmBaudRate
+            // 
+            this.robotArmBaudRate.FormattingEnabled = true;
+            this.robotArmBaudRate.Items.AddRange(new object[] {
+            "2400",
+            "4800",
+            "9600",
+            "19200",
+            "38400",
+            "57600",
+            "115200",
+            ""});
+            this.robotArmBaudRate.Location = new System.Drawing.Point(115, 48);
+            this.robotArmBaudRate.Name = "robotArmBaudRate";
+            this.robotArmBaudRate.Size = new System.Drawing.Size(121, 21);
+            this.robotArmBaudRate.TabIndex = 10;
+            this.robotArmBaudRate.SelectedIndexChanged += new System.EventHandler(this.robotArmBaudRate_SelectedIndexChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1046, 580);
-            this.Controls.Add(this.elbowGP);
+            this.Controls.Add(this.robotArm_Configuration);
             this.Controls.Add(this.home_btn);
             this.Controls.Add(this.startBtn);
             this.Controls.Add(this.setting_label);
             this.Controls.Add(this.setting_pictureBx);
-            this.Controls.Add(this.forarmGpBox);
-            this.Controls.Add(this.shoulderGP);
-            this.Controls.Add(this.hand_groupBx);
-            this.Controls.Add(this.wrist_gpBox);
-            this.Controls.Add(this.gripGpBox);
-            this.Controls.Add(this.btn_servo);
-            this.Controls.Add(this.btn_robbotCtrl);
-            this.Controls.Add(this.btn_debug);
-            this.Controls.Add(this.btn_ports);
-            this.Controls.Add(this.setPictureBox);
             this.Controls.Add(this.glove_configuration);
             this.Controls.Add(this.IMU_Configuration);
             this.Controls.Add(this.kinect_configuration);
@@ -1516,6 +1559,17 @@
             this.Controls.Add(this.btn_videoFeed);
             this.Controls.Add(this.robot_armPicture);
             this.Controls.Add(this.webCamGroupBx);
+            this.Controls.Add(this.shoulderGP);
+            this.Controls.Add(this.forarmGpBox);
+            this.Controls.Add(this.hand_groupBx);
+            this.Controls.Add(this.wrist_gpBox);
+            this.Controls.Add(this.gripGpBox);
+            this.Controls.Add(this.elbowGP);
+            this.Controls.Add(this.btn_servo);
+            this.Controls.Add(this.btn_robbotCtrl);
+            this.Controls.Add(this.btn_debug);
+            this.Controls.Add(this.btn_ports);
+            this.Controls.Add(this.setPictureBox);
             this.Name = "Form1";
             this.Text = "Capstone GUI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Close);
@@ -1562,6 +1616,8 @@
             this.webcamGroupbx2.PerformLayout();
             this.elbowGP.ResumeLayout(false);
             this.elbowGP.PerformLayout();
+            this.robotArm_Configuration.ResumeLayout(false);
+            this.robotArm_Configuration.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1585,15 +1641,11 @@
         private System.Windows.Forms.CheckBox IMUEnable;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox IMUBaudRate;
-        private System.Windows.Forms.ComboBox IMUBoardModel;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox IMUCOMPort;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cyberGloveBaudRate;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox cyberGloveDefaultPosition;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.ComboBox cyberGloveCOMPort;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.CheckBox cyberGloveEnable;
@@ -1692,6 +1744,13 @@
         private System.Windows.Forms.Label label51;
         private System.Windows.Forms.CheckBox kinectEnable;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.GroupBox robotArm_Configuration;
+        private System.Windows.Forms.CheckBox robotArmEnable;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.ComboBox robotArmCOMPort;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.ComboBox robotArmBaudRate;
 
     }
 }

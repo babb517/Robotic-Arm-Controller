@@ -2,83 +2,83 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ArmController.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="handMinRange" Type="System.Int32" Scope="User">
+    <Setting Name="handMinRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="handMaxRange" Type="System.Int32" Scope="User">
+    <Setting Name="handMaxRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">2200</Value>
     </Setting>
-    <Setting Name="handSpeed" Type="System.Int32" Scope="User">
+    <Setting Name="handSpeed" Type="System.String" Scope="User">
       <Value Profile="(Default)">400</Value>
     </Setting>
     <Setting Name="handEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="wristMinRange" Type="System.Int32" Scope="User">
+    <Setting Name="wristMinRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="wristMaxRange" Type="System.Int32" Scope="User">
+    <Setting Name="wristMaxRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">2000</Value>
     </Setting>
-    <Setting Name="wristSpeed" Type="System.Int32" Scope="User">
+    <Setting Name="wristSpeed" Type="System.String" Scope="User">
       <Value Profile="(Default)">300</Value>
     </Setting>
     <Setting Name="wristEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="wristRotateMinRange" Type="System.Int32" Scope="User">
+    <Setting Name="wristRotateMinRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="wristRotateMaxRange" Type="System.Int32" Scope="User">
+    <Setting Name="wristRotateMaxRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">2000</Value>
     </Setting>
-    <Setting Name="wristRotateSpeed" Type="System.Int32" Scope="User">
+    <Setting Name="wristRotateSpeed" Type="System.String" Scope="User">
       <Value Profile="(Default)">300</Value>
     </Setting>
     <Setting Name="wristRotateEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="forearmMinRange" Type="System.Int32" Scope="User">
+    <Setting Name="forearmMinRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="forearmMaxRange" Type="System.Int32" Scope="User">
+    <Setting Name="forearmMaxRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">2000</Value>
     </Setting>
-    <Setting Name="forearmSpeed" Type="System.Int32" Scope="User">
+    <Setting Name="forearmSpeed" Type="System.String" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
     <Setting Name="forearmEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="armMinRange" Type="System.Int32" Scope="User">
+    <Setting Name="armMinRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="armMaxRange" Type="System.Int32" Scope="User">
+    <Setting Name="armMaxRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">2000</Value>
     </Setting>
-    <Setting Name="armSpeed" Type="System.Int32" Scope="User">
+    <Setting Name="armSpeed" Type="System.String" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
     <Setting Name="armEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="shoulderMinRange" Type="System.Int32" Scope="User">
+    <Setting Name="shoulderMinRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="shoulderMaxRange" Type="System.Int32" Scope="User">
+    <Setting Name="shoulderMaxRange" Type="System.String" Scope="User">
       <Value Profile="(Default)">2000</Value>
     </Setting>
-    <Setting Name="shoulderSpeed" Type="System.Int32" Scope="User">
+    <Setting Name="shoulderSpeed" Type="System.String" Scope="User">
       <Value Profile="(Default)">200</Value>
     </Setting>
     <Setting Name="shoulderEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="IMUCOMPortIndex" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">4</Value>
     </Setting>
     <Setting Name="IMUBaudRateIndex" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">3</Value>
     </Setting>
     <Setting Name="IMUEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
@@ -87,25 +87,22 @@
       <Value Profile="(Default)">0</Value>
     </Setting>
     <Setting Name="cyberGloveBaudRateIndex" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">6</Value>
     </Setting>
     <Setting Name="cyberGloveEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="robotArmCOMPortIndex" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="robotArmBaudRateIndex" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)">6</Value>
     </Setting>
     <Setting Name="robotArmEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
     <Setting Name="kinectEnable" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="cyberGloveDefaultPosition" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>
