@@ -74,6 +74,7 @@ namespace ArmController // Capstone_GUI
         public Form1()
         {
             InitializeComponent();
+            LoadGUISettings();
         }
 
 
@@ -88,8 +89,6 @@ namespace ArmController // Capstone_GUI
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e)
         {
-            LoadGUISettings();
-
             if (!DesignMode)
             {
               
