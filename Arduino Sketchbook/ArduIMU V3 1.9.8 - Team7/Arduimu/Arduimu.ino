@@ -27,16 +27,16 @@
 //**********************************************************************
 
 // *** NOTE!   Hardware version - Can be used for v1 (daughterboards) , v2 (flat) or new v3 (MPU6000)
-#define BOARD_VERSION 2 // 1 For V1 and 2 for V2 and 3 for new V3
+#define BOARD_VERSION 3 // 1 For V1 and 2 for V2 and 3 for new V3
 
 #if BOARD_VERSION == 3
 #include "MPU6000.h"
 #endif
 
-#define GPS_CONNECTION 0 // 0 for GPS pins, 1 for programming pins
+#define GPS_CONNECTION 1 // 0 for GPS pins, 1 for programming pins
 
 // GPS Type Selection - Note Ublox or MediaTek is recommended.  Support for NMEA is limited.
-#define GPS_PROTOCOL 1    // 1 - NMEA,  2 - EM406,  3 - Ublox, 4 -- MediaTek  
+#define GPS_PROTOCOL 4    // 1 - NMEA,  2 - EM406,  3 - Ublox, 4 -- MediaTek  
 
 // Enable Air Start uses Remove Before Fly flag - connection to pin 6 on ArduPilot 
 #define ENABLE_AIR_START 1  //  1 if using airstart/groundstart signaling, 0 if not
@@ -306,6 +306,11 @@ void setup()
   #if BOARD_VERSION == 2
   debug_print("You are using Hardware Version 2...");
   #endif 
+  
+  #if BOARD_VERSION == 3
+  debug_print("You are using Hardware Version 3...");
+  #endif 
+  
   
   GPS.init();			// GPS Initialization
   

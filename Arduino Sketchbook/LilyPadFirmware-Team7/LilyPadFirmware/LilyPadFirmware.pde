@@ -114,10 +114,6 @@ void loop()
 
   Serial.print("B");
   Serial.print(roll_b);
-  
-  
-  
-  
   Serial.print(",");
   Serial.print(pitch_b);
   Serial.print(",");
@@ -179,6 +175,7 @@ bool getSensorData(NewSoftSerial *newSerial, float *roll_float, float *pitch_flo
         (*newSerial).read(); // Get rid of very first comma after "!!!"
 
         // Get Roll
+//        Serial.println("Getting roll");
         temp = (char)(*newSerial).read();
         do
         {
@@ -187,6 +184,7 @@ bool getSensorData(NewSoftSerial *newSerial, float *roll_float, float *pitch_flo
         while((temp = ((char)(*newSerial).read())) != ',');
         
         // Get Pitch
+  //      Serial.println("Getting pitch");
         temp = (char)(*newSerial).read();
         do
         {
@@ -195,6 +193,7 @@ bool getSensorData(NewSoftSerial *newSerial, float *roll_float, float *pitch_flo
         while((temp = ((char)(*newSerial).read())) != ',');
         
         // Get Yaw
+    //    Serial.println("Getting yaw");
         temp = (char)(*newSerial).read();
         do
         {

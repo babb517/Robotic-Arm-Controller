@@ -39,14 +39,14 @@
 #define SPEEDFILT 2 // >1 use min speed filter for yaw drift cancellation (m/s), 0=do not use speed filter
 
 /*For debugging propurses*/
-#define PRINT_DEBUG 0   //Will print Debug messages
+#define PRINT_DEBUG 1   //Will print Debug messages
 
 //OUTPUTMODE=1 will print the corrected data, 0 will print uncorrected data of the gyros (with drift), 2 will print accelerometer only data
 #define OUTPUTMODE 1
 
-#define PRINT_DCM 0     //Will print the whole direction cosine matrix
+#define PRINT_DCM 1     //Will print the whole direction cosine matrix -- *** temp for testing
 #define PRINT_ANALOGS 0 //Will print the analog raw data CHANGE FROM 0
-#define PRINT_EULER 1   //Will print the Euler angles Roll, Pitch and Yaw
+#define PRINT_EULER 0   //Will print the Euler angles Roll, Pitch and Yaw -- *** we normally use just this
 #define PRINT_GPS 0     //Will print GPS data
 #define ANGULARVELOCITY 0
 
@@ -346,15 +346,20 @@ void loop() //Main Loop
         G_Dt = 0;  //Something is wrong - keeps dt from blowing up, goes to zero to keep gyros from departing
     
     // *** DCM algorithm
-   
+
+//    Serial.println("About to Read_adc_raw");   
     Read_adc_raw();
 
+//    Serial.println("About to Matrix_update");   
     Matrix_update(); 
 
+//    Serial.println("About to Normalize");   
     Normalize();
 
+//    Serial.println("About to Drift_correction");   
     Drift_correction();
    
+//    Serial.println("About to Euler_angles");   
     Euler_angles();
     
     #if PRINT_BINARY == 1
