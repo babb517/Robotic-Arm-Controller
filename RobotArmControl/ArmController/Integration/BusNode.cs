@@ -55,7 +55,15 @@ namespace ArmController.Integration
         public static readonly BusNode ORIENTATION_RIGHT_HAND = new BusNode(typeof(Orientation));      ///< (Orientation) The orientation of the right hand relative to the right lower-arm.
         public static readonly BusNode ABSOLUTE_ORIENTATION_RIGHT_HAND = new BusNode(typeof(Orientation));      ///< (Orientation) The absolute orientation of the right hand.
 
-        
+        #region IMU Nodes
+
+        public static readonly BusNode ORIENTATION_RIGHT_SHOULDER_RAW = new BusNode(typeof(Orientation));   ///< (Orientation) The raw orientation of the right hand from the IMUs.
+        public static readonly BusNode ORIENTATION_RIGHT_UPPER_ARM_RAW = new BusNode(typeof(Orientation));   ///< (Orientation) The raw orientation of the right upper arm from the IMUs.
+        public static readonly BusNode ORIENTATION_RIGHT_LOWER_ARM_RAW = new BusNode(typeof(Orientation));   ///< (Orientation) The raw orientation of the right lower arm from the IMUs.
+
+        #endregion
+
+
         #endregion Right Arms
 
         #endregion Position Module Output

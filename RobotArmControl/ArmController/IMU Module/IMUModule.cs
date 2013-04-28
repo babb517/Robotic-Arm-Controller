@@ -92,7 +92,7 @@ namespace ArmController.IMU_Module
             if (IMUEnabled)
             {
                 _lilySerial = new SerialPort(COMPort, baudRate, Parity.None, 8, StopBits.One);
-                _lilySerial.Open();
+                ////_lilySerial.Open();
 
                 //    _rotationBicep = new Orientation(0,0,0);
                 //    _rotationForearm = new Orientation(0,0,0);
@@ -146,7 +146,8 @@ namespace ArmController.IMU_Module
                 Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, tmp.Orientation);
                 Bus.Publish<object>(BusNode.POSITION_TICK, null);
             }
-       */     
+       */
+
 
             while (_running)
             {
@@ -159,8 +160,23 @@ namespace ArmController.IMU_Module
                     Console.WriteLine(e.ToString());
                     continue;
                 }
-                good = true;
+                catch (InvalidOperationException e)
+                {
+                    Console.WriteLine(e.ToString());
 
+                    String COMPort = Bus.Get<String>(BusNode.IMU_COM_PORT);
+                    int baudRate = Bus.Get<int>(BusNode.IMU_BAUD_RATE);
+                    bool IMUEnabled = Bus.Get<bool>(BusNode.IMU_ENABLE);
+
+                    if (IMUEnabled)
+                    {
+                        _lilySerial = new SerialPort(COMPort, baudRate, Parity.None, 8, StopBits.One);
+                        _lilySerial.Open();
+                    }
+                    continue;
+                }
+                good = true;
+                
                 /*
                  * The format of each line is:
                  * XR,P,Y,\n
@@ -180,8 +196,8 @@ namespace ArmController.IMU_Module
 
                 switch (currentLine[0])
                 {
-                    case 'F':
-                        // forearm
+                    case 'W':
+                        // (really the forearm)
                         Console.WriteLine("Got forearm.");
                         good = updateMatrix(currentLine, ref _rotationForearm, ref _forearmRoll);
                       //  good = updateOrientation(currentLine, ref _rotationForearm);
@@ -190,9 +206,9 @@ namespace ArmController.IMU_Module
                         // update the position of the forearm
                         updateBusForearm();
 
-
                         break;
-                    case 'B':
+                    case 'F':   
+                        // (really the bicep)
                         // bicep
                         Console.WriteLine("Got bicep.");
                         good = updateMatrix(currentLine, ref _rotationBicep, ref _bicepRoll);
@@ -203,14 +219,9 @@ namespace ArmController.IMU_Module
                         updateBusForearm();
 
                         break;
-                    case 'W':   
-                        // wrist
-                        // we don't track the wrist.
-
-                        // TODO: This is a hack because we're using the 'wrist' IMU for the shoulder.
-                        //  break;
+                    case 'B':
                     case 'S':
-                        // shoulder
+                        // (really the shoulder)
                         Console.WriteLine("Got shoulder.");
                         good = updateMatrix(currentLine, ref  _rotationShoulder, ref _shoulderRoll);
                      //   good = updateOrientation(currentLine, ref _rotationShoulder);
@@ -223,7 +234,7 @@ namespace ArmController.IMU_Module
 
                         break;
                     default:
-                          Console.WriteLine("Got unknown.");
+                        Console.WriteLine("Got unknown.");
                         // who knows what this is.
                         // The input is corrupt.
                         good = false;
@@ -277,17 +288,50 @@ namespace ArmController.IMU_Module
             string[] arr = input.Substring(1).Split(',');
 
             if (arr.Length != 3) ret = false;
-
-            ret = ret && float.TryParse(arr[0], out yaw);
+            
+            ret = ret && float.TryParse(arr[0], out roll);
             ret = ret && float.TryParse(arr[1], out pitch);
-            ret = ret && float.TryParse(arr[2], out roll);
+            ret = ret && float.TryParse(arr[2], out yaw);
             outRoll = roll * (float)(Math.PI / 180.0);
 
-            // Dirty hack
-           // roll = 0;
+            if (ret)
+            {
+                switch (input[0])
+                {
+                    case 'W':
+                        Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM_RAW, new Orientation(roll * (float)(Math.PI / 180.0), pitch * (float)(Math.PI / 180.0), yaw * (float)(Math.PI / 180.0)));
+                        break;
+                    case 'F':
+                        Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM_RAW, new Orientation(roll * (float)(Math.PI / 180.0), pitch * (float)(Math.PI / 180.0), yaw * (float)(Math.PI / 180.0)));
+                        break;
+                    case 'B':
+                    case 'S':
+                        Bus.Publish(BusNode.ORIENTATION_RIGHT_SHOULDER_RAW, new Orientation(roll * (float)(Math.PI / 180.0), pitch * (float)(Math.PI / 180.0), yaw * (float)(Math.PI / 180.0)));
+                        break;
+                }
+
+                // this is the roll-pitch-yaw, we really need the yaw-pitch-roll
+                //Matrix33 tmp = (new Matrix33(-1 * yaw * (float)(Math.PI / 180.0), -1 * pitch * (float)(Math.PI / 180.0), -1 * roll * (float)(Math.PI / 180.0), true)).Invert;
+            //   Matrix33 tmp = (new Matrix33(yaw * (float)(Math.PI / 180.0), pitch * (float)(Math.PI / 180.0), roll * (float)(Math.PI / 180.0), true));
+
+                // The inverse of -roll * -pitch * -yaw is yaw * pitch * roll.
+                // pretend this is a yawpitchroll matrix.
+               // tmp.RollPitchYaw = false;
+
+              //  roll = roll * (float)(Math.PI / 180.0);
+              //  pitch = pitch *(float)(Math.PI / 180.0) * (float)Math.Cos(roll);
+              //  yaw = yaw * (float)(Math.PI / 180.0) * (float)Math.Cos(pitch);
+
+            //   tmp.RollPitchYaw = false;
+
+          //     roll = tmp.Roll;
+           //    pitch = tmp.Pitch;
+           //    yaw = tmp.Yaw;
 
 
-            if (ret) outMatrix.setRotation(yaw * (float)(Math.PI / 180.0), pitch * (float)(Math.PI / 180.0), roll * (float)(Math.PI / 180.0));
+                if (ret) outMatrix.setRotation(yaw * (float)(Math.PI / 180.0), pitch * (float)(Math.PI / 180.0), roll * (float)(Math.PI / 180.0));
+            }
+
             return ret;
         }
 
@@ -354,13 +398,20 @@ namespace ArmController.IMU_Module
           //  Orientation absOrientation = _rotationBicep;
 
 
-            Matrix33 relative = _rotationBicep.RelativeFrame(_rotationShoulder);
+       //     Matrix33 relative = _rotationBicep.RelativeFrame(_rotationShoulder);
             //Matrix33 relative = _rotationBicep.RelativeFrame(tmp);
-            Orientation relOrientation = relative.Orientation;
+         //   Orientation relOrientation = relative.Orientation;
+         //   Orientation absOrientation = _rotationBicep.Orientation;
+
+
+            Orientation relOrientation = new Orientation(0,0,0);
+            relOrientation.Roll = -1 * _rotationBicep.Roll /*- _rotationBicep.Roll*/;
+            relOrientation.Pitch = -1 * _rotationBicep.Pitch /*- _rotationShoulder.Pitch*/;
+            relOrientation.Yaw = _rotationBicep.RelativeFrame(_rotationShoulder).Yaw;
             Orientation absOrientation = _rotationBicep.Orientation;
 
-            Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, relative.YPoint);
-            Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, new Orientation(relOrientation.Roll, -1 * relOrientation.Pitch, relOrientation.Yaw));
+          //  Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, relative.YPoint);
+            Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, new Orientation(relOrientation.Roll, relOrientation.Pitch, relOrientation.Yaw));
             Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, new Orientation(absOrientation.Roll, absOrientation.Pitch,absOrientation.Yaw));
            // Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, new Orientation(_bicepRoll - _shoulderRoll, relOrientation.Pitch, relOrientation.Yaw));
            // Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, new Orientation(_bicepRoll - _shoulderRoll, absOrientation.Pitch, absOrientation.Yaw));
@@ -378,13 +429,15 @@ namespace ArmController.IMU_Module
       //      Orientation absOrientation = _rotationForearm;
 
 
-            Matrix33 relative = _rotationForearm.RelativeFrame(_rotationBicep);
-            Orientation relOrientation = relative.Orientation;
+          //  Matrix33 relative = _rotationForearm.RelativeFrame(_rotationBicep.Rotate(0,0,-(float)(Math.PI/2)));
+         //   Orientation relOrientation = relative.Orientation;
+        //    Orientation absOrientation = _rotationForearm.Orientation;
+
+            Orientation relOrientation = new Orientation(-1 * _rotationForearm.Roll /*- _rotationBicep.Roll*/, _rotationForearm.Pitch - _rotationBicep.Pitch, _rotationForearm.Yaw - _rotationBicep.Yaw);
             Orientation absOrientation = _rotationForearm.Orientation;
 
-
-            Bus.Publish(BusNode.DIR_RIGHT_LOWER_ARM, relative.YPoint);
-            Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, new Orientation(relOrientation.Roll, relOrientation.Yaw, relOrientation.Pitch));
+           // Bus.Publish(BusNode.DIR_RIGHT_LOWER_ARM, relative.YPoint);
+            Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, new Orientation(relOrientation.Roll, -1 * relOrientation.Yaw, relOrientation.Pitch));
             Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, new Orientation(absOrientation.Roll, absOrientation.Yaw, absOrientation.Pitch));
           //  Bus.Publish(BusNode.ORIENTATION_RIGHT_LOWER_ARM, new Orientation(_forearmRoll - _bicepRoll, relOrientation.Yaw, relOrientation.Pitch));
           //  Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_LOWER_ARM, new Orientation(_forearmRoll - _bicepRoll, absOrientation.Yaw, absOrientation.Pitch));

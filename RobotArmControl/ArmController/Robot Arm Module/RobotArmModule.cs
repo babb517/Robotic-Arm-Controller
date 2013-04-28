@@ -22,39 +22,20 @@ namespace ArmController.Robot_Arm_Module
         /* Private Constants */
         /**********************************************************************/
 
-        #region Servo Positions
-
-        /// <summary>
-        /// The current position of the shoulder servo.
-        /// </summary>
-        int currentShoulderPosition = 0;
-
-        /// <summary>
-        /// The current position of the arm servo.
-        /// </summary>
-        int currentArmPosition = 0;
-
-        /// <summary>
-        /// The current position of the forearm servo.
-        /// </summary>
-        int currentForearmPosition = 0;
-
-        /// <summary>
-        /// The current position of the wrist servo.
-        /// </summary>
-        int currentWristPosition = 0;
-
-        /// <summary>
-        /// The current position of the hand servo.
-        /// </summary>
-        int currentHandPosition = 0;
-
-        #endregion
-
         /// <summary>
         /// Minimum movement amount that the robot arm can move a servo.
         /// </summary>
         private const int positionDeltaThreshold = 20;
+
+        /// <summary>
+        /// Maximum movement amount that the robot arm can move a servo.
+        /// </summary>
+        private const int positionDeltaMax = 200;
+
+        /// <summary>
+        /// The number of servos connected
+        /// </summary>
+        private const int NUM_SERVOS = 6;
 
         /// <summary>
         /// Radians per degree.
@@ -92,6 +73,11 @@ namespace ArmController.Robot_Arm_Module
         /// Hand servo channel number on the robot arm.
         /// </summary>
         private const int HAND = 4;
+
+        /// <summary>
+        /// Wrist rotation servo channel number on the robot arm.
+        /// </summary>
+        private const int WRIST_ROTATE = 5;
 
         #endregion Servos
 
@@ -142,6 +128,17 @@ namespace ArmController.Robot_Arm_Module
         /// </summary>
         private const int WRIST_MIN_DEG = -90;
 
+        /// <summary>
+        /// The maximum amount of degrees that the wrist servo can rotate.
+        /// </summary>
+        private const int WRIST_ROTATE_MAX_DEG = 90;
+
+        /// <summary>
+        /// The minimum amount of degrees that the wrist servo can rotate.
+        /// </summary>
+        private const int WRIST_ROTATE_MIN_DEG = 0;
+
+
         #endregion Input Extrema
 
         #endregion Private Constants
@@ -160,6 +157,9 @@ namespace ArmController.Robot_Arm_Module
         /// The last time that a command was sent to the robot arm.
         /// </summary>
         long _lastUpdateTime;
+
+        int[] lastPos;
+
 
         #endregion Private Members
 
@@ -190,6 +190,11 @@ namespace ArmController.Robot_Arm_Module
             _serialPort.WriteTimeout = 500;
             _serialPort.Open(); 
             _lastUpdateTime = 0;
+
+            lastPos = new int[NUM_SERVOS];
+
+            for (int i = 0; i < NUM_SERVOS; i++)
+                lastPos[i] = int.MinValue;
 
             //Initialize the robot arm position.
             move(ARM, 1500,100);
@@ -253,13 +258,14 @@ namespace ArmController.Robot_Arm_Module
             int finalArmPosition = 0;
             int finalForearmPosition = 0;
             int finalWristPosition = 0;
+            int finalWristRotation = 0;
             int finalHandPosition = 0;
             int finalShoulderPosition = 0;
 
             // Let's limit the rate at which we send commands
             // TODO: Do this right!
             if (System.DateTime.Now.Ticks < _lastUpdateTime + MIN_UPDATE_INTERVAL * System.TimeSpan.TicksPerMillisecond) return;
-            _lastUpdateTime = System.DateTime.Now.Millisecond;
+            _lastUpdateTime = System.DateTime.Now.Ticks;
 
             // What we want to do here is update our 'goal' position based on the data we can read from the virtual bus.
             // Since we've subscribed to the POSITION_TICK, the 'value' parameter has no meaning, we should get the value directly from the bus.
@@ -329,11 +335,11 @@ namespace ArmController.Robot_Arm_Module
 
                         // move the stuff!
                         // TODO: Do This correctly
-                        if (Math.Abs(finalForearmPosition - currentForearmPosition) >= positionDeltaThreshold)
+                        if (Math.Abs(finalForearmPosition - lastPos[FOREARM]) >= positionDeltaThreshold)
                         {
-                            currentForearmPosition = finalForearmPosition;
-                            move(FOREARM, currentForearmPosition, forearmServoSpeed);
-                            Debug.WriteLine("Got " + currentForearmPosition);
+                            lastPos[FOREARM] = finalForearmPosition;
+                            move(FOREARM, lastPos[FOREARM], forearmServoSpeed);
+                            Debug.WriteLine("Got " + lastPos[FOREARM]);
                         }
                     }
 
@@ -363,11 +369,11 @@ namespace ArmController.Robot_Arm_Module
 
                         // move the stuff!
                         // TODO: Do This correctly
-                        if (Math.Abs(finalArmPosition - currentForearmPosition) >= positionDeltaThreshold)
+                        if (Math.Abs(finalArmPosition - lastPos[FOREARM]) >= positionDeltaThreshold)
                         {
-                            currentArmPosition = finalArmPosition;
-                            move(ARM, currentArmPosition, armServoSpeed);
-                            Debug.WriteLine("ARM: " + ARM + ", currentArmPosition: " + currentArmPosition);
+                            lastPos[ARM] = finalArmPosition;
+                            move(ARM, lastPos[ARM], armServoSpeed);
+                            Debug.WriteLine("ARM: " + ARM + ", lastPos[ARM]: " + lastPos[ARM]);
                         }
                     }
 
@@ -396,42 +402,42 @@ namespace ArmController.Robot_Arm_Module
 
                         // move the stuff!
                         // TODO: Do This correctly
-                        if (Math.Abs(finalShoulderPosition - currentShoulderPosition) >= positionDeltaThreshold)
+                        if (Math.Abs(finalShoulderPosition - lastPos[SHOULDER]) >= positionDeltaThreshold)
                         {
-                            currentShoulderPosition = finalShoulderPosition;
+                            lastPos[SHOULDER] = finalShoulderPosition;
                             move(SHOULDER, finalShoulderPosition, shoulderServoSpeed);
                         }
                     }
-                    //wrist
-                    if (forearm != null && wristServoEnabled)
+                    //wrist rotation
+                    if (forearm != null && wristRotateServoEnabled)
                     {
-                        if (forearm.Roll > WRIST_MAX_DEG * RAD_PER_DEG) forearm.Roll = (float)(WRIST_MAX_DEG * RAD_PER_DEG);
-                        if (forearm.Roll < WRIST_MIN_DEG * RAD_PER_DEG) forearm.Roll = (float)(WRIST_MIN_DEG * RAD_PER_DEG);
+                        if (forearm.Roll > WRIST_ROTATE_MAX_DEG * RAD_PER_DEG) forearm.Roll = (float)(WRIST_ROTATE_MAX_DEG * RAD_PER_DEG);
+                        if (forearm.Roll < WRIST_ROTATE_MIN_DEG * RAD_PER_DEG) forearm.Roll = (float)(WRIST_ROTATE_MIN_DEG * RAD_PER_DEG);
 
                         // scale to the valid range (800 - 2200)
                         if (forearm.Roll > 0)
                         {
-                            finalWristPosition = 1500 - (int)((
+                            finalWristRotation = 1500 - (int)((
                                 (forearm.Roll /
-                                    ((WRIST_MAX_DEG - WRIST_MIN_DEG) * RAD_PER_DEG)
+                                    ((WRIST_ROTATE_MAX_DEG - WRIST_ROTATE_MIN_DEG) * RAD_PER_DEG)
                                 ) //* (180 / ((float)Math.Abs(SHOULDER_PITC_MIN_DEG_PHYSICAL)))
                                 ) * 700);
                         }
                         else
                         {
-                            finalWristPosition = 1500 + (int)((
+                            finalWristRotation = 1500 + (int)((
                                 (Math.Abs(forearm.Roll) /
-                                    ((WRIST_MAX_DEG - WRIST_MIN_DEG) * RAD_PER_DEG)
+                                    ((WRIST_ROTATE_MAX_DEG - WRIST_ROTATE_MIN_DEG) * RAD_PER_DEG)
                                 ) //* (180 / ((float)Math.Abs(SHOULDER_PITCH_MIN_DEG_PHYSICAL)))
                                 ) * 700);
                         }
 
                         // move the stuff!
                         // TODO: Do This correctly
-                        if (Math.Abs(finalWristPosition - currentWristPosition) >= positionDeltaThreshold)
+                        if (Math.Abs(finalWristRotation - lastPos[WRIST_ROTATE]) >= positionDeltaThreshold)
                         {
-                            currentWristPosition = finalWristPosition;
-                            move(WRIST, finalWristPosition, wristRotateServoSpeed);
+                            lastPos[WRIST_ROTATE] = finalWristRotation;
+                            move(WRIST, finalWristRotation, wristRotateServoSpeed);
                         }
                     }
 
@@ -444,10 +450,10 @@ namespace ArmController.Robot_Arm_Module
 
                     // move the stuff!
                     // TODO: Do This correctly
-                    if (Math.Abs(finalHandPosition - currentHandPosition) >= positionDeltaThreshold)
+                    if (Math.Abs(finalHandPosition - lastPos[HAND]) >= positionDeltaThreshold)
                     {
-                        currentHandPosition = finalHandPosition;
-                        move(HAND, currentHandPosition, handServoSpeed);
+                        lastPos[HAND] = finalHandPosition;
+                        move(HAND, lastPos[HAND], handServoSpeed);
                     }
                 }
 
@@ -455,10 +461,10 @@ namespace ArmController.Robot_Arm_Module
                 {
                     finalWristPosition = 1380 + (int)((-wrist_hand + 50) * 12.4f);
 
-                    if (Math.Abs(finalWristPosition - currentWristPosition) >= positionDeltaThreshold)
+                    if (Math.Abs(finalWristPosition - lastPos[WRIST]) >= positionDeltaThreshold)
                     {
-                        currentWristPosition = finalWristPosition;
-                        move(WRIST, currentWristPosition, wristServoSpeed);
+                        lastPos[WRIST] = finalWristPosition;
+                        move(WRIST, lastPos[WRIST], wristServoSpeed);
                     }
                 }
                 
@@ -480,10 +486,21 @@ namespace ArmController.Robot_Arm_Module
                 pos = (pos < 800) ? 800 : 2200;
             }
 
-            //Debug.WriteLine("Moving servo " + servo + " to position " + pos);
+            // apply a filter
+            if (lastPos[servo] == int.MinValue || (pos <= lastPos[servo] + positionDeltaMax || pos >= lastPos[servo] - positionDeltaMax))
+           // if (true)
+            {
+                lastPos[servo] = pos;
 
-            string command = "#" + servo + "P" + pos + "S" + speed + "\r\n";
-            send(command);
+                //Debug.WriteLine("Moving servo " + servo + " to position " + pos);
+
+                string command = "#" + servo + "P" + pos + "S" + speed + "\r\n";
+                send(command);
+            }
+
+
+
+            
         }
 
         /// <summary>

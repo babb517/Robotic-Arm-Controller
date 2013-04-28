@@ -38,12 +38,13 @@ namespace ArmController.IMU_Module
         /// Basic Constructor.
         /// Creates a 3x3 identity matrix.
         /// </summary>
-        public Matrix33()
+        /// <param name="rollpitchyaw">If true, will create the matrix using roll * pitch * yaw, instead of yaw * pitch * roll</param>
+        public Matrix33(bool rollpitchyaw = false)
         {
             _matrix = new Matrix();
+            RollPitchYaw = rollpitchyaw;
             //Matrix.CreateFromYawPitchRoll(0, 0, 0, out _matrix);
             setRotation(0, 0, 0);
-
         }
 
 
@@ -54,8 +55,10 @@ namespace ArmController.IMU_Module
         /// <param name="yaw">The initial yaw of the matrix.</param>
         /// <param name="pitch">The initial pitch of the matrix.</param>
         /// <param name="roll">The initial roll of the matrix.</param>
-        public Matrix33(float yaw, float pitch, float roll)
+        /// <param name="rollpitchyaw">If true, will create the matrix using roll * pitch * yaw, instead of yaw * pitch * roll</param>
+        public Matrix33(float yaw, float pitch, float roll, bool rollpitchyaw = false)
         {
+            RollPitchYaw = rollpitchyaw;
             _matrix = new Matrix();
            //Matrix.CreateFromYawPitchRoll(yaw, pitch, roll, out _matrix);
             setRotation(yaw, pitch, roll);
@@ -69,8 +72,11 @@ namespace ArmController.IMU_Module
         /**************************************************************************************/
         /* Public Methods */
         /**************************************************************************************/
-    
 
+        /// <summary>
+        /// Whether we are using roll*pitch*yaw instead of yaw*pitch*roll.
+        /// </summary>
+        public bool RollPitchYaw { get; set; }
 
         /// <summary>
         /// Multiplies two matrices and returns the result.
@@ -80,7 +86,7 @@ namespace ArmController.IMU_Module
         /// <returns>The resulting matrix (A * B).</returns>
         public static Matrix33 operator*(Matrix33 A, Matrix33 B)
         {
-            Matrix33 ret = new Matrix33();
+            Matrix33 ret = new Matrix33(A.RollPitchYaw);
             Matrix.Multiply(ref A._matrix, ref B._matrix, out ret._matrix);
             return ret;
         }
@@ -93,7 +99,7 @@ namespace ArmController.IMU_Module
         /// <returns>The resulting matrix (A - B).</returns>
         public static Matrix33 operator-(Matrix33 A, Matrix33 B)
         {
-            Matrix33 ret = new Matrix33();
+            Matrix33 ret = new Matrix33(A.RollPitchYaw);
             ret._matrix = Matrix.Subtract(A._matrix, B._matrix);
             return ret;
 
@@ -107,7 +113,7 @@ namespace ArmController.IMU_Module
         /// <returns>The resulting matrix (A + B).</returns>
         public static Matrix33 operator+(Matrix33 A, Matrix33 B)
         {
-            Matrix33 ret = new Matrix33();
+            Matrix33 ret = new Matrix33(A.RollPitchYaw);
             ret._matrix = Matrix.Add(A._matrix, B._matrix);
             return ret;
 
@@ -121,7 +127,14 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return (float)Math.Atan2(_matrix.M21, _matrix.M11);
+                if (RollPitchYaw)
+                {
+                    return (float)Math.Atan2(_matrix.M21, _matrix.M11);
+                }
+                else
+                {
+                    return (float)Math.Atan2(-_matrix.M12, _matrix.M11);
+                }
                // return (float)Math.Atan2(_matrix.M13, Math.Sqrt(_matrix.M23 * _matrix.M23 + _matrix.M33 * _matrix.M33));
             }
         }
@@ -133,7 +146,14 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return (float)Math.Atan2(_matrix.M32, _matrix.M33);
+               if (RollPitchYaw)
+               {
+                   return (float)Math.Atan2(_matrix.M32, _matrix.M33);
+               }
+               else
+               {
+                   return (float)Math.Atan2(-_matrix.M23, _matrix.M33);
+               }
               //  return 0;
             }
         }
@@ -146,7 +166,15 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                return (float)Math.Atan2(-_matrix.M31, Math.Sqrt(_matrix.M32 * _matrix.M32 + _matrix.M33 * _matrix.M33));
+                if (RollPitchYaw)
+                {
+                    return (float)Math.Atan2(-_matrix.M31, Math.Sqrt(_matrix.M32 * _matrix.M32 + _matrix.M33 * _matrix.M33));
+                }
+                else
+                {
+                    return (float)Math.Atan2(_matrix.M13, Math.Sqrt(_matrix.M23 * _matrix.M23 + _matrix.M33 * _matrix.M33));
+                }
+
             }
         }
 
@@ -252,7 +280,7 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                Matrix33 result = new Matrix33();
+                Matrix33 result = new Matrix33(RollPitchYaw);
                 Matrix.Transpose(ref _matrix, out result._matrix);
                 return result;
             }
@@ -266,7 +294,7 @@ namespace ArmController.IMU_Module
         {
             get
             {
-                Matrix33 result = new Matrix33();
+                Matrix33 result = new Matrix33(RollPitchYaw);
                 Matrix.Invert(ref _matrix, out result._matrix);
                 return result;
             }
@@ -285,8 +313,8 @@ namespace ArmController.IMU_Module
         {
             //Matrix x = Matrix.CreateFromYawPitchRoll(yaw, pitch, roll);
             //ret._matrix = Matrix.Multiply(this._matrix, x);
-            Matrix33 x = new Matrix33(yaw, pitch, roll);
-            return x * this;
+            Matrix33 x = new Matrix33(yaw, pitch, roll, RollPitchYaw);
+            return this * x;
         }
 
 
@@ -310,9 +338,23 @@ namespace ArmController.IMU_Module
         /// <param name="roll">The new roll.</param>
         public void setRotation(float yaw, float pitch, float roll)
         {
-            Matrix.CreateFromYawPitchRoll(yaw, pitch, roll, out _matrix);
+            setRotation(yaw, pitch, roll, RollPitchYaw);
+        }
 
-            /*
+        /// <summary>
+        /// Sets the rotation of this matrix to match the provided yaw, pitch, and roll.
+        /// </summary>
+        /// <param name="yaw">The new yaw.</param>
+        /// <param name="pitch">The new pitch.</param>
+        /// <param name="roll">The new roll.</param>
+        /// <param name="rollpitchyaw">If true, will create the matrix using roll * pitch * yaw, instead of yaw * pitch * roll</param>
+        public void setRotation(float yaw, float pitch, float roll, bool rollpitchyaw)
+        {
+            RollPitchYaw = rollpitchyaw;
+
+            // Matrix.CreateFromYawPitchRoll(yaw, pitch, roll, out _matrix);
+
+            // R[yaw] * R[pitch] * R[roll]
             float cos_pitch, cos_yaw, cos_roll;
             float sin_pitch, sin_yaw, sin_roll;
 
@@ -324,29 +366,56 @@ namespace ArmController.IMU_Module
             sin_yaw = (float)Math.Sin(yaw);
             sin_roll = (float)Math.Sin(roll);
 
-            //Top row
-            _matrix.M11 = cos_roll * cos_yaw;
-            _matrix.M12 = -sin_yaw * cos_pitch + cos_yaw * sin_roll * sin_pitch;
-            _matrix.M13 = sin_pitch * sin_yaw + cos_yaw * sin_roll * cos_pitch;
-            _matrix.M14 = 0;
+            if (!rollpitchyaw)
+            {
+                //Top row
+                _matrix.M11 = cos_roll * cos_yaw;
+                _matrix.M12 = -sin_yaw * cos_roll;
+                _matrix.M13 = sin_roll;
+                _matrix.M14 = 0;
 
-            //Middle row
-            _matrix.M21 = cos_roll * sin_yaw;
-            _matrix.M22 = cos_yaw * cos_pitch + sin_roll * sin_yaw * sin_pitch;
-            _matrix.M23 = -sin_pitch * cos_yaw + sin_roll * sin_yaw * cos_pitch;
-            _matrix.M24 = 0;
+                //Middle row
+                _matrix.M21 = cos_yaw * sin_roll * sin_pitch + sin_yaw * cos_pitch;
+                _matrix.M22 = -sin_yaw * sin_roll * sin_pitch + cos_yaw * cos_pitch;
+                _matrix.M23 = -cos_roll * sin_pitch;
+                _matrix.M24 = 0;
 
-            //Bottom row
-            _matrix.M31 = -sin_roll;
-            _matrix.M32 = cos_roll * sin_pitch;
-            _matrix.M33 = cos_roll * cos_pitch;
-            _matrix.M34 = 0;
+                //Bottom row
+                _matrix.M31 = -cos_yaw * sin_roll * cos_pitch + sin_yaw * sin_pitch;
+                _matrix.M32 = sin_yaw * sin_roll * cos_pitch + cos_yaw * sin_pitch;
+                _matrix.M33 = cos_roll * cos_pitch;
+                _matrix.M34 = 0;
 
-            _matrix.M41 = 0;
-            _matrix.M42 = 0;
-            _matrix.M43 = 0;
-            _matrix.M44 = 1;
-            */
+                _matrix.M41 = 0;
+                _matrix.M42 = 0;
+                _matrix.M43 = 0;
+                _matrix.M44 = 1;
+            }
+            else
+            {
+                //Top row
+                _matrix.M11 = cos_roll * cos_yaw;
+                _matrix.M12 = -sin_yaw * cos_pitch + cos_yaw * sin_roll * sin_pitch;
+                _matrix.M13 = sin_pitch * sin_yaw + cos_yaw * sin_roll * cos_pitch;
+                _matrix.M14 = 0;
+
+                //Middle row
+                _matrix.M21 = cos_roll * sin_yaw;
+                _matrix.M22 = cos_yaw * cos_pitch + sin_roll * sin_yaw * sin_pitch;
+                _matrix.M23 = -sin_pitch * cos_yaw + sin_roll * sin_yaw * cos_pitch;
+                _matrix.M24 = 0;
+
+                //Bottom row
+                _matrix.M31 = -sin_roll;
+                _matrix.M32 = cos_roll * sin_pitch;
+                _matrix.M33 = cos_roll * cos_pitch;
+                _matrix.M34 = 0;
+
+                _matrix.M41 = 0;
+                _matrix.M42 = 0;
+                _matrix.M43 = 0;
+                _matrix.M44 = 1;
+            }
         }
 
         #endregion Public Methods
