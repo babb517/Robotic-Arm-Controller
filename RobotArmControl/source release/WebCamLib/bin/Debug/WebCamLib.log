@@ -1,9 +1,14 @@
-﻿Build started 4/20/2013 10:02:01 AM.
-     1>Project "C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\WebCamLib.vcxproj" on node 3 (Build target(s)).
-     1>Link:
-         WebCamLib.vcxproj -> C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\bin\Debug\WebCamLib.dll
-     1>Done Building Project "C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\WebCamLib.vcxproj" (Build target(s)).
+﻿Build started 4/24/2013 10:58:33 PM.
+     1>Project "C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\WebCamLib.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /AI"C:\Program Files (x86)\Windows Kits\8.0\References\CommonConfiguration\Neutral" /Zi /clr /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDLL /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\bin\Debug\\" /Fd"C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\bin\Debug\vc110.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\mscorlib.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt /clr:nostdlib WebCamLib.cpp
+         WebCamLib.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\bin\Debug\WebCamLib.dll" /INCREMENTAL /NOLOGO Strmiids.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\bin\Debug\WebCamLib.pdb" /ASSEMBLYDEBUG /TLBID:1 /DYNAMICBASE:NO /FIXED:NO /MACHINE:X86 /SAFESEH /DLL "C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\bin\Debug\WebCamLib.obj"
+         "C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\bin\Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         WebCamLib.vcxproj -> C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\bin\Debug\WebCamLib.dll
+     1>Done Building Project "C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamLib\WebCamLib.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.46
+Time Elapsed 00:00:04.44

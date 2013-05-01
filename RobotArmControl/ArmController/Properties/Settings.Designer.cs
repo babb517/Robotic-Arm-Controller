@@ -8,22 +8,426 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ArmController.Properties
-{
-
-
+namespace ArmController.Properties {
+    
+    
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "11.0.0.0")]
-    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase
-    {
-
+    internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
+        
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
-
-        public static Settings Default
-        {
-            get
-            {
+        
+        public static Settings Default {
+            get {
                 return defaultInstance;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string handMinRange {
+            get {
+                return ((string)(this["handMinRange"]));
+            }
+            set {
+                this["handMinRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2200")]
+        public string handMaxRange {
+            get {
+                return ((string)(this["handMaxRange"]));
+            }
+            set {
+                this["handMaxRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("400")]
+        public string handSpeed {
+            get {
+                return ((string)(this["handSpeed"]));
+            }
+            set {
+                this["handSpeed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool handEnable {
+            get {
+                return ((bool)(this["handEnable"]));
+            }
+            set {
+                this["handEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string wristMinRange {
+            get {
+                return ((string)(this["wristMinRange"]));
+            }
+            set {
+                this["wristMinRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string wristMaxRange {
+            get {
+                return ((string)(this["wristMaxRange"]));
+            }
+            set {
+                this["wristMaxRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        public string wristSpeed {
+            get {
+                return ((string)(this["wristSpeed"]));
+            }
+            set {
+                this["wristSpeed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool wristEnable {
+            get {
+                return ((bool)(this["wristEnable"]));
+            }
+            set {
+                this["wristEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string wristRotateMinRange {
+            get {
+                return ((string)(this["wristRotateMinRange"]));
+            }
+            set {
+                this["wristRotateMinRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string wristRotateMaxRange {
+            get {
+                return ((string)(this["wristRotateMaxRange"]));
+            }
+            set {
+                this["wristRotateMaxRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("300")]
+        public string wristRotateSpeed {
+            get {
+                return ((string)(this["wristRotateSpeed"]));
+            }
+            set {
+                this["wristRotateSpeed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool wristRotateEnable {
+            get {
+                return ((bool)(this["wristRotateEnable"]));
+            }
+            set {
+                this["wristRotateEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string forearmMinRange {
+            get {
+                return ((string)(this["forearmMinRange"]));
+            }
+            set {
+                this["forearmMinRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string forearmMaxRange {
+            get {
+                return ((string)(this["forearmMaxRange"]));
+            }
+            set {
+                this["forearmMaxRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public string forearmSpeed {
+            get {
+                return ((string)(this["forearmSpeed"]));
+            }
+            set {
+                this["forearmSpeed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool forearmEnable {
+            get {
+                return ((bool)(this["forearmEnable"]));
+            }
+            set {
+                this["forearmEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string armMinRange {
+            get {
+                return ((string)(this["armMinRange"]));
+            }
+            set {
+                this["armMinRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string armMaxRange {
+            get {
+                return ((string)(this["armMaxRange"]));
+            }
+            set {
+                this["armMaxRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public string armSpeed {
+            get {
+                return ((string)(this["armSpeed"]));
+            }
+            set {
+                this["armSpeed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool armEnable {
+            get {
+                return ((bool)(this["armEnable"]));
+            }
+            set {
+                this["armEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public string shoulderMinRange {
+            get {
+                return ((string)(this["shoulderMinRange"]));
+            }
+            set {
+                this["shoulderMinRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2000")]
+        public string shoulderMaxRange {
+            get {
+                return ((string)(this["shoulderMaxRange"]));
+            }
+            set {
+                this["shoulderMaxRange"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("200")]
+        public string shoulderSpeed {
+            get {
+                return ((string)(this["shoulderSpeed"]));
+            }
+            set {
+                this["shoulderSpeed"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool shoulderEnable {
+            get {
+                return ((bool)(this["shoulderEnable"]));
+            }
+            set {
+                this["shoulderEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public int IMUCOMPortIndex {
+            get {
+                return ((int)(this["IMUCOMPortIndex"]));
+            }
+            set {
+                this["IMUCOMPortIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("3")]
+        public int IMUBaudRateIndex {
+            get {
+                return ((int)(this["IMUBaudRateIndex"]));
+            }
+            set {
+                this["IMUBaudRateIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IMUEnable {
+            get {
+                return ((bool)(this["IMUEnable"]));
+            }
+            set {
+                this["IMUEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int cyberGloveCOMPortIndex {
+            get {
+                return ((int)(this["cyberGloveCOMPortIndex"]));
+            }
+            set {
+                this["cyberGloveCOMPortIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public int cyberGloveBaudRateIndex {
+            get {
+                return ((int)(this["cyberGloveBaudRateIndex"]));
+            }
+            set {
+                this["cyberGloveBaudRateIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool cyberGloveEnable {
+            get {
+                return ((bool)(this["cyberGloveEnable"]));
+            }
+            set {
+                this["cyberGloveEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("2")]
+        public int robotArmCOMPortIndex {
+            get {
+                return ((int)(this["robotArmCOMPortIndex"]));
+            }
+            set {
+                this["robotArmCOMPortIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("6")]
+        public int robotArmBaudRateIndex {
+            get {
+                return ((int)(this["robotArmBaudRateIndex"]));
+            }
+            set {
+                this["robotArmBaudRateIndex"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool robotArmEnable {
+            get {
+                return ((bool)(this["robotArmEnable"]));
+            }
+            set {
+                this["robotArmEnable"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool kinectEnable {
+            get {
+                return ((bool)(this["kinectEnable"]));
+            }
+            set {
+                this["kinectEnable"] = value;
             }
         }
     }

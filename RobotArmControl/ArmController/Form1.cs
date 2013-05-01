@@ -74,6 +74,7 @@ namespace ArmController // Capstone_GUI
         public Form1()
         {
             InitializeComponent();
+            LoadGUISettings();
         }
 
 
@@ -242,6 +243,7 @@ namespace ArmController // Capstone_GUI
             glove_configuration.Visible = true;
             webcam_configuration.Visible = true;
             kinect_configuration.Visible = true;
+            robotArm_Configuration.Visible = true;
             setting_label.Visible = true;
             setting_pictureBx.Visible = true;
             startBtn.Visible = true;
@@ -289,6 +291,7 @@ namespace ArmController // Capstone_GUI
             glove_configuration.Visible = false;
             webcam_configuration.Visible = false;
             kinect_configuration.Visible = false;
+            robotArm_Configuration.Visible = false;
             setting_label.Visible = false;
             setting_pictureBx.Visible = false;
             startBtn.Visible = false;
@@ -422,12 +425,11 @@ namespace ArmController // Capstone_GUI
         private void startBtn_Click(object sender, EventArgs e)
         {
             // TODO: Add each module to the list here.
-
+ 
             if (isStarted == false)
             {
                 //Don't allow modules to be initialized more than once
                 isStarted = true;
-
         
                 //Wrist servo settings
                 _bus.Publish(BusNode.WRIST_SERVO_MIN_RANGE, Convert.ToInt32(wristServoMinRange.Text));
@@ -466,22 +468,26 @@ namespace ArmController // Capstone_GUI
                 _bus.Publish(BusNode.SHOULDER_SERVO_ENABLE, shoulderServoEnable.Checked);
 
                 //CyberGlove settings
-                _bus.Publish(BusNode.CYBERGLOVE_BAUD_RATE, Convert.ToInt32(cyberGloveBaudRate.SelectedValue));
-                _bus.Publish(BusNode.CYBERGLOVE_COM_PORT, cyberGloveCOMPort.SelectedText);
+                _bus.Publish(BusNode.CYBERGLOVE_BAUD_RATE, Convert.ToInt32(cyberGloveBaudRate.Text));
+                _bus.Publish(BusNode.CYBERGLOVE_COM_PORT, cyberGloveCOMPort.Text);
                 _bus.Publish(BusNode.CYBERGLOVE_ENABLE, cyberGloveEnable.Checked);
                 _bus.Publish(BusNode.CYBERGLOVE_COM_PORT, "COM1");
                 _bus.Publish(BusNode.CYBERGLOVE_BAUD_RATE, 115200);
 
                 //IMU settings
-                _bus.Publish(BusNode.IMU_BAUD_RATE, Convert.ToInt32(IMUBaudRate.SelectedValue));
-                _bus.Publish(BusNode.IMU_COM_PORT, IMUCOMPort.SelectedText);
+                _bus.Publish(BusNode.IMU_BAUD_RATE, Convert.ToInt32(IMUBaudRate.Text));
+                _bus.Publish(BusNode.IMU_COM_PORT, IMUCOMPort.Text);
                 _bus.Publish(BusNode.IMU_ENABLE, IMUEnable.Checked);
                 _bus.Publish(BusNode.IMU_COM_PORT, "COM5");
                 _bus.Publish(BusNode.IMU_BAUD_RATE, 19200);
 
+                //Robot Arm Settings
+                _bus.Publish(BusNode.ROBOT_ARM_BAUD_RATE, Convert.ToInt32(robotArmBaudRate.Text));
+                _bus.Publish(BusNode.ROBOT_ARM_COM_PORT, cyberGloveCOMPort.Text);
+                _bus.Publish(BusNode.ROBOT_ARM_ENABLE, cyberGloveEnable.Checked);
+
                 //Kinect settings
                 _bus.Publish(BusNode.KINECT_ENABLE, kinectEnable.Checked);
-
  
                 InitializeModules();
             }
@@ -544,7 +550,258 @@ namespace ArmController // Capstone_GUI
             }
         }
 
+        /// <summary>
+        /// Loads all of the GUI textfields, checkboxes, and comboboxes with saved settings
+        /// </summary>
+        private void LoadGUISettings()
+        {
+            armServoEnable.Checked = ArmController.Properties.Settings.Default.armEnable;
+            armServoMinRange.Text = ArmController.Properties.Settings.Default.armMinRange;
+            armServoMaxRange.Text = ArmController.Properties.Settings.Default.armMaxRange;
+            armServoSpeed.Text = ArmController.Properties.Settings.Default.armSpeed;
 
-        
+            cyberGloveBaudRate.SelectedIndex = ArmController.Properties.Settings.Default.cyberGloveBaudRateIndex;
+            cyberGloveCOMPort.SelectedIndex = ArmController.Properties.Settings.Default.cyberGloveCOMPortIndex;
+            cyberGloveEnable.Checked = ArmController.Properties.Settings.Default.cyberGloveEnable;
+
+            forearmServoEnable.Checked = ArmController.Properties.Settings.Default.forearmEnable;
+            forearmServoMinRange.Text = ArmController.Properties.Settings.Default.forearmMinRange;
+            forearmServoMaxRange.Text = ArmController.Properties.Settings.Default.forearmMaxRange;
+            forearmServoSpeed.Text = ArmController.Properties.Settings.Default.forearmSpeed;
+
+            handServoEnable.Checked = ArmController.Properties.Settings.Default.handEnable;
+            handServoMinRange.Text = ArmController.Properties.Settings.Default.handMinRange;
+            handServoMaxRange.Text = ArmController.Properties.Settings.Default.handMaxRange;
+            handServoSpeed.Text = ArmController.Properties.Settings.Default.handSpeed;
+
+            IMUBaudRate.SelectedIndex = ArmController.Properties.Settings.Default.IMUBaudRateIndex;
+            IMUCOMPort.SelectedIndex = ArmController.Properties.Settings.Default.IMUCOMPortIndex;
+            IMUEnable.Checked = ArmController.Properties.Settings.Default.IMUEnable;
+
+            kinectEnable.Checked = ArmController.Properties.Settings.Default.kinectEnable;
+
+            robotArmBaudRate.SelectedIndex = ArmController.Properties.Settings.Default.robotArmBaudRateIndex;
+            robotArmCOMPort.SelectedIndex = ArmController.Properties.Settings.Default.robotArmCOMPortIndex;
+            robotArmEnable.Checked = ArmController.Properties.Settings.Default.robotArmEnable;
+
+            shoulderServoEnable.Checked = ArmController.Properties.Settings.Default.shoulderEnable;
+            shoulderServoMinRange.Text = ArmController.Properties.Settings.Default.shoulderMinRange;
+            shoulderServoMaxRange.Text = ArmController.Properties.Settings.Default.shoulderMaxRange;
+            shoulderServoSpeed.Text = ArmController.Properties.Settings.Default.shoulderSpeed;
+
+            wristServoEnable.Checked = ArmController.Properties.Settings.Default.wristEnable;
+            wristServoMinRange.Text = ArmController.Properties.Settings.Default.wristMinRange;
+            wristServoMaxRange.Text = ArmController.Properties.Settings.Default.wristMaxRange;
+            wristServoSpeed.Text = ArmController.Properties.Settings.Default.wristSpeed;
+
+            wristRotateServoEnable.Checked = ArmController.Properties.Settings.Default.wristRotateEnable;
+            wristRotateServoMinRange.Text = ArmController.Properties.Settings.Default.wristRotateMinRange;
+            wristRotateServoMaxRange.Text = ArmController.Properties.Settings.Default.wristRotateMaxRange;
+            wristRotateServoSpeed.Text = ArmController.Properties.Settings.Default.wristRotateSpeed;
+        }
+
+        private void IMUBaudRate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.IMUBaudRateIndex = IMUBaudRate.SelectedIndex;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void IMUCOMPort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.IMUCOMPortIndex = IMUCOMPort.SelectedIndex;
+            ArmController.Properties.Settings.Default.Save();
+        } 
+
+        private void IMUEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.IMUEnable = IMUEnable.Checked;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void cyberGloveEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.cyberGloveEnable = cyberGloveEnable.Checked;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void cyberGloveBaudRate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.cyberGloveBaudRateIndex = cyberGloveBaudRate.SelectedIndex;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void cyberGloveCOMPort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.cyberGloveCOMPortIndex = cyberGloveCOMPort.SelectedIndex;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void kinectEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.kinectEnable = kinectEnable.Checked;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void handServoMinRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.handMinRange = handServoMinRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void handServoMaxRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.handMaxRange = handServoMaxRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void handServoSpeed_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.handSpeed = handServoSpeed.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void handServoEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.handEnable = handServoEnable.Checked;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void wristServoMinRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.wristMinRange = wristServoMinRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void wristServoMaxRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.wristMaxRange = wristServoMaxRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void wristServoSpeed_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.wristSpeed = wristServoSpeed.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void wristServoEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.wristEnable = wristServoEnable.Checked;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void wristRotateServoMinRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.wristRotateMinRange = wristRotateServoMinRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void wristRotateServoMaxRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.wristRotateMaxRange = wristRotateServoMaxRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void wristRotateServoSpeed_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.wristRotateSpeed = wristRotateServoSpeed.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void wristRotateServoEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.wristRotateEnable = wristRotateServoEnable.Checked;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void forearmServoMinRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.forearmMinRange = forearmServoMinRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void forearmServoMaxRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.forearmMaxRange = forearmServoMaxRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void forearmServoSpeed_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.forearmSpeed = forearmServoSpeed.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void forearmServoEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.forearmEnable = forearmServoEnable.Checked;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void armServoMinRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.armMinRange = armServoMinRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void armServoMaxRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.armMaxRange = armServoMaxRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void armServoSpeed_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.armSpeed = armServoSpeed.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void armServoEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.armEnable = armServoEnable.Checked;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void shoulderServoMinRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.shoulderMinRange = shoulderServoMinRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void shoulderServoMaxRange_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.shoulderMaxRange = shoulderServoMaxRange.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void shoulderServoSpeed_TextChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.shoulderSpeed = shoulderServoSpeed.Text;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void shoulderServoEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.shoulderEnable = shoulderServoEnable.Checked;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void robotArmBaudRate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.robotArmBaudRateIndex = robotArmBaudRate.SelectedIndex;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void robotArmCOMPort_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.robotArmCOMPortIndex = robotArmCOMPort.SelectedIndex;
+            ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void robotArmEnable_CheckedChanged(object sender, EventArgs e)
+        {
+            ArmController.Properties.Settings.Default.robotArmEnable = robotArmEnable.Checked;
+            ArmController.Properties.Settings.Default.Save();
+        }
     }
 }
