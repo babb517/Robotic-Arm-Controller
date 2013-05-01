@@ -1,28 +1,3 @@
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.exe.config
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.exe
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.pdb
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\Microsoft.Kinect.Toolkit.dll
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\TCPCam.dll
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\TCPCamActivex.dll
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\Touchless.Vision.dll
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\WebCamLib.dll
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\System.ComponentModel.Composition.dll
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\Microsoft.Kinect.Toolkit.pdb
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\TCPCam.xml
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\TCPCamActivex.xml
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\Touchless.Vision.pdb
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\WebCamLib.pdb
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csprojResolveAssemblyReference.cache
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\MainWindow.baml
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\MainWindow.g.cs
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\App.g.cs
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController_MarkupCompile.cache
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.g.resources
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.Form1.resources
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.Properties.Resources.resources
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csproj.GenerateResource.Cache
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.exe
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.pdb
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.exe.config
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.exe
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.pdb
@@ -35,3 +10,26 @@ C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmCon
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.Form1.resources
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.Properties.Resources.resources
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csproj.GenerateResource.Cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\MainWindow.baml
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\MainWindow.g.cs
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\App.g.cs
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController_MarkupCompile.cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.g.resources
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.Form1.resources
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.Properties.Resources.resources
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csproj.GenerateResource.Cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.exe.config
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.exe
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\Microsoft.Kinect.Toolkit.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\TCPCam.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\TCPCamActivex.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\Touchless.Vision.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\WebCamLib.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\System.ComponentModel.Composition.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\Microsoft.Kinect.Toolkit.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\Touchless.Vision.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\WebCamLib.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csprojResolveAssemblyReference.cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.exe
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.pdb

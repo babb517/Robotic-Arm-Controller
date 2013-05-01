@@ -4,7 +4,7 @@
 library
 C#
 .cs
-C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\source release\WebCamWrapper\obj\Debug\
 Touchless.Vision
 none
 false
@@ -13,7 +13,7 @@ DEBUG;TRACE
 1-1570900898
 
 13-1423137110
-161883983644
+16-108224407
 Camera\Configuration\CameraFrameSourceConfigurationElement.xaml;
 
 False

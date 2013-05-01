@@ -406,13 +406,13 @@ namespace ArmController.IMU_Module
 
             Orientation relOrientation = new Orientation(0,0,0);
             relOrientation.Roll = -1 * _rotationBicep.Roll /*- _rotationBicep.Roll*/;
-            relOrientation.Pitch = -1 * _rotationBicep.Pitch /*- _rotationShoulder.Pitch*/;
-            relOrientation.Yaw = _rotationBicep.RelativeFrame(_rotationShoulder).Yaw;
+            relOrientation.Pitch = /*-1 * */ _rotationBicep.Pitch /*- _rotationShoulder.Pitch*/;
+            relOrientation.Yaw = -1 * _rotationBicep.RelativeFrame(_rotationShoulder).Yaw;
             Orientation absOrientation = _rotationBicep.Orientation;
 
           //  Bus.Publish(BusNode.DIR_RIGHT_UPPER_ARM, relative.YPoint);
             Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, new Orientation(relOrientation.Roll, relOrientation.Pitch, relOrientation.Yaw));
-            Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, new Orientation(absOrientation.Roll, absOrientation.Pitch,absOrientation.Yaw));
+            Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, new Orientation(absOrientation.Roll, absOrientation.Pitch, absOrientation.Yaw));
            // Bus.Publish(BusNode.ORIENTATION_RIGHT_UPPER_ARM, new Orientation(_bicepRoll - _shoulderRoll, relOrientation.Pitch, relOrientation.Yaw));
            // Bus.Publish(BusNode.ABSOLUTE_ORIENTATION_RIGHT_UPPER_ARM, new Orientation(_bicepRoll - _shoulderRoll, absOrientation.Pitch, absOrientation.Yaw));
         }
@@ -427,7 +427,6 @@ namespace ArmController.IMU_Module
       //          _rotationForearm.Yaw - _rotationBicep.Yaw
       //      );
       //      Orientation absOrientation = _rotationForearm;
-
 
           //  Matrix33 relative = _rotationForearm.RelativeFrame(_rotationBicep.Rotate(0,0,-(float)(Math.PI/2)));
          //   Orientation relOrientation = relative.Orientation;
@@ -453,7 +452,7 @@ namespace ArmController.IMU_Module
     }
 }
 
-#if 0
+#if false
 using System;
 using System.Collections.Generic;
 using System.Linq;

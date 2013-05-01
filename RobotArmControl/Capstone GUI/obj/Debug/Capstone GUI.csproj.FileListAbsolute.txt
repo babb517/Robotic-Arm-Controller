@@ -19,22 +19,6 @@ C:\Users\max\Documents\Visual Studio 2012\Projects\Capstone GUI\Capstone GUI\bin
 G:\Capstone GUI\Capstone GUI\bin\Debug\Capstone GUI.exe.config
 G:\Capstone GUI\Capstone GUI\obj\Debug\Capstone GUI.exe
 G:\Capstone GUI\Capstone GUI\obj\Debug\Capstone GUI.pdb
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone_GUI.Form1.resources
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone_GUI.Properties.Resources.resources
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.csproj.GenerateResource.Cache
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Capstone GUI.exe.config
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Capstone GUI.exe
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Capstone GUI.pdb
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Touchless.Vision.dll
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\WebCamLib.dll
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\System.ComponentModel.Composition.dll
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\WebCamLib.pdb
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Touchless.Vision.pdb
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\TCPCam.xml
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\TCPCamActivex.xml
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.csprojResolveAssemblyReference.cache
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.exe
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.pdb
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Capstone GUI.exe.config
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Capstone GUI.exe
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Capstone GUI.pdb
@@ -51,3 +35,17 @@ C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capsto
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.csproj.GenerateResource.Cache
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.exe
 C:\Users\Ashoraya\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Capstone GUI.exe.config
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Capstone GUI.exe
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Capstone GUI.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Touchless.Vision.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\WebCamLib.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\System.ComponentModel.Composition.dll
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\WebCamLib.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\bin\Debug\Touchless.Vision.pdb
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.csprojResolveAssemblyReference.cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone_GUI.Form1.resources
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone_GUI.Properties.Resources.resources
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.csproj.GenerateResource.Cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.exe
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\Capstone GUI\obj\Debug\Capstone GUI.pdb
