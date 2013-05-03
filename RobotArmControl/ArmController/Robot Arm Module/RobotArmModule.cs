@@ -45,7 +45,7 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// Milliseconds to wait between command updates.
         /// </summary>
-        private const long MIN_UPDATE_INTERVAL = 300;
+        private const long MIN_UPDATE_INTERVAL = 100;
 
         #region Servo Channel Numbers
 
@@ -116,7 +116,7 @@ namespace ArmController.Robot_Arm_Module
         /// <summary>
         /// The minimum amount of degrees that the shoulder servo can move.
         /// </summary>
-        private const int SHOULDER_YAW_MIN_DEG = -30;
+        private const int SHOULDER_YAW_MIN_DEG = -100;
 
         /// <summary>
         /// The maximum amount of degrees that the wrist servo can move.
@@ -158,8 +158,12 @@ namespace ArmController.Robot_Arm_Module
         /// </summary>
         long _lastUpdateTime;
 
+        /// <summary>
+        /// The last position we moved the servo to.
+        /// </summary>
         int[] lastPos;
-        
+
+
         /// <summary>
         /// The list of nodes that we've updated and ignored.
         /// </summary>
@@ -273,8 +277,8 @@ namespace ArmController.Robot_Arm_Module
 
             // Let's limit the rate at which we send commands
             // TODO: Do this right!
-            //if (System.DateTime.Now.Ticks < _lastUpdateTime + MIN_UPDATE_INTERVAL * System.TimeSpan.TicksPerMillisecond)
-            if (false)
+             if (System.DateTime.Now.Ticks < _lastUpdateTime + MIN_UPDATE_INTERVAL * System.TimeSpan.TicksPerMillisecond)
+           // if (false)
             {
                 if (!_updatedNodes.Contains(node))
                     _updatedNodes.AddLast(node);
@@ -400,18 +404,18 @@ namespace ArmController.Robot_Arm_Module
                             if (arm.Yaw > 0)
                             {
                                 finalShoulderPosition = 1500 + (int)((
-                                    (Math.Abs(arm.Yaw) /
+                                    (arm.Yaw /
                                         ((SHOULDER_YAW_MAX_DEG) * RAD_PER_DEG)
                                     ) //* (180 / ((float)Math.Abs(SHOULDER_PITCH_MIN_DEG_PHYSICAL)))
-                                    ) * 900);
+                                    ) * 1000);
                             }
                             else
                             {
                                 finalShoulderPosition = 1500 - (int)((
-                                    (arm.Yaw /
-                                        ((SHOULDER_YAW_MIN_DEG) * RAD_PER_DEG)
+                                    (Math.Abs(arm.Yaw) /
+                                        (Math.Abs(SHOULDER_YAW_MIN_DEG) * RAD_PER_DEG)
                                     ) //* (180 / ((float)Math.Abs(SHOULDER_PITC_MIN_DEG_PHYSICAL)))
-                                    ) * 900);
+                                    ) * 1000);
                             }
 
                             // move the stuff!
@@ -429,7 +433,7 @@ namespace ArmController.Robot_Arm_Module
                             {
                                 finalWristRotation = 1500 - (int)((
                                     (forearm.Roll /
-                                        ((WRIST_ROTATE_MAX_DEG - WRIST_ROTATE_MIN_DEG) * RAD_PER_DEG)
+                                        ((WRIST_ROTATE_MAX_DEG) * RAD_PER_DEG)
                                     ) //* (180 / ((float)Math.Abs(SHOULDER_PITC_MIN_DEG_PHYSICAL)))
                                     ) * 700);
                             }
@@ -437,7 +441,7 @@ namespace ArmController.Robot_Arm_Module
                             {
                                 finalWristRotation = 1500 + (int)((
                                     (Math.Abs(forearm.Roll) /
-                                        ((WRIST_ROTATE_MAX_DEG - WRIST_ROTATE_MIN_DEG) * RAD_PER_DEG)
+                                        (Math.Abs(WRIST_ROTATE_MIN_DEG) * RAD_PER_DEG)
                                     ) //* (180 / ((float)Math.Abs(SHOULDER_PITCH_MIN_DEG_PHYSICAL)))
                                     ) * 700);
                             }
@@ -449,8 +453,7 @@ namespace ArmController.Robot_Arm_Module
 
                     }
 
-                    if (n == BusNode.CLAW_OPEN_PERCENT)
-                    //if (n == BusNode.CLAW_OPEN_PERCENT && handServoEnabled)
+                    if (n == BusNode.CLAW_OPEN_PERCENT && wristServoEnabled)
                     {
                         // scale to the valid range (1000 - 2000)
                         finalHandPosition = 1500 + ((-hand + 50) * 10);
@@ -460,8 +463,7 @@ namespace ArmController.Robot_Arm_Module
                         move(HAND, finalHandPosition, handServoSpeed);
                     }
 
-                    //      if (n == BusNode.WRIST_PERCENT && wristServoEnabled) // flexion/extension
-                    if (n == BusNode.WRIST_PERCENT)
+                    if (n == BusNode.WRIST_PERCENT && wristServoEnabled) // flexion/extension
                     {
                      
                         finalWristPosition = 1380 + (int)((-wrist_hand + 50) * 12.4f);
@@ -483,16 +485,17 @@ namespace ArmController.Robot_Arm_Module
         /// <param name="speed"></param>
         private void move(int servo, int pos, int speed)
         {
-            if (pos < 800 || pos > 2200)
+            if (pos < 600 || pos >  2500)
             {
                 Debug.WriteLine("ERROR: servo " + servo + " set to invalid position " + pos);
-                pos = (pos < 800) ? 800 : 2200;
+                pos = (pos < 600) ? 600 : 2500;
             }
 
             if (lastPos[servo] == int.MinValue ||
-               ( Math.Abs(pos - lastPos[servo]) >= positionDeltaThreshold
-                       && (pos <= lastPos[servo] + positionDeltaMax 
-                            || pos >= lastPos[servo] - positionDeltaMax))) {
+               ( Math.Abs(pos - lastPos[servo]) >= positionDeltaThreshold))
+ //                      && (pos <= lastPos[servo] + positionDeltaMax
+  //                          || pos >= lastPos[servo] - positionDeltaMax)))
+            {
 
                 lastPos[servo] = pos;
                 //Debug.WriteLine("Moving servo " + servo + " to position " + pos);

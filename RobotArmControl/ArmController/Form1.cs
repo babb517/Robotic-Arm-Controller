@@ -12,7 +12,8 @@ using System.Diagnostics;
 using System.Net;
 using TCPCam;
 using TCPCamActivex;
-
+using System.IO.Ports;
+using System.Threading;
 using ArmController.Kinect_Module;
 using ArmController.Integration;
 using ArmController.Robot_Arm_Module;
@@ -63,6 +64,18 @@ namespace ArmController // Capstone_GUI
         /// TODO
         /// </summary>
         TCPCam.Host Host;
+
+
+        //manual Control
+        SerialPort _serialPort;
+        int shoulderPos = 1600;
+        int armPos = 1600;
+        int forearmPos = 1600;
+        int wristRotatePos = 1600;
+        int wristPos = 1600;
+        int handPos = 1600;
+        int servo;
+        private delegate void SetTextDeleg(string text);
 
 
         /**************************************************************************/
@@ -135,10 +148,94 @@ namespace ArmController // Capstone_GUI
       
         private void btn_robbotCtrl_Click(object sender, EventArgs e)
         {
+            startBtn.Visible = false;
+            _serialPort = new SerialPort("COM3", 115200, Parity.None, 8, StopBits.One);
 
-            hide_firstPanel();
-          
+            _serialPort.Handshake = Handshake.None;
+            _serialPort.DataReceived += new SerialDataReceivedEventHandler(sp_DataReceived);
+            _serialPort.ReadTimeout = 500;
+            _serialPort.WriteTimeout = 500;
+            try
+            {
+                _serialPort.Open();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error opening COM Port for manual robot arm control.");
+            }
+
+
+            
+            shBtnLeft.Visible = true;
+            shBtnRight.Visible = true;
+            armBtnLeft.Visible = true;
+            armBtnRight.Visible = true;
+            forArmBtnLeft.Visible = true;
+            foreArmBtnRight.Visible = true;
+            wristLeft.Visible = true;
+            wristRight.Visible = true;
+            WristRotateLeft.Visible = true;
+            wristRotateRight.Visible = true;
+            handLeft.Visible = true;
+            handRight.Visible = true;
+
+            shoulderLabel.Visible = true;
+            armLabel.Visible = true;
+            forearmLabel.Visible = true;
+            wristLabel.Visible = true;
+            wristRotateLabel.Visible = true;
+            handLabel.Visible = true;
+            hide_firstPanel1();
         }
+
+        void sp_DataReceived(object sender, SerialDataReceivedEventArgs e)
+        {
+            Thread.Sleep(500);
+            string data = _serialPort.ReadLine();
+            this.BeginInvoke(new SetTextDeleg(si_DataReceived), new object[] { data });
+        }
+        private void si_DataReceived(string data)
+        {
+            //textBox1.Text = data.Trim();
+
+        }
+
+
+        public void send_manualControl(string command)
+        {
+            string tempcommand = command + "\r\n";
+
+            try
+            {
+                if (!_serialPort.IsOpen)
+                    _serialPort.Open();
+
+                _serialPort.Write(tempcommand);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error opening/writing to serial port :: " + ex.Message, "Error!");
+            }
+
+        }
+        private void hide_firstPanel1()
+        {
+            btn_debug.Visible = false;
+            btn_robbotCtrl.Visible = false;
+            btn_videoFeed.Visible = false;
+            btn_ports.Visible = false;
+            btn_servo.Visible = false;
+            asu_logo.Visible = false;
+            setPictureBox.Visible = false;
+            robot_armPicture.Visible = false;
+            designPictureBx.Visible = false;
+            home_btn.Visible = true;
+           // startBtn.Visible = true;
+
+        }
+
+
 
         private void hide_firstPanel()
         {
@@ -152,7 +249,7 @@ namespace ArmController // Capstone_GUI
             robot_armPicture.Visible = false;
             designPictureBx.Visible = false;
             home_btn.Visible = true;
-            startBtn.Visible = true;
+           startBtn.Visible = true;
             
         }
 
@@ -260,6 +357,27 @@ namespace ArmController // Capstone_GUI
             System.Windows.Application.Current.MainWindow.Hide();
             enable_homePanel();
             FinalizeModules();
+            hide_controlPanel();
+
+        }
+
+        private void hide_controlPanel()
+        {
+            shBtnLeft.Visible = false;
+            shBtnRight.Visible = false;
+            armBtnLeft.Visible = false;
+            armBtnRight.Visible = false;
+            forArmBtnLeft.Visible = false;
+            foreArmBtnRight.Visible = false;
+            wristLeft.Visible = false;
+            wristRight.Visible = false;
+            WristRotateLeft.Visible = false;
+            wristRotateRight.Visible = false;
+            handLeft.Visible = false;
+            handRight.Visible = false;
+
+
+
         }
         private void hide_webcamPanel()
         {
@@ -281,7 +399,13 @@ namespace ArmController // Capstone_GUI
             setPictureBox.Visible = true;
             robot_armPicture.Visible = true;
             designPictureBx.Visible = true;
-
+            shoulderLabel.Visible = false;
+            armLabel.Visible = false;
+            forearmLabel.Visible = false;
+            wristLabel.Visible = false;
+            wristRotateLabel.Visible = false;
+            handLabel.Visible = false;
+            _serialPort.Close();
         }
 
         private void hide_Settings()
@@ -802,6 +926,164 @@ namespace ArmController // Capstone_GUI
         {
             ArmController.Properties.Settings.Default.robotArmEnable = robotArmEnable.Checked;
             ArmController.Properties.Settings.Default.Save();
+        }
+
+        private void shBtnLeft_Click(object sender, EventArgs e)
+        {
+            servo = 0;
+            shoulderPos = shoulderPos + 100;
+            string tempServo = servo.ToString();
+            string tempPos = shoulderPos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void shBtnRight_Click(object sender, EventArgs e)
+        {
+            servo = 0;
+            shoulderPos = shoulderPos - 100;
+            string tempServo = servo.ToString();
+            string tempPos = shoulderPos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void armBtnLeft_Click(object sender, EventArgs e)
+        {
+            servo = 1;
+            armPos = armPos + 100;
+
+            Thread.Sleep(100);
+            string tempServo = servo.ToString();
+            string tempPos = armPos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void armBtnRight_Click(object sender, EventArgs e)
+        {
+            servo = 1;
+            armPos = armPos - 100;
+            string tempServo = servo.ToString();
+            string tempPos = armPos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void forArmBtnLeft_Click(object sender, EventArgs e)
+        {
+            servo = 2;
+            forearmPos = forearmPos + 100;
+            string tempServo = servo.ToString();
+            string tempPos = forearmPos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void foreArmBtnRight_Click(object sender, EventArgs e)
+        {
+            servo = 2;
+            forearmPos = forearmPos - 100;
+            string tempServo = servo.ToString();
+            string tempPos = forearmPos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void wristLeft_Click(object sender, EventArgs e)
+        {
+            servo = 3;
+            wristPos = wristPos + 100;
+            string tempServo = servo.ToString();
+            string tempPos = wristPos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void wristRight_Click(object sender, EventArgs e)
+        {
+            servo = 3;
+            wristPos = wristPos - 100;
+            string tempServo = servo.ToString();
+            string tempPos = wristPos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void WristRotateLeft_Click(object sender, EventArgs e)
+        {
+            servo = 4;
+            wristRotatePos = wristRotatePos + 100;
+            string tempServo = servo.ToString();
+            string tempPos = wristRotatePos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void wristRotateRight_Click(object sender, EventArgs e)
+        {
+            servo = 4;
+            wristRotatePos = wristRotatePos - 100;
+            string tempServo = servo.ToString();
+            string tempPos = wristRotatePos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void handLeft_Click(object sender, EventArgs e)
+        {
+            servo = 5;
+            handPos = handPos + 100;
+            string tempServo = servo.ToString();
+            string tempPos = handPos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
+        }
+
+        private void handRight_Click(object sender, EventArgs e)
+        {
+            servo = 5;
+            handPos = handPos - 100;
+            string tempServo = servo.ToString();
+            string tempPos = handPos.ToString();
+            string command = "#" + tempServo + "P" + tempPos + "S" + "500" + "\r\n";
+
+            //send(command);
+
+            send_manualControl(command);
         }
     }
 }

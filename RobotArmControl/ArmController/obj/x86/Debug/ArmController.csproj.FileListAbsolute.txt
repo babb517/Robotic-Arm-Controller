@@ -18,6 +18,7 @@ C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmContr
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.Form1.resources
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.Properties.Resources.resources
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csproj.GenerateResource.Cache
+C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csprojResolveAssemblyReference.cache
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.exe.config
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.exe
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\ArmController.pdb
@@ -30,6 +31,5 @@ C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmContr
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\Microsoft.Kinect.Toolkit.pdb
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\Touchless.Vision.pdb
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\bin\x86\Debug\WebCamLib.pdb
-C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.csprojResolveAssemblyReference.cache
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.exe
 C:\Users\Armed & Dangerous\Documents\GitHub\Robotic-Arm-Controller\RobotArmControl\ArmController\obj\x86\Debug\ArmController.pdb

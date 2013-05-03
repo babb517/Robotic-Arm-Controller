@@ -154,6 +154,24 @@
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.robotArmBaudRate = new System.Windows.Forms.ComboBox();
+            this.WristRotateLeft = new System.Windows.Forms.Button();
+            this.armBtnLeft = new System.Windows.Forms.Button();
+            this.wristLeft = new System.Windows.Forms.Button();
+            this.forArmBtnLeft = new System.Windows.Forms.Button();
+            this.wristRight = new System.Windows.Forms.Button();
+            this.foreArmBtnRight = new System.Windows.Forms.Button();
+            this.armBtnRight = new System.Windows.Forms.Button();
+            this.shBtnRight = new System.Windows.Forms.Button();
+            this.wristRotateRight = new System.Windows.Forms.Button();
+            this.handRight = new System.Windows.Forms.Button();
+            this.handLeft = new System.Windows.Forms.Button();
+            this.shBtnLeft = new System.Windows.Forms.Button();
+            this.shoulderLabel = new System.Windows.Forms.Label();
+            this.armLabel = new System.Windows.Forms.Label();
+            this.wristLabel = new System.Windows.Forms.Label();
+            this.forearmLabel = new System.Windows.Forms.Label();
+            this.handLabel = new System.Windows.Forms.Label();
+            this.wristRotateLabel = new System.Windows.Forms.Label();
             this.IMU_Configuration.SuspendLayout();
             this.glove_configuration.SuspendLayout();
             this.kinect_configuration.SuspendLayout();
@@ -1534,12 +1552,222 @@
             this.robotArmBaudRate.TabIndex = 10;
             this.robotArmBaudRate.SelectedIndexChanged += new System.EventHandler(this.robotArmBaudRate_SelectedIndexChanged);
             // 
+            // WristRotateLeft
+            // 
+            this.WristRotateLeft.Location = new System.Drawing.Point(318, 281);
+            this.WristRotateLeft.Name = "WristRotateLeft";
+            this.WristRotateLeft.Size = new System.Drawing.Size(75, 23);
+            this.WristRotateLeft.TabIndex = 28;
+            this.WristRotateLeft.Text = "Left";
+            this.WristRotateLeft.UseVisualStyleBackColor = true;
+            this.WristRotateLeft.Visible = false;
+            this.WristRotateLeft.Click += new System.EventHandler(this.WristRotateLeft_Click);
+            // 
+            // armBtnLeft
+            // 
+            this.armBtnLeft.Location = new System.Drawing.Point(316, 158);
+            this.armBtnLeft.Name = "armBtnLeft";
+            this.armBtnLeft.Size = new System.Drawing.Size(75, 23);
+            this.armBtnLeft.TabIndex = 30;
+            this.armBtnLeft.Text = "Left";
+            this.armBtnLeft.UseVisualStyleBackColor = true;
+            this.armBtnLeft.Visible = false;
+            this.armBtnLeft.Click += new System.EventHandler(this.armBtnLeft_Click);
+            // 
+            // wristLeft
+            // 
+            this.wristLeft.Location = new System.Drawing.Point(317, 242);
+            this.wristLeft.Name = "wristLeft";
+            this.wristLeft.Size = new System.Drawing.Size(75, 23);
+            this.wristLeft.TabIndex = 32;
+            this.wristLeft.Text = "Left";
+            this.wristLeft.UseVisualStyleBackColor = true;
+            this.wristLeft.Visible = false;
+            this.wristLeft.Click += new System.EventHandler(this.wristLeft_Click);
+            // 
+            // forArmBtnLeft
+            // 
+            this.forArmBtnLeft.Location = new System.Drawing.Point(317, 203);
+            this.forArmBtnLeft.Name = "forArmBtnLeft";
+            this.forArmBtnLeft.Size = new System.Drawing.Size(75, 23);
+            this.forArmBtnLeft.TabIndex = 31;
+            this.forArmBtnLeft.Text = "Left";
+            this.forArmBtnLeft.UseVisualStyleBackColor = true;
+            this.forArmBtnLeft.Visible = false;
+            this.forArmBtnLeft.Click += new System.EventHandler(this.forArmBtnLeft_Click);
+            // 
+            // wristRight
+            // 
+            this.wristRight.Location = new System.Drawing.Point(415, 244);
+            this.wristRight.Name = "wristRight";
+            this.wristRight.Size = new System.Drawing.Size(75, 23);
+            this.wristRight.TabIndex = 37;
+            this.wristRight.Text = "Right";
+            this.wristRight.UseVisualStyleBackColor = true;
+            this.wristRight.Visible = false;
+            this.wristRight.Click += new System.EventHandler(this.wristRight_Click);
+            // 
+            // foreArmBtnRight
+            // 
+            this.foreArmBtnRight.Location = new System.Drawing.Point(415, 205);
+            this.foreArmBtnRight.Name = "foreArmBtnRight";
+            this.foreArmBtnRight.Size = new System.Drawing.Size(75, 23);
+            this.foreArmBtnRight.TabIndex = 36;
+            this.foreArmBtnRight.Text = "Right";
+            this.foreArmBtnRight.UseVisualStyleBackColor = true;
+            this.foreArmBtnRight.Visible = false;
+            this.foreArmBtnRight.Click += new System.EventHandler(this.foreArmBtnRight_Click);
+            // 
+            // armBtnRight
+            // 
+            this.armBtnRight.Location = new System.Drawing.Point(414, 160);
+            this.armBtnRight.Name = "armBtnRight";
+            this.armBtnRight.Size = new System.Drawing.Size(75, 23);
+            this.armBtnRight.TabIndex = 35;
+            this.armBtnRight.Text = "Right";
+            this.armBtnRight.UseVisualStyleBackColor = true;
+            this.armBtnRight.Visible = false;
+            this.armBtnRight.Click += new System.EventHandler(this.armBtnRight_Click);
+            // 
+            // shBtnRight
+            // 
+            this.shBtnRight.Location = new System.Drawing.Point(414, 121);
+            this.shBtnRight.Name = "shBtnRight";
+            this.shBtnRight.Size = new System.Drawing.Size(75, 23);
+            this.shBtnRight.TabIndex = 34;
+            this.shBtnRight.Text = "Right";
+            this.shBtnRight.UseVisualStyleBackColor = true;
+            this.shBtnRight.Visible = false;
+            this.shBtnRight.Click += new System.EventHandler(this.shBtnRight_Click);
+            // 
+            // wristRotateRight
+            // 
+            this.wristRotateRight.Location = new System.Drawing.Point(416, 283);
+            this.wristRotateRight.Name = "wristRotateRight";
+            this.wristRotateRight.Size = new System.Drawing.Size(75, 23);
+            this.wristRotateRight.TabIndex = 33;
+            this.wristRotateRight.Text = "Right";
+            this.wristRotateRight.UseVisualStyleBackColor = true;
+            this.wristRotateRight.Visible = false;
+            this.wristRotateRight.Click += new System.EventHandler(this.wristRotateRight_Click);
+            // 
+            // handRight
+            // 
+            this.handRight.Location = new System.Drawing.Point(414, 322);
+            this.handRight.Name = "handRight";
+            this.handRight.Size = new System.Drawing.Size(75, 23);
+            this.handRight.TabIndex = 39;
+            this.handRight.Text = "Right";
+            this.handRight.UseVisualStyleBackColor = true;
+            this.handRight.Visible = false;
+            this.handRight.Click += new System.EventHandler(this.handRight_Click);
+            // 
+            // handLeft
+            // 
+            this.handLeft.Location = new System.Drawing.Point(316, 320);
+            this.handLeft.Name = "handLeft";
+            this.handLeft.Size = new System.Drawing.Size(75, 23);
+            this.handLeft.TabIndex = 38;
+            this.handLeft.Text = "Left";
+            this.handLeft.UseVisualStyleBackColor = true;
+            this.handLeft.Visible = false;
+            this.handLeft.Click += new System.EventHandler(this.handLeft_Click);
+            // 
+            // shBtnLeft
+            // 
+            this.shBtnLeft.Location = new System.Drawing.Point(315, 121);
+            this.shBtnLeft.Name = "shBtnLeft";
+            this.shBtnLeft.Size = new System.Drawing.Size(75, 23);
+            this.shBtnLeft.TabIndex = 41;
+            this.shBtnLeft.Text = "Left";
+            this.shBtnLeft.UseVisualStyleBackColor = true;
+            this.shBtnLeft.Visible = false;
+            this.shBtnLeft.Click += new System.EventHandler(this.shBtnLeft_Click);
+            // 
+            // shoulderLabel
+            // 
+            this.shoulderLabel.AutoSize = true;
+            this.shoulderLabel.Location = new System.Drawing.Point(220, 126);
+            this.shoulderLabel.Name = "shoulderLabel";
+            this.shoulderLabel.Size = new System.Drawing.Size(83, 13);
+            this.shoulderLabel.TabIndex = 42;
+            this.shoulderLabel.Text = "Shoulder Servo:";
+            this.shoulderLabel.Visible = false;
+            // 
+            // armLabel
+            // 
+            this.armLabel.AutoSize = true;
+            this.armLabel.Location = new System.Drawing.Point(217, 163);
+            this.armLabel.Name = "armLabel";
+            this.armLabel.Size = new System.Drawing.Size(59, 13);
+            this.armLabel.TabIndex = 43;
+            this.armLabel.Text = "Arm Servo:";
+            this.armLabel.Visible = false;
+            // 
+            // wristLabel
+            // 
+            this.wristLabel.AutoSize = true;
+            this.wristLabel.Location = new System.Drawing.Point(216, 242);
+            this.wristLabel.Name = "wristLabel";
+            this.wristLabel.Size = new System.Drawing.Size(65, 13);
+            this.wristLabel.TabIndex = 45;
+            this.wristLabel.Text = "Wrist Servo:";
+            this.wristLabel.Visible = false;
+            // 
+            // forearmLabel
+            // 
+            this.forearmLabel.AutoSize = true;
+            this.forearmLabel.Location = new System.Drawing.Point(219, 205);
+            this.forearmLabel.Name = "forearmLabel";
+            this.forearmLabel.Size = new System.Drawing.Size(79, 13);
+            this.forearmLabel.TabIndex = 44;
+            this.forearmLabel.Text = "Forearm Servo:";
+            this.forearmLabel.Visible = false;
+            // 
+            // handLabel
+            // 
+            this.handLabel.AutoSize = true;
+            this.handLabel.Location = new System.Drawing.Point(214, 323);
+            this.handLabel.Name = "handLabel";
+            this.handLabel.Size = new System.Drawing.Size(67, 13);
+            this.handLabel.TabIndex = 47;
+            this.handLabel.Text = "Hand Servo:";
+            this.handLabel.Visible = false;
+            // 
+            // wristRotateLabel
+            // 
+            this.wristRotateLabel.AutoSize = true;
+            this.wristRotateLabel.Location = new System.Drawing.Point(217, 286);
+            this.wristRotateLabel.Name = "wristRotateLabel";
+            this.wristRotateLabel.Size = new System.Drawing.Size(100, 13);
+            this.wristRotateLabel.TabIndex = 46;
+            this.wristRotateLabel.Text = "Wrist Rotate Servo:";
+            this.wristRotateLabel.Visible = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1046, 580);
+            this.ClientSize = new System.Drawing.Size(1044, 580);
+            this.Controls.Add(this.handLabel);
+            this.Controls.Add(this.wristRotateLabel);
+            this.Controls.Add(this.wristLabel);
+            this.Controls.Add(this.forearmLabel);
+            this.Controls.Add(this.armLabel);
+            this.Controls.Add(this.shoulderLabel);
+            this.Controls.Add(this.shBtnLeft);
+            this.Controls.Add(this.handRight);
+            this.Controls.Add(this.handLeft);
+            this.Controls.Add(this.wristRight);
+            this.Controls.Add(this.foreArmBtnRight);
+            this.Controls.Add(this.armBtnRight);
+            this.Controls.Add(this.shBtnRight);
+            this.Controls.Add(this.wristRotateRight);
+            this.Controls.Add(this.wristLeft);
+            this.Controls.Add(this.forArmBtnLeft);
+            this.Controls.Add(this.armBtnLeft);
+            this.Controls.Add(this.WristRotateLeft);
             this.Controls.Add(this.robotArm_Configuration);
             this.Controls.Add(this.home_btn);
             this.Controls.Add(this.startBtn);
@@ -1547,19 +1775,13 @@
             this.Controls.Add(this.setting_pictureBx);
             this.Controls.Add(this.glove_configuration);
             this.Controls.Add(this.IMU_Configuration);
-            this.Controls.Add(this.kinect_configuration);
             this.Controls.Add(this.asu_logo);
             this.Controls.Add(this.kinect_Gp);
             this.Controls.Add(this.webcamGroupbx2);
-            this.Controls.Add(this.webcam_pictureBx);
-            this.Controls.Add(this.kinect_console);
-            this.Controls.Add(this.debugGp);
-            this.Controls.Add(this.webcam_configuration);
             this.Controls.Add(this.designPictureBx);
             this.Controls.Add(this.btn_videoFeed);
             this.Controls.Add(this.robot_armPicture);
             this.Controls.Add(this.webCamGroupBx);
-            this.Controls.Add(this.shoulderGP);
             this.Controls.Add(this.forarmGpBox);
             this.Controls.Add(this.hand_groupBx);
             this.Controls.Add(this.wrist_gpBox);
@@ -1570,6 +1792,12 @@
             this.Controls.Add(this.btn_debug);
             this.Controls.Add(this.btn_ports);
             this.Controls.Add(this.setPictureBox);
+            this.Controls.Add(this.webcam_pictureBx);
+            this.Controls.Add(this.kinect_console);
+            this.Controls.Add(this.debugGp);
+            this.Controls.Add(this.kinect_configuration);
+            this.Controls.Add(this.webcam_configuration);
+            this.Controls.Add(this.shoulderGP);
             this.Name = "Form1";
             this.Text = "Capstone GUI";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_Close);
@@ -1751,6 +1979,24 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.ComboBox robotArmBaudRate;
+        private System.Windows.Forms.Button WristRotateLeft;
+        private System.Windows.Forms.Button armBtnLeft;
+        private System.Windows.Forms.Button wristLeft;
+        private System.Windows.Forms.Button forArmBtnLeft;
+        private System.Windows.Forms.Button wristRight;
+        private System.Windows.Forms.Button foreArmBtnRight;
+        private System.Windows.Forms.Button armBtnRight;
+        private System.Windows.Forms.Button shBtnRight;
+        private System.Windows.Forms.Button wristRotateRight;
+        private System.Windows.Forms.Button handRight;
+        private System.Windows.Forms.Button handLeft;
+        private System.Windows.Forms.Button shBtnLeft;
+        private System.Windows.Forms.Label shoulderLabel;
+        private System.Windows.Forms.Label armLabel;
+        private System.Windows.Forms.Label wristLabel;
+        private System.Windows.Forms.Label forearmLabel;
+        private System.Windows.Forms.Label handLabel;
+        private System.Windows.Forms.Label wristRotateLabel;
 
     }
 }
