@@ -405,7 +405,10 @@ namespace ArmController // Capstone_GUI
             wristLabel.Visible = false;
             wristRotateLabel.Visible = false;
             handLabel.Visible = false;
-            _serialPort.Close();
+            if (_serialPort != null && _serialPort.IsOpen == true)
+            {
+                _serialPort.Close();
+            }
         }
 
         private void hide_Settings()
@@ -595,15 +598,15 @@ namespace ArmController // Capstone_GUI
                 _bus.Publish(BusNode.CYBERGLOVE_BAUD_RATE, Convert.ToInt32(cyberGloveBaudRate.Text));
                 _bus.Publish(BusNode.CYBERGLOVE_COM_PORT, cyberGloveCOMPort.Text);
                 _bus.Publish(BusNode.CYBERGLOVE_ENABLE, cyberGloveEnable.Checked);
-                _bus.Publish(BusNode.CYBERGLOVE_COM_PORT, "COM1");
-                _bus.Publish(BusNode.CYBERGLOVE_BAUD_RATE, 115200);
+                //_bus.Publish(BusNode.CYBERGLOVE_COM_PORT, "COM1");
+                //_bus.Publish(BusNode.CYBERGLOVE_BAUD_RATE, 115200);
 
                 //IMU settings
                 _bus.Publish(BusNode.IMU_BAUD_RATE, Convert.ToInt32(IMUBaudRate.Text));
                 _bus.Publish(BusNode.IMU_COM_PORT, IMUCOMPort.Text);
                 _bus.Publish(BusNode.IMU_ENABLE, IMUEnable.Checked);
-                _bus.Publish(BusNode.IMU_COM_PORT, "COM5");
-                _bus.Publish(BusNode.IMU_BAUD_RATE, 19200);
+                //_bus.Publish(BusNode.IMU_COM_PORT, "COM5");
+                //_bus.Publish(BusNode.IMU_BAUD_RATE, 19200);
 
                 //Robot Arm Settings
                 _bus.Publish(BusNode.ROBOT_ARM_BAUD_RATE, Convert.ToInt32(robotArmBaudRate.Text));
